@@ -30,7 +30,8 @@ No menu Preferências, Configurações... do NVDA na opção Gerenciador de cont
 2. Exibir a opção de excluir toda a agenda, caixa de seleção desmarcada. Alt+e.
    Quando habilitada, permite deletar todo o conteúdo da agenda.
 3. Exibir Importar arquivo CSV, caixa de seleção desmarcada. Alt+e.
-   Permite a importação de arquivos csv. Obs: todos os campos devem ser compatíveis com o Gerenciador de contatos.
+   Permite a importação de arquivos csv.
+   Observação: todos os campos devem ser compatíveis com o Gerenciador de contatos.
 4. Exibir Exportar arquivo CSV, caixa de seleção desmarcada. Alt+e.
    Salva todos os contatos da agenda em um arquivo csv.
 5. Caminho dos arquivos da agenda.
@@ -51,16 +52,16 @@ Para registrar um novo contato:
 
 1. Acesse o Gerenciador de contatos, menu do NVDA, Ferramentas, Gerenciador de contatos, Gerenciador de contatos. ou por atalho (windows+Alt+L);
 2. Na janela Lista de contatos, pressione Alt+N para adicionar um novo contato.
-3. Na janela Novo Contato, preencha todos os campos e pressione Alt+E para salvar e Alt+F para sair sem salvar;
+3. Na janela Novo Contato, preencha todos os campos e pressione Alt+O para salvar e Alt+C para sair sem salvar;
 
 ### Editando um contato
 
 Para editar um contato:
 
 1. Selecione um contato da lista;
-2. Pressione ALT+E;
+2. Pressione ALT + E ou utilize a tecla F2.
 
-A janela de edição será aberta com foco no campo do nome. Basta editar e pressionar ALT+E para salvar as alterações ou ALT+F para cancelar.
+A janela de edição será aberta com foco no campo do nome. Basta editar e pressionar ALT+O para salvar as alterações ou ALT+C para cancelar.
 
 ### Pesquisar
 
@@ -72,31 +73,29 @@ Você pode pesquisar pelos campos:
 * Telefone Fixo;
 * E-mail.
 
-Após selecionar o campo, basta informar o item de busca, e pressionar o atalho ALT+P, que exibirá o resultado da busca na lista. Se nada for retornado, uma mensagem será exibida informando que o item não foi encontrado. Basta atualizar usando o atalho ALT+A.
+Após selecionar o campo, informe o item de busca e pressione o atalho ALT + P para exibir os resultados na lista. Se nenhum resultado for encontrado, uma mensagem aparecerá informando que o item não foi encontrado. Para atualizar, utilize o atalho ALT + A ou a tecla F5.
 
 ## Dicas e Atalhos
 
 ### Janela Lista de contatos
 
-* Botão Buscar Alt+P
-* Botão Editar Alt+E
-* Novo botão Alt+N
-* Remover botão Alt+R
-* Botão Atualizar Alt+A
-* Importar csv... Botão Alt+I
-* Exportar csv... Botão Alt+X
-* Excluir todos os registros. Botão Alt+T
-* Botão Sair Alt+S
+* **Botão Buscar:** ALT + P
+* **Botão Editar:** ALT + E (também pode ser utilizado a tecla F2)
+* **Novo Botão:** ALT + N
+* **Remover Botão:** ALT + R (também pode ser utilizado a tecla Delete)
+* **Botão Atualizar:** ALT + A (também pode ser utilizado a tecla F5)
+* **Importar CSV:** ALT + I
+* **Exportar CSV:** ALT + X
+* **Excluir todos os registros:** ALT + T
+* **Botão Sair:** ALT + S
 
 ### Janela novo contato e edição
 
-* Adicionar contato botão Alt+O
-* Botão Fechar Alt+C
+* **Confirmar operações:** ALT + O
+* **Botão Cancelar:** ALT + C
 
-Todas as janelas do complemento Gerenciador de contatos para NVDA podem ser fechadas com a tecla Esc ou alt+f4.
+>Todas as janelas do complemento Gerenciador de contatos para NVDA podem ser fechadas com a tecla Esc ou alt+f4.
 
 ## Agradecimentos
 
 Este addon foi inspirado na agenda criada por Abel Passos do Nascimento Jr. <abel.passos@gmail.com>, Rui Fontes <rui.fontes@tiflotecnia.com> e Ângelo Abrantes <ampa4374@gmail.com>.
-
-[1]: https://www.gnu.org/licenses/gpl-2.0.html

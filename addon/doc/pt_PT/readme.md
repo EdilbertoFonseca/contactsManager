@@ -1,107 +1,101 @@
-# Agenda de Contatos para o NVDA
+# Gestor de Contactos para NVDA
+
+* **Autor**: Edilberto Fonseca <edilberto.fonseca@outlook.com>
+* **Data de Criação**: 11/04/2024
+* **Licença**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Introdução
 
-Bem-vindo ao complemento da Agenda de Contatos do NVDA! Este é um plug-in especialmente desenvolvido para ajudar pessoas com deficiência visual a gerenciar sua lista de contatos com mais facilidade e eficiência. Com nosso Addon você pode adicionar, editar e excluir contatos, bem como pesquisar nomes e informações de contato de forma rápida e simples. Além disso, também oferecemos a possibilidade de exportar e importar sua lista de contatos, para que você possa compartilhá-la ou migrá-la para outro dispositivo. O Address Book Addon do NVDA é fácil de usar e oferece uma interface intuitiva, tornando-o a escolha ideal para quem precisa gerenciar sua lista de contatos com eficiência.
+Bem-vindo ao complemento Gestor de Contactos para NVDA! Este é um plug-in especialmente desenvolvido para ajudar pessoas com deficiência visual a gerir a sua lista de contactos com mais facilidade e eficiência. Com este add-on, pode adicionar, editar e eliminar contactos, assim como pesquisar nomes e informações de contacto de forma rápida e simples. Além disso, também oferecemos a possibilidade de exportar e importar a sua lista de contactos, para que possa partilhá-la. O Gestor de Contactos para NVDA é fácil de usar e oferece uma interface intuitiva, tornando-o a escolha ideal para quem precisa de gerir a sua lista de contactos de forma eficiente.
 
 ## Instalação
 
-Aqui estão as instruções passo a passo para instalar o Add-on Address Book no NVDA:
+Aqui estão as instruções passo a passo para instalar o Gestor de Contactos para NVDA:
 
-1. Baixe o arquivo de instalação do Add-on [Contact Book](https://github.com/EdilbertoFonseca/contactBook).
-2. Pressione enter no arquivo de complemento que você baixou.
-3. Siga as instruções na tela para instalar o complemento.
-4. Reinicie o NVDA.
-5. Pressione "NVDA + N" para abrir o menu de configurações e verifique se o Add-on Agenda de Contato para o NVDA está listado na lista de plugins.
-Agora você está pronto para usar o Add-on Agenda de contatos para o NVDA e salvar seus contatos diretamente do NVDA. Certifique-se de verificar a documentação do complemento para obter informações adicionais sobre como usá-lo e personalizá-lo de acordo com suas necessidades.
+1. **Descarregue o ficheiro de instalação do add-on**: Obtenha o ficheiro na Loja de Complementos ou na página oficial do [Gestor de Contactos](https://github.com/EdilbertoFonseca/contactManager).
+   **Nota**: Se o add-on for descarregado da loja, a instalação ocorrerá automaticamente. Caso contrário, siga as instruções abaixo.
+2. **Instale o add-on**: Pressione Enter sobre o ficheiro do add-on descarregado.
+3. **Siga as instruções no ecrã**: Complete a instalação conforme as orientações fornecidas.
+4. **Reinicie o NVDA**: É necessário reiniciar para ativar o add-on.
+5. **Verifique a instalação**: Pressione "NVDA + N" para abrir o menu do NVDA, vá até "Ferramentas" e verifique se o add-on Gestor de Contactos está listado.
+
+Agora está pronto para usar o Gestor de Contactos para NVDA e salvar os seus contactos diretamente do NVDA. Certifique-se de consultar a documentação do complemento para obter informações adicionais sobre como utilizá-lo e personalizá-lo de acordo com as suas necessidades.
 
 ## Configurações
 
-No menu Preferências, Configurações... do NVDA na opção Agenda de Contatos para o NVDA. Você pode configurar as seguintes opções, que estão desmarcadas por padrão:
+No menu Preferências, Configurações... do NVDA, na opção Gestor de Contactos para NVDA, pode configurar as seguintes opções:
 
-1. Não usar formatação de telefone, caixa de seleção desmarcada. Alt+n.
-Esta opção adiciona ou remove a formatação do número de telefone. por enquanto, apenas a formatação (+55) para o Brasil está disponível.
-2. Exibir a opção de excluir toda a agenda, caixa de seleção desmarcada. Alt+e.
-quando habilitada, permite deletar todo o conteúdo da agenda.
-3. Exibir Importar arquivo CSV, caixa de seleção desmarcada. Alt+e.
-Permite a importação de arquivos csv. Obs: todos os campos devem ser compatíveis com a agenda de contatos.
-4. Exibir Exportar arquivo CSV, caixa de seleção desmarcada. Alt+e.
-Salva todos os contatos da agenda em um arquivo csv.
+1. Adicionar máscara para campos de telefone.
+   Esta opção adiciona a máscara usando o símbolo cardinal `#` para a formatação do número de telefone. Por padrão, os campos de telemóvel e telefone fixo estão formatados para o Brasil.
+2. Exibir a opção de excluir toda a agenda, caixa de seleção desmarcada. Alt + e.
+   Quando habilitada, permite eliminar todo o conteúdo da agenda.
+3. Exibir Importar ficheiro CSV, caixa de seleção desmarcada. Alt + e.
+   Permite a importação de ficheiros CSV.
+   Nota: Todos os campos devem ser compatíveis com o Gestor de Contactos.
+4. Exibir Exportar ficheiro CSV, caixa de seleção desmarcada. Alt + e.
+   Salva todos os contactos da agenda num ficheiro CSV.
+5. Caminho dos ficheiros da agenda.
+   Permite selecionar ou adicionar um diretório diferente do padrão para a base de dados.
 
 ## Uso
 
-Você pode acessar a Agenda de Contatos para o NVDA de duas maneiras:
+Pode aceder ao Gestor de Contactos para NVDA de duas maneiras:
 
-1. Pelo atalho, Windows+Alt+L;
-2. Através do menu do NVDA (NVDA+N) ferramentas Agenda de Contatos.
+1. Pelo atalho, Windows + Alt + L;
+2. Através do menu do NVDA (NVDA + N) Ferramentas > Gestor de Contactos.
 
-você terá acesso à janela principal do addon. Nesta janela você pode registrar, editar, remover e pesquisar contatos. Ele também tem as opções de importar csv, exportar csv e excluir toda a agenda. Essas três opções estão desativadas por padrão.
+Terá acesso à janela principal do add-on. Nesta janela, pode registar, editar, remover e pesquisar contactos. Ele também tem as opções de importar CSV, exportar CSV e excluir toda a agenda. Estas três opções estão ativadas por padrão, podendo ser desativadas no painel de configuração.
 
-### Cadastrando um novo contato
+### Cadastrando um novo contacto
 
-Para registrar um novo contato:
+Para registar um novo contacto:
 
-1. Acesse a Agenda de Contatos, menu do NVDA, Ferramentas, Agenda, Lista de Contatos. ou por atalho (windows+Alt+L);
-2. Na janela Lista de contatos, pressione Alt+N para adicionar um novo contato.
-3. Na janela Novo Contato, preencha todos os campos e pressione Alt+E,, para salvar e Alt+F para sair sem salvar;
+1. Aceda ao Gestor de Contactos através do menu do NVDA, Ferramentas, Gestor de Contactos, ou por atalho (Windows + Alt + L);
+2. Na janela Lista de Contactos, pressione Alt + N para adicionar um novo contacto.
+3. Na janela Novo Contacto, preencha todos os campos e pressione Alt + O para salvar e Alt + C para sair sem salvar;
 
-### Editando um contato
+### Editando um contacto
 
-Para editar um contato:
+Para editar um contacto:
 
-1. Selecione um contato da lista;
-2. Pressione ALT+E;
+1. Selecione um contacto da lista;
+2. Pressione ALT + E ou utilize a tecla F2.
 
-A janela de edição será aberta com foco no campo do nome. Basta editar e pressionar ALT+E para salvar as alterações ou ALT+F para cancelar.
+A janela de edição será aberta com foco no campo do nome. Basta editar e pressionar ALT + O para salvar as alterações ou ALT + C para cancelar.
 
 ### Pesquisar
 
-Na janela Lista de contatos, você pode usar o campo de pesquisa para localizar um contato específico.
-Você pode pesquisar pelos campos:
+Na janela Lista de Contactos, pode usar o campo de pesquisa para localizar um contacto específico.
+Pode pesquisar pelos campos:
 
 * Nome;
-* Celular;
+* Telemóvel;
 * Telefone Fixo;
 * E-mail.
 
-Após selecionar o campo, basta informar o item de busca, e pressionar o atalho ALT+B, que exibirá o resultado da busca na lista. Se nada for retornado, basta atualizar usando o atalho ALT+A.
+Após selecionar o campo, informe o item de busca e pressione o atalho ALT + P para exibir os resultados na lista. Se nenhum resultado for encontrado, uma mensagem aparecerá informando que o item não foi encontrado. Para atualizar, utilize o atalho ALT + A ou a tecla F5.
 
 ## Dicas e Atalhos
 
-### Janela Lista de contatos
+### Janela Lista de Contactos
 
-* Botão Buscar Alt+B
-* Botão Editar Alt+e
-* Novo botão Alt+n
-* Remover botão Alt+r
-* Botão Atualizar Alt+a
-* Importar csv... Botão Alt+I
-* Exportar csv... Botão Alt+x
-* Excluir todos os registros. botão Alt+t
-* Botão Sair Alt+s
+* **Botão Buscar:** ALT + P
+* **Botão Editar:** ALT + E (também pode ser utilizado a tecla F2)
+* **Novo Botão:** ALT + N
+* **Remover Botão:** ALT + R (também pode ser utilizado a tecla Delete)
+* **Botão Atualizar:** ALT + A (também pode ser utilizado a tecla F5)
+* **Importar CSV:** ALT + I
+* **Exportar CSV:** ALT + X
+* **Excluir todos os registos:** ALT + T
+* **Botão Sair:** ALT + S
 
-### Janela novo contato
+### Janela Novo Contacto e Edição
 
-* Adicionar contato botão Alt+a
-* Botão Fechar Alt+f
+* **Confirmar operações:** ALT + O
+* **Botão Cancelar:** ALT + C
 
-### Janela de edição
-
-* Editar contato Botão Alt+e
-* Botão Fechar Alt+f
-
-Todas as janelas do complemento Agenda de Contatos para o NVDA são fechadas com a tecla Esc.
-
-## Problemas conhecidos
-
-Ao realizar uma pesquisa e o item de pesquisa não for encontrado, o NVDA não anuncia a mensagem ('Nenhum registro foi encontrado!') que aparece na lista de exibição.
-
-## Licença
-
-Este complemento é coberto pela Licença Pública Geral GNU [GPL v2][1].
+>Todas as janelas do complemento Gestor de Contactos para NVDA podem ser fechadas com a tecla Esc ou Alt + F4.
 
 ## Agradecimentos
 
-Este addon foi inspirado na agenda criada por Abel Passos do Nascimento Jr. <abel.passos@gmail.com>, Rui Fontes <rui.fontes@tiflotecnia.com> e Ângelo Abrantes <ampa4374@gmail.com>.
-
-[1]: https://www.gnu.org/licenses/gpl-2.0.html
+Este add-on foi inspirado na agenda criada por Abel Passos do Nascimento Jr. <abel.passos@gmail.com>, Rui Fontes <rui.fontes@tiflotecnia.com> e Ângelo Abrantes <ampa4374@gmail.com>.
