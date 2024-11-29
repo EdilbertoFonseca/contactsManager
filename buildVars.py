@@ -28,7 +28,7 @@ addon_info = {
 	# on add-on information from add-ons manager
 	"addon_description": _("""This add-on creates a contacts manager where you can save phone numbers, emails, and other contact information for people and companies you consider necessary."""),
 	# version
-	"addon_version": "2024.2.0",
+	"addon_version": "2024.3.0",
 	# Author(s)
 	"addon_author": "Edilberto Fonseca <edilberto.fonseca@outlook.com>",
 	# URL for the add-on documentation support

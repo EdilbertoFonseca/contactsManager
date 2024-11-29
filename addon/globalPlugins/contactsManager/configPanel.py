@@ -117,7 +117,7 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 
 		self.resetRecords = wx.CheckBox(
 			# Translators: Checkbox text to display scheduler reset button.
-			self, label=_('&Show option to delete entire calendar')
+			self, label=_('Show option &to delete entire calendar')
 		)
 		self.resetRecords.SetValue(config.conf[ourAddon.name].get("resetRecords", False))
 		settingsSizerHelper.addItem(self.resetRecords)
@@ -125,7 +125,7 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 		# Button to import CSV files.
 		self.importCSV = wx.CheckBox(
 			# Translators: Checkbox text to display import csv files to database.
-			self, label=_('&Show import CSV file button')
+			self, label=_('Show &import CSV file button')
 		)
 		self.importCSV.SetValue(config.conf[ourAddon.name].get("importCSV", False))
 		settingsSizerHelper.addItem(self.importCSV)
@@ -133,7 +133,7 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 		# Button to export CSV files.
 		self.exportCSV = wx.CheckBox(
 			# Translators: Checkbox text to display export csv files to database.
-			self, label=_('&Show export CSV file button')
+			self, label=_('Show e&xport CSV file button')
 		)
 		self.exportCSV.SetValue(config.conf[ourAddon.name].get("exportCSV", False))
 		settingsSizerHelper.addItem(self.exportCSV)

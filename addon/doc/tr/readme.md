@@ -1,101 +1,103 @@
-﻿# NVDA için İletişim Yöneticisi
+﻿# NVDA için Kişi Yöneticisi
 
 * **Yazar**: Edilberto Fonseca <edilberto.fonseca@outlook.com>
 * **Oluşturulma Tarihi**: 11/04/2024
 * **Lisans**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
-## Giriş
+## giriş
 
-NVDA için İletişim Yöneticisi eklentisine hoş geldiniz! Bu, görme engelli bireylerin iletişim listelerini daha kolay ve verimli bir şekilde yönetmelerine yardımcı olmak için özel olarak geliştirilmiş bir eklentidir. Bu eklenti ile iletişim ekleyebilir, düzenleyebilir ve silebilir, ayrıca isimler ve iletişim bilgilerini hızlı ve basit bir şekilde arayabilirsiniz. Ayrıca, iletişim listenizi dışa aktarma ve içe aktarma imkanı da sunuyoruz, böylece paylaşabilirsiniz. NVDA için İletişim Yöneticisi, kullanımı kolay ve sezgisel bir arayüze sahip olup, iletişim listenizi verimli bir şekilde yönetmeniz için ideal bir seçimdir.
+NVDA Kişi Yöneticisi Eklentisine hoş geldiniz! Bu, görme engelli kişilerin kişi listelerini daha kolay ve verimli bir şekilde yönetmelerine yardımcı olmak için özel olarak tasarlanmış bir eklentidir. Eklentimiz ile kişi ekleyebilir, düzenleyebilir ve silebilirsiniz. Ayrıca isim ile kişi bilgilerini hızlı ve basit bir şekilde arayabilirsiniz. Ek olarak, kişi listenizi paylaşabilmeniz veya başka bir cihaza taşıyabilmeniz için size dışa ve içe aktarma olanağı da sağlıyoruz. NVDA'nın Kişi Yöneticisi Eklentisinin kullanımı kolaydır ve sezgisel bir arayüz sunar, bu da onu kişi listelerini verimli bir şekilde yönetmesi gereken herkes için ideal bir seçim haline getirir.
 
 ## Kurulum
 
-NVDA için İletişim Yöneticisi'ni kurmak için adım adım talimatlar:
+NVDA'da Kişi Yöneticisi Eklentisini kurmak için adım adım talimatlar:
 
-1. **Eklenti kurulum dosyasını indirin**: Dosyayı Eklenti Mağazası'ndan veya [İletişim Yöneticisi](https://github.com/EdilbertoFonseca/contactManager) resmi sayfasından edinin.
-   **Not**: Eklenti mağazadan indirilirse, kurulum otomatik olarak gerçekleşecektir. Aksi takdirde, aşağıdaki talimatları izleyin.
-2. **Eklentiyi kurun**: İndirilen eklenti dosyasının üzerine Enter tuşuna basın.
-3. **Ekrandaki talimatları izleyin**: Kurulumu verilen talimatlara göre tamamlayın.
-4. **NVDA'yı yeniden başlatın**: Eklentiyi etkinleştirmek için yeniden başlatmanız gerekmektedir.
-5. **Kurulumu kontrol edin**: "NVDA + N" tuşuna basarak NVDA menüsünü açın, "Araçlar" kısmına gidin ve İletişim Yöneticisi eklentisinin listelendiğinden emin olun.
-
-Artık NVDA için İletişim Yöneticisi'ni kullanmaya ve iletişimlerinizi doğrudan NVDA'dan kaydetmeye hazırsınız. Kullanımınızı ve ihtiyaçlarınıza göre özelleştirmenizi sağlamak için eklentinin belgelerini kontrol etmeyi unutmayın.
+1. Eklenti kurulum dosyasını [Kişi Yöneticisi](https://github.com/EdilbertoFonseca/contactManager) indirin.
+   **Not**: Eklenti mağazadan indirilirse kurulum otomatik olarak gerçekleşir. Aksi halde aşağıdaki talimatları izleyin.
+2. İndirdiğiniz Eklenti dosyası üzerinde enter tuşuna basın.
+3. Eklentiyi yüklemek için ekrandaki talimatları izleyin.
+4. NVDA'yı yeniden başlatın.
+5. **Kurulumu kontrol edin**:Ayarlar menüsünü açmak için "NVDA + N" tuşlarına basın ve Eklentiler listesinde NVDA İçin Kişi Yöneticisi Eklentisinin listelenip listelenmediğini kontrol edin.
+Artık Kişi Yöneticisi Eklentisini kullanmaya ve kişilerinizi doğrudan NVDA'dan kaydetmeye hazırsınız. Nasıl kullanılacağı ve ihtiyaçlarınıza göre nasıl özelleştirileceği hakkında ek bilgi için Eklentinin belgelerine baktığınızdan emin olun.
 
 ## Ayarlar
 
-NVDA'nın Tercihler menüsünde, İletişim Yöneticisi için Ayarlar... kısmında aşağıdaki seçenekleri yapılandırabilirsiniz:
+Tercihler menüsünde, ayarlar iletişim kutusunda NVDA için Kişi Yöneticisi öğesini seçin. Varsayılan olarak işaretli olmayan aşağıdaki seçenekleri yapılandırabilirsiniz:
 
-1. Telefon alanları için maske ekleyin.
-   Bu seçenek, telefon numarasının formatlanması için `#` sembolünü kullanarak bir maske ekler. Varsayılan olarak, cep telefonu ve sabit telefon alanları Brezilya için formatlanmıştır.
-2. Tüm rehberi silme seçeneğini göster, işaretlenmemiş kutu. Alt + e.
-   Aktif hale getirildiğinde, rehberin tüm içeriğini silmenizi sağlar.
-3. CSV dosyası içe aktarımı göster, işaretlenmemiş kutu. Alt + e.
-   CSV dosyalarının içe aktarımına olanak tanır.
-   Not: Tüm alanlar İletişim Yöneticisi ile uyumlu olmalıdır.
-4. CSV dosyası dışa aktarımı göster, işaretlenmemiş kutu. Alt + e.
-   Rehberdeki tüm iletişimleri bir CSV dosyasına kaydeder.
-5. Rehber dosyalarının yolu.
-   Varsayılanın dışında bir veritabanı dizini seçmenize veya eklemenize olanak tanır.
+1. Telefon alanları için maske ekleyin:
+Bu başlık altında, iki yazma alanı bulunur. İlk yazma alanı cep telefonu ve ikinci alan da sabit hat için kullanılır.
+Telefon mumaramızın rehberde görünmesini istediğimiz şekilde # diyez işareti ekleyerek numara görüntülenme şeklini yapılandırmış oluruz.
+Örneğin: (####) ### ### ## ## şeklinde yazıp ayar penceresini enter ile kapattığımızda, yazdığımız numara:
+(0090) 512 345 67 89
+Şeklinde görünecektir.
+2. Tüm rehberi silme seçeneğini göster, işaretlenmemiş onay kutusu. Alt+r.
+etkinleştirildiğinde, ajandanın tüm içeriğinin silinmesine izin verir.
+3. CSV dosyasını içe aktar düğmesini göster, onay kutusu işaretli değil. Alt+c.
+CSV dosyalarının içe aktarılmasına izin verir. Not: Tüm alanlar Kişi Yöneticisiyle uygun olmalıdır.
+4. CSV dosyasını dışa aktar düğmesini göster, onay kutusu işaretli değil. Alt+c.
+Tüm telefon defteri kişilerini bir csv dosyasına kaydeder.
+5. Ajanda dosyalarının yolu.
+   Veritabanı için varsayılandan farklı bir dizin seçmenizi veya eklemenizi sağlar.
 
-## Kullanım
+## kullanım
 
-NVDA için İletişim Yöneticisi'ne iki şekilde erişebilirsiniz:
+Kişi Yöneticisine iki şekilde erişebilirsiniz
 
-1. Kısayol ile, Windows + Alt + L;
-2. NVDA menüsünden (NVDA + N) Araçlar > İletişim Yöneticisi.
+1. Windows+Alt+L kısayolunu kullanabilirsiniz.
+2. NVDA menüsü>Araçlar>Kişi Yöneticisi alt menüsünden Kişi listesi.
 
-Eklentinin ana penceresine erişeceksiniz. Bu pencerede, iletişimleri kaydedebilir, düzenleyebilir, kaldırabilir ve arayabilirsiniz. Ayrıca, CSV içe aktarma, CSV dışa aktarma ve tüm rehberi silme seçeneklerine de sahiptir. Bu üç seçenek varsayılan olarak etkin durumdadır ve yapılandırma panelinde devre dışı bırakılabilir.
+eklentinin ana penceresine erişebileceksiniz. Bu pencerede kişileri kaydedebilir, düzenleyebilir, kaldırabilir ve arayabilirsiniz. Ayrıca csv'yi içe aktarma, csv'yi dışa aktarma ve tüm kayıtları silme seçeneklerine sahiptir. Bu üç seçenek varsayılan olarak devre dışıdır.
 
-### Yeni bir iletişim kaydetme
+### Yeni bir kişi kaydetme ###
 
-Yeni bir iletişim kaydetmek için:
+Yeni bir kişi kaydetmek için:
 
-1. NVDA menüsünden İletişim Yöneticisi'ne erişin, Araçlar, İletişim Yöneticisi veya kısayol (Windows + Alt + L) ile;
-2. İletişim Listesi penceresinde, yeni bir iletişim eklemek için Alt + N tuşuna basın.
-3. Yeni İletişim penceresinde, tüm alanları doldurun ve kaydetmek için Alt + O'ya, kaydetmeden çıkmak için Alt + C'ye basın;
+1. NVDA menüsü>Araçlar>Kişi Yöneticisi>Kişi Listesi'ne erişin. veya kısayolla (windows+Alt+L);
+2. Kişi Listesi penceresinde, yeni bir kişi eklemek için Alt+N tuşlarına basın.
+3. Yeni Kişi penceresinde, tüm alanları doldurun, kaydetmek için Alt+T,, ve kaydetmeden çıkmak için Alt+L tuşlarına basın;
 
-### Bir iletişimi düzenleme
+### Bir kişiyi düzenleme
 
-Bir iletişimi düzenlemek için:
+Bir kişiyi düzenlemek için:
 
-1. Listeden bir iletişimi seçin;
-2. ALT + E tuşuna basın veya F2 tuşunu kullanın.
+1. Listeden bir kişi seçin;
+2. ALT+E'ye basın;
 
-Düzenleme penceresi, isim alanına odaklanarak açılacaktır. Düzenleyin ve değişiklikleri kaydetmek için ALT + O, iptal etmek için ALT + C'ye basın.
+İsim alanına odaklanan düzenleme penceresi açılacaktır. Sadece düzenleyin ve değişiklikleri kaydetmek için ALT+T'ye veya iptal etmek için ALT+L'ye basın.
 
 ### Arama
 
-İletişim Listesi penceresinde, belirli bir iletişimi bulmak için arama alanını kullanabilirsiniz.
-Aşağıdaki alanlara göre arama yapabilirsiniz:
+Kişi Listesi penceresinde, belirli bir kişiyi bulmak için arama alanını kullanabilirsiniz.
+Alanlara göre arama yapabilirsiniz:
 
 * İsim;
 * Cep telefonu;
-* Sabit telefon;
+* sabit hat;
 * E-posta.
 
-Alanı seçtikten sonra, arama terimini girin ve sonuçları listede görüntülemek için ALT + P kısayoluna basın. Hiçbir sonuç bulunamazsa, öğenin bulunamadığını belirten bir mesaj görüntülenecektir. Güncellemek için ALT + A kısayolunu veya F5 tuşunu kullanın.
+Alanı seçtikten sonra, arama öğesini yazın ve arama sonucunu listede görüntüleyecek olan ALT+A kısayoluna basın. Hiçbir sonuç bulunamazsa, ALT+Y veya F5 kısayolunu kullanarak yenileyin.
 
 ## İpuçları ve Kısayollar
 
-### İletişim Listesi Penceresi
+### Kişi Listesi penceresi:
 
-* **Ara Butonu:** ALT + P
-* **Düzenle Butonu:** ALT + E (F2 tuşu da kullanılabilir)
-* **Yeni Buton:** ALT + N
-* **Kaldır Butonu:** ALT + R (Delete tuşu da kullanılabilir)
-* **Güncelle Butonu:** ALT + A (F5 tuşu da kullanılabilir)
-* **CSV İçe Aktar:** ALT + I
-* **CSV Dışa Aktar:** ALT + X
-* **Tüm Kayıtları Sil:** ALT + T
-* **Çıkış Butonu:** ALT + S
+* **Ara Alt+A**
+* **Düzenle Alt+e. F2 tuşuna da bsabilirsiniz.**
+* **Yeni Alt+n**
+* **Kaldır Alt+r**
+* **Yenile düğmesi Alt+Y**
+* **CSV dosyasını içe aktar... Alt+i**
+* **CSV olarak dışa aktar... Alt+ı**
+* **Tüm kayıtları sil. alt+t**
+* **Çıkış düğmesi Alt+Ç**
+### Yeni Kişi ve Düzenle Penceresi:
 
-### Yeni İletişim ve Düzenleme Penceresi
+* **Kişi ekle Alt+T**
+* **Kişiyi düzenle Alt+e**
+ * **İptal düğmesi Alt+l**
 
-* **Onay İşlemleri:** ALT + O
-* **İptal Butonu:** ALT + C
-
->Tüm NVDA için İletişim Yöneticisi pencereleri, Esc tuşu veya Alt + F4 ile kapatılabilir.
+> Kişi Yöneticisi eklentisinin tüm pencereleri escape tuşu ile veya ALT+L kısayol tuşuna basarak kapatılabilir.
 
 ## Teşekkürler
 
-Bu eklenti, Abel Passos do Nascimento Jr. <abel.passos@gmail.com>, Rui Fontes <rui.fontes@tiflotecnia.com> ve Ângelo Abrantes <ampa4374@gmail.com> tarafından oluşturulan rehberden ilham alınarak hazırlanmıştır.
+Bu eklenti, Abel Passos do Nascimento Jr. <abel.passos@gmail.com>, Rui Fontes <rui.fontes@tiflotecnia.com> ve Ângelo Abrantes <ampa4374@gmail.com> tarafından oluşturulan Erişilebilir Ajanda Eklentisinden ilham almıştır. .

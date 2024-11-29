@@ -243,7 +243,7 @@ class ContactList(wx.Dialog):
 
 	# Show all records in the ObjectListview's view control.
 	def onToUpdate(self, event):
-		ui.message(_("Registros atualizados!"))
+		ui.message(_("Updated records!"), True)
 		self.show_all_records()
 		wx.CallAfter(self.Show)
 
