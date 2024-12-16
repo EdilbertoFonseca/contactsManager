@@ -1,10 +1,16 @@
 # -*- coding: UTF-8 -*-
 
-# Description: Simple contacts manager for saving phone numbers, emails, and other contact details for
-# people and companies.
-# Author: Edilberto Fonseca.
-# Email: edilberto.fonseca@outlook.com
-# Date of creation: 30/11/2022.
+# Description:
+# Simple contacts manager for saving phone numbers, emails, and other contact details
+# for personal or professional use.
+
+# Author: Edilberto Fonseca
+# Email: <edilberto.fonseca@outlook.com>
+# Copyright (C) 2022-2025 Edilberto Fonseca
+# This file is covered by the GNU General Public License.
+# See the file COPYING for more details or visit https://www.gnu.org/licenses/gpl-2.0.html.
+
+# Date of creation: 30/11/2022
 
 # Imports necessary for the add-on to function.
 import os
@@ -30,9 +36,8 @@ ADDON_SUMMARY = addonHandler.getCodeAddon().manifest["summary"]
 # Start the initDB function.
 Section.initDB()
 
-# For translation process
+# Initializes the translation
 addonHandler.initTranslation()
-
 
 def disableInSecureMode(decoratedCls):
 	"""

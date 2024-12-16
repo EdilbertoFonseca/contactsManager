@@ -26,7 +26,9 @@ addon_info = {
 	# Add-on description
 	# Translators: Long description to be shown for this add-on
 	# on add-on information from add-ons manager
-	"addon_description": _("""This add-on creates a contacts manager where you can save phone numbers, emails, and other contact information for people and companies you consider necessary."""),
+	"addon_description": _(
+		"""Simple contacts manager for saving phone numbers, emails, and other contact details for personal or professional use."""
+		),
 	# version
 	"addon_version": "2024.3.0",
 	# Author(s)

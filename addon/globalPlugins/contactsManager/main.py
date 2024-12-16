@@ -1,8 +1,14 @@
 # -*- coding: UTF-8 -*-
 
-# Description: Lists all contacts registered in the phonebook.
-# Author: Edilberto Fonseca.
-# Email: edilberto.fonseca@outlook.com.
+# Description:
+# Lists all contacts registered in the phonebook.
+
+# Author: Edilberto Fonseca
+# Email: <edilberto.fonseca@outlook.com>
+# Copyright (C) 2022-2025 Edilberto Fonseca
+# This file is covered by the GNU General Public License.
+# See the file COPYING for more details or visit https://www.gnu.org/licenses/gpl-2.0.html.
+
 # Date of creation: 30/11/2022.
 
 # Imports necessary for the add-on to function.
@@ -32,7 +38,7 @@ try:
 except ImportError as e:
 	logger.error(f"Error importing module: {str(e)}")
 
-# For translation process
+# Initializes the translation
 addonHandler.initTranslation()
 
 # Get the title of the addon defined in the summary.

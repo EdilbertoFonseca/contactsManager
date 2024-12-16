@@ -1,8 +1,14 @@
 # -*- coding: UTF-8 -*-
 
-# Description: Contacts manager configuration panel.
-# Author: Edilberto Fonseca.
-# Email: edilberto.fonseca@outlook.com.
+# Description:
+# Contacts manager configuration panel.
+
+# Author: Edilberto Fonseca
+# Email: <edilberto.fonseca@outlook.com>
+# Copyright (C) 2022-2025 Edilberto Fonseca
+# This file is covered by the GNU General Public License.
+# See the file COPYING for more details or visit https://www.gnu.org/licenses/gpl-2.0.html.
+
 # Date of creation: 24/01/2023.
 
 # Imports necessary for the add-on to function.
@@ -19,7 +25,7 @@ from gui.settingsDialogs import SettingsPanel
 
 from .varsConfig import initConfiguration, ourAddon
 
-# For the translation process
+# Initializes the translation
 addonHandler.initTranslation()
 
 # Get a logger with the name of the current module

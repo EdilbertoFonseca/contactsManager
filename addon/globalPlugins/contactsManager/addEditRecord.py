@@ -1,8 +1,14 @@
 # -*- coding: UTF-8 -*-
 
-# Description: Dialog box for adding and editing records in Contacts Manager for NVDA.
-# Author: Edilberto Fonseca.
-# Email: edilberto.fonseca@outlook.com
+# Description:
+# Dialog box for adding and editing records in Contacts Manager for NVDA.
+
+# Author: Edilberto Fonseca
+# Email: <edilberto.fonseca@outlook.com>
+# Copyright (C) 2022-2025 Edilberto Fonseca
+# This file is covered by the GNU General Public License.
+# See the file COPYING for more details or visit https://www.gnu.org/licenses/gpl-2.0.html.
+
 # Date of creation: 30/11/2022.
 
 # Imports necessary for the add-on to function.
@@ -31,9 +37,8 @@ try:
 except Exception as e:
 	logger.error(f"Error importing module: {str(e)}")
 
-# For translation process
+# Initializes the translation
 addonHandler.initTranslation()
-
 
 class AddEditRecDialog(wx.Dialog):
 

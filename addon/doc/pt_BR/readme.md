@@ -27,12 +27,12 @@ No menu Preferências, Configurações... do NVDA na opção Gerenciador de cont
 
 1. Adicionar máscara para campos de telefone.
    Esta opção adiciona a máscara usando o símbolo cardinal `#` para a formatação do número de telefone. Por padrão, os campos de celular e telefone fixo estão formatados para o Brasil.
-2. Exibir a opção de excluir toda a agenda, caixa de seleção desmarcada. `Alt+T`.
+2. Mostrar opção para excluir todo o calendário caixa de seleção marcado `Alt+t`.
    Quando habilitada, permite deletar todo o conteúdo da agenda.
-3. Exibir Importar arquivo CSV, caixa de seleção desmarcada. `Alt+I`.
+3. Mostrar botão de importação de arquivo CSV caixa de seleção marcado `Alt+I`.
    Permite a importação de arquivos csv.
    Observação: todos os campos devem ser compatíveis com o Gerenciador de contatos.
-4. Exibir Exportar arquivo CSV, caixa de seleção desmarcada. `Alt+X`.
+4. Mostrar o botão exportar arquivo CSV caixa de seleção marcado `Alt+X`.
    Salva todos os contatos da agenda em um arquivo csv.
 5. Caminho dos arquivos da agenda.
    Permite selecionar ou adicionar um diretório diferente do padrão para o banco de dados.
@@ -42,7 +42,7 @@ No menu Preferências, Configurações... do NVDA na opção Gerenciador de cont
 Você pode acessar o Gerenciador de contatos para NVDA de duas maneiras:
 
 1. Pelo atalho, `Windows+Alt+L`;
-2. Através do menu do NVDA `NVDA+N` ferramentas Gerenciador de contatos.
+2. Através do menu do NVDA `NVDA+N` ferramentas Gerenciador de contatos, Gerenciador de contatos.
 
 Você terá acesso à janela principal do addon. Nesta janela você pode registrar, editar, remover e pesquisar contatos. Ele também tem as opções de importar csv, exportar csv e excluir toda a agenda. Essas três opções estão ativadas por padrão. Podendo ser desativadas no painel de configuração.
 
