@@ -19,8 +19,8 @@ import sys
 import addonHandler
 import versionInfo
 
-from .configPanel import \
-	db_config  # Imports the instance of the DatabaseConfig class
+# Imports the instance of the DatabaseConfig class
+from .configPanel import db_config
 from .model import ObjectContact, Section
 
 # Get a logger with the name of the current module
@@ -54,7 +54,7 @@ This function creates and returns a connection to the database specified by the 
 	Returns:
 		sqlite3.Connection: Database connection object.
 	"""
-	return sql.connect(db_config.get_current_database_path())
+	return sqlite3.connect(db_config.get_current_database_path())
 
 
 def get_all_records():

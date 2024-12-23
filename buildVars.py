@@ -30,7 +30,7 @@ addon_info = {
 		"""Simple contacts manager for saving phone numbers, emails, and other contact details for personal or professional use."""
 		),
 	# version
-	"addon_version": "2024.3.0",
+	"addon_version": "2024.4.0",
 	# Author(s)
 	"addon_author": "Edilberto Fonseca <edilberto.fonseca@outlook.com>",
 	# URL for the add-on documentation support
