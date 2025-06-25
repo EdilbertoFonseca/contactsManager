@@ -1,7 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-# Description:
-# Dialog box for adding and editing records in Contacts Manager for NVDA.
+# Description: Dialog box for adding and editing records in Contacts Manager for NVDA.
 
 # Author: Edilberto Fonseca
 # Email: <edilberto.fonseca@outlook.com>
@@ -12,7 +11,6 @@
 # Date of creation: 30/11/2022.
 
 # Imports necessary for the add-on to function.
-import logging
 import os
 import re
 import sys
@@ -21,21 +19,23 @@ import addonHandler
 import config
 import gui
 import wx
+from logHandler import log
 
 from . import controller as core
 from .varsConfig import ourAddon
 
-# Get a logger with the name of the current module
-logger = logging.getLogger(__name__)
+# Get the path to the root of the current add-on
+addonPath = os.path.dirname(__file__)
 
-# Add directories to sys.path before importing libraries
-baseDir = os.path.dirname(__file__)
-libs = os.path.join(baseDir, "lib")
-sys.path.append(libs)
+# Add the lib/ folder to sys.path (only once)
+libPath = os.path.join(addonPath, "lib")
+if libPath not in sys.path:
+	sys.path.insert(0, libPath)
+
 try:
 	from masked import TextCtrl
 except Exception as e:
-	logger.error(f"Error importing module: {str(e)}")
+	log.error(f"Error importing module: {str(e)}")
 
 # Initializes the translation
 addonHandler.initTranslation()

@@ -1,7 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-# Description:
-# This script is part of a simple contact book add-on for NVDA (NonVisual Desktop Access).
+# Description: This script is part of a simple contact book add-on for NVDA (NonVisual Desktop Access).
 #              It handles the installation process by moving the existing database file to a new location.
 #              The script checks if the database file exists in the current configuration path and renames
 #              it to ensure compatibility with pending installations.
@@ -26,7 +25,6 @@ addonHandler.initTranslation()
 
 # Get the name of the addon defined in the manifest.
 ADDON_name = addonHandler.getCodeAddon().manifest["name"]
-
 
 def onInstall():
 	"""

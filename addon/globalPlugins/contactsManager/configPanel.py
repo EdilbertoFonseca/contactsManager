@@ -1,7 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-# Description:
-# Contacts manager configuration panel.
+# Description: Contacts manager configuration panel.
 
 # Author: Edilberto Fonseca
 # Email: <edilberto.fonseca@outlook.com>
@@ -12,7 +11,6 @@
 # Date of creation: 24/01/2023.
 
 # Imports necessary for the add-on to function.
-import logging
 import os
 
 import addonHandler
@@ -22,17 +20,12 @@ import gui
 import wx
 from gui import guiHelper
 from gui.settingsDialogs import SettingsPanel
+from logHandler import log
 
-from .varsConfig import initConfiguration, ourAddon
+from .varsConfig import ADDON_SUMMARY, initConfiguration, ourAddon
 
 # Initializes the translation
 addonHandler.initTranslation()
-
-# Get a logger with the name of the current module
-logger = logging.getLogger(__name__)
-
-# Get the summary of the manifest
-addonSummary = addonHandler.getCodeAddon().manifest["summary"]
 
 # Initialize settings
 initConfiguration()
@@ -55,9 +48,9 @@ class DatabaseConfig:
 			else:
 				self.alt_database = config.conf[ourAddon.name].get("altPath", self.default_path)
 		except ValueError:
-			logger.error("Invalid value for database index in configuration, using default.")
+			log.error("Invalid value for database index in configuration, using default.")
 		except KeyError:
-			logger.warning("Database configuration not found, using default paths.")
+			log.warning("Database configuration not found, using default paths.")
 
 	def save_config(self):
 		config.conf[ourAddon.name]["path"] = self.first_database
@@ -100,7 +93,7 @@ db_config = DatabaseConfig(default_path=os.path.join(os.path.dirname(__file__), 
 
 class ContactsManagerSettingsPanel(SettingsPanel):
 	# Translators: Title of the Contacts Manager settings dialog in the NVDA settings.
-	title = addonSummary
+	title = ADDON_SUMMARY
 
 	def makeSettings(self, settingsSizer):
 		settingsSizerHelper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)

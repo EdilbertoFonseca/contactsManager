@@ -7,8 +7,8 @@ import codecs
 import gettext
 import os
 import os.path
-import zipfile
 import sys
+import zipfile
 
 # Add-on localization exchange facility and the template requires Python 3.10.
 # For best practice, use Python 3.11 or later to align with NVDA development.
@@ -18,36 +18,40 @@ sys.dont_write_bytecode = True
 # Bytecode should not be written for build vars module to keep the repository root folder clean.
 import buildVars  # NOQA: E402
 
-
 def md2html(source, dest):
 	import markdown
 	# Use extensions if defined.
 	mdExtensions = buildVars.markdownExtensions
 	lang = os.path.basename(os.path.dirname(source)).replace('_', '-')
 	localeLang = os.path.basename(os.path.dirname(source))
+	
 	try:
 		_ = gettext.translation("nvda", localedir=os.path.join("addon", "locale"), languages=[localeLang]).gettext
 		summary = _(buildVars.addon_info["addon_summary"])
 	except Exception:
 		summary = buildVars.addon_info["addon_summary"]
+	
 	title = "{addonSummary} {addonVersion}".format(
 		addonSummary=summary, addonVersion=buildVars.addon_info["addon_version"]
 	)
+	
 	headerDic = {
 		"[[!meta title=\"": "# ",
 		"\"]]": " #",
 	}
+	
 	with codecs.open(source, "r", "utf-8") as f:
 		mdText = f.read()
 		for k, v in headerDic.items():
-			mdText = mdText.replace(k, v, 1)
+			mdText = mdText.replace(k, v)  #Replacing all occurrences
 		htmlText = markdown.markdown(mdText, extensions=mdExtensions)
-	# Optimization: build resulting HTML text in one go instead of writing parts separately.
+	
+	# Generating the full html
 	docText = "\n".join([
 		"<!DOCTYPE html>",
 		f"<html lang=\"{lang}\">",
 		"<head>",
-		"<meta charset=\"UTF-8\">"
+		"<meta charset=\"UTF-8\">",
 		"<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
 		"<link rel=\"stylesheet\" type=\"text/css\" href=\"../style.css\" media=\"screen\">",
 		f"<title>{title}</title>",
@@ -55,9 +59,9 @@ def md2html(source, dest):
 		htmlText,
 		"</body>\n</html>"
 	])
+	
 	with codecs.open(dest, "w", "utf-8") as f:
 		f.write(docText)
-
 
 def mdTool(env):
 	mdAction = env.Action(

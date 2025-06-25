@@ -1,7 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-# Description:
-#Control module for Contacts Manager for NVDA.
+# Description: Control module for Contacts Manager for NVDA.
 
 # Author: Edilberto Fonseca
 # Email: <edilberto.fonseca@outlook.com>
@@ -12,24 +11,25 @@
 # Date of creation: 30/11/2022.
 
 # Imports necessary for the add-on to function.
-import logging
 import os
 import sys
 
 import addonHandler
 import versionInfo
+from logHandler import log
 
 # Imports the instance of the DatabaseConfig class
 from .configPanel import db_config
 from .model import ObjectContact, Section
 
-# Get a logger with the name of the current module
-logger = logging.getLogger(__name__)
+# Get the path to the root of the current add-on
+addonPath = os.path.dirname(__file__)
 
-# Add directories to sys.path before importing libraries
-baseDir = os.path.dirname(__file__)
-libs = os.path.join(baseDir, "lib")
-sys.path.append(libs)
+# Add the lib/ folder to sys.path (only once)
+libPath = os.path.join(addonPath, "lib")
+if libPath not in sys.path:
+	sys.path.insert(0, libPath)
+
 try:
 	import csv
 
@@ -38,7 +38,7 @@ try:
 	else:
 		import sqlite311 as sqlite3
 except ImportError as e:
-	logger.error(f"Error importing module: {str(e)}")
+	log.error(f"Error importing module: {str(e)}")
 
 # Initializes the translation
 addonHandler.initTranslation()
@@ -222,7 +222,7 @@ def import_csv_to_db(mypath):
 				trans.executemany(insert_records, data_to_insert)
 			trans.persist()  # Persist only after successful execution
 		except (FileNotFoundError, csv.Error, UnicodeDecodeError) as e:
-			logger.error(f"Error importing data: {str(e)}")
+			log.error(f"Error importing data: {str(e)}")
 			raise  # Re-raise the exception after logging
 
 
@@ -244,7 +244,7 @@ def export_db_to_csv(mypath):
 				result = [[row[i] for i in range(len(row)) if i != 0] for row in data]
 				newFile.writerows(result)
 	except Exception as e:
-		logger.error(f"Erro ao conectar ao banco de dados: {str(e)}")
+		log.error(f"Erro ao conectar ao banco de dados: {str(e)}")
 
 
 def count_records():

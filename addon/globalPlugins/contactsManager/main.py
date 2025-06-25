@@ -12,8 +12,8 @@
 # Date of creation: 30/11/2022.
 
 # Imports necessary for the add-on to function.
-import logging
 import os
+import sys
 
 import addonHandler
 import config
@@ -22,27 +22,27 @@ import queueHandler
 import ui
 import wx
 from gui import guiHelper
+from logHandler import log
 
 from . import controller as core
 from .addEditRecord import AddEditRecDialog
-from .varsConfig import ourAddon
+from .varsConfig import ADDON_SUMMARY, ourAddon
 
-# Get a logger with the name of the current module
-logger = logging.getLogger(__name__)
+# Get the path to the root of the current add-on
+addonPath = os.path.dirname(__file__)
 
-# Add directories to sys.path before importing libraries
-baseDir = os.path.dirname(__file__)
-libs = os.path.join(baseDir, "lib")
+# Add the lib/ folder to sys.path (only once)
+libPath = os.path.join(addonPath, "lib")
+if libPath not in sys.path:
+	sys.path.insert(0, libPath)
+
 try:
 	from ObjectListView import ColumnDefn, ObjectListView
 except ImportError as e:
-	logger.error(f"Error importing module: {str(e)}")
+	log.error(f"Error importing module: {str(e)}")
 
 # Initializes the translation
 addonHandler.initTranslation()
-
-# Get the title of the addon defined in the summary.
-ADDON_SUMMARY = addonHandler.getCodeAddon().manifest["summary"]
 
 
 class ContactList(wx.Dialog):
@@ -245,7 +245,7 @@ class ContactList(wx.Dialog):
 				self.contactList.SetFocus()
 		except Exception as e:
 			# Display an error message if an exception occurs during the search
-			self.show_message(_(f"{e}"))
+			self.show_message(f"{e}")
 
 	# Show all records in the ObjectListview's view control.
 	def onToUpdate(self, event):

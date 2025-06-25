@@ -1,7 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-# Description:
-# Variables for the Contacts Manager for NVDA add-on
+# Description: Variables for the Contacts Manager for NVDA add-on
 
 # Author: Edilberto Fonseca
 # Email: <edilberto.fonseca@outlook.com>
@@ -12,14 +11,13 @@
 # Date of creation: 24/05/2024
 
 # Import the necessary modules
-import logging
 
 import addonHandler
 import config
+from logHandler import log
 
-# Configure the logger instance for the current module, allowing logging of log messages.
-logger = logging.getLogger(__name__)
-
+# Get the title of the add-on defined in the summary.
+ADDON_SUMMARY = addonHandler.getCodeAddon().manifest["summary"]
 
 def getOurAddon():
 	"""
@@ -30,7 +28,7 @@ def getOurAddon():
 	try:
 		return addonHandler.getCodeAddon()
 	except Exception as e:
-		logger.error(f"Error getting the add-on: {e}")
+		log.error(f"Error getting the add-on: {e}")
 
 
 # Retrieve the current add-on instance
@@ -54,7 +52,7 @@ def initConfiguration():
 		}
 		config.conf.spec[ourAddon.name] = confspec
 	except Exception as e:
-		logger.error(f"Error initializing configuration: {e}")
+		log.error(f"Error initializing configuration: {e}")
 
 
 # Initialize the configuration

@@ -27,10 +27,10 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on
 	# on add-on information from add-ons manager
 	"addon_description": _(
-		"""Simple contacts manager for saving phone numbers, emails, and other contact details for personal or professional use."""
+		"""Simple contacts manager for saving phone numbers, emails, and other contact details for personal or professional use. Shortcut Windows+Alt+L."""
 		),
 	# version
-	"addon_version": "2024.4.0",
+	"addon_version": "2025.4.0",
 	# Author(s)
 	"addon_author": "Edilberto Fonseca <edilberto.fonseca@outlook.com>",
 	# URL for the add-on documentation support
@@ -43,7 +43,7 @@ addon_info = {
 	"addon_minimumNVDAVersion": "2023.3.4",
 	# Last NVDA version supported/tested
 	# (e.g. "2018.4", ideally more recent than minimum version)
-	"addon_lastTestedNVDAVersion": "2024.2.0",
+	"addon_lastTestedNVDAVersion": "2025.1.0",
 	# Add-on update channel (default is stable or None)
 	"addon_updateChannel": None,
 	# Add-on license such as GPL 2

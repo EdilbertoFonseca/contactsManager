@@ -1,7 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-# Description:
-# Simple contacts manager for saving phone numbers, emails, and other contact details
+# Description: Simple contacts manager for saving phone numbers, emails, and other contact details
 # for personal or professional use.
 
 # Author: Edilberto Fonseca
@@ -25,13 +24,10 @@ from scriptHandler import script
 from .configPanel import ContactsManagerSettingsPanel
 from .main import ContactList
 from .model import Section
-from .varsConfig import initConfiguration
+from .varsConfig import ADDON_SUMMARY, initConfiguration
 
 # Initialize configuration settings
 initConfiguration()
-
-# Get the title of the add-on defined in the summary.
-ADDON_SUMMARY = addonHandler.getCodeAddon().manifest["summary"]
 
 # Start the initDB function.
 Section.initDB()

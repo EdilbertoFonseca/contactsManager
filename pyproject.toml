@@ -18,6 +18,7 @@ include = [
 ]
 
 exclude = [
+	"addon/globalPlugins/contactsManager/lib",
 	".git",
 	"__pycache__",
 ]
