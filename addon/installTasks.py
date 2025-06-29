@@ -30,7 +30,7 @@ def onInstall():
 	"""
 	Moves the add-on database file to a new location during installation.
 	"""
-	relativeDbPath = os.path.join("addons", "contactsManager", "globalPlugins", "ContactsManager for NVDA", "database.db")
+	relativeDbPath = os.path.join("addons", "contactsManager", "globalPlugins", "contactsManager", "database.db")
 	absoluteDbPath = os.path.abspath(os.path.join(globalVars.appArgs.configPath, relativeDbPath))
 
 	if os.path.isfile(absoluteDbPath):

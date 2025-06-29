@@ -6,20 +6,21 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 'contactsManager' '2025.4.0'\n"
+"Project-Id-Version: 'contactsManager' '2025.5.1'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2025-06-25 09:25-0300\n"
-"PO-Revision-Date: 2025-06-25 09:34-0300\n"
+"POT-Creation-Date: 2025-06-28 23:47-0300\n"
+"PO-Revision-Date: 2025-06-29 01:38-0300\n"
 "Last-Translator: Edilberto Fonseca <edilberto.fonseca@outlook.com>\n"
 "Language-Team: Edilberto Fonseca <edilberto.fonseca@outlook.com>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.6\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: addon\installTasks.py:45
+#, python-brace-format
 msgid "Error when renaming file: {e}"
 msgstr "Erro ao renomear arquivo: {e}"
 
@@ -181,7 +182,7 @@ msgstr "Telefone fixo"
 #. Translators: Checkbox text to display scheduler reset button.
 #: addon\globalPlugins\contactsManager\configPanel.py:119
 msgid "Show option &to delete entire calendar"
-msgstr "Exibir opção &para excluir todo o calendário"
+msgstr "Exibir opção para excluir &todo o calendário"
 
 #. Translators: Checkbox text to display import csv files to database.
 #: addon\globalPlugins\contactsManager\configPanel.py:127
@@ -191,7 +192,7 @@ msgstr "Exibir botão de &importar arquivo CSV"
 #. Translators: Checkbox text to display export csv files to database.
 #: addon\globalPlugins\contactsManager\configPanel.py:135
 msgid "Show e&xport CSV file button"
-msgstr "Exibir botão de &exportar arquivo CSV"
+msgstr "E&xibir botão de exportar arquivo CSV"
 
 #. Translators: Name of combobox with the agenda files path.
 #: addon\globalPlugins\contactsManager\configPanel.py:142
@@ -265,11 +266,11 @@ msgstr "&Importar CSV..."
 
 #: addon\globalPlugins\contactsManager\main.py:104
 msgid "Ex&port csv..."
-msgstr "Ex&portar para CSV..."
+msgstr "E&xportar para CSV..."
 
 #: addon\globalPlugins\contactsManager\main.py:105
 msgid "&Delete all records."
-msgstr "&Excluir todos os registros."
+msgstr "Excluir &todos os registros."
 
 #: addon\globalPlugins\contactsManager\main.py:106
 msgid "E&xit"
@@ -314,6 +315,7 @@ msgid "File imported successfully!"
 msgstr "Arquivo importado com sucesso!"
 
 #: addon\globalPlugins\contactsManager\main.py:270
+#, python-brace-format
 msgid "It was not possible to import the file! {e}"
 msgstr "Não foi possível importar o arquivo! {e}"
 
@@ -326,6 +328,7 @@ msgid "File exported successfully!"
 msgstr "Arquivo exportado com sucesso!"
 
 #: addon\globalPlugins\contactsManager\main.py:297
+#, python-brace-format
 msgid "It was not possible to export the file! {e}"
 msgstr "Não foi possível exportar o arquivo! {e}"
 
@@ -359,9 +362,6 @@ msgid "Contacts Manager for NVDA"
 msgstr "Gerenciador de contatos para NVDA"
 
 #: buildVars.py:30
-#| msgid ""
-#| "Simple contacts manager for saving phone numbers, emails, and other "
-#| "contact details for personal or professional use."
 msgid ""
 "Simple contacts manager for saving phone numbers, emails, and other contact "
 "details for personal or professional use. Shortcut Windows+Alt+L."

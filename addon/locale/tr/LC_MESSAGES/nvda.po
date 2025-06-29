@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Kişi Defteri 2024.3.0\n"
-"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
-"POT-Creation-Date: 2024-10-04 17:40+0000\n"
-"PO-Revision-Date: 2024-11-29 14:53-0300\n"
+"Project-Id-Version: Kişi Defteri 2025.5.1\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2025-06-28 23:47-0300\n"
+"PO-Revision-Date: 2025-06-28 23:53-0300\n"
 "Last-Translator: Edilberto Fonseca <edilberto.fonseca@outlook.com>\n"
 "Language-Team: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language: tr_TR\n"
@@ -11,348 +11,342 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.6\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: globalPlugins/contactBook\n"
 "X-Poedit-SearchPath-1: buildVars.py\n"
 
-#: addon/installTasks.py:41
+#: addon\installTasks.py:45
 #, python-brace-format
 msgid "Error when renaming file: {e}"
 msgstr "Dosyayı yeniden adlandırırken hata oluştu: {e}"
 
 #. Translators: Message displayed to the user in case of errors when importing the CSV file
 #. Translators: Message displayed to the user in case of errors when exporting the CSV file
-#: addon/installTasks.py:41 addon/globalPlugins/contactsManager/main.py:201
-#: addon/globalPlugins/contactsManager/main.py:260
-#: addon/globalPlugins/contactsManager/main.py:268
-#: addon/globalPlugins/contactsManager/main.py:287
-#: addon/globalPlugins/contactsManager/main.py:295
-#: addon/globalPlugins/contactsManager/main.py:316
-#: addon/globalPlugins/contactsManager/main.py:320
+#: addon\installTasks.py:45 addon\globalPlugins\contactsManager\main.py:207
+#: addon\globalPlugins\contactsManager\main.py:266
+#: addon\globalPlugins\contactsManager\main.py:274
+#: addon\globalPlugins\contactsManager\main.py:293
+#: addon\globalPlugins\contactsManager\main.py:301
+#: addon\globalPlugins\contactsManager\main.py:322
+#: addon\globalPlugins\contactsManager\main.py:326
 msgid "Attention"
 msgstr "Dikkat"
 
-#: addon/globalPlugins/contactsManager/__init__.py:69
-#: addon/globalPlugins/contactsManager/__init__.py:106
+#: addon\globalPlugins\contactsManager\__init__.py:70
+#: addon\globalPlugins\contactsManager\__init__.py:107
 msgid "&Contacts Manager"
 msgstr "&Kişi Yöneticisi"
 
-#: addon/globalPlugins/contactsManager/__init__.py:79
+#: addon\globalPlugins\contactsManager\__init__.py:80
 msgid "&Settings"
 msgstr "&Ayarlar"
 
-#: addon/globalPlugins/contactsManager/__init__.py:89
+#: addon\globalPlugins\contactsManager\__init__.py:90
 msgid "&Help"
 msgstr "&Yardım"
 
 #. Translators: Title of contact list dialog box.
-#: addon/globalPlugins/contactsManager/__init__.py:116
+#: addon\globalPlugins\contactsManager\__init__.py:117
 msgid "Contact list."
 msgstr "Kişi listesi."
 
 #. Translators: Text displayed in NVDA help.
-#: addon/globalPlugins/contactsManager/__init__.py:126
+#: addon\globalPlugins\contactsManager\__init__.py:127
 msgid "Displays a window with all contacts registered in the Contacts Manager."
 msgstr ""
 "Kişi Yöneticisi'nde kayıtlı tüm kişileri içeren bir pencere görüntüler."
 
 #. Translators: Opens the Contacts Manager configuration menu
-#: addon/globalPlugins/contactsManager/__init__.py:136
+#: addon\globalPlugins\contactsManager\__init__.py:137
 msgid "Opens Contacts Manager add-on settings"
 msgstr "Kişi Yöneticisi eklenti ayarlarını açar"
 
 #. Translators: Text displayed in NVDA help.
-#: addon/globalPlugins/contactsManager/__init__.py:151
+#: addon\globalPlugins\contactsManager\__init__.py:152
 msgid "Opens the Contacts Manager add-on help page."
 msgstr "Kişi Yöneticisi eklenti yardım sayfasını açar."
 
-#: addon/globalPlugins/contactsManager/addEditRecord.py:40
+#: addon\globalPlugins\contactsManager\addEditRecord.py:45
 msgid "Add"
 msgstr "Ekle"
 
-#: addon/globalPlugins/contactsManager/addEditRecord.py:47
+#: addon\globalPlugins\contactsManager\addEditRecord.py:52
 msgid "{} Record in Contacts Manager for NVDA"
 msgstr "{} NVDA için Kişi Yöneticisi yeni kayıt"
 
-#: addon/globalPlugins/contactsManager/addEditRecord.py:70
+#: addon\globalPlugins\contactsManager\addEditRecord.py:75
 msgid "Name: "
 msgstr "İsim: "
 
-#: addon/globalPlugins/contactsManager/addEditRecord.py:73
+#: addon\globalPlugins\contactsManager\addEditRecord.py:78
 msgid "Cell phone: "
 msgstr "Cep telefonu: "
 
-#: addon/globalPlugins/contactsManager/addEditRecord.py:76
+#: addon\globalPlugins\contactsManager\addEditRecord.py:81
 msgid "Landline: "
 msgstr "Sabit hat: "
 
-#: addon/globalPlugins/contactsManager/addEditRecord.py:80
+#: addon\globalPlugins\contactsManager\addEditRecord.py:85
 msgid "Email: "
 msgstr "E-posta: "
 
-#: addon/globalPlugins/contactsManager/addEditRecord.py:83
+#: addon\globalPlugins\contactsManager\addEditRecord.py:88
 msgid "&Ok"
 msgstr "&Tamam"
 
-#: addon/globalPlugins/contactsManager/addEditRecord.py:86
+#: addon\globalPlugins\contactsManager\addEditRecord.py:91
 msgid "&Cancel"
 msgstr "İpta&l"
 
-#: addon/globalPlugins/contactsManager/addEditRecord.py:171
+#: addon\globalPlugins\contactsManager\addEditRecord.py:176
 msgid "Name is required!"
 msgstr "İsim gerekli!"
 
-#: addon/globalPlugins/contactsManager/addEditRecord.py:171
-#: addon/globalPlugins/contactsManager/addEditRecord.py:177
-#: addon/globalPlugins/contactsManager/addEditRecord.py:183
-#: addon/globalPlugins/contactsManager/addEditRecord.py:190
-#: addon/globalPlugins/contactsManager/addEditRecord.py:239
-#: addon/globalPlugins/contactsManager/main.py:172
-#: addon/globalPlugins/contactsManager/main.py:197
-#: addon/globalPlugins/contactsManager/main.py:211
-#: addon/globalPlugins/contactsManager/main.py:312
-#: addon/globalPlugins/contactsManager/main.py:328
+#: addon\globalPlugins\contactsManager\addEditRecord.py:176
+#: addon\globalPlugins\contactsManager\addEditRecord.py:182
+#: addon\globalPlugins\contactsManager\addEditRecord.py:188
+#: addon\globalPlugins\contactsManager\addEditRecord.py:195
+#: addon\globalPlugins\contactsManager\addEditRecord.py:244
+#: addon\globalPlugins\contactsManager\main.py:178
+#: addon\globalPlugins\contactsManager\main.py:203
+#: addon\globalPlugins\contactsManager\main.py:217
+#: addon\globalPlugins\contactsManager\main.py:318
+#: addon\globalPlugins\contactsManager\main.py:334
 msgid "Error"
 msgstr "Hata"
 
-#: addon/globalPlugins/contactsManager/addEditRecord.py:177
+#: addon\globalPlugins\contactsManager\addEditRecord.py:182
 msgid "Mobile number is required!"
 msgstr "Cep telefonu numarası gerekli!"
 
-#: addon/globalPlugins/contactsManager/addEditRecord.py:183
+#: addon\globalPlugins\contactsManager\addEditRecord.py:188
 msgid "Landline number is required!"
 msgstr "Sabit hat numarası gerekli!"
 
-#: addon/globalPlugins/contactsManager/addEditRecord.py:190
+#: addon\globalPlugins\contactsManager\addEditRecord.py:195
 msgid "Invalid email format!"
 msgstr "Geçersiz e-posta biçimi!"
 
 #. Translators:  Dialog displayed upon completion.
-#: addon/globalPlugins/contactsManager/addEditRecord.py:227
+#: addon\globalPlugins\contactsManager\addEditRecord.py:232
 msgid "Contact added, want to add a new contact?"
 msgstr "Kişi eklendi, yeni bir kişi daha eklemek ister misiniz?"
 
-#: addon/globalPlugins/contactsManager/addEditRecord.py:228
-#: addon/globalPlugins/contactsManager/addEditRecord.py:267
-#: addon/globalPlugins/contactsManager/main.py:207
-#: addon/globalPlugins/contactsManager/main.py:326
+#: addon\globalPlugins\contactsManager\addEditRecord.py:233
+#: addon\globalPlugins\contactsManager\addEditRecord.py:272
+#: addon\globalPlugins\contactsManager\main.py:213
+#: addon\globalPlugins\contactsManager\main.py:332
 msgid "Success"
 msgstr "Başarılı"
 
-#: addon/globalPlugins/contactsManager/addEditRecord.py:239
+#: addon\globalPlugins\contactsManager\addEditRecord.py:244
 msgid "Error adding contact: {}"
 msgstr "Kişi eklenirken hata oluştu: {}"
 
 #. Translators:  Dialog displayed after editing is complete.
-#: addon/globalPlugins/contactsManager/addEditRecord.py:267
+#: addon\globalPlugins\contactsManager\addEditRecord.py:272
 msgid "Contact edited!"
 msgstr "Kişi düzenlendi!"
 
-#: addon/globalPlugins/contactsManager/addEditRecord.py:292
-#: addon/globalPlugins/contactsManager/main.py:343
+#: addon\globalPlugins\contactsManager\addEditRecord.py:297
+#: addon\globalPlugins\contactsManager\main.py:349
 msgid "Message"
 msgstr "Mesaj"
 
 #. Translators: Formatting text for phone fields.
-#: addon/globalPlugins/contactsManager/configPanel.py:103
+#: addon\globalPlugins\contactsManager\configPanel.py:102
 msgid "Add mask for phone fields:"
 msgstr "Telefon alanları için maske ekleyin:"
 
 #. Cell field formatting.
-#: addon/globalPlugins/contactsManager/configPanel.py:109
-#: addon/globalPlugins/contactsManager/controller.py:133
-#: addon/globalPlugins/contactsManager/main.py:87
-#: addon/globalPlugins/contactsManager/main.py:145
+#: addon\globalPlugins\contactsManager\configPanel.py:108
+#: addon\globalPlugins\contactsManager\controller.py:138
+#: addon\globalPlugins\contactsManager\main.py:93
+#: addon\globalPlugins\contactsManager\main.py:151
 msgid "Cell phone"
 msgstr "Cep telefonu"
 
 #. Formatting the landline phone field.
-#: addon/globalPlugins/contactsManager/configPanel.py:114
-#: addon/globalPlugins/contactsManager/controller.py:134
-#: addon/globalPlugins/contactsManager/main.py:87
-#: addon/globalPlugins/contactsManager/main.py:146
+#: addon\globalPlugins\contactsManager\configPanel.py:113
+#: addon\globalPlugins\contactsManager\controller.py:139
+#: addon\globalPlugins\contactsManager\main.py:93
+#: addon\globalPlugins\contactsManager\main.py:152
 msgid "Landline"
 msgstr "Sabit hat"
 
 #. Translators: Checkbox text to display scheduler reset button.
-#: addon/globalPlugins/contactsManager/configPanel.py:120
-msgid "&Show option to delete entire calendar"
-msgstr "Tüm &rehberi silme seçeneğini göster"
+#: addon\globalPlugins\contactsManager\configPanel.py:119
+msgid "Show option &to delete entire calendar"
+msgstr "Tüm &takvimi silme seçeneğini göster"
 
 #. Translators: Checkbox text to display import csv files to database.
-#: addon/globalPlugins/contactsManager/configPanel.py:128
-msgid "&Show import CSV file button"
-msgstr "CSV dosyasını &içe aktar düğmesini göster"
+#: addon\globalPlugins\contactsManager\configPanel.py:127
+msgid "Show &import CSV file button"
+msgstr "CSV &dosyasını göster ve içe aktar düğmesi"
 
 #. Translators: Checkbox text to display export csv files to database.
-#: addon/globalPlugins/contactsManager/configPanel.py:136
-msgid "&Show export CSV file button"
-msgstr "&CSV dosyasını dışa aktar düğmesini göster"
+#: addon\globalPlugins\contactsManager\configPanel.py:135
+msgid "Show e&xport CSV file button"
+msgstr "E&xport CSV dosyası düğmesini göster"
 
 #. Translators: Name of combobox with the agenda files path.
-#: addon/globalPlugins/contactsManager/configPanel.py:143
+#: addon\globalPlugins\contactsManager\configPanel.py:142
 msgid "Path of agenda files:"
 msgstr "Ajanda dosyalarının saklandığı konum:"
 
 #. Translators: This is the label for the button used to add or change a contactsManager.db location.
-#: addon/globalPlugins/contactsManager/configPanel.py:154
+#: addon\globalPlugins\contactsManager\configPanel.py:153
 msgid "&Select or add a directory"
 msgstr "&Bir dizin seç veya ekle"
 
-#: addon/globalPlugins/contactsManager/configPanel.py:170
+#: addon\globalPlugins\contactsManager\configPanel.py:169
 msgid "Choose where to save the Data Base file"
 msgstr "Veri Tabanı dosyasının nereye kaydedileceğini seçin"
 
-#: addon/globalPlugins/contactsManager/configPanel.py:173
+#: addon\globalPlugins\contactsManager\configPanel.py:172
 msgid "Database files (*.db)"
 msgstr "Veritabanı dosyaları (*.db)"
 
 #. List of combobox choices option.
-#: addon/globalPlugins/contactsManager/controller.py:132
-#: addon/globalPlugins/contactsManager/main.py:87
-#: addon/globalPlugins/contactsManager/main.py:88
-#: addon/globalPlugins/contactsManager/main.py:144
+#: addon\globalPlugins\contactsManager\controller.py:137
+#: addon\globalPlugins\contactsManager\main.py:93
+#: addon\globalPlugins\contactsManager\main.py:94
+#: addon\globalPlugins\contactsManager\main.py:150
 msgid "Name"
 msgstr "İsim"
 
-#: addon/globalPlugins/contactsManager/controller.py:135
-#: addon/globalPlugins/contactsManager/main.py:87
-#: addon/globalPlugins/contactsManager/main.py:147
+#: addon\globalPlugins\contactsManager\controller.py:140
+#: addon\globalPlugins\contactsManager\main.py:93
+#: addon\globalPlugins\contactsManager\main.py:153
 msgid "Email"
 msgstr "E-posta"
 
-#: addon/globalPlugins/contactsManager/main.py:49
+#: addon\globalPlugins\contactsManager\main.py:55
 msgid "An instance of {} is already open."
 msgstr "{} örneği zaten açık."
 
 #. Translators: Message displayed when the contactList is empty.
-#: addon/globalPlugins/contactsManager/main.py:81
+#: addon\globalPlugins\contactsManager\main.py:87
 msgid "No records found!"
 msgstr "Kayıt bulunamadı!"
 
 #. Translators: Search field label.
-#: addon/globalPlugins/contactsManager/main.py:84
+#: addon\globalPlugins\contactsManager\main.py:90
 msgid "Search for: "
 msgstr "Arama türü: "
 
-#: addon/globalPlugins/contactsManager/main.py:91
+#: addon\globalPlugins\contactsManager\main.py:97
 msgid "&Search"
 msgstr "&Ara"
 
-#: addon/globalPlugins/contactsManager/main.py:93
+#: addon\globalPlugins\contactsManager\main.py:99
 msgid "&Edit"
 msgstr "Düz&enle"
 
-#: addon/globalPlugins/contactsManager/main.py:94
+#: addon\globalPlugins\contactsManager\main.py:100
 msgid "&New"
 msgstr "Ye&ni"
 
-#: addon/globalPlugins/contactsManager/main.py:95
+#: addon\globalPlugins\contactsManager\main.py:101
 msgid "&Remove"
 msgstr "Kaldı&r"
 
-#: addon/globalPlugins/contactsManager/main.py:96
+#: addon\globalPlugins\contactsManager\main.py:102
 msgid "Refres&h"
 msgstr "&Yenile"
 
-#: addon/globalPlugins/contactsManager/main.py:97
+#: addon\globalPlugins\contactsManager\main.py:103
 msgid "&Import csv..."
 msgstr "CSV dosyasını &içe aktar..."
 
-#: addon/globalPlugins/contactsManager/main.py:98
+#: addon\globalPlugins\contactsManager\main.py:104
 msgid "Ex&port csv..."
 msgstr "CSV olarak d&ışa aktar..."
 
-#: addon/globalPlugins/contactsManager/main.py:99
+#: addon\globalPlugins\contactsManager\main.py:105
 msgid "&Delete all records."
 msgstr "Tüm kayıtları &sil."
 
-#: addon/globalPlugins/contactsManager/main.py:100
+#: addon\globalPlugins\contactsManager\main.py:106
 msgid "E&xit"
 msgstr "&Çık"
 
-#: addon/globalPlugins/contactsManager/main.py:172
-#: addon/globalPlugins/contactsManager/main.py:197
+#: addon\globalPlugins\contactsManager\main.py:178
+#: addon\globalPlugins\contactsManager\main.py:203
 msgid "No records selected!"
 msgstr "Kayıt seçilmedi!"
 
-#: addon/globalPlugins/contactsManager/main.py:177
+#: addon\globalPlugins\contactsManager\main.py:183
 msgid "To edit"
 msgstr "Düzenlemek için"
 
-#: addon/globalPlugins/contactsManager/main.py:200
+#: addon\globalPlugins\contactsManager\main.py:206
 msgid "Do you want to delete the selected record?"
 msgstr "Seçilen kaydı silmek istiyor musunuz?"
 
-#: addon/globalPlugins/contactsManager/main.py:207
+#: addon\globalPlugins\contactsManager\main.py:213
 msgid "Record deleted!"
 msgstr "Kayıt silindi!"
 
-#: addon/globalPlugins/contactsManager/main.py:211
+#: addon\globalPlugins\contactsManager\main.py:217
 msgid "Error deleting record: {}"
 msgstr "Kayıt silinirken hata oluştu: {}"
 
 #. If there are no results, displays an informative message
-#: addon/globalPlugins/contactsManager/main.py:229
+#: addon\globalPlugins\contactsManager\main.py:235
 msgid "No contacts found matching the search criteria."
 msgstr "Arama kriterleriyle eşleşen kişi bulunamadı."
 
-#. Display an error message if an exception occurs during the search
-#: addon/globalPlugins/contactsManager/main.py:242
-#, python-brace-format
-msgid "{e}"
-msgstr "{e}"
+#: addon\globalPlugins\contactsManager\main.py:252
+msgid "Updated records!"
+msgstr "Güncellenmiş kayıtlar!"
 
-#: addon/globalPlugins/contactsManager/main.py:246
-msgid "Registros atualizados!"
-msgstr "Kayıtlar güncellendi!"
-
-#: addon/globalPlugins/contactsManager/main.py:253
+#: addon\globalPlugins\contactsManager\main.py:259
 msgid "import csv file"
 msgstr "csv dosyasını içe aktar"
 
-#: addon/globalPlugins/contactsManager/main.py:260
+#: addon\globalPlugins\contactsManager\main.py:266
 msgid "File imported successfully!"
 msgstr "Dosya başarıyla içe aktarıldı!"
 
-#: addon/globalPlugins/contactsManager/main.py:264
+#: addon\globalPlugins\contactsManager\main.py:270
 #, python-brace-format
 msgid "It was not possible to import the file! {e}"
 msgstr "Dosya içe aktarılamadı! {e}"
 
-#: addon/globalPlugins/contactsManager/main.py:277
+#: addon\globalPlugins\contactsManager\main.py:283
 msgid "export csv file"
 msgstr "csv dosyasını dışa aktar"
 
-#: addon/globalPlugins/contactsManager/main.py:287
+#: addon\globalPlugins\contactsManager\main.py:293
 msgid "File exported successfully!"
 msgstr "Dosya başarıyla dışa aktarıldı!"
 
-#: addon/globalPlugins/contactsManager/main.py:291
+#: addon\globalPlugins\contactsManager\main.py:297
 #, python-brace-format
 msgid "It was not possible to export the file! {e}"
 msgstr "Dosya dışa aktarılamadı! {e}"
 
-#: addon/globalPlugins/contactsManager/main.py:312
+#: addon\globalPlugins\contactsManager\main.py:318
 msgid "Error counting records: {}"
 msgstr "Kayıtlar sayılırken hata oluştu: {}"
 
-#: addon/globalPlugins/contactsManager/main.py:316
+#: addon\globalPlugins\contactsManager\main.py:322
 msgid "The agenda is empty!"
 msgstr "Ajanda boş!"
 
-#: addon/globalPlugins/contactsManager/main.py:319
+#: addon\globalPlugins\contactsManager\main.py:325
 msgid "This operation erases all phonebook entries. do you wish to continue?"
 msgstr ""
 "Bu işlem tüm telefon defteri girişlerini siler. devam etmek istiyor musunuz?"
 
-#: addon/globalPlugins/contactsManager/main.py:326
+#: addon\globalPlugins\contactsManager\main.py:332
 msgid "Agenda deleted!"
 msgstr "Ajanda silindi!"
 
-#: addon/globalPlugins/contactsManager/main.py:328
+#: addon\globalPlugins\contactsManager\main.py:334
 msgid "Error deleting records: {}"
 msgstr "Kayıtlar silinirken hata oluştu: {}"
 
@@ -363,18 +357,21 @@ msgstr "Kayıtlar silinirken hata oluştu: {}"
 msgid "Contacts Manager for NVDA"
 msgstr "NVDA için Kişi Yöneticisi"
 
-#. Add-on description
-#. Translators: Long description to be shown for this add-on
-#. on add-on information from add-ons manager
-#: buildVars.py:29
+#: buildVars.py:30
 msgid ""
-"This add-on creates a contacts manager where you can save phone numbers, "
-"emails, and other contact information for people and companies you consider "
-"necessary."
+"Simple contacts manager for saving phone numbers, emails, and other contact "
+"details for personal or professional use. Shortcut Windows+Alt+L."
 msgstr ""
-"Bu eklenti, gerekli olduğunu düşündüğünüz kişi ve şirketlerin telefon "
-"numaralarını, e-postalarını ve diğer iletişim bilgilerini kaydedebileceğiniz "
-"bir kişi yöneticisi oluşturur."
+"Kişisel veya profesyonel kullanım için telefon numaralarını, e-postaları ve "
+"diğer iletişim bilgilerini kaydetmek için basit kişi yöneticisi. "
+"Windows+Alt+L kısayolu."
+
+#, python-brace-format
+#~ msgid "{e}"
+#~ msgstr "{e}"
+
+#~ msgid "Registros atualizados!"
+#~ msgstr "Kayıtlar güncellendi!"
 
 #~ msgid "Error importing contacts: {}"
 #~ msgstr "Kişiler içe aktarılırken hata oluştu: {}"
@@ -481,9 +478,6 @@ msgstr ""
 
 #~ msgid "Add-on information"
 #~ msgstr "Eklenti bilgileri"
-
-#~ msgid "new record"
-#~ msgstr "novo registro"
 
 #~ msgid "bank path"
 #~ msgstr "caminho do banco"

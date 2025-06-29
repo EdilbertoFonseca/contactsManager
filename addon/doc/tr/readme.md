@@ -1,103 +1,111 @@
 ﻿# NVDA için Kişi Yöneticisi
 
-* **Yazar**: Edilberto Fonseca <edilberto.fonseca@outlook.com>
-* **Oluşturulma Tarihi**: 11/04/2024
-* **Lisans**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
+**Yazar**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)  
+**Oluşturma Tarihi**: 11.04.2024  
+**Lisans**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
-## giriş
+## Giriş
 
-NVDA Kişi Yöneticisi Eklentisine hoş geldiniz! Bu, görme engelli kişilerin kişi listelerini daha kolay ve verimli bir şekilde yönetmelerine yardımcı olmak için özel olarak tasarlanmış bir eklentidir. Eklentimiz ile kişi ekleyebilir, düzenleyebilir ve silebilirsiniz. Ayrıca isim ile kişi bilgilerini hızlı ve basit bir şekilde arayabilirsiniz. Ek olarak, kişi listenizi paylaşabilmeniz veya başka bir cihaza taşıyabilmeniz için size dışa ve içe aktarma olanağı da sağlıyoruz. NVDA'nın Kişi Yöneticisi Eklentisinin kullanımı kolaydır ve sezgisel bir arayüz sunar, bu da onu kişi listelerini verimli bir şekilde yönetmesi gereken herkes için ideal bir seçim haline getirir.
+NVDA için Kişi Yöneticisine hoş geldiniz!  
+Bu eklenti, görme engelli kullanıcıların kişilerle ilgili bilgilerini daha erişilebilir bir şekilde yönetmelerine yardımcı olmak amacıyla tasarlanmıştır.
+
+Bu araç ile:
+
+- Kişileri ekleyebilir, düzenleyebilir, silebilir ve arayabilirsiniz;
+- Kişi listenizi CSV formatında içe ve dışa aktarabilirsiniz;
+- Telefon numarası formatlarını özelleştirebilirsiniz;
+- Veritabanını dilediğiniz klasöre kaydedebilirsiniz;
+- Klavye kısayolları ile hızlı ve verimli bir kullanım sağlayabilirsiniz.
 
 ## Kurulum
 
-NVDA'da Kişi Yöneticisi Eklentisini kurmak için adım adım talimatlar:
+1. NVDA'da **Araçlar > Eklenti Yöneticisi** menüsünü açın.
+2. **Mevcut Eklentiler** sekmesinde arama kutusuna “Kişi Yöneticisi” yazın.
+3. Sonuçlardan eklentiyi seçin, `Enter` veya **Uygula** tuşuna basın, ardından **Yükle**’yi seçin.
+4. Kurulumu tamamlamak için NVDA'yı yeniden başlatın.
 
-1. Eklenti kurulum dosyasını [Kişi Yöneticisi](https://github.com/EdilbertoFonseca/contactManager) indirin.
-   **Not**: Eklenti mağazadan indirilirse kurulum otomatik olarak gerçekleşir. Aksi halde aşağıdaki talimatları izleyin.
-2. İndirdiğiniz Eklenti dosyası üzerinde enter tuşuna basın.
-3. Eklentiyi yüklemek için ekrandaki talimatları izleyin.
-4. NVDA'yı yeniden başlatın.
-5. **Kurulumu kontrol edin**:Ayarlar menüsünü açmak için "NVDA + N" tuşlarına basın ve Eklentiler listesinde NVDA İçin Kişi Yöneticisi Eklentisinin listelenip listelenmediğini kontrol edin.
-Artık Kişi Yöneticisi Eklentisini kullanmaya ve kişilerinizi doğrudan NVDA'dan kaydetmeye hazırsınız. Nasıl kullanılacağı ve ihtiyaçlarınıza göre nasıl özelleştirileceği hakkında ek bilgi için Eklentinin belgelerine baktığınızdan emin olun.
+## Yapılandırma
 
-## Ayarlar
+**Ayarlar > Kişi Yöneticisi** sekmesinde aşağıdaki yapılandırmaları yapabilirsiniz:
 
-Tercihler menüsünde, ayarlar iletişim kutusunda NVDA için Kişi Yöneticisi öğesini seçin. Varsayılan olarak işaretli olmayan aşağıdaki seçenekleri yapılandırabilirsiniz:
+1. **Telefon numarası maskesi**: Sabit hat ve cep numaraları için `#` karakteriyle maske belirleyin (varsayılan olarak Brezilya biçimi kullanılır).
+2. **Tüm kişileri silmeye izin ver**: Bu seçeneği etkinleştirerek `Alt+T` kısayoluyla tüm kişileri topluca silebilirsiniz.
+3. **CSV dosyasından içe aktar**: CSV’den kişi verilerini almak için bu seçeneği etkinleştirin (`Alt+I`).
+4. **CSV dosyasına dışa aktar**: Kayıtlı kişileri dışa aktarmak için bu seçeneği etkinleştirin (`Alt+X`).
+5. **Veritabanı konumu**: Veritabanının hangi klasöre kaydedileceğini belirleyin.
 
-1. Telefon alanları için maske ekleyin:
-Bu başlık altında, iki yazma alanı bulunur. İlk yazma alanı cep telefonu ve ikinci alan da sabit hat için kullanılır.
-Telefon mumaramızın rehberde görünmesini istediğimiz şekilde # diyez işareti ekleyerek numara görüntülenme şeklini yapılandırmış oluruz.
-Örneğin: (####) ### ### ## ## şeklinde yazıp ayar penceresini enter ile kapattığımızda, yazdığımız numara:
-(0090) 512 345 67 89
-Şeklinde görünecektir.
-2. Tüm rehberi silme seçeneğini göster, işaretlenmemiş onay kutusu. Alt+r.
-etkinleştirildiğinde, ajandanın tüm içeriğinin silinmesine izin verir.
-3. CSV dosyasını içe aktar düğmesini göster, onay kutusu işaretli değil. Alt+c.
-CSV dosyalarının içe aktarılmasına izin verir. Not: Tüm alanlar Kişi Yöneticisiyle uygun olmalıdır.
-4. CSV dosyasını dışa aktar düğmesini göster, onay kutusu işaretli değil. Alt+c.
-Tüm telefon defteri kişilerini bir csv dosyasına kaydeder.
-5. Ajanda dosyalarının yolu.
-   Veritabanı için varsayılandan farklı bir dizin seçmenizi veya eklemenizi sağlar.
+## Uygulamayı Açma
 
-## kullanım
+Kişi Yöneticisi’ni şu yollarla açabilirsiniz:
 
-Kişi Yöneticisine iki şekilde erişebilirsiniz
+1. `Windows+Alt+L` tuş kombinasyonu ile;
+2. NVDA menüsünden: `NVDA+N > Araçlar > Kişi Yöneticisi`
 
-1. Windows+Alt+L kısayolunu kullanabilirsiniz.
-2. NVDA menüsü>Araçlar>Kişi Yöneticisi alt menüsünden Kişi listesi.
+Ana pencerede kişileri listeleyebilir, arama yapabilir, CSV dosyası içe/dışa aktarımı yapabilir veya tüm verileri temizleyebilirsiniz.
 
-eklentinin ana penceresine erişebileceksiniz. Bu pencerede kişileri kaydedebilir, düzenleyebilir, kaldırabilir ve arayabilirsiniz. Ayrıca csv'yi içe aktarma, csv'yi dışa aktarma ve tüm kayıtları silme seçeneklerine sahiptir. Bu üç seçenek varsayılan olarak devre dışıdır.
+## Yeni Kişi Ekleme
 
-### Yeni bir kişi kaydetme ###
+1. Ana pencereyi açın;
+2. `Alt+N` tuşuna basarak yeni kişi ekleyin;
+3. Gerekli alanları doldurun ve `Alt+O` ile kaydedin veya `Alt+C` ile iptal edin.
 
-Yeni bir kişi kaydetmek için:
+> Not: Alanlar arasında geçiş yapmak için **Enter** tuşunu kullanın. **Tab** tuşu bazı durumlarda düzgün çalışmayabilir.
 
-1. NVDA menüsü>Araçlar>Kişi Yöneticisi>Kişi Listesi'ne erişin. veya kısayolla (windows+Alt+L);
-2. Kişi Listesi penceresinde, yeni bir kişi eklemek için Alt+N tuşlarına basın.
-3. Yeni Kişi penceresinde, tüm alanları doldurun, kaydetmek için Alt+T,, ve kaydetmeden çıkmak için Alt+L tuşlarına basın;
+## Kişi Düzenleme
 
-### Bir kişiyi düzenleme
+1. Düzenlemek istediğiniz kişiyi listeden seçin;
+2. `Alt+E` veya `F2` tuşuna basın;
+3. Değişiklikleri yapın ve `Alt+O` ile kaydedin veya `Alt+C` ile iptal edin.
 
-Bir kişiyi düzenlemek için:
+## Kişi Arama
 
-1. Listeden bir kişi seçin;
-2. ALT+E'ye basın;
+Ana pencerede şu alanlara göre arama yapabilirsiniz:
 
-İsim alanına odaklanan düzenleme penceresi açılacaktır. Sadece düzenleyin ve değişiklikleri kaydetmek için ALT+T'ye veya iptal etmek için ALT+L'ye basın.
+- İsim
+- Cep telefonu
+- Sabit telefon
+- E-posta
 
-### Arama
+Arama kriterini yazın, alanı seçin ve `Alt+P` tuşuna basın. Listeyi yenilemek için `Alt+A` veya `F5` tuşuna basın.
 
-Kişi Listesi penceresinde, belirli bir kişiyi bulmak için arama alanını kullanabilirsiniz.
-Alanlara göre arama yapabilirsiniz:
+Eğer eşleşme bulunamazsa uygun bir bildirim gösterilecektir.
 
-* İsim;
-* Cep telefonu;
-* sabit hat;
-* E-posta.
+## Klavye Kısayolları
 
-Alanı seçtikten sonra, arama öğesini yazın ve arama sonucunu listede görüntüleyecek olan ALT+A kısayoluna basın. Hiçbir sonuç bulunamazsa, ALT+Y veya F5 kısayolunu kullanarak yenileyin.
+### Ana Pencere
 
-## İpuçları ve Kısayollar
+| İşlem                        | Kısayol               |
+|-----------------------------|-----------------------|
+| Yeni kişi                   | `Alt+N`               |
+| Kişi düzenle                | `Alt+E` veya `F2`     |
+| Kişi sil                    | `Alt+R` veya `Delete` |
+| Arama yap                   | `Alt+P`               |
+| Listeyi yenile              | `Alt+A` veya `F5`     |
+| CSV içe aktar               | `Alt+I`               |
+| CSV dışa aktar              | `Alt+X`               |
+| Tüm kişileri sil            | `Alt+T`               |
+| Kapat                       | `Alt+S`               |
 
-### Kişi Listesi penceresi:
+### Kişi Ekle/Düzenle Penceresi
 
-* **Ara Alt+A**
-* **Düzenle Alt+e. F2 tuşuna da bsabilirsiniz.**
-* **Yeni Alt+n**
-* **Kaldır Alt+r**
-* **Yenile düğmesi Alt+Y**
-* **CSV dosyasını içe aktar... Alt+i**
-* **CSV olarak dışa aktar... Alt+ı**
-* **Tüm kayıtları sil. alt+t**
-* **Çıkış düğmesi Alt+Ç**
-### Yeni Kişi ve Düzenle Penceresi:
+| İşlem        | Kısayol  |
+|--------------|----------|
+| Kaydet       | `Alt+O`  |
+| İptal        | `Alt+C`  |
 
-* **Kişi ekle Alt+T**
-* **Kişiyi düzenle Alt+e**
- * **İptal düğmesi Alt+l**
-
-> Kişi Yöneticisi eklentisinin tüm pencereleri escape tuşu ile veya ALT+L kısayol tuşuna basarak kapatılabilir.
+> Tüm pencereler `Esc` veya `Alt+F4` ile kapatılabilir.
 
 ## Teşekkürler
 
-Bu eklenti, Abel Passos do Nascimento Jr. <abel.passos@gmail.com>, Rui Fontes <rui.fontes@tiflotecnia.com> ve Ângelo Abrantes <ampa4374@gmail.com> tarafından oluşturulan Erişilebilir Ajanda Eklentisinden ilham almıştır. .
+Bu eklenti şu kişilerin geliştirdiği kişi rehberi uygulamasından esinlenilmiştir:
+
+- Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)  
+- Rui Fontes (<rui.fontes@tiflotecnia.com>)  
+- Angelo Abrantes (<ampa4374@gmail.com>)
+
+## Çeviriler
+
+- **Portekizce (Brezilya)** – Edilberto Fonseca  
+- **Portekizce (Portekiz)** – Edilberto Fonseca  
+- **Ukraynaca** – George‑br  
+- **Türkçe** – Umut KORKMAZ

@@ -1,103 +1,113 @@
 # Contact Manager for NVDA
 
-* **Author**: Edilberto Fonseca <edilberto.fonseca@outlook.com>
-* **Creation Date**: 04/11/2024
-* **License**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
+**Author**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)  
+**Created on**: 11/04/2024  
+**License**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Introduction
 
-Welcome to the Contact Manager for NVDA! This add-on is specially designed to help visually impaired individuals manage their contact lists with greater ease and efficiency. With this add-on, you can add, edit, and delete contacts, as well as search for names and contact information quickly and easily. Additionally, we offer the ability to export and import your contact list, allowing you to share it. The Contact Manager for NVDA is user-friendly and provides an intuitive interface, making it the ideal choice for those who need efficient contact list management.
+Welcome to the Contact Manager for NVDA!  
+This add-on was designed specifically for blind or visually impaired users who need a practical and accessible way to manage their contacts.
+
+With this tool, you can:
+
+- Add, edit, delete, and search for contacts;
+- Import and export contact lists in CSV format;
+- Apply custom phone number formatting;
+- Choose a custom location to store your contact database;
+- Navigate an intuitive and fully keyboard-accessible interface.
 
 ## Installation
 
-Here are the step-by-step instructions to install the Contact Manager for NVDA:
+1. In NVDA, go to **Tools > Add-on Store**.
+2. In the **Available Add-ons** tab, search for "Contact Manager".
+3. Select it, press **Enter** or click **Apply**, and then choose **Install**.
+4. Restart NVDA to complete the installation.
 
-1. **Download the add-on installation file**: Obtain the file from the Add-on Store or the official [Contact Manager page](https://github.com/EdilbertoFonseca/contactManager).
-   **Note**: If the add-on is downloaded from the store, the installation will occur automatically. Otherwise, follow the instructions below.
-2. **Install the add-on**: Press Enter on the downloaded add-on file.
-3. **Follow the on-screen instructions**: Complete the installation as directed.
-4. **Restart NVDA**: Restarting is required to activate the add-on.
-5. **Verify the installation**: Press `NVDA+N` to open the NVDA menu, navigate to "Tools," and check if the Contact Manager add-on is listed.
+## Configuration
 
-Now you're ready to use the Contact Manager for NVDA and save your contacts directly from NVDA.
+In NVDA, go to **Preferences > Settings**, and locate the "Contact Manager for NVDA" panel to customize:
 
-## Settings
+1. **Phone number masking**: Use `#` to apply a formatting mask (default: Brazilian format).
+2. **Allow clearing all contacts**: Enables a button to delete all entries in the contact list (`Alt+T`).
+3. **Enable CSV import**: Shows a button to import contacts from compatible CSV files (`Alt+I`).
+4. **Enable CSV export**: Shows a button to export the contact list to a CSV file (`Alt+X`).
+5. **Contact file directory**: Set a custom path for storing your agenda file.
 
-In the NVDA menu, Preferences > Settings > Contact Manager for NVDA, you can configure the following options:
+## Accessing the Add-on
 
-1. Add masks for phone fields.
-   This option adds a mask using the hash symbol `#` to format phone numbers. By default, mobile and landline fields are formatted for Brazil.
-2. Show option to delete the entire calendar, checkbox checked `Alt+t`.
-   When enabled, it allows deleting all the content of the calendar.
-3. Show CSV file import button, checkbox checked `Alt+I`.
-   Allows importing CSV files.
-   Note: All fields must be compatible with the Contact Manager.
-4. Show CSV file export button, checkbox checked `Alt+X`.
-   Saves all calendar contacts to a CSV file.
-5. Agenda file path.
-   Allows selecting or adding a directory different from the default one for the database.
+There are two ways to open the Contact Manager:
 
-## Usage
+1. Using the shortcut `Windows+Alt+L`;
+2. Via NVDA menu: `NVDA+N > Tools > Contact Manager`.
 
-You can access the Contact Manager for NVDA in two ways:
+In the main window, you can manage contacts, perform searches, import/export data, or clear the entire list.
 
-1. By shortcut, `Windows+Alt+L`;
-2. Through the NVDA menu: `NVDA+N` > Tools > Contact Manager.
+## Adding a New Contact
 
-You will have access to the add-on's main window. In this window, you can register, edit, remove, and search contacts. It also includes options to import CSV, export CSV, and delete the entire calendar. These three options are enabled by default but can be disabled in the settings panel.
+1. Open the add-on via menu or shortcut;
+2. Press `Alt+N` to create a new contact;
+3. Fill in the fields, then press `Alt+O` to save or `Alt+C` to cancel.
 
-### Registering a new contact
+> Note: Use **Enter** to move between fields. The **Tab** key may behave unexpectedly due to a known issue.
 
-To register a new contact:
-
-1. Access the Contact Manager: NVDA menu > Tools > Contact Manager, or by shortcut `Windows+Alt+L`;
-2. In the Contact List window, press `Alt+N` to add a new contact;
-3. In the New Contact window, fill in all the fields and press `Alt+O` to save or `Alt+C` to exit without saving.
-   > **Note**: To navigate between fields, press the "Enter" key. You can also use the "Tab" key, but it may behave unpredictably due to an unresolved issue.
-
-### Editing a contact
-
-To edit a contact:
+## Editing a Contact
 
 1. Select a contact from the list;
-2. Press `Alt+E` or use the `F2` key.
+2. Press `Alt+E` or `F2`;
+3. Make changes and press `Alt+O` to save, or `Alt+C` to cancel.
 
-The edit window will open with the focus on the name field. Edit the fields and press `Alt+O` to save changes or `Alt+C` to cancel.
-> **Note**: To navigate between fields, press the "Enter" key. You can also use the "Tab" key, but it may behave unpredictably due to an unresolved issue.
+> Field navigation works the same as in the "Add Contact" window.
 
-### Searching
+## Searching Contacts
 
-In the Contact List window, use the search field to locate a specific contact.
-You can search by the following fields:
+From the main window, you can search by:
 
-* Name;
-* Mobile;
-* Landline;
-* Email.
+- Name
+- Mobile Phone
+- Landline
+- Email
 
-After selecting the field, enter the search term and press the shortcut `Alt+P` to display the results in the list. If no results are found, a message will appear stating that the item was not found. To refresh, use the shortcut `Alt+A` or the `F5` key.
+Type your query, select the appropriate field, and press `Alt+P`. Use `Alt+A` or `F5` to refresh the list.
 
-## Tips and Shortcuts
+If nothing is found, a notification will appear.
 
-### Contact List Window
+## Keyboard Shortcuts
 
-* **Search Button**: `Alt+P`
-* **Edit Button**: `Alt+E` (also accessible with `F2`)
-* **New Button**: `Alt+N`
-* **Remove Button**: `Alt+R` (also accessible with the `Delete` key)
-* **Refresh Button**: `Alt+A` (also accessible with `F5`)
-* **Import CSV Button**: `Alt+I`
-* **Export CSV Button**: `Alt+X`
-* **Delete All Records Button**: `Alt+T`
-* **Exit Button**: `Alt+S`
+### Main Window
 
-### New Contact and Edit Windows
+| Action                       | Shortcut             |
+|-----------------------------|----------------------|
+| Add new contact             | `Alt+N`              |
+| Edit selected contact       | `Alt+E` or `F2`      |
+| Remove selected contact     | `Alt+R` or `Delete`  |
+| Search                      | `Alt+P`              |
+| Refresh contact list        | `Alt+A` or `F5`      |
+| Import CSV file             | `Alt+I`              |
+| Export to CSV               | `Alt+X`              |
+| Delete all contacts         | `Alt+T`              |
+| Exit                        | `Alt+S`              |
 
-* **Confirm Operations**: `Alt+O`
-* **Cancel Button**: `Alt+C`
+### Add/Edit Window
 
-> All windows in the Contact Manager for NVDA can be closed using the `Esc` or `Alt+F4` keys.
+| Action        | Shortcut |
+|---------------|----------|
+| Confirm       | `Alt+O`  |
+| Cancel        | `Alt+C`  |
 
-## Acknowledgments
+> All windows can also be closed using `Esc` or `Alt+F4`.
 
-This add-on was inspired by the agenda created by Abel Passos do Nascimento Jr. <abel.passos@gmail.com>, Rui Fontes <rui.fontes@tiflotecnia.com>, and Ângelo Abrantes <ampa4374@gmail.com>.
+## Acknowledgements
+
+This add-on was inspired by the agenda project developed by:
+
+- Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)
+- Rui Fontes (<rui.fontes@tiflotecnia.com>)
+- Ângelo Abrantes (<ampa4374@gmail.com>)
+
+## Translators
+
+- **Portuguese (Brazil)** – Edilberto Fonseca  
+- **Portuguese (Portugal)** – Edilberto Fonseca  
+- **Ukrainian** – George‑br  
+- **Turkish** – Umut KORKMAZ

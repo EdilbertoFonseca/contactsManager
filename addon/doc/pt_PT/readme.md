@@ -1,103 +1,113 @@
-# Gestor de Contactos para NVDA
+# Gestor de Contactos para o NVDA
 
-* **Autor**: Edilberto Fonseca <edilberto.fonseca@outlook.com>
-* **Data de Criação**: 11/04/2024
-* **Licença**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
+**Autor**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)  
+**Data de Criação**: 11/04/2024  
+**Licença**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Introdução
 
-Bem-vindo ao Gestor de Contactos para NVDA! Este complemento foi especialmente desenvolvido para ajudar pessoas com deficiência visual a gerir as suas listas de contactos de forma mais fácil e eficiente. Com este complemento, pode adicionar, editar e eliminar contactos, bem como pesquisar nomes e informações de contacto de forma rápida e simples. Adicionalmente, oferecemos a possibilidade de exportar e importar a sua lista de contactos, permitindo que a partilhe. O Gestor de Contactos para NVDA é fácil de usar e apresenta uma interface intuitiva, tornando-se a escolha ideal para quem precisa de gerir os seus contactos com eficiência.
+Bem-vindo ao Gestor de Contactos para o NVDA!  
+Este extra foi desenvolvido especialmente para utilizadores com deficiência visual que pretendem organizar e aceder aos seus contactos com autonomia e facilidade.
+
+Com esta ferramenta, pode:
+
+- Adicionar, editar, remover e pesquisar contactos;
+- Importar e exportar listas de contactos em formato CSV;
+- Personalizar o formato dos números de telefone;
+- Armazenar os dados numa directoria personalizada;
+- Navegar por uma interface acessível e intuitiva através do teclado.
 
 ## Instalação
 
-Aqui estão as instruções passo a passo para instalar o Gestor de Contactos para NVDA:
+1. No NVDA, abra o menu **Ferramentas** e seleccione **Loja de Extras**.
+2. No separador **Extras Disponíveis**, escreva "Gestor de Contactos" no campo de pesquisa.
+3. Seleccione o extra, prima **Enter** ou clique em **Aplicar**, depois escolha **Instalar**.
+4. Reinicie o NVDA para concluir a instalação.
 
-1. **Descarregue o ficheiro de instalação do complemento**: Obtenha o ficheiro a partir da Loja de Complementos ou da página oficial do [Gestor de Contactos](https://github.com/EdilbertoFonseca/contactManager).
-   **Nota**: Se o complemento for descarregado da loja, a instalação será feita automaticamente. Caso contrário, siga as instruções abaixo.
-2. **Instale o complemento**: Pressione Enter no ficheiro do complemento que descarregou.
-3. **Siga as instruções no ecrã**: Complete a instalação conforme as orientações fornecidas.
-4. **Reinicie o NVDA**: É necessário reiniciar para ativar o complemento.
-5. **Verifique a instalação**: Pressione `NVDA+N` para abrir o menu do NVDA, navegue até "Ferramentas" e verifique se o complemento Gestor de Contactos está listado.
+## Definições
 
-Agora está pronto para utilizar o Gestor de Contactos para NVDA e guardar os seus contactos diretamente no NVDA.
+No menu **Preferências > Definições** do NVDA, localize o painel "Gestor de Contactos para o NVDA" para configurar:
 
-## Configurações
+1. **Máscara para números de telefone**: Use `#` para definir o formato dos números de telefone e telemóvel (por omissão: formato do Brasil).
+2. **Permitir apagar todos os contactos**: Active esta opção para permitir apagar toda a lista de contactos de uma só vez (`Alt+T`).
+3. **Importação de ficheiros CSV**: Activa o botão para importar contactos a partir de ficheiros CSV compatíveis (`Alt+I`).
+4. **Exportação para ficheiro CSV**: Activa o botão para guardar os contactos num ficheiro CSV (`Alt+X`).
+5. **Localização da base de dados**: Permite definir uma directoria alternativa para guardar os dados da agenda.
 
-No menu do NVDA, Preferências > Configurações > Gestor de Contactos para NVDA, pode configurar as seguintes opções:
+## Aceder ao extra
 
-1. Adicionar máscara aos campos de telefone.
-   Esta opção adiciona uma máscara utilizando o símbolo cardinal `#` para a formatação do número de telefone. Por padrão, os campos de telemóvel e telefone fixo estão formatados para Portugal.
-2. Mostrar opção para eliminar todo o calendário, caixa de seleção marcada `Alt+t`.
-   Quando ativada, permite eliminar todo o conteúdo do calendário.
-3. Mostrar botão de importação de ficheiro CSV, caixa de seleção marcada `Alt+I`.
-   Permite a importação de ficheiros CSV.
-   Nota: Todos os campos devem ser compatíveis com o Gestor de Contactos.
-4. Mostrar botão de exportação de ficheiro CSV, caixa de seleção marcada `Alt+X`.
-   Guarda todos os contactos do calendário num ficheiro CSV.
-5. Caminho dos ficheiros do calendário.
-   Permite selecionar ou adicionar um diretório diferente do padrão para a base de dados.
+Existem duas formas de aceder ao Gestor de Contactos:
 
-## Utilização
+1. Através do atalho de teclado `Windows+Alt+L`;
+2. Através do menu NVDA: `NVDA+N > Ferramentas > Gestor de Contactos`.
 
-Pode aceder ao Gestor de Contactos para NVDA de duas maneiras:
+Na janela principal, pode gerir os contactos, realizar pesquisas, importar/exportar dados ou apagar todos os registos.
 
-1. Através do atalho, `Windows+Alt+L`;
-2. Pelo menu do NVDA: `NVDA+N` > Ferramentas > Gestor de Contactos.
+## Adicionar um novo contacto
 
-Terá acesso à janela principal do complemento. Nesta janela, pode registar, editar, remover e pesquisar contactos. Também inclui as opções de importar CSV, exportar CSV e eliminar todo o calendário. Estas três opções estão ativadas por padrão, mas podem ser desativadas no painel de configurações.
+1. Abra o Gestor de Contactos através do menu ou atalho;
+2. Prima `Alt+N` para adicionar um novo contacto;
+3. Preencha os campos desejados e prima `Alt+O` para guardar ou `Alt+C` para cancelar.
 
-### Registar um novo contacto
+> Nota: Utilize a tecla **Enter** para navegar entre os campos. A tecla **Tab** pode originar comportamentos inesperados.
 
-Para registar um novo contacto:
+## Editar um contacto
 
-1. Aceda ao Gestor de Contactos: Menu do NVDA > Ferramentas > Gestor de Contactos, ou pelo atalho `Windows+Alt+L`;
-2. Na janela Lista de Contactos, pressione `Alt+N` para adicionar um novo contacto;
-3. Na janela Novo Contacto, preencha todos os campos e pressione `Alt+O` para guardar ou `Alt+C` para sair sem guardar.
-   > **Nota**: Para navegar entre os campos, pressione a tecla "Enter". Também pode utilizar a tecla "Tab", mas esta pode apresentar um comportamento imprevisível devido a um problema que ainda não consegui identificar.
+1. Seleccione o contacto na lista;
+2. Prima `Alt+E` ou `F2`;
+3. Altere os dados e prima `Alt+O` para guardar ou `Alt+C` para cancelar.
 
-### Editar um contacto
+> A navegação entre os campos é idêntica à da janela de adição.
 
-Para editar um contacto:
+## Pesquisar contactos
 
-1. Selecione um contacto da lista;
-2. Pressione `Alt+E` ou utilize a tecla `F2`.
+Na janela principal, pode procurar por:
 
-A janela de edição será aberta com o foco no campo do nome. Basta editar os campos e pressionar `Alt+O` para guardar as alterações ou `Alt+C` para cancelar.
-> **Nota**: Para navegar entre os campos, pressione a tecla "Enter". Também pode utilizar a tecla "Tab", mas esta pode apresentar um comportamento imprevisível devido a um problema que ainda não consegui identificar.
+- Nome
+- Telemóvel
+- Telefone fixo
+- E-mail
 
-### Pesquisar
+Introduza o termo de pesquisa, escolha o campo e prima `Alt+P`. Para actualizar a lista, prima `Alt+A` ou `F5`.
 
-Na janela Lista de Contactos, pode utilizar o campo de pesquisa para localizar um contacto específico.
-Pode pesquisar pelos seguintes campos:
+Se nenhum contacto for encontrado, será apresentada uma mensagem.
 
-* Nome;
-* Telemóvel;
-* Telefone fixo;
-* Email.
+## Atalhos de teclado
 
-Depois de selecionar o campo, introduza o termo de pesquisa e pressione o atalho `Alt+P` para exibir os resultados na lista. Se não forem encontrados resultados, aparecerá uma mensagem a informar que o item não foi encontrado. Para atualizar, utilize o atalho `Alt+A` ou a tecla `F5`.
+### Janela principal
 
-## Dicas e Atalhos
+| Acção                         | Atalho             |
+|------------------------------|--------------------|
+| Novo contacto                 | `Alt+N`            |
+| Editar contacto               | `Alt+E` ou `F2`    |
+| Remover contacto              | `Alt+R` ou `Delete`|
+| Pesquisar                     | `Alt+P`            |
+| Actualizar lista              | `Alt+A` ou `F5`    |
+| Importar ficheiro CSV         | `Alt+I`            |
+| Exportar para ficheiro CSV    | `Alt+X`            |
+| Apagar todos os contactos     | `Alt+T`            |
+| Sair                          | `Alt+S`            |
 
-### Janela Lista de Contactos
+### Janela de adição/edição
 
-* **Botão Pesquisar**: `Alt+P`
-* **Botão Editar**: `Alt+E` (também pode utilizar a tecla `F2`)
-* **Botão Novo**: `Alt+N`
-* **Botão Remover**: `Alt+R` (também pode utilizar a tecla Delete)
-* **Botão Atualizar**: `Alt+A` (também pode utilizar a tecla `F5`)
-* **Botão Importar CSV**: `Alt+I`
-* **Botão Exportar CSV**: `Alt+X`
-* **Botão Eliminar todos os registos**: `Alt+T`
-* **Botão Sair**: `Alt+S`
+| Acção     | Atalho  |
+|-----------|---------|
+| Confirmar | `Alt+O` |
+| Cancelar  | `Alt+C` |
 
-### Janela Novo Contacto e Edição
-
-* **Confirmar operações**: `Alt+O`
-* **Botão Cancelar**: `Alt+C`
-
-> Todas as janelas do complemento Gestor de Contactos para NVDA podem ser fechadas utilizando a tecla `Esc` ou `Alt+F4`.
+> Todas as janelas podem ser fechadas com `Esc` ou `Alt+F4`.
 
 ## Agradecimentos
 
-Este complemento foi inspirado na agenda criada por Abel Passos do Nascimento Jr. <abel.passos@gmail.com>, Rui Fontes <rui.fontes@tiflotecnia.com> e Ângelo Abrantes <ampa4374@gmail.com>.
+Este extra foi inspirado na agenda desenvolvida por:
+
+- Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)  
+- Rui Fontes (<rui.fontes@tiflotecnia.com>)  
+- Ângelo Abrantes (<ampa4374@gmail.com>)
+
+## Traduções
+
+- **Português (Brasil)** – Edilberto Fonseca  
+- **Português (Portugal)** – Edilberto Fonseca  
+- **Ucraniano** – George‑br  
+- **Turco** – Umut KORKMAZ

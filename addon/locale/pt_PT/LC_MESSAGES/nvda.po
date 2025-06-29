@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: 'Contacts Manager' '2025.4.0'\n"
+"Project-Id-Version: 'Contacts Manager' '2025.5.1'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2025-06-25 09:25-0300\n"
-"PO-Revision-Date: 2025-06-25 09:35-0300\n"
+"POT-Creation-Date: 2025-06-28 23:47-0300\n"
+"PO-Revision-Date: 2025-06-29 01:17-0300\n"
 "Last-Translator: Edilberto Fonseca <edilberto.fonseca@outlook.com>\n"
 "Language-Team: Edilberto Fonseca <edilberto.fonseca@outlook.com>\n"
 "Language: pt_PT\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.6\n"
 "X-Poedit-Basepath: ../../../..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Flags-xgettext: --add-comments=Translators:\n"
@@ -20,6 +20,7 @@ msgstr ""
 "X-Poedit-SearchPath-2: buildVars.py\n"
 
 #: addon\installTasks.py:45
+#, python-brace-format
 msgid "Error when renaming file: {e}"
 msgstr "Erro ao renomear ficheiro: {e}"
 
@@ -256,7 +257,7 @@ msgstr "&Remover"
 
 #: addon\globalPlugins\contactsManager\main.py:102
 msgid "Refres&h"
-msgstr "&Refrescar"
+msgstr "Refresc&ar"
 
 #: addon\globalPlugins\contactsManager\main.py:103
 msgid "&Import csv..."
@@ -264,11 +265,11 @@ msgstr "&Importar CSV..."
 
 #: addon\globalPlugins\contactsManager\main.py:104
 msgid "Ex&port csv..."
-msgstr "Ex&portar CSV..."
+msgstr "E&xportar CSV..."
 
 #: addon\globalPlugins\contactsManager\main.py:105
 msgid "&Delete all records."
-msgstr "&Eliminar todos os registos."
+msgstr "Eliminar &todos os registos."
 
 #: addon\globalPlugins\contactsManager\main.py:106
 msgid "E&xit"
@@ -313,6 +314,7 @@ msgid "File imported successfully!"
 msgstr "Contactos importados com sucesso!"
 
 #: addon\globalPlugins\contactsManager\main.py:270
+#, python-brace-format
 msgid "It was not possible to import the file! {e}"
 msgstr "Não foi possível importar o arquivo! {e}"
 
@@ -325,6 +327,7 @@ msgid "File exported successfully!"
 msgstr "Contactos exportados com sucesso!"
 
 #: addon\globalPlugins\contactsManager\main.py:297
+#, python-brace-format
 msgid "It was not possible to export the file! {e}"
 msgstr "Não foi possível exportar o arquivo! {e}"
 
@@ -357,9 +360,6 @@ msgid "Contacts Manager for NVDA"
 msgstr "Gestor de contactos para NVDA"
 
 #: buildVars.py:30
-#| msgid ""
-#| "Simple contacts manager for saving phone numbers, emails, and other "
-#| "contact details for personal or professional use."
 msgid ""
 "Simple contacts manager for saving phone numbers, emails, and other contact "
 "details for personal or professional use. Shortcut Windows+Alt+L."
