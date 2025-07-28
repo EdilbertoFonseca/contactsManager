@@ -13,7 +13,6 @@
 
 # Imports necessary for the add-on to function.
 import os
-import sys
 
 import addonHandler
 import config
@@ -22,24 +21,10 @@ import queueHandler
 import ui
 import wx
 from gui import guiHelper
-from logHandler import log
 
 from . import controller as core
 from .addEditRecord import AddEditRecDialog
 from .varsConfig import ADDON_SUMMARY, ourAddon
-
-# Get the path to the root of the current add-on
-addonPath = os.path.dirname(__file__)
-
-# Add the lib/ folder to sys.path (only once)
-libPath = os.path.join(addonPath, "lib")
-if libPath not in sys.path:
-	sys.path.insert(0, libPath)
-
-try:
-	from ObjectListView import ColumnDefn, ObjectListView
-except ImportError as e:
-	log.error(f"Error importing module: {str(e)}")
 
 # Initializes the translation
 addonHandler.initTranslation()
@@ -79,12 +64,18 @@ class ContactList(wx.Dialog):
 
 		# Creating the screen objects.
 		panel = wx.Panel(self)
-		self.contactList = ObjectListView(panel, style=wx.LC_REPORT | wx.SUNKEN_BORDER)
-		wx.CallAfter(self.initialize_contact_list)
+		self.contactList = wx.ListCtrl(panel, style=wx.LC_REPORT | wx.BORDER_SUNKEN)
+		self.initialize_contact_list()
 		self.contactList.SetFocus()
 
-		# Translators: Message displayed when the contactList is empty.
-		self.contactList.SetEmptyListMsg(_("No records found!"))
+		# Selection event
+		self.contactList.Bind(wx.EVT_LIST_ITEM_SELECTED, self.onSelectLine)
+
+		# Selected line viewing field
+		self.visualizationField = wx.TextCtrl(
+			panel,
+			style=wx.TE_MULTILINE | wx.TE_READONLY | wx.BORDER_STATIC
+		)
 
 		# Translators: Search field label.
 		labelSearch = wx.StaticText(panel, label=_('Search for: '))
@@ -112,7 +103,8 @@ class ContactList(wx.Dialog):
 		searchSizer = wx.BoxSizer(wx.HORIZONTAL)
 		buttonSizer = wx.BoxSizer(wx.HORIZONTAL)
 
-		viewSizer.Add(self.contactList, 0, wx.ALL | wx.EXPAND, 5)
+		viewSizer.Add(self.contactList, 1, wx.ALL | wx.EXPAND, 10)
+		viewSizer.Add(self.visualizationField, 0, wx.ALL | wx.EXPAND, 10)
 		searchSizer.Add(labelSearch, 0, wx.ALL, 5)
 		searchSizer.Add(self.comboboxOptions, 0, wx.ALL, 5)
 		searchSizer.Add(self.search, 1, wx.ALL, 5)
@@ -146,13 +138,23 @@ class ContactList(wx.Dialog):
 
 	# Creating the columns of the ObjectListView.
 	def initialize_contact_list(self):
-		self.contactList.SetColumns([
-			ColumnDefn(_('Name'), 'left', 250, 'name'),
-			ColumnDefn(_('Cell phone'), 'right', 100, 'cell'),
-			ColumnDefn(_('Landline'), 'right', 100, 'landline'),
-			ColumnDefn(_('Email'), 'left', 200, 'email')
-		])
-		self.contactList.SetObjects(self.contactResults)
+		self.contactList.ClearAll()
+		columns = [
+			(_("Name"), 250),
+			(_("Cell phone"), 100),
+			(_("Landline"), 100),
+			(_("Email"), 300),
+		]
+		for i, (title, width) in enumerate(columns):
+			self.contactList.InsertColumn(i, title, width=width)
+
+		for record in self.contactResults:
+			index = self.contactList.InsertItem(self.contactList.GetItemCount(), record.name)
+			self.contactList.SetItem(index, 1, record.cell)
+			self.contactList.SetItem(index, 2, record.landline)
+			self.contactList.SetItem(index, 3, record.email)
+			# Salvando o objeto para recuperar depois (por exemplo, em edições)
+			self.contactList.SetItemData(index, id(record))  # ou salvar o objeto num dicionário separado
 
 	# Show all records.
 	def show_all_records(self):
@@ -168,12 +170,12 @@ class ContactList(wx.Dialog):
 		dlg.CentreOnScreen()
 		dlg.Destroy()
 		gui.mainFrame.postPopup
-		wx.CallAfter(self.show_all_records)
+		self.show_all_records
 		self.contactList.SetFocus()
 
 	# Edit a selected record.
 	def onEdit(self, event):
-		selectedRow = self.contactList.GetSelectedObject()
+		selectedRow = self.get_selected_record()
 		if selectedRow is None:
 			self.show_message(_('No records selected!'), _('Error'))
 			return
@@ -188,7 +190,7 @@ class ContactList(wx.Dialog):
 		dlg.CentreOnScreen()
 		dlg.Destroy()
 		gui.mainFrame.postPopup
-		wx.CallAfter(self.show_all_records)
+		self.show_all_records
 		self.contactList.SetFocus()
 
 	def onDelete(self, event):
@@ -198,7 +200,7 @@ class ContactList(wx.Dialog):
 		Args:
 			event (wx.Event): The event that triggered this function.
 		"""
-		selectedRow = self.contactList.GetSelectedObject()
+		selectedRow = self.get_selected_record()
 		if selectedRow is None:
 			self.show_message(_('No records selected!'), _('Error'))
 			return
@@ -223,6 +225,11 @@ class ContactList(wx.Dialog):
 		# Gets the chosen filter option and the entered keyword
 		filterChoice = self.comboboxOptions.GetValue()
 		keyword = self.search.GetValue()
+
+		if not keyword or keyword.strip() == "":
+			self.show_message(_("The search field is empty!"), _("Attention"))
+			self.search.SetFocus()
+			return
 
 		# Try to search based on filter and keyword option
 		try:
@@ -392,3 +399,25 @@ class ContactList(wx.Dialog):
 			event (wx.Event): Event triggered by the cancel button.
 		"""
 		self.Destroy()
+
+	def get_selected_record(self):
+		index = self.contactList.GetFirstSelected()
+		if index == -1:
+			return None
+		itemId = self.contactList.GetItemData(index)
+		for obj in self.contactResults:
+			if id(obj) == itemId:
+				return obj
+		return None
+
+	def onSelectLine(self, evento):
+		idx = evento.GetIndex()
+		columns = self.contactList.GetColumnCount()
+		data = []
+
+		for i in range(columns):
+			value = self.contactList.GetItem(idx, i).GetText()
+			header = self.contactList.GetColumn(i).GetText()
+			data.append(f"{header}: {value}")
+		lineComplete = " | ".join(data)
+		self.visualizationField.SetValue(lineComplete)

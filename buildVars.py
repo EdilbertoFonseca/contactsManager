@@ -30,7 +30,7 @@ addon_info = {
 		"""Simple contacts manager for saving phone numbers, emails, and other contact details for personal or professional use. Shortcut Windows+Alt+L."""
 		),
 	# version
-	"addon_version": "2025.4.0",
+	"addon_version": "2025.6.1",
 	# Author(s)
 	"addon_author": "Edilberto Fonseca <edilberto.fonseca@outlook.com>",
 	# URL for the add-on documentation support

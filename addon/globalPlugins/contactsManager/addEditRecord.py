@@ -22,10 +22,7 @@ import wx
 from logHandler import log
 
 from . import controller as core
-from .varsConfig import ourAddon
-
-# Get the path to the root of the current add-on
-addonPath = os.path.dirname(__file__)
+from .varsConfig import ourAddon, addonPath
 
 # Add the lib/ folder to sys.path (only once)
 libPath = os.path.join(addonPath, "lib")
@@ -33,7 +30,7 @@ if libPath not in sys.path:
 	sys.path.insert(0, libPath)
 
 try:
-	from masked import TextCtrl
+	from masked.textctrl import TextCtrl
 except Exception as e:
 	log.error(f"Error importing module: {str(e)}")
 

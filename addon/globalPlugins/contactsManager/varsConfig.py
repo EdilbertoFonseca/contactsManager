@@ -11,10 +11,14 @@
 # Date of creation: 24/05/2024
 
 # Import the necessary modules
+import os
 
 import addonHandler
 import config
 from logHandler import log
+
+# Get the path to the root of the current add-on
+addonPath = os.path.dirname(__file__)
 
 # Get the title of the add-on defined in the summary.
 ADDON_SUMMARY = addonHandler.getCodeAddon().manifest["summary"]
