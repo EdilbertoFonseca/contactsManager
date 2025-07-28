@@ -110,6 +110,7 @@ class ContactList(wx.Dialog):
 		searchSizer.Add(self.search, 1, wx.ALL, 5)
 		searchSizer.Add(self.buttonSearch, 0, wx.ALL, 5)
 
+		buttonSizer.Add(self.buttonNew, 0, wx.ALL | wx.EXPAND, 5)
 		buttonSizer.Add(self.buttonEdit, 0, wx.ALL | wx.EXPAND, 5)
 		buttonSizer.Add(self.buttonDelete, 0, wx.ALL | wx.EXPAND, 5)
 		buttonSizer.Add(self.buttonRefresh, 0, wx.ALL | wx.EXPAND, 5)
@@ -165,12 +166,12 @@ class ContactList(wx.Dialog):
 	# Add a new record to the agenda.
 	def onNew(self, event):
 		dlg = AddEditRecDialog(gui.mainFrame)
-		gui.mainFrame.prePopup
-		dlg.ShowModal()
+		gui.mainFrame.prePopup()
 		dlg.CentreOnScreen()
+		dlg.ShowModal()
 		dlg.Destroy()
-		gui.mainFrame.postPopup
-		self.show_all_records
+		gui.mainFrame.postPopup()
+		self.show_all_records()
 		self.contactList.SetFocus()
 
 	# Edit a selected record.
@@ -185,12 +186,12 @@ class ContactList(wx.Dialog):
 			title=_('To edit'),
 			addRecord=False
 		)
-		gui.mainFrame.prePopup
-		dlg.ShowModal()
+		gui.mainFrame.prePopup()
 		dlg.CentreOnScreen()
+		dlg.ShowModal()
 		dlg.Destroy()
-		gui.mainFrame.postPopup
-		self.show_all_records
+		gui.mainFrame.postPopup()
+		self.show_all_records()
 		self.contactList.SetFocus()
 
 	def onDelete(self, event):
@@ -243,7 +244,7 @@ class ContactList(wx.Dialog):
 				self.search.SetFocus()
 			else:
 				# Otherwise, update the contact list in the graphical interface
-				wx.CallAfter(self.initialize_contact_list())
+				self.initialize_contact_list()
 
 				# Clear the search field after searching
 				self.search.Clear()
@@ -258,13 +259,13 @@ class ContactList(wx.Dialog):
 	def onToUpdate(self, event):
 		ui.message(_("Updated records!"), True)
 		self.show_all_records()
-		wx.CallAfter(self.Show)
+		self.Show()
 
 	# Import csv file to the agenda.
 	def onToImport(self, event):
 		dlg = wx.FileDialog(
 			self, _('import csv file'),
-			os.getcwd(), '', '*.csv', wx.FC_OPEN
+			os.getcwd(), '', '*.csv', wx.FD_OPEN
 		)
 		if dlg.ShowModal() == wx.ID_OK:
 			try:
@@ -410,14 +411,17 @@ class ContactList(wx.Dialog):
 				return obj
 		return None
 
-	def onSelectLine(self, evento):
-		idx = evento.GetIndex()
+	def onSelectLine(self, event):
+		# Check if there is a line selected in the list
+		selected_idx = self.contactList.GetFirstSelected()
+
 		columns = self.contactList.GetColumnCount()
 		data = []
 
 		for i in range(columns):
-			value = self.contactList.GetItem(idx, i).GetText()
+			value = self.contactList.GetItem(selected_idx, i).GetText()
 			header = self.contactList.GetColumn(i).GetText()
 			data.append(f"{header}: {value}")
+
 		lineComplete = " | ".join(data)
 		self.visualizationField.SetValue(lineComplete)
