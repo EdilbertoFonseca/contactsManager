@@ -1,17 +1,16 @@
 # -*- coding: UTF-8 -*-
 
-# Description: Simple contacts manager for saving phone numbers, emails, and other contact details
-# for personal or professional use.
+"""
+Author: Edilberto Fonseca <edilberto.fonseca@outlook.com>
+Copyright: (C) 2025 Edilberto Fonseca
 
-# Author: Edilberto Fonseca
-# Email: <edilberto.fonseca@outlook.com>
-# Copyright (C) 2022-2025 Edilberto Fonseca
-# This file is covered by the GNU General Public License.
-# See the file COPYING for more details or visit https://www.gnu.org/licenses/gpl-2.0.html.
+This file is covered by the GNU General Public License.
+See the file COPYING for more details or visit:
+https://www.gnu.org/licenses/gpl-2.0.html
 
-# Date of creation: 30/11/2022
+Created on: 30/11/2022
+"""
 
-# Imports necessary for the add-on to function.
 import os
 
 import addonHandler
@@ -32,7 +31,7 @@ initConfiguration()
 # Start the initDB function.
 Section.initDB()
 
-# Initializes the translation
+# Initialize translation support
 addonHandler.initTranslation()
 
 def disableInSecureMode(decoratedCls):
@@ -60,36 +59,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		super(GlobalPlugin, self).__init__(*args, **kwargs)
 		self.create_menu()
 
-	def create_contacts_manager_menu(self):
-		"""
-		We created the menu item for the Contact Manager and associated it with an event.
-
-		Adds the "Contact Manager" item to the main menu and associates it with the event that activates the
-		contact manager when selected.
-		"""
-		contactsManager = self.mainMenu.Append(-1, _('&Contacts Manager'))
-		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_activateContactsManager, contactsManager)
-
-	def create_contacts_manager_settings_panel_menu(self):
-		"""
-		Creates the menu item for Contact Manager settings and associates it with an event.
-
-		Adds the "Settings" item to the main menu and associates it with the event that opens the add-on's
-		settings dialog when selected.
-		"""
-		settingsPanel = self.mainMenu.Append(-1, _('&Settings'))
-		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_openAddonSettingsDialog, settingsPanel)
-
-	def create_help_menu(self):
-		"""
-Creates the menu item for help and associates it with an event.
-
-		Adds the "Help" item to the main menu and associates it with the event that opens the help dialog when
-		selected.
-		"""
-		help = self.mainMenu.Append(-1, _('&Help'))
-		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_onHelp, help)
-
 	def create_menu(self):
 		"""
 		Creates and adds the contact management menu to the main menu.
@@ -100,11 +69,18 @@ Creates the menu item for help and associates it with an event.
 		"""
 		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.append(ContactsManagerSettingsPanel)
 		self.mainMenu = wx.Menu()
-		toolsMenu = gui.mainFrame.sysTrayIcon.toolsMenu
-		self.create_contacts_manager_menu()
-		self.create_contacts_manager_settings_panel_menu()
-		self.create_help_menu()
-		toolsMenu.AppendSubMenu(self.mainMenu, _('&Contacts Manager'))
+		self.toolsMenu = gui.mainFrame.sysTrayIcon.toolsMenu
+
+		self.contactsManager = self.mainMenu.Append(-1, _('&Contact List'))
+		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_activateContactsManager, self.contactsManager)
+
+		self.settingsPanel = self.mainMenu.Append(-1, _('&Settings'))
+		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_openAddonSettingsDialog, self.settingsPanel)
+
+		self.help = self.mainMenu.Append(-1, _('&Help'))
+		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_onHelp, self.help)
+
+		self.toolsMenu.AppendSubMenu(self.mainMenu, _('&Contacts Manager'))
 
 	def onContactsManager(self, event):
 		"""
@@ -116,8 +92,8 @@ Creates the menu item for help and associates it with an event.
 		# Translators: Title of contact list dialog box.
 		self.dlg = ContactList(gui.mainFrame, _('Contact list.'))
 		gui.mainFrame.prePopup()
-		self.dlg.Show()
 		self.dlg.CentreOnScreen()
+		self.dlg.Show()
 		gui.mainFrame.postPopup()
 
 	# defining a script with decorator:
@@ -163,5 +139,5 @@ Creates the menu item for help and associates it with an event.
 			ContactsManagerSettingsPanel)
 		try:
 			self.toolsMenu.Remove(self.mainMenu)
-		except Exception:
+		except AttributeError:
 			pass

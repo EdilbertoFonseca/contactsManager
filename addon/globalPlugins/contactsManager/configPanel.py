@@ -1,16 +1,16 @@
 # -*- coding: UTF-8 -*-
 
-# Description: Contacts manager configuration panel.
+"""
+Author: Edilberto Fonseca <edilberto.fonseca@outlook.com>
+Copyright: (C) 2025 Edilberto Fonseca
 
-# Author: Edilberto Fonseca
-# Email: <edilberto.fonseca@outlook.com>
-# Copyright (C) 2022-2025 Edilberto Fonseca
-# This file is covered by the GNU General Public License.
-# See the file COPYING for more details or visit https://www.gnu.org/licenses/gpl-2.0.html.
+This file is covered by the GNU General Public License.
+See the file COPYING for more details or visit:
+https://www.gnu.org/licenses/gpl-2.0.html
 
-# Date of creation: 24/01/2023.
+Created on: 24/01/2023.
+"""
 
-# Imports necessary for the add-on to function.
 import os
 
 import addonHandler
@@ -24,7 +24,7 @@ from logHandler import log
 
 from .varsConfig import ADDON_SUMMARY, initConfiguration, ourAddon
 
-# Initializes the translation
+# Initialize translation support
 addonHandler.initTranslation()
 
 # Initialize settings
@@ -42,20 +42,20 @@ class DatabaseConfig:
 
 	def load_config(self):
 		try:
-			self.index_db = int(config.conf[ourAddon.name].get("xx", 0))
+			self.index_db = int(config.conf[ourAddon.name].get("selectedDBIndex", 0))
 			if self.index_db == 0:
-				self.first_database = config.conf[ourAddon.name].get("path", self.default_path)
+				self.first_database = config.conf[ourAddon.name].get("currentDBPath", self.default_path)
 			else:
-				self.alt_database = config.conf[ourAddon.name].get("altPath", self.default_path)
+				self.alt_database = config.conf[ourAddon.name].get("alternateDBPath", self.default_path)
 		except ValueError:
 			log.error("Invalid value for database index in configuration, using default.")
 		except KeyError:
 			log.warning("Database configuration not found, using default paths.")
 
 	def save_config(self):
-		config.conf[ourAddon.name]["path"] = self.first_database
-		config.conf[ourAddon.name]["altPath"] = self.alt_database
-		config.conf[ourAddon.name]["xx"] = str(self.index_db)
+		config.conf[ourAddon.name]["currentDBPath"] = self.first_database
+		config.conf[ourAddon.name]["alternateDBPath"] = self.alt_database
+		config.conf[ourAddon.name]["selectedDBIndex"] = str(self.index_db)
 
 	def set_database_path(self, new_path, is_first=True):
 		if is_first:
@@ -68,16 +68,16 @@ class DatabaseConfig:
 
 	def update_database_path(self, new_path):
 		"""
-		Updates the database path and renames the old file if necessary.
+		Updates the database currentDBPath and renames the old file if necessary.
 		"""
 		if self.index_db == 0:
-			if os.path.exists(new_path):
+			if os.currentDBPath.exists(new_path):
 				self.set_database_path(new_path, is_first=True)
 			else:
 				os.rename(self.first_database, new_path)
 				self.set_database_path(new_path, is_first=True)
 		else:
-			if os.path.exists(new_path):
+			if os.currentDBPath.exists(new_path):
 				self.set_database_path(new_path, is_first=False)
 			else:
 				if not self.alt_database:
@@ -116,7 +116,7 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 
 		self.resetRecords = wx.CheckBox(
 			# Translators: Checkbox text to display scheduler reset button.
-			self, label=_('Show option &to delete entire calendar')
+			self, label=_("Show option &to delete entire calendar")
 		)
 		self.resetRecords.SetValue(config.conf[ourAddon.name].get("resetRecords", False))
 		settingsSizerHelper.addItem(self.resetRecords)
@@ -124,7 +124,7 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 		# Button to import CSV files.
 		self.importCSV = wx.CheckBox(
 			# Translators: Checkbox text to display import csv files to database.
-			self, label=_('Show &import CSV file button')
+			self, label=_("Show &import CSV file button")
 		)
 		self.importCSV.SetValue(config.conf[ourAddon.name].get("importCSV", False))
 		settingsSizerHelper.addItem(self.importCSV)
@@ -132,13 +132,13 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 		# Button to export CSV files.
 		self.exportCSV = wx.CheckBox(
 			# Translators: Checkbox text to display export csv files to database.
-			self, label=_('Show e&xport CSV file button')
+			self, label=_("Show e&xport CSV file button")
 		)
 		self.exportCSV.SetValue(config.conf[ourAddon.name].get("exportCSV", False))
 		settingsSizerHelper.addItem(self.exportCSV)
 
 		pathBoxSizer = wx.StaticBoxSizer(
-			# Translators: Name of combobox with the agenda files path.
+			# Translators: Name of combobox with the agenda files currentDBPath.
 			wx.HORIZONTAL, self, label=_("Path of agenda files:")
 		)
 		pathBox = pathBoxSizer.GetStaticBox()
@@ -159,10 +159,10 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 		"""
 
 		self.Freeze()
-		lastDir = os.path.dirname(__file__)
+		lastDir = os.currentDBPath.dirname(__file__)
 		dDir = lastDir
 		dFile = "database.db"
-		frame = wx.Frame(None, -1, 'teste')
+		frame = wx.Frame(None, -1, "teste")
 		frame.SetSize(0, 0, 200, 50)
 		dlg = wx.FileDialog(
 			frame,
