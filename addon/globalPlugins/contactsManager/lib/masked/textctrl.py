@@ -23,11 +23,11 @@ function.  See maskededit module overview for how to configure the control.
 """
 
 import  wx
-from . import *
+from masked import *
 
 # jmg 12/9/03 - when we cut ties with Py 2.2 and earlier, this would
 # be a good place to implement the 2.3 logger class
-from .dbg import Logger
+from tools.dbg import Logger
 ##dbg = Logger()
 ##dbg(enable=1)
 
@@ -212,7 +212,7 @@ class BaseMaskedTextCtrl( wx.TextCtrl, MaskedEditMixin ):
 
     def ChangeValue(self, value):
         """
-        Provided to accomodate similar functionality added to base
+        Provided to accommodate similar functionality added to base
         control in wxPython 2.7.1.1.
 
         :param string `value`: new value for control, this will not fire an event
@@ -298,7 +298,7 @@ class BaseMaskedTextCtrl( wx.TextCtrl, MaskedEditMixin ):
         """
         Set the font, then recalculate control size, if appropriate.
 
-        see :meth:`TextCtrl.SetFont` for valid arguements
+        see :meth:`TextCtrl.SetFont` for valid arguments
         """
         wx.TextCtrl.SetFont(self, *args, **kwargs)
         if self._autofit:

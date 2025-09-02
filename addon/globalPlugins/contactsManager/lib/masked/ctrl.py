@@ -54,9 +54,9 @@ provides a single "unified" interface for masked controls.
 
 """
 
-from . import TextCtrl, ComboBox, IpAddrCtrl
-from . import NumCtrl
-from . import TimeCtrl
+from masked   import TextCtrl, ComboBox, IpAddrCtrl
+from masked   import NumCtrl
+from masked   import TimeCtrl
 
 
 # "type" enumeration for class instance factory function
@@ -104,5 +104,3 @@ def Ctrl( *args, **kwargs):
     else:
         raise AttributeError(
             "invalid controlType specified: %s" % repr(controlType))
-
-

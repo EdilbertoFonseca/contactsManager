@@ -61,7 +61,7 @@ masked.NumCtrl:
 
   Here's the API::
 
-        from wx.lib.masked import NumCtrl
+        from masked import NumCtrl
 
         NumCtrl(
              parent, id = -1,
@@ -89,7 +89,7 @@ masked.NumCtrl:
              emptyBackgroundColour = "White",
              validBackgroundColour = "White",
              invalidBackgroundColour = "Yellow",
-             autoSize = True
+             autoSize = True,
              )
 
 
@@ -220,7 +220,7 @@ GetValue()
     fractionWidth is 0, or a float otherwise.
 
 
-SetParameters(\*\*kwargs)
+SetParameters(**kwargs)
     Allows simultaneous setting of various attributes
     of the control after construction.  Keyword arguments
     allowed are the same parameters as supported in the constructor.
@@ -401,14 +401,13 @@ GetAutoSize()
 import  copy
 
 import  wx
-import  six
 
 from sys import maxsize
 MAXINT = maxsize     # (constants should be in upper case)
 MININT = -maxsize-1
 
-from .dbg import Logger
-from . import MaskedEditMixin, Field, BaseMaskedTextCtrl
+from tools.dbg import Logger
+from masked import MaskedEditMixin, Field, BaseMaskedTextCtrl
 ##dbg = Logger()
 ##dbg(enable=1)
 
@@ -929,7 +928,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
     def _GetNumValue(self, value):
         """
         This function attempts to "clean up" a text value, providing a regularized
-        convertable string, via atol() or atof(), for any well-formed numeric text value.
+        convertible string, via atol() or atof(), for any well-formed numeric text value.
         """
         return value.replace(self._groupChar, '').replace(self._decimalChar, '.').replace('(', '-').replace(')','').strip()
 
@@ -1012,7 +1011,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
     def _SetValue(self, value):
         """
         This routine supersedes the base masked control _SetValue().  It is
-        needed to ensure that the value of the control is always representable/convertable
+        needed to ensure that the value of the control is always representable/convertible
         to a numeric return value (via GetValue().)  This routine also handles
         automatic adjustment and grouping of the value without explicit intervention
         by the user.
@@ -1369,7 +1368,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
         If min > the max value allowed by the width of the control,
         the function will return False, and the min will not be set.
 
-        :param `min`: Minium value for the control
+        :param `min`: Minimum value for the control
         :type `min`: integer or None
 
         """
@@ -1410,7 +1409,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
         If max > the max value allowed by the width of the control,
         the function will return False, and the max will not be set.
 
-        :param `max`: Minium value for the control
+        :param `max`: Minimum value for the control
         :type `max`: integer or None
 
         """
@@ -1443,9 +1442,9 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
 
         .. note:: leaving out an argument will remove the corresponding bound.
 
-        :param `min`: Minium value for the control
+        :param `min`: Minimum value for the control
         :type `min`: integer or None
-        :param `max`: Minium value for the control
+        :param `max`: Minimum value for the control
         :type `max`: integer or None
 
         """
@@ -1641,7 +1640,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
 ##            dbg(indent=0)
             return self._template
 
-        elif isinstance(value, six.string_types):
+        elif isinstance(value, str):
             value = self._GetNumValue(value)
 ##            dbg('cleansed num value: "%s"' % value)
             if value == "":
