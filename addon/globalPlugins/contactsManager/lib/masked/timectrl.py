@@ -281,10 +281,9 @@ IsLimited()
 import  copy
 
 import  wx
-import  six
 
-from .dbg import Logger
-from . import Field, BaseMaskedTextCtrl
+from tools.dbg import Logger
+from masked import Field, BaseMaskedTextCtrl
 
 dbg = Logger()
 ##dbg(enable=0)
@@ -414,7 +413,7 @@ class TimeCtrl(BaseMaskedTextCtrl):
         max = self.__max
         limited = self.__limited
         self.__posCurrent = 0
-        # handle deprecated keword argument name:
+        # handle deprecated keyword argument name:
         if 'display_seconds' in kwargs:
             kwargs['displaySeconds'] = kwargs['display_seconds']
             del kwargs['display_seconds']
@@ -582,7 +581,7 @@ class TimeCtrl(BaseMaskedTextCtrl):
                 # Set hour field to zero-pad, right-insert, require explicit field change,
                 # select entire field on entry, and require a resultant valid entry
                 # to allow character entry:
-                hourfield = Field(formatcodes='0r<SV', validRegex='0\d|1\d|2[0123]', validRequired=True)
+                hourfield = Field(formatcodes='0r<SV', validRegex=r'0\d|1\d|2[0123]', validRequired=True)
             else:
                 if self.__displaySeconds:  maskededit_kwargs['autoformat'] = 'TIMEHHMMSS'
                 else:                      maskededit_kwargs['autoformat'] = 'TIMEHHMM'
@@ -595,7 +594,7 @@ class TimeCtrl(BaseMaskedTextCtrl):
 
             # Field 1 is always a zero-padded right-insert minute field,
             # similarly configured as above:
-            minutefield = Field(formatcodes='0r<SV', validRegex='[0-5]\d', validRequired=True)
+            minutefield = Field(formatcodes='0r<SV', validRegex=r'[0-5]\d', validRequired=True)
 
             fields = [ hourfield, minutefield ]
             if self.__displaySeconds:
@@ -762,8 +761,8 @@ class TimeCtrl(BaseMaskedTextCtrl):
 ##            dbg('value = "%s"' % value)
 
         valid = True    # assume true
-        if isinstance(value, six.string_types):
-            value = six.text_type(value)  # convert to regular string
+        if isinstance(value, str):
+            value = str(value)  # convert to regular string
 
             # Construct constant wxDateTime, then try to parse the string:
             wxdt = wx.DateTime.FromDMY(1, 0, 1970)
@@ -851,7 +850,7 @@ class TimeCtrl(BaseMaskedTextCtrl):
         adjusted to the new minimum value; if not limited, the value in the
         control will be colored as invalid.
 
-        :param `min`: Minium value for the control
+        :param `min`: Minimum value for the control
         :type `min`: integer or None
 
         """
@@ -915,7 +914,7 @@ class TimeCtrl(BaseMaskedTextCtrl):
         adjusted to this maximum value; if not limited, the value in the
         control will be colored as invalid.
 
-        :param `max`: Minium value for the control
+        :param `max`: Minimum value for the control
         :type `max`: integer or None
 
         """
@@ -975,9 +974,9 @@ class TimeCtrl(BaseMaskedTextCtrl):
 
         .. note:: Leaving out an argument will remove the corresponding bound.
 
-        :param `min`: Minium value for the control
+        :param `min`: Minimum value for the control
         :type `min`: integer or None
-        :param `max`: Minium value for the control
+        :param `max`: Minimum value for the control
         :type `max`: integer or None
 
         """
@@ -1385,7 +1384,7 @@ class TimeCtrl(BaseMaskedTextCtrl):
         if self.IsLimited() and not self.IsInBounds(value):
 ##            dbg(indent=0)
             raise ValueError (
-                'value %s is not within the bounds of the control' % six.text_type(value) )
+                'value %s is not within the bounds of the control' % str(value) )
 ##        dbg(indent=0)
         return value
 

@@ -1,16 +1,16 @@
 # -*- coding: UTF-8 -*-
 
-# Description: Dialog box for adding and editing records in Contacts Manager for NVDA.
+"""
+Author: Edilberto Fonseca <edilberto.fonseca@outlook.com>
+Copyright: (C) 2025 Edilberto Fonseca
 
-# Author: Edilberto Fonseca
-# Email: <edilberto.fonseca@outlook.com>
-# Copyright (C) 2022-2025 Edilberto Fonseca
-# This file is covered by the GNU General Public License.
-# See the file COPYING for more details or visit https://www.gnu.org/licenses/gpl-2.0.html.
+This file is covered by the GNU General Public License.
+See the file COPYING for more details or visit:
+https://www.gnu.org/licenses/gpl-2.0.html
 
-# Date of creation: 30/11/2022.
+Created on: 30/11/2022.
+"""
 
-# Imports necessary for the add-on to function.
 import os
 import re
 import sys
@@ -22,34 +22,60 @@ import wx
 from logHandler import log
 
 from . import controller as core
-from .varsConfig import ourAddon
-
-# Get the path to the root of the current add-on
-addonPath = os.path.dirname(__file__)
+from .varsConfig import ourAddon, ADDON_PATH
 
 # Add the lib/ folder to sys.path (only once)
-libPath = os.path.join(addonPath, "lib")
+libPath = os.path.join(ADDON_PATH, "lib")
 if libPath not in sys.path:
 	sys.path.insert(0, libPath)
 
 try:
-	from masked import TextCtrl
-except Exception as e:
-	log.error(f"Error importing module: {str(e)}")
+	from masked.textctrl import TextCtrl
+except ImportError as e:
+	log.error(f"Failed to import masked.textctrl: {str(e)}. The 'lib' folder might be missing or corrupted.")
 
-# Initializes the translation
+# Initialize translation support
 addonHandler.initTranslation()
+
+# Global Constants for Regex
+EMAIL_REGEX = r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,63}$"
+
+def validate_fields(data):
+	"""
+	Validates the fields of the contact form.
+
+	Args:
+		data (dict): Data from the form to be validated.
+
+	Returns:
+		dict: A dictionary of errors with the invalid fields and their respective messages.
+	"""
+
+	errors = {}
+
+	# Validation of mandatory fields is essential to avoid corrupted data.
+	if not data.get("name"):
+		errors["name"] = _("It is necessary to inform the name!")
+	if not data.get("landline"):
+		errors["landline"] = _("It is necessary to inform the landline!")
+	# Email validation is done only if the field is not empty.
+	if data.get("email") and not re.match(EMAIL_REGEX, data["email"]):
+		errors["email"] = _("Invalid email format!")
+
+	return errors
+
 
 class AddEditRecDialog(wx.Dialog):
 
-	def __init__(self, parent, row=None, title=_('Add'), addRecord=True):
+	def __init__(self, parent, row=None, title=_("Add"), addRecord=True):
 		# Dialog window title.
 		self.title = title
 		WIDTH = 600
 		HEIGHT = 300
 
 		wx.Dialog.__init__(
-			self, parent, title=_('{} Record in Contacts Manager for NVDA').format(title), size=(WIDTH, HEIGHT))
+			self, parent, title=_("{} Record in Contacts Manager for NVDA").format(title), size=(WIDTH, HEIGHT))
+
 		# Check and apply settings.
 		self.formatCellPhone = config.conf[ourAddon.name]["formatCellPhone"]
 		self.formatLandline = config.conf[ourAddon.name]["formatLandline"]
@@ -57,38 +83,31 @@ class AddEditRecDialog(wx.Dialog):
 		self.addRecord = addRecord  # Defines whether it is a new record or an edit
 		self.selectedRow = row  # Stores the selected line, if any
 
-		name = cell = landline = email = ""  # Initialize the variables
-
-		# If a line is selected, fill in the fields with the corresponding values
-		if row:
-			name = self.selectedRow.name
-			cell = self.selectedRow.cell
-			landline = self.selectedRow.landline
-			email = self.selectedRow.email
-		else:
-			if name is None or cell is None or landline is None or email is None:
-				# Initialize variables as empty strings if the selected line does not exist
-				name = cell = landline = email = ""
+		# Simplified initialization of variables.
+		name = self.selectedRow.name if self.selectedRow else ""
+		cell = self.selectedRow.cell if self.selectedRow else ""
+		landline = self.selectedRow.landline if self.selectedRow else ""
+		email = self.selectedRow.email if self.selectedRow else ""
 
 		# Creating the widgets.
 		self.panel = wx.Panel(self)
-		labelName = wx.StaticText(self.panel, label=_('Name: '))
+		labelName = wx.StaticText(self.panel, label=_("Name: "))
 		self.textName = wx.TextCtrl(self.panel, -1, value=name, size=(200, 25), style=wx.TE_PROCESS_ENTER)
 
-		labelCell = wx.StaticText(self.panel, label=_('Cell phone: '))
+		labelCell = wx.StaticText(self.panel, label=_("Cell phone: "))
 		self.textCell = TextCtrl(self.panel, value=cell, mask=self.formatCellPhone, style=wx.TE_PROCESS_ENTER)
 
-		labelLandline = wx.StaticText(self.panel, label=_('Landline: '))
+		labelLandline = wx.StaticText(self.panel, label=_("Landline: "))
 		self.textLandline = TextCtrl(
 			self.panel, value=landline, mask=self.formatLandline, style=wx.TE_PROCESS_ENTER)
 
-		labelEmail = wx.StaticText(self.panel, label=_('Email: '))
+		labelEmail = wx.StaticText(self.panel, label=_("Email: "))
 		self.textEmail = wx.TextCtrl(self.panel, value=email, size=(200, 25), style=wx.TE_PROCESS_ENTER)
 
-		self.buttonOk = wx.Button(self.panel, wx.ID_OK, label=_('&Ok'))
-		self.buttonOk.Bind(wx.EVT_BUTTON, self.onRecord)
+		self.buttonOk = wx.Button(self.panel, wx.ID_OK, label=_("&Ok"))
+		self.buttonOk.Bind(wx.EVT_BUTTON, self.handleRecord)
 
-		self.buttonCancel = wx.Button(self.panel, wx.ID_CANCEL, label=_('&Cancel'))
+		self.buttonCancel = wx.Button(self.panel, wx.ID_CANCEL, label=_("&Cancel"))
 		self.buttonCancel.Bind(wx.EVT_BUTTON, self.onClose)
 
 		# Creating the screen objects.
@@ -110,7 +129,6 @@ class AddEditRecDialog(wx.Dialog):
 		mainSizer.Add(viewSizer, wx.EXPAND)
 		mainSizer.Add(buttonSizer, 0, wx.CENTER)
 		self.panel.SetSizerAndFit(mainSizer)
-
 		# Binding EVT_TEXT_ENTER events to corresponding methods
 		self.textName.Bind(wx.EVT_TEXT_ENTER, self.onFocusName)
 		self.textCell.Bind(wx.EVT_TEXT_ENTER, self.onFocusCell)
@@ -156,58 +174,34 @@ Args:
 
 	def getData(self):
 		"""
-Collects and validates contact form data and returns it in a dictionary.
+		Collects and validates contact form data and returns it in a dictionary.
 
 		Returns:
 			dict or None: A dictionary with the contact's data if all fields are filled in and valid, or None if there
 			are validation errors.
 		"""
 
-		email_regex = r'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,63}$'
-		contactDict = {}
+		# Form data collection
+		contactDict = {
+			"name": self.textName.GetValue().strip(),
+			"cell": self.textCell.GetValue().strip(),
+			"landline": self.textLandline.GetValue().strip(),
+			"email": self.textEmail.GetValue().strip()
+		}
 
-		Name = self.textName.GetValue().strip()
-		Cell = self.textCell.GetValue().strip()
-		Landline = self.textLandline.GetValue().strip()
-		Email = self.textEmail.GetValue().strip()
-
-		# Check the Name field
-		if not Name:
-			self.show_message(_('Name is required!'), _('Error'))
-			self.textName.SetFocus()
+		errors = validate_fields(contactDict)
+		if errors:
+			# Take the first error and display the message
+			field, message = next(iter(errors.items()))
+			self.show_message(message, _("Error"))
+			self.focus_field(field)
 			return None
-
-		# Check the cell phone field
-		if not Cell:
-			self.show_message(_('Mobile number is required!'), _('Error'))
-			self.textCell.SetFocus()
-			return None
-
-		# Check the Landline field
-		if not Landline:
-			self.show_message(_('Landline number is required!'), _('Error'))
-			self.textLandline.SetFocus()
-			return None
-
-		# Check the Email field if it was provided
-		if Email:
-			if not re.match(email_regex, Email):
-				self.show_message(_('Invalid email format!'), _('Error'))
-				self.textEmail.SetFocus()
-				return None
-			Email = Email.replace("-", "")  # Remove hífen, se necessário
-
-		# Fill the dictionary with the collected data
-		contactDict['name'] = Name
-		contactDict['cell'] = Cell
-		contactDict['landline'] = Landline
-		contactDict['email'] = Email
 
 		return contactDict
 
 	def onAdd(self):
 		"""
-Adds a new contact to the database and displays a message to the user.
+		Adds a new contact to the database and displays a message to the user.
 
 		This method collects the form data, adds the contact to the database, and presents a dialog box for the
 		user to confirm whether they want to add a new contact or close the window.
@@ -219,79 +213,88 @@ Adds a new contact to the database and displays a message to the user.
 		"""
 
 		contactDict = self.getData()
-
-		# Check if contactDict is None
-		if contactDict is None:
+		if not contactDict:
 			return
 
-		data = {'contacts': contactDict}
-		try:
-			core.add_record(data)
+		data = {"contacts": contactDict}
+		success, error = self.save_contact_to_db(data)
 
-			# Translators:  Dialog displayed upon completion.
-			message = _('Contact added, want to add a new contact?')
-			caption = _('Success')
-
+		if success:
+			message = _("Contact added, want to add a new contact?")
+			caption = _("Success")
 			user_response = gui.messageBox(message, caption, style=wx.ICON_QUESTION | wx.YES_NO)
 			if user_response == wx.YES:
-				# Clear all fields to add a new record.
-				for child in self.panel.GetChildren():
-					if isinstance(child, wx.TextCtrl):
-						child.SetValue("")
+				self.clear_form()
 			else:
 				self.Destroy()
-		except Exception as e:
-			self.show_message(_('Error adding contact: {}').format(str(e)), _('Error'), wx.ICON_ERROR)
+		else:
+			self.show_message(_("Error adding contact: {}").format(error), _("Error"), wx.ICON_ERROR)
 
-	# Cancels the dialog.
-	def onClose(self, event):
+	def save_contact_to_db(self, data):
 		"""
-		closes the window.
+		Save a contact in the database.
 
 		Args:
-			event (wx.Event): Event triggered by the cancel button.
+			data (dict): Contact data to be saved.
+
+		Returns:
+			tuple: A boolean indicating success or failure, and an error message in case of failure.
 		"""
-		self.Destroy()
+		try:
+			core.add_record(data)
+			return True, None
+		except Exception as e:
+			return False, str(e)
+
+	def focus_field(self, field_name):
+		"""
+		Defines the focus on the field corresponding to the name of the provided field.
+
+		Args:
+			field_name (str): Name of the field to be focused.
+		"""
+		focus_mapping = {
+			"name": self.textName,
+			"cell": self.textCell,
+			"landline": self.textLandline,
+			"email": self.textEmail,
+		}
+		if field_name in focus_mapping:
+			focus_mapping[field_name].SetFocus()
 
 	def onEdit(self):
 		"""
 		Edits the selected contact in the database and displays a success message to the user.
-
-		This method collects the form data,
-		updates the contact in the database based on the selected contact, and then presents a dialog box to inform
-		the user that the edit was successful.
-
-		Returns:
-			None
 		"""
-
 		contactDict = self.getData()
-		core.edit_record(self.selectedRow.id, contactDict)
+		if not contactDict:
+			return
 
-		# Translators:  Dialog displayed after editing is complete.
-		self.show_message(_('Contact edited!'), _('Success'), wx.ICON_INFORMATION)
-		self.Destroy()
+		try:
+			core.edit_record(self.selectedRow.id, contactDict)
+			self.show_message(_("Contact edited!"), _("Success"), wx.ICON_INFORMATION)
+			self.Destroy()
+		except Exception as e:
+			self.show_message(_("Error editing contact: {}").format(str(e)), _("Error"), wx.ICON_ERROR)
 
-	def onRecord(self, event):
+	def handleRecord(self, event):
 		"""
-Adds or edits a contact based on the form's current state.
-
-		This method checks whether the form is in add or edit mode. Depending on the mode, it calls `onAdd()` to
-		add a new contact or `onEdit()` to edit the existing contact.
-		After the operation, the focus is set on the name field.
-
-		Args:
-			event (wx.Event): The event that triggered this method. This could be a click event or another type of
-			user interaction.
-
-		Returns:
-			None
+		Adds or edits a contact based on the form's current state.
 		"""
-
 		if self.addRecord:
 			self.onAdd()
 		else:
 			self.onEdit()
+
+	def clear_form(self):
+		"""
+		Cleans the fields of the form and position the focus on the first field.
+		"""
+		# Cleaning of safer and direct fields
+		self.textName.SetValue("")
+		self.textCell.SetValue("")
+		self.textLandline.SetValue("")
+		self.textEmail.SetValue("")
 		self.textName.SetFocus()
 
 	def show_message(self, message, caption=_("Message"), style=wx.OK | wx.ICON_INFORMATION):
@@ -306,3 +309,13 @@ Adds or edits a contact based on the form's current state.
 			wx.CANCEL, wx.ICON INFORMATION, etc. The default is wx.OK | wx.ICON INFORMATION.
 		"""
 		gui.messageBox(message, caption, style)
+
+	# Cancels the dialog.
+	def onClose(self, event):
+		"""
+		closes the window.
+
+		Args:
+			event (wx.Event): Event triggered by the cancel button.
+		"""
+		self.Destroy()

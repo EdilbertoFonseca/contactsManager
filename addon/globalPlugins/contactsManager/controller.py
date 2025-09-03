@@ -1,62 +1,38 @@
 # -*- coding: UTF-8 -*-
 
-# Description: Control module for Contacts Manager for NVDA.
+"""
+Author: Edilberto Fonseca <edilberto.fonseca@outlook.com>
+Copyright: (C) 2025 Edilberto Fonseca
 
-# Author: Edilberto Fonseca
-# Email: <edilberto.fonseca@outlook.com>
-# Copyright (C) 2022-2025 Edilberto Fonseca
-# This file is covered by the GNU General Public License.
-# See the file COPYING for more details or visit https://www.gnu.org/licenses/gpl-2.0.html.
+This file is covered by the GNU General Public License.
+See the file COPYING for more details or visit:
+https://www.gnu.org/licenses/gpl-2.0.html
 
-# Date of creation: 30/11/2022.
+Created on: 30/11/2022.
+"""
 
-# Imports necessary for the add-on to function.
 import os
 import sys
 
 import addonHandler
-import versionInfo
 from logHandler import log
 
-# Imports the instance of the DatabaseConfig class
-from .configPanel import db_config
 from .model import ObjectContact, Section
+from .varsConfig import ADDON_PATH
 
 # Get the path to the root of the current add-on
-addonPath = os.path.dirname(__file__)
-
 # Add the lib/ folder to sys.path (only once)
-libPath = os.path.join(addonPath, "lib")
+libPath = os.path.join(ADDON_PATH, "lib")
 if libPath not in sys.path:
 	sys.path.insert(0, libPath)
 
 try:
 	import csv
-
-	if versionInfo.version_year < 2024:
-		import sqlite3
-	else:
-		import sqlite311 as sqlite3
 except ImportError as e:
 	log.error(f"Error importing module: {str(e)}")
 
-# Initializes the translation
+# Initialize translation support
 addonHandler.initTranslation()
-
-def get_db_connection():
-	"""
-	Gets the connection to the current database.
-
-This function creates and returns a connection to the database specified by the path
-	current stored in the configuration. The database used depends on the NVDA version:
-	- If the NVDA version is older than 2024, the `sqlite3` library is used.
-	- If the NVDA version is 2024 or later, the `sqlite311` library is used.
-	Returns:
-		sqlite3.Connection: Database connection object.
-	"""
-	return sqlite3.connect(db_config.get_current_database_path())
-
-
 def get_all_records():
 	"""
 	Function that retrieves all data from the database.
@@ -139,11 +115,14 @@ def search_records(filterChoice, keyword):
 		_('Landline'): "SELECT * FROM contacts WHERE landline LIKE ?",
 		_('Email'): "SELECT * FROM contacts WHERE email LIKE ?",
 	}
+	query = query_map.get(filterChoice)
+	if not query:
+		# Lidar com erro ou retornar uma lista vazia
+		return []
 	with Section() as trans:
-		trans.execute(query_map.get(filterChoice, ''), ('%' + keyword + '%',))
+		trans.execute(query, ('%' + keyword + '%',))
 		results = trans.fetchall()
 	return convert_results(results)
-
 
 def edit_record(ID, row):
 	"""
@@ -206,8 +185,11 @@ def import_csv_to_db(mypath):
 
 	with Section() as trans:
 		try:
-			with open(mypath, 'r') as file:
-				contents = csv.reader(file, delimiter=',')
+			with open(mypath, 'r', encoding="UTF-8") as file:
+				sample = file.read(1024)
+				file.seek(0)
+				dialect = csv.Sniffer().sniff(sample)
+				contents = csv.reader(file, dialect=dialect)
 				insert_records = """
 				INSERT INTO contacts(name, cell, landline, email)
 				SELECT ?, ?, ?, ?
@@ -225,37 +207,44 @@ def import_csv_to_db(mypath):
 			log.error(f"Error importing data: {str(e)}")
 			raise  # Re-raise the exception after logging
 
-
 def export_db_to_csv(mypath):
-	"""
-	Exports data from the database to a CSV file.
-
-	Args:
-		mypath (str): The path to the CSV file where the database data will be exported.
-	"""
-
 	try:
-		with get_db_connection() as conn:
-			cursor = conn.cursor()
-			cursor.execute("SELECT * FROM contacts")
-			with open(mypath, "w", newline="") as file:
-				newFile = csv.writer(file)
-				data = [row for row in cursor]
-				result = [[row[i] for i in range(len(row)) if i != 0] for row in data]
-				newFile.writerows(result)
+		with Section() as trans:
+			trans.execute("SELECT * FROM contacts")
+			rows = trans.fetchall() # Isso retorna uma lista de dicionários, como você já configurou.
+			
+# Use column names to extract values by excluding 'id'.
+			# This is safe because dictionaries are hashable and have keys.
+			cleaned_rows = [
+				[row['name'], row['cell'], row['landline'], row['email']]
+				for row in rows
+			]
+			
+			with open(mypath, "w", newline="", encoding="UTF-8") as file:
+				writer = csv.writer(file)
+				writer.writerows(cleaned_rows)
 	except Exception as e:
-		log.error(f"Erro ao conectar ao banco de dados: {str(e)}")
-
+		log.error(f"Error export data to CSV: {str(e)}")
+		# The exception must be relaunched to notify the interface
+		raise
 
 def count_records():
 	"""
-	Counts the total number of records registered in the database.
+It counts the total number of records in the database safely.
 
-	Returns:
-		int: The total number of records in the database contact table.
+Returns:
+INT: The total number of records.
+None: In case of error when accessing the database.
 	"""
-
-	with Section() as trans:
-		trans.execute("SELECT * FROM contacts")
-		result = len(trans.fetchall())
-	return result
+	try:
+		with Section() as trans:
+			if not trans.connected:
+				return None
+			
+			trans.execute("SELECT COUNT(*) FROM contacts")
+# Access the value of the dictionary by the 'Count (*)' key instead of the index [0].
+			count = trans.cursor.fetchone()['COUNT(*)']
+			return count
+	except Exception as e:
+		log.error(f"Erro ao contar registros no banco de dados: {e.__class__.__name__} - {e}")
+		return None
