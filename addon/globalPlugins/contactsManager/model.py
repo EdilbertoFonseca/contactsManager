@@ -17,8 +17,7 @@ import sys
 import versionInfo
 from logHandler import log
 
-from .configPanel import \
-	db_config  # Imports the instance of the DatabaseConfig class
+from .configPanel import db_config  # Imports the instance of the DatabaseConfig class
 
 # Get the path to the root of the current add-on
 addonPath = os.path.dirname(__file__)

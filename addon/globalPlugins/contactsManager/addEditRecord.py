@@ -22,7 +22,7 @@ import wx
 from logHandler import log
 
 from . import controller as core
-from .varsConfig import ourAddon, ADDON_PATH
+from .varsConfig import ADDON_PATH, ourAddon
 
 # Add the lib/ folder to sys.path (only once)
 libPath = os.path.join(ADDON_PATH, "lib")

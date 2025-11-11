@@ -18,6 +18,7 @@ import globalPluginHandler
 import globalVars
 import gui
 import wx
+from logHandler import log
 from scriptHandler import script
 
 from .configPanel import ContactsManagerSettingsPanel
@@ -80,7 +81,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.help = self.mainMenu.Append(-1, _('&Help'))
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_onHelp, self.help)
 
-		self.toolsMenu.AppendSubMenu(self.mainMenu, _('&Contacts Manager'))
+		# Save submenu item
+		self.contactsManagerMenuItem = self.toolsMenu.AppendSubMenu(self.mainMenu, _("&{}...".format(ADDON_SUMMARY)))
 
 	def onContactsManager(self, event):
 		"""
@@ -138,6 +140,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(
 			ContactsManagerSettingsPanel)
 		try:
-			self.toolsMenu.Remove(self.mainMenu)
-		except AttributeError:
-			pass
+			self.toolsMenu.Remove(self.contactsManagerMenuItem)
+		except Exception as e:
+			log.warning(f"Error removing Scraps and agenda organizer menu item: {e}")
