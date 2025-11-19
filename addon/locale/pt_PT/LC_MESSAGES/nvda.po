@@ -1,68 +1,62 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: 'contactManager' '2025.6.2'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2025-09-03 08:40-0300\n"
+"POT-Creation-Date: 2025-11-19 14:04-0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Edilberto Fonseca <edilberto.fonseca@outlook.com>\n"
-"Language-Team: \n"
+"Language-Team: Edilberto Fonseca <edilberto.fonseca@outlook.com>\n"
 "Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.6\n"
 
 #: addon\installTasks.py:43
 msgid "Error when renaming file: {e}"
 msgstr "Erro ao renomear ficheiro: {e}"
 
-#. Translators: Message displayed to the user in case of errors when importing the CSV file
-#. Translators: Message displayed to the user in case of errors when exporting the CSV file
-#: addon\installTasks.py:43 addon\globalPlugins\contactsManager\main.py:211
-#: addon\globalPlugins\contactsManager\main.py:231
-#: addon\globalPlugins\contactsManager\main.py:268
-#: addon\globalPlugins\contactsManager\main.py:274
-#: addon\globalPlugins\contactsManager\main.py:293
-#: addon\globalPlugins\contactsManager\main.py:298
-#: addon\globalPlugins\contactsManager\main.py:324
-#: addon\globalPlugins\contactsManager\main.py:329
+#: addon\installTasks.py:43 addon\globalPlugins\contactsManager\main.py:191
+#: addon\globalPlugins\contactsManager\main.py:202
+#: addon\globalPlugins\contactsManager\main.py:247
 msgid "Attention"
 msgstr "Atenção"
 
-#: addon\globalPlugins\contactsManager\__init__.py:74
+#: addon\globalPlugins\contactsManager\__init__.py:75
 msgid "&Contact List"
 msgstr "&Lista de contactos"
 
-#: addon\globalPlugins\contactsManager\__init__.py:77
+#: addon\globalPlugins\contactsManager\__init__.py:78
 msgid "&Settings"
 msgstr "&Definições"
 
-#: addon\globalPlugins\contactsManager\__init__.py:80
+#: addon\globalPlugins\contactsManager\__init__.py:81
 msgid "&Help"
 msgstr "&Ajuda"
 
-#: addon\globalPlugins\contactsManager\__init__.py:83
-msgid "&Contacts Manager"
-msgstr "&Gerente de contactos"
+#. Save submenu item
+#: addon\globalPlugins\contactsManager\__init__.py:85
+msgid "&{}..."
+msgstr "&{}..."
 
 #. Translators: Title of contact list dialog box.
-#: addon\globalPlugins\contactsManager\__init__.py:93
+#: addon\globalPlugins\contactsManager\__init__.py:95
 msgid "Contact list."
 msgstr "Lista de contactos."
 
 #. Translators: Text displayed in NVDA help.
-#: addon\globalPlugins\contactsManager\__init__.py:103
+#: addon\globalPlugins\contactsManager\__init__.py:105
 msgid "Displays a window with all contacts registered in the Contacts Manager."
 msgstr ""
 "Exibe uma janela com todos os contactos registados no Gestor de Contactos."
 
 #. Translators: Opens the Contacts Manager configuration menu
-#: addon\globalPlugins\contactsManager\__init__.py:113
+#: addon\globalPlugins\contactsManager\__init__.py:115
 msgid "Opens Contacts Manager add-on settings"
 msgstr "Abre as definições da extensão do Gestor de Contactos"
 
 #. Translators: Text displayed in NVDA help.
-#: addon\globalPlugins\contactsManager\__init__.py:128
+#: addon\globalPlugins\contactsManager\__init__.py:130
 msgid "Opens the Contacts Manager add-on help page."
 msgstr "Abre a página de ajuda do suplemento Gestor de Contactos."
 
@@ -113,11 +107,9 @@ msgstr "&Cancelar"
 #: addon\globalPlugins\contactsManager\addEditRecord.py:196
 #: addon\globalPlugins\contactsManager\addEditRecord.py:231
 #: addon\globalPlugins\contactsManager\addEditRecord.py:278
-#: addon\globalPlugins\contactsManager\main.py:183
-#: addon\globalPlugins\contactsManager\main.py:207
-#: addon\globalPlugins\contactsManager\main.py:220
-#: addon\globalPlugins\contactsManager\main.py:319
-#: addon\globalPlugins\contactsManager\main.py:338
+#: addon\globalPlugins\contactsManager\main.py:177
+#: addon\globalPlugins\contactsManager\main.py:188
+#: addon\globalPlugins\contactsManager\main.py:242
 msgid "Error"
 msgstr "Erro"
 
@@ -127,8 +119,6 @@ msgstr "Contacto adicionado, deseja adicionar um novo contacto?"
 
 #: addon\globalPlugins\contactsManager\addEditRecord.py:224
 #: addon\globalPlugins\contactsManager\addEditRecord.py:275
-#: addon\globalPlugins\contactsManager\main.py:217
-#: addon\globalPlugins\contactsManager\main.py:335
 msgid "Success"
 msgstr "Sucesso"
 
@@ -145,7 +135,7 @@ msgid "Error editing contact: {}"
 msgstr "Erro ao editar o contacto: {}"
 
 #: addon\globalPlugins\contactsManager\addEditRecord.py:300
-#: addon\globalPlugins\contactsManager\main.py:354
+#: addon\globalPlugins\contactsManager\main.py:260
 msgid "Message"
 msgstr "Mensagem"
 
@@ -157,16 +147,16 @@ msgstr "Adicionar máscara para campos de telefone:"
 #. Cell field formatting.
 #: addon\globalPlugins\contactsManager\configPanel.py:108
 #: addon\globalPlugins\contactsManager\controller.py:114
-#: addon\globalPlugins\contactsManager\main.py:80
-#: addon\globalPlugins\contactsManager\main.py:150
+#: addon\globalPlugins\contactsManager\main.py:73
+#: addon\globalPlugins\contactsManager\main.py:141
 msgid "Cell phone"
 msgstr "Telemóvel"
 
 #. Formatting the landline phone field.
 #: addon\globalPlugins\contactsManager\configPanel.py:113
 #: addon\globalPlugins\contactsManager\controller.py:115
-#: addon\globalPlugins\contactsManager\main.py:80
-#: addon\globalPlugins\contactsManager\main.py:151
+#: addon\globalPlugins\contactsManager\main.py:73
+#: addon\globalPlugins\contactsManager\main.py:142
 msgid "Landline"
 msgstr "Telefone fixo"
 
@@ -203,164 +193,175 @@ msgstr "Escolha onde guardar o ficheiro da base de dados"
 msgid "Database files (*.db)"
 msgstr "Ficheiros de bases de dados (*.db)"
 
-#. List of combobox choices option.
 #: addon\globalPlugins\contactsManager\controller.py:113
-#: addon\globalPlugins\contactsManager\main.py:80
-#: addon\globalPlugins\contactsManager\main.py:81
-#: addon\globalPlugins\contactsManager\main.py:149
+#: addon\globalPlugins\contactsManager\main.py:73
+#: addon\globalPlugins\contactsManager\main.py:74
+#: addon\globalPlugins\contactsManager\main.py:140
 msgid "Name"
 msgstr "Nome"
 
 #: addon\globalPlugins\contactsManager\controller.py:116
-#: addon\globalPlugins\contactsManager\main.py:80
-#: addon\globalPlugins\contactsManager\main.py:152
+#: addon\globalPlugins\contactsManager\main.py:73
+#: addon\globalPlugins\contactsManager\main.py:143
 msgid "Email"
 msgstr "E-mail"
 
-#: addon\globalPlugins\contactsManager\main.py:40
+#: addon\globalPlugins\contactsManager\main.py:39
 msgid "An instance of {} is already open."
 msgstr "Uma instância de {} já está aberta."
 
-#. Translators: Search field label.
-#: addon\globalPlugins\contactsManager\main.py:77
+#: addon\globalPlugins\contactsManager\main.py:72
 msgid "Search for: "
 msgstr "Pesquisar por: "
 
-#: addon\globalPlugins\contactsManager\main.py:84
+#: addon\globalPlugins\contactsManager\main.py:77
 msgid "&Search"
 msgstr "&Pesquizar"
 
-#: addon\globalPlugins\contactsManager\main.py:95
+#. Buttons
+#: addon\globalPlugins\contactsManager\main.py:84
 msgid "&New"
 msgstr "&Novo"
 
-#: addon\globalPlugins\contactsManager\main.py:96
+#: addon\globalPlugins\contactsManager\main.py:85
 msgid "&Edit"
 msgstr "&Editar"
 
-#: addon\globalPlugins\contactsManager\main.py:97
+#: addon\globalPlugins\contactsManager\main.py:86
 msgid "&Remove"
 msgstr "&Remover"
 
-#: addon\globalPlugins\contactsManager\main.py:98
+#: addon\globalPlugins\contactsManager\main.py:87
 msgid "Refres&h"
 msgstr "Refresc&ar"
 
-#: addon\globalPlugins\contactsManager\main.py:99
+#: addon\globalPlugins\contactsManager\main.py:88
 msgid "&Import csv..."
 msgstr "&Importar CSV..."
 
-#: addon\globalPlugins\contactsManager\main.py:100
+#: addon\globalPlugins\contactsManager\main.py:89
 msgid "Ex&port csv..."
 msgstr "E&xportar CSV..."
 
-#: addon\globalPlugins\contactsManager\main.py:101
+#: addon\globalPlugins\contactsManager\main.py:90
 msgid "&Delete all records."
 msgstr "Eliminar &todos os registos."
 
-#: addon\globalPlugins\contactsManager\main.py:102
+#: addon\globalPlugins\contactsManager\main.py:91
 msgid "E&xit"
 msgstr "&Sair"
 
-#: addon\globalPlugins\contactsManager\main.py:183
-#: addon\globalPlugins\contactsManager\main.py:207
+#: addon\globalPlugins\contactsManager\main.py:177
+#: addon\globalPlugins\contactsManager\main.py:188
 msgid "No records selected!"
 msgstr "Nenhum registo seleccionado!"
 
-#: addon\globalPlugins\contactsManager\main.py:188
+#: addon\globalPlugins\contactsManager\main.py:179
 msgid "To edit"
 msgstr "Editar"
 
-#: addon\globalPlugins\contactsManager\main.py:210
+#: addon\globalPlugins\contactsManager\main.py:190
 msgid "Do you want to delete the selected record?"
 msgstr "Deseja eliminar o registo selecionado?"
 
-#: addon\globalPlugins\contactsManager\main.py:217
+#: addon\globalPlugins\contactsManager\main.py:194
 msgid "Record deleted!"
 msgstr "Registo eliminado!"
 
-#: addon\globalPlugins\contactsManager\main.py:220
-msgid "Error deleting record: {}"
-msgstr "Erro ao eliminar registo: {}"
-
-#: addon\globalPlugins\contactsManager\main.py:231
+#: addon\globalPlugins\contactsManager\main.py:202
 msgid "The search field is empty!"
 msgstr "O campo de busca está vazio!"
 
-#. If there are no results, displays an informative message
-#: addon\globalPlugins\contactsManager\main.py:243
+#: addon\globalPlugins\contactsManager\main.py:209
 msgid "No contacts found matching the search criteria."
 msgstr "Nenhum contacto encontrado que corresponda aos critérios de pesquisa."
 
-#: addon\globalPlugins\contactsManager\main.py:261
+#: addon\globalPlugins\contactsManager\main.py:219
 msgid "import csv file"
 msgstr "importar ficheiro CSV"
 
-#: addon\globalPlugins\contactsManager\main.py:268
+#: addon\globalPlugins\contactsManager\main.py:223
 msgid "File imported successfully!"
 msgstr "Contactos importados com sucesso!"
 
-#: addon\globalPlugins\contactsManager\main.py:271
-msgid "It was not possible to import the file! {}"
-msgstr "Não foi possível importar o ficheiro! {}"
-
-#: addon\globalPlugins\contactsManager\main.py:283
+#: addon\globalPlugins\contactsManager\main.py:229
 msgid "export csv file"
 msgstr "exportar ficheiro CSV"
 
-#: addon\globalPlugins\contactsManager\main.py:293
+#: addon\globalPlugins\contactsManager\main.py:234
 msgid "File exported successfully!"
 msgstr "Contactos exportados com sucesso!"
 
-#: addon\globalPlugins\contactsManager\main.py:296
-msgid "It was not possible to export the file! {}"
-msgstr "Não foi possível exportar o ficheiro! {}"
+#: addon\globalPlugins\contactsManager\main.py:242
+msgid "Error counting records."
+msgstr "Erro ao contar registos."
 
-#. If Record Count for None, there was an error in the database.
-#. The error message is already displayed internally by the Core.COUNT Records function.
-#: addon\globalPlugins\contactsManager\main.py:319
-msgid "An error occurred while counting records. Check the logs."
-msgstr ""
-"Ocorreu um erro durante a contagem dos registos. Verificar os registos."
-
-#. If Record Count for 0, the agenda is already empty.
-#: addon\globalPlugins\contactsManager\main.py:324
+#: addon\globalPlugins\contactsManager\main.py:245
 msgid "The agenda is already empty!"
 msgstr "A agenda já está vazia!"
 
-#. 3. If Record Count> 0, requests user confirmation.
-#: addon\globalPlugins\contactsManager\main.py:328
-msgid "This operation erases all phonebook entries. Do you wish to continue?"
-msgstr ""
-"Esta operação apaga todos os registros da agenda, Você deseja continuar?"
+#: addon\globalPlugins\contactsManager\main.py:247
+msgid "Erase ALL records?"
+msgstr "Apagar TODOS os registos?"
 
-#: addon\globalPlugins\contactsManager\main.py:335
+#: addon\globalPlugins\contactsManager\main.py:250
 msgid "Agenda deleted!"
 msgstr "Agenda apagada!"
 
-#: addon\globalPlugins\contactsManager\main.py:338
-msgid "Error deleting records: {}"
-msgstr "Erro ao eliminar registos: {}"
-
-#: addon\globalPlugins\contactsManager\main.py:435
+#: addon\globalPlugins\contactsManager\main.py:302
 msgid "Updated records!"
 msgstr "Registos actualizados!"
 
-#. Add-on summary, usually the user visible name of the addon.
-#. Translators: Summary for this add-on to be shown
-#. on installation and add-on information.
-#: buildVars.py:25
+#. Add-on summary/title, usually the user visible name of the add-on
+#. Translators: Summary/title for this add-on
+#. to be shown on installation and add-on information found in add-on store
+#: buildVars.py:21
 msgid "Contacts Manager for NVDA"
 msgstr "Gestor de contactos para NVDA"
 
-#: buildVars.py:30
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-on store
+#: buildVars.py:24
 msgid ""
 "Simple contacts manager for saving phone numbers, emails, and other contact "
-"details for personal or professional use. Shortcut Windows+Alt+L."
+"details for personal or professional use.\n"
+"\n"
+"Shortcut Windows+Alt+L."
 msgstr ""
 "Gestor simples de contactos para guardar números de telefone, e-mails e "
-"outros detalhes de contacto para uso pessoal ou profissional. Atalho "
-"Windows+Alt+L."
+"outros detalhes de contacto para uso pessoal ou profissional. \n"
+"\n"
+"Atalho Windows+Alt+L."
+
+#. Brief changelog for this version
+#. Translators: what's new content for the add-on version to be shown in the add-on store
+#: buildVars.py:31
+msgid "improve code clarity and update docstrings."
+msgstr "melhorar a clareza do código e atualizar as strings de documentação."
+
+#~ msgid "&Contacts Manager"
+#~ msgstr "&Gerente de contactos"
+
+#~ msgid "Error deleting record: {}"
+#~ msgstr "Erro ao eliminar registo: {}"
+
+#~ msgid "It was not possible to import the file! {}"
+#~ msgstr "Não foi possível importar o ficheiro! {}"
+
+#~ msgid "It was not possible to export the file! {}"
+#~ msgstr "Não foi possível exportar o ficheiro! {}"
+
+#~ msgid "An error occurred while counting records. Check the logs."
+#~ msgstr ""
+#~ "Ocorreu um erro durante a contagem dos registos. Verificar os registos."
+
+#~ msgid ""
+#~ "This operation erases all phonebook entries. Do you wish to continue?"
+#~ msgstr ""
+#~ "Esta operação apaga todos os registros da agenda, Você deseja continuar?"
+
+#~ msgid "Error deleting records: {}"
+#~ msgstr "Erro ao eliminar registos: {}"
 
 #, python-brace-format
 #~ msgid "It was not possible to import the file! {e}"
@@ -369,9 +370,6 @@ msgstr ""
 #, python-brace-format
 #~ msgid "It was not possible to export the file! {e}"
 #~ msgstr "Não foi possível exportar o ficheiro! {e}"
-
-#~ msgid "Error counting records: {}"
-#~ msgstr "Erro ao contar registros: {}"
 
 #~ msgid "Name is required!"
 #~ msgstr "O nome é obrigatório!"
