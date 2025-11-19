@@ -1,1 +1,1 @@
-Use this file to explain what has changed in your add-on since the previous release. This will be included automatically in the release description when used with GitHub actions.
+Refactored main.py and model.py in contactsManager to improve code clarity, update docstrings to use Python conventions, and simplify logic. Added a GitHub Actions workflow to fetch translations from Crowdin. Updated buildVars.py for new version and NVDA compatibility, and excluded 'lib' from pyproject.toml packaging.
