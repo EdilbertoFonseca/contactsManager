@@ -1,16 +1,16 @@
 # -*- coding: UTF-8 -*-
 
-# Description: Database modeling for Contacts Manager for NVDA.
+"""
+Author: Edilberto Fonseca <edilberto.fonseca@outlook.com>
+Copyright: (C) 2025 Edilberto Fonseca
 
-# Author: Edilberto Fonseca
-# Email: <edilberto.fonseca@outlook.com>
-# Copyright (C) 2022-2025 Edilberto Fonseca
-# This file is covered by the GNU General Public License.
-# See the file COPYING for more details or visit https://www.gnu.org/licenses/gpl-2.0.html.
+This file is covered by the GNU General Public License.
+See the file COPYING for more details or visit:
+https://www.gnu.org/licenses/gpl-2.0.html
 
-# Date of creation: 30/11/2022.
+Created on: 30/11/2022.
+"""
 
-# Imports necessary for the add-on to function.
 import os
 import sys
 
