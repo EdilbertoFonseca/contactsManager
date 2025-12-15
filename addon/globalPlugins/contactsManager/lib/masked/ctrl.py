@@ -54,9 +54,9 @@ provides a single "unified" interface for masked controls.
 
 """
 
-from masked   import TextCtrl, ComboBox, IpAddrCtrl
-from masked   import NumCtrl
-from masked   import TimeCtrl
+from wx.lib.masked   import TextCtrl, ComboBox, IpAddrCtrl
+from wx.lib.masked   import NumCtrl
+from wx.lib.masked   import TimeCtrl
 
 
 # "type" enumeration for class instance factory function
@@ -104,3 +104,5 @@ def Ctrl( *args, **kwargs):
     else:
         raise AttributeError(
             "invalid controlType specified: %s" % repr(controlType))
+
+

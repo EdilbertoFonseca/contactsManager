@@ -1,16 +1,5 @@
 # -*- coding: UTF-8 -*-
 
-"""
-Author: Edilberto Fonseca <edilberto.fonseca@outlook.com>
-Copyright: (C) 2025 Edilberto Fonseca
-
-This file is covered by the GNU General Public License.
-See the file COPYING for more details or visit:
-https://www.gnu.org/licenses/gpl-2.0.html
-
-Created on: 30/11/2022.
-"""
-
 import os
 
 import addonHandler
@@ -25,7 +14,6 @@ from . import controller as core
 from .addEditRecord import AddEditRecDialog
 from .varsConfig import ADDON_SUMMARY, ourAddon
 
-# Initialize translation support
 addonHandler.initTranslation()
 
 
@@ -59,7 +47,7 @@ class ContactList(wx.Dialog):
 
 		self.Bind(wx.EVT_CHAR_HOOK, self.onKeyPress)
 
-		# -------- WIDGETS --------
+		# -------- UI --------
 		panel = wx.Panel(self)
 		self.contactList = wx.ListCtrl(panel, style=wx.LC_REPORT | wx.BORDER_SUNKEN)
 		self.initialize_contact_list()
@@ -132,9 +120,13 @@ class ContactList(wx.Dialog):
 		self.buttonResetRecords.Bind(wx.EVT_BUTTON, self.onReset)
 		self.buttonExit.Bind(wx.EVT_BUTTON, self.onClose)
 
+
+	# ============================================================
+	# CORREÇÃO FUNDAMENTAL: MAPEAMENTO SEGURO DE OBJETOS
+	# ============================================================
 	def initialize_contact_list(self):
 		self.contactList.ClearAll()
-		self._itemMap = {}  # SAFE ITEM MAP
+		self._itemMap = {}  # <======== NOVO (correção essencial)
 
 		columns = [
 			(_("Name"), 250),
@@ -152,17 +144,21 @@ class ContactList(wx.Dialog):
 			for col, value in enumerate(values, start=1):
 				self.contactList.SetItem(i, col, value)
 
-			# SAVE THE OBJECT ON THE SECURE MAP
+			# GUARDA O OBJETO NO MAPA SEGURO
 			self._itemMap[i] = record
 
-			# SAVE THE INDEX IN LISTCTRL (only accepts integers!)
+			# GUARDA O ÍNDICE NO LISTCTRL (só aceita inteiros!)
 			self.contactList.SetItemData(i, i)
+
+	# ============================================================
 
 	def get_selected_record(self):
 		index = self.contactList.GetFirstSelected()
 		if index == -1:
 			return None
-		return self._itemMap.get(index) # SAFE RETURN
+		return self._itemMap.get(index)  # <===== 100% correto no NVDA
+
+	# ============================================================
 
 	def onNew(self, event):
 		dlg = AddEditRecDialog(gui.mainFrame)

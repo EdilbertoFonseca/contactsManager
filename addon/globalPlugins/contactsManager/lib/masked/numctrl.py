@@ -61,7 +61,7 @@ masked.NumCtrl:
 
   Here's the API::
 
-        from masked import NumCtrl
+        from wx.lib.masked import NumCtrl
 
         NumCtrl(
              parent, id = -1,
@@ -406,8 +406,8 @@ from sys import maxsize
 MAXINT = maxsize     # (constants should be in upper case)
 MININT = -maxsize-1
 
-from tools.dbg import Logger
-from masked import MaskedEditMixin, Field, BaseMaskedTextCtrl
+from wx.tools.dbg import Logger
+from wx.lib.masked import MaskedEditMixin, Field, BaseMaskedTextCtrl
 ##dbg = Logger()
 ##dbg(enable=1)
 

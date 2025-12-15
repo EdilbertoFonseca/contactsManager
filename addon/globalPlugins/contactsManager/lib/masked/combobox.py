@@ -22,11 +22,11 @@ function.  See maskededit module overview for how to configure the control.
 """
 
 import  wx
-from masked import *
+from wx.lib.masked import *
 
 # jmg 12/9/03 - when we cut ties with Py 2.2 and earlier, this would
 # be a good place to implement the 2.3 logger class
-from tools.dbg import Logger
+from wx.tools.dbg import Logger
 ##dbg = Logger()
 ##dbg(enable=1)
 

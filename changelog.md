@@ -1,1 +1,8 @@
-Refactored main.py and model.py in contactsManager to improve code clarity, update docstrings to use Python conventions, and simplify logic. Added a GitHub Actions workflow to fetch translations from Crowdin. Updated buildVars.py for new version and NVDA compatibility, and excluded 'lib' from pyproject.toml packaging.
+- Replace custom sqlite311 library with newer sqlite3 (64-bit only)
+- Remove old sqlite311 directory and its tests
+- Refactor masked control imports to use wx.lib.masked and wx.tools.dbg
+- Update csv.py to a newer implementation
+- Add __main__.py for sqlite3 CLI support
+- Fix import order and apply minor code cleanups across contactsManager addon
+
+BREAKING CHANGE: This add-on is no longer compatible with 32-bit versions of NVDA.

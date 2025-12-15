@@ -1,23 +1,23 @@
 # -*- coding: UTF-8 -*-
 
-"""
-Author: Edilberto Fonseca <edilberto.fonseca@outlook.com>
-Copyright: (C) 2025 Edilberto Fonseca
+# Description: Database modeling for Contacts Manager for NVDA.
 
-This file is covered by the GNU General Public License.
-See the file COPYING for more details or visit:
-https://www.gnu.org/licenses/gpl-2.0.html
+# Author: Edilberto Fonseca
+# Email: <edilberto.fonseca@outlook.com>
+# Copyright (C) 2022-2025 Edilberto Fonseca
+# This file is covered by the GNU General Public License.
+# See the file COPYING for more details or visit https://www.gnu.org/licenses/gpl-2.0.html.
 
-Created on: 30/11/2022.
-"""
+# Date of creation: 30/11/2022.
 
+# Imports necessary for the add-on to function.
 import os
 import sys
 
-import versionInfo
 from logHandler import log
 
-from .configPanel import db_config  # Imports the instance of the DatabaseConfig class
+from .configPanel import \
+	db_config  # Imports the instance of the DatabaseConfig class
 
 # Get the path to the root of the current add-on
 addonPath = os.path.dirname(__file__)
@@ -28,10 +28,7 @@ if libPath not in sys.path:
 	sys.path.insert(0, libPath)
 
 try:
-	if versionInfo.version_year < 2024:
-		import sqlite3 as sql
-	else:
-		import sqlite311 as sql
+	import sqlite3 as sql
 except ImportError as e:
 	log.error(f"Error importing module: {str(e)}")
 

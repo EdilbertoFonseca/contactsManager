@@ -282,8 +282,8 @@ import  copy
 
 import  wx
 
-from tools.dbg import Logger
-from masked import Field, BaseMaskedTextCtrl
+from wx.tools.dbg import Logger
+from wx.lib.masked import Field, BaseMaskedTextCtrl
 
 dbg = Logger()
 ##dbg(enable=0)
