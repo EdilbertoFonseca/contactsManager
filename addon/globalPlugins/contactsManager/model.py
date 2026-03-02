@@ -1,36 +1,18 @@
 # -*- coding: UTF-8 -*-
 
-# Description: Database modeling for Contacts Manager for NVDA.
+"""
+Author: Edilberto Fonseca <edilberto.fonseca@outlook.com>
+Copyright: (C) 2025 Edilberto Fonseca
 
-# Author: Edilberto Fonseca
-# Email: <edilberto.fonseca@outlook.com>
-# Copyright (C) 2022-2025 Edilberto Fonseca
-# This file is covered by the GNU General Public License.
-# See the file COPYING for more details or visit https://www.gnu.org/licenses/gpl-2.0.html.
+This file is covered by the GNU General Public License.
+See the file COPYING for more details or visit:
+https://www.gnu.org/licenses/gpl-2.0.html
 
-# Date of creation: 30/11/2022.
+Created on: 30/11/2022.
+"""
 
-# Imports necessary for the add-on to function.
-import os
-import sys
-
-from logHandler import log
-
-from .configPanel import \
-	db_config  # Imports the instance of the DatabaseConfig class
-
-# Get the path to the root of the current add-on
-addonPath = os.path.dirname(__file__)
-
-# Add the lib/ folder to sys.path (only once)
-libPath = os.path.join(addonPath, "lib")
-if libPath not in sys.path:
-	sys.path.insert(0, libPath)
-
-try:
-	import sqlite3 as sql
-except ImportError as e:
-	log.error(f"Error importing module: {str(e)}")
+from .configPanel import db_config  # Imports the instance of the DatabaseConfig class
+from .sqlLoader import sql
 
 
 class ObjectContact(object):
@@ -69,7 +51,7 @@ class Section:
 	connected = False
 
 	def __enter__(self):
-		"""Método de entrada para o gerenciador de contexto."""
+		"""Input method for the context manager."""
 		self.connect = sql.connect(db_config.get_current_database_path())
 		self.connect.row_factory = self.dict_factory # Adicionado aqui para consistência
 		self.cursor = self.connect.cursor()
@@ -77,16 +59,16 @@ class Section:
 		return self
 
 	def __exit__(self, exc_type, exc_val, exc_tb):
-		"""Método de saída para o gerenciador de contexto."""
+		"""Output method for the context manager."""
 		if self.connect:
 			self.connect.close()
 		self.connected = False
 		return False
 	
-	# Métodos connection e disconnect foram removidos.
+	# Connection and disconnect methods have been removed.
 
 	def execute(self, sql, parms=None):
-		"""Executa uma consulta SQL no banco de dados."""
+		"""Executes an SQL query on the database."""
 		if self.connected:
 			if parms is None:
 				self.cursor.execute(sql)
@@ -96,7 +78,7 @@ class Section:
 		return False
 
 	def executemany(self, sql, parms=None):
-		"""Executa várias consultas SQL no banco de dados."""
+		"""Executes multiple SQL queries against the database."""
 		if self.connected:
 			if parms is None:
 				self.cursor.executemany(sql)
@@ -106,7 +88,7 @@ class Section:
 		return False
 
 	def dict_factory(self, cursor, row):
-		"""Converte o resultado de uma consulta em um dicionário."""
+		"""Converts the result of a query to a dictionary."""
 		return {col[0]: row[idx] for idx, col in enumerate(cursor.description)}
 
 	def fetchall(self):
@@ -115,7 +97,7 @@ class Section:
 		return self.cursor.fetchall()
 
 	def persist(self):
-		"""Confirma as alterações feitas em uma transação de banco de dados."""
+		"""Commits changes made to a database transaction."""
 		if self.connected:
 			self.connect.commit()
 			return True
@@ -123,7 +105,7 @@ class Section:
 
 	@classmethod
 	def initDB(cls):
-		"""Verifica a existência do banco de dados e cria a tabela de contatos, se não existir."""
+		"""Checks the existence of the database and creates the contact table if it does not exist."""
 		with cls() as trans:
 			sqlCommand = """CREATE TABLE IF NOT EXISTS contacts(
 				id INTEGER PRIMARY KEY, name TEXT, cell TEXT, landline TEXT, email TEXT)"""

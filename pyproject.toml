@@ -21,6 +21,7 @@ exclude = [
 	".git",
 	"__pycache__",
 	"lib",
+	"lib64",
 ]
 
 [tool.ruff.format]

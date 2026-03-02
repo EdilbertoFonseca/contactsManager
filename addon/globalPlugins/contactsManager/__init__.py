@@ -18,8 +18,8 @@ import globalPluginHandler
 import globalVars
 import gui
 import wx
-from scriptHandler import script
 from logHandler import log
+from scriptHandler import script
 
 from .configPanel import ContactsManagerSettingsPanel
 from .main import ContactList

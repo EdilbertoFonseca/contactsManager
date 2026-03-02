@@ -1,3 +1,5 @@
+# changelog
+
 - Replace custom sqlite311 library with newer sqlite3 (64-bit only)
 - Remove old sqlite311 directory and its tests
 - Refactor masked control imports to use wx.lib.masked and wx.tools.dbg

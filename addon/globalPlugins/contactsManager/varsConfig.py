@@ -12,10 +12,14 @@ Created on: 24/05/2024
 """
 
 import os
+import struct
 
 import addonHandler
 import config
 from logHandler import log
+
+# Detect architecture
+is64 = struct.calcsize("P") * 8 == 64
 
 # Get the path to the root of the current add-on
 ADDON_PATH = os.path.dirname(__file__)

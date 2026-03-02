@@ -18,12 +18,14 @@ import addonHandler
 from logHandler import log
 
 from .model import ObjectContact, Section
-from .varsConfig import ADDON_PATH
+from .varsConfig import ADDON_PATH, is64
 
-# Get the path to the root of the current add-on
+
 # Add the lib/ folder to sys.path (only once)
-libPath = os.path.join(ADDON_PATH, "lib")
-if libPath not in sys.path:
+libFolder = "lib64" if is64 else "lib"
+libPath = os.path.join(ADDON_PATH, libFolder)
+
+if os.path.isdir(libPath) and libPath not in sys.path:
 	sys.path.insert(0, libPath)
 
 try:
