@@ -7,4 +7,4 @@
 - Add __main__.py for sqlite3 CLI support
 - Fix import order and apply minor code cleanups across contactsManager addon
 
-BREAKING CHANGE: This add-on is no longer compatible with 32-bit versions of NVDA.
+> Universal Compatibility: The add-on now works perfectly on both 32-bit and 64-bit versions of NVDA.
