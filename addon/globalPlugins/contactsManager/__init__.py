@@ -2,11 +2,17 @@
 
 """
 Author: Edilberto Fonseca <edilberto.fonseca@outlook.com>
-Copyright: (C) 2025 Edilberto Fonseca
+Copyright: (C) 2025 - 2026 Edilberto Fonseca
 
 This file is covered by the GNU General Public License.
 See the file COPYING for more details or visit:
 https://www.gnu.org/licenses/gpl-2.0.html
+
+-------------------------------------------------------------------------
+AI DISCLOSURE / NOTA DE IA:
+This project utilizes AI for code refactoring and logic suggestions.
+All AI-generated code was manually reviewed and tested by the author.
+-------------------------------------------------------------------------
 
 Created on: 30/11/2022
 """
@@ -58,9 +64,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	# Creating the constructor of the newly created GlobalPlugin class.
 	def __init__(self, *args, **kwargs):
 		super(GlobalPlugin, self).__init__(*args, **kwargs)
-		self.create_menu()
+		self.createMenu()
 
-	def create_menu(self):
+	def createMenu(self):
 		"""
 		Creates and adds the contact management menu to the main menu.
 
@@ -82,7 +88,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_onHelp, self.help)
 
 		# Save submenu item
-		self.contactsManagerMenuItem = self.toolsMenu.AppendSubMenu(self.mainMenu, _("&{}...".format(ADDON_SUMMARY)))
+		self.contactsManagerMenuItem = self.toolsMenu.AppendSubMenu(self.mainMenu, "&{}...".format(ADDON_SUMMARY))
 
 	def onContactsManager(self, event):
 		"""

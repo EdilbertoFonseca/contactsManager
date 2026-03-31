@@ -25,7 +25,7 @@ addon_info = AddonInfo(
 
 Shortcut Windows+Alt+L."""),
 	# version
-	addon_version="2025.6.2",
+	addon_version="2025.7.0-beta.1",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
 	addon_changelog=_("""improve code clarity and update docstrings."""),

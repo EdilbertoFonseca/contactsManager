@@ -41,15 +41,3 @@ def onInstall():
 			os.rename(absoluteDbPath, os.path.abspath(newDbPath))
 		except OSError as e:
 			messageBox(_(f"Error when renaming file: {e}"), _("Attention"))
-
-
-def onUninstall():
-	# Go through the configuration profiles and try to remove the 'Contacts Manager for NVDA' key
-	for key, value in list(config.conf._profileCache.items()):
-		try:
-			del config.conf._profileCache[key][ADDON_name]
-		except KeyError:
-			pass  # Ignore if key does not exist
-
-	# Save configuration changes
-	config.conf.save()

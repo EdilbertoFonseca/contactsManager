@@ -2,11 +2,17 @@
 
 """
 Author: Edilberto Fonseca <edilberto.fonseca@outlook.com>
-Copyright: (C) 2025 Edilberto Fonseca
+Copyright: (C) 2025 - 2026 Edilberto Fonseca
 
 This file is covered by the GNU General Public License.
 See the file COPYING for more details or visit:
 https://www.gnu.org/licenses/gpl-2.0.html
+
+-------------------------------------------------------------------------
+AI DISCLOSURE / NOTA DE IA:
+This project utilizes AI for code refactoring and logic suggestions.
+All AI-generated code was manually reviewed and tested by the author.
+-------------------------------------------------------------------------
 
 Created on: 30/11/2022.
 """
@@ -17,7 +23,7 @@ import sys
 import versionInfo
 from logHandler import log
 
-from .configPanel import db_config  # Imports the instance of the DatabaseConfig class
+from .configPanel import dbConfig  # Imports the instance of the DatabaseConfig class
 
 # Get the path to the root of the current add-on
 addonPath = os.path.dirname(__file__)
@@ -73,8 +79,8 @@ class Section:
 
 	def __enter__(self):
 		"""Método de entrada para o gerenciador de contexto."""
-		self.connect = sql.connect(db_config.get_current_database_path())
-		self.connect.row_factory = self.dict_factory # Adicionado aqui para consistência
+		self.connect = sql.connect(dbConfig.getCurrentDatabasePath())
+		self.connect.row_factory = self.dictFactory # Adicionado aqui para consistência
 		self.cursor = self.connect.cursor()
 		self.connected = True
 		return self
@@ -85,8 +91,8 @@ class Section:
 			self.connect.close()
 		self.connected = False
 		return False
-	
-	# Métodos connection e disconnect foram removidos.
+
+	# Connection and disconnect methods have been removed.
 
 	def execute(self, sql, parms=None):
 		"""Executa uma consulta SQL no banco de dados."""
@@ -98,7 +104,7 @@ class Section:
 			return True
 		return False
 
-	def executemany(self, sql, parms=None):
+	def executeMany(self, sql, parms=None):
 		"""Executa várias consultas SQL no banco de dados."""
 		if self.connected:
 			if parms is None:
@@ -108,7 +114,7 @@ class Section:
 			return True
 		return False
 
-	def dict_factory(self, cursor, row):
+	def dictFactory(self, cursor, row):
 		"""Converte o resultado de uma consulta em um dicionário."""
 		return {col[0]: row[idx] for idx, col in enumerate(cursor.description)}
 

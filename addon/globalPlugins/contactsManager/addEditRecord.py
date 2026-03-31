@@ -2,11 +2,17 @@
 
 """
 Author: Edilberto Fonseca <edilberto.fonseca@outlook.com>
-Copyright: (C) 2025 Edilberto Fonseca
+Copyright: (C) 2025 - 2026 Edilberto Fonseca
 
 This file is covered by the GNU General Public License.
 See the file COPYING for more details or visit:
 https://www.gnu.org/licenses/gpl-2.0.html
+
+-------------------------------------------------------------------------
+AI DISCLOSURE / NOTA DE IA:
+This project utilizes AI for code refactoring and logic suggestions.
+All AI-generated code was manually reviewed and tested by the author.
+-------------------------------------------------------------------------
 
 Created on: 30/11/2022.
 """
@@ -40,7 +46,7 @@ addonHandler.initTranslation()
 # Global Constants for Regex
 EMAIL_REGEX = r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,63}$"
 
-def validate_fields(data):
+def validateFields(data):
 	"""
 	Validates the fields of the contact form.
 
@@ -189,12 +195,12 @@ Args:
 			"email": self.textEmail.GetValue().strip()
 		}
 
-		errors = validate_fields(contactDict)
+		errors = validateFields(contactDict)
 		if errors:
 			# Take the first error and display the message
 			field, message = next(iter(errors.items()))
-			self.show_message(message, _("Error"))
-			self.focus_field(field)
+			self.showMessage(message, _("Error"))
+			self.focusField(field)
 			return None
 
 		return contactDict
@@ -217,20 +223,20 @@ Args:
 			return
 
 		data = {"contacts": contactDict}
-		success, error = self.save_contact_to_db(data)
+		success, error = self.saveContactToDb(data)
 
 		if success:
 			message = _("Contact added, want to add a new contact?")
 			caption = _("Success")
 			user_response = gui.messageBox(message, caption, style=wx.ICON_QUESTION | wx.YES_NO)
 			if user_response == wx.YES:
-				self.clear_form()
+				self.clearForm()
 			else:
 				self.Destroy()
 		else:
-			self.show_message(_("Error adding contact: {}").format(error), _("Error"), wx.ICON_ERROR)
+			self.showMessage(_("Error adding contact: {}").format(error), _("Error"), wx.ICON_ERROR)
 
-	def save_contact_to_db(self, data):
+	def saveContactToDb(self, data):
 		"""
 		Save a contact in the database.
 
@@ -241,26 +247,26 @@ Args:
 			tuple: A boolean indicating success or failure, and an error message in case of failure.
 		"""
 		try:
-			core.add_record(data)
+			core.addRecord(data)
 			return True, None
 		except Exception as e:
 			return False, str(e)
 
-	def focus_field(self, field_name):
+	def focusField(self, fieldName):
 		"""
 		Defines the focus on the field corresponding to the name of the provided field.
 
 		Args:
 			field_name (str): Name of the field to be focused.
 		"""
-		focus_mapping = {
+		focusMapping = {
 			"name": self.textName,
 			"cell": self.textCell,
 			"landline": self.textLandline,
 			"email": self.textEmail,
 		}
-		if field_name in focus_mapping:
-			focus_mapping[field_name].SetFocus()
+		if fieldName in focusMapping:
+			focusMapping[fieldName].SetFocus()
 
 	def onEdit(self):
 		"""
@@ -271,11 +277,11 @@ Args:
 			return
 
 		try:
-			core.edit_record(self.selectedRow.id, contactDict)
-			self.show_message(_("Contact edited!"), _("Success"), wx.ICON_INFORMATION)
+			core.editRecord(self.selectedRow.id, contactDict)
+			self.showMessage(_("Contact edited!"), _("Success"), wx.ICON_INFORMATION)
 			self.Destroy()
 		except Exception as e:
-			self.show_message(_("Error editing contact: {}").format(str(e)), _("Error"), wx.ICON_ERROR)
+			self.showMessage(_("Error editing contact: {}").format(str(e)), _("Error"), wx.ICON_ERROR)
 
 	def handleRecord(self, event):
 		"""
@@ -286,7 +292,7 @@ Args:
 		else:
 			self.onEdit()
 
-	def clear_form(self):
+	def clearForm(self):
 		"""
 		Cleans the fields of the form and position the focus on the first field.
 		"""
@@ -297,20 +303,18 @@ Args:
 		self.textEmail.SetValue("")
 		self.textName.SetFocus()
 
-	def show_message(self, message, caption=_("Message"), style=wx.OK | wx.ICON_INFORMATION):
+	def showMessage(self, message, caption=None, style=wx.OK | wx.ICON_INFORMATION):
 		"""
 		Displays a message to the user in a dialog box.
-
-		Args:
-			message (str): The message to be displayed.
-			caption (str, optional): The title of the dialog box. The default is ("Message").
-			style (int, optional): The style of the dialog box,
-			combining flags like wx.OK,
-			wx.CANCEL, wx.ICON INFORMATION, etc. The default is wx.OK | wx.ICON INFORMATION.
 		"""
+
+		if caption is None:
+			# translators: Title of message dialog box.
+			caption = _("Attention")
+
 		gui.messageBox(message, caption, style)
 
-	# Cancels the dialog.
+		# Cancels the dialog.
 	def onClose(self, event):
 		"""
 		closes the window.
