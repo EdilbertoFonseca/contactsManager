@@ -2,11 +2,17 @@
 
 """
 Author: Edilberto Fonseca <edilberto.fonseca@outlook.com>
-Copyright: (C) 2025 Edilberto Fonseca
+Copyright: (C) 2025 - 2026 Edilberto Fonseca
 
 This file is covered by the GNU General Public License.
 See the file COPYING for more details or visit:
 https://www.gnu.org/licenses/gpl-2.0.html
+
+-------------------------------------------------------------------------
+AI DISCLOSURE / NOTA DE IA:
+This project utilizes AI for code refactoring and logic suggestions.
+All AI-generated code was manually reviewed and tested by the author.
+-------------------------------------------------------------------------
 
 Created on: 24/01/2023.
 """
@@ -22,7 +28,7 @@ from gui import guiHelper
 from gui.settingsDialogs import SettingsPanel
 from logHandler import log
 
-from .varsConfig import ADDON_SUMMARY, initConfiguration, ourAddon
+from .varsConfig import ADDON_SUMMARY, initConfiguration, ourAddon, countryCode
 
 # Initialize translation support
 addonHandler.initTranslation()
@@ -33,62 +39,62 @@ initConfiguration()
 
 class DatabaseConfig:
 
-	def __init__(self, default_path):
-		self.default_path = default_path
-		self.first_database = default_path
-		self.alt_database = ""
-		self.index_db = 0
-		self.load_config()
+	def __init__(self, defaultPath):
+		self.defaultPath = defaultPath
+		self.firstDatabase = defaultPath
+		self.altDatabase = ""
+		self.indexDb = 0
+		self.loadConfig()
 
-	def load_config(self):
+	def loadConfig(self):
 		try:
-			self.index_db = int(config.conf[ourAddon.name].get("selectedDBIndex", 0))
-			if self.index_db == 0:
-				self.first_database = config.conf[ourAddon.name].get("currentDBPath", self.default_path)
+			self.indexDb = int(config.conf[ourAddon.name].get("selectedDBIndex", 0))
+			if self.indexDb == 0:
+				self.firstDatabase = config.conf[ourAddon.name].get("currentDBPath", self.defaultPath)
 			else:
-				self.alt_database = config.conf[ourAddon.name].get("alternateDBPath", self.default_path)
+				self.altDatabase = config.conf[ourAddon.name].get("alternateDBPath", self.defaultPath)
 		except ValueError:
 			log.error("Invalid value for database index in configuration, using default.")
 		except KeyError:
 			log.warning("Database configuration not found, using default paths.")
 
-	def save_config(self):
-		config.conf[ourAddon.name]["currentDBPath"] = self.first_database
-		config.conf[ourAddon.name]["alternateDBPath"] = self.alt_database
-		config.conf[ourAddon.name]["selectedDBIndex"] = str(self.index_db)
+	def saveConfig(self):
+		config.conf[ourAddon.name]["currentDBPath"] = self.firstDatabase
+		config.conf[ourAddon.name]["alternateDBPath"] = self.altDatabase
+		config.conf[ourAddon.name]["selectedDBIndex"] = str(self.indexDb)
 
-	def set_database_path(self, new_path, is_first=True):
-		if is_first:
-			self.first_database = new_path
+	def setDatabasePath(self, newPath, isFirst=True):
+		if isFirst:
+			self.firstDatabase = newPath
 		else:
-			self.alt_database = new_path
+			self.altDatabase = newPath
 
-	def get_current_database_path(self):
-		return self.first_database if self.index_db == 0 else self.alt_database
+	def getCurrentDatabasePath(self):
+		return self.firstDatabase if self.indexDb == 0 else self.altDatabase
 
-	def update_database_path(self, new_path):
+	def updateDatabasePath(self, newPath):
 		"""
 		Updates the database currentDBPath and renames the old file if necessary.
 		"""
-		if self.index_db == 0:
-			if os.path.exists(new_path):
-				self.set_database_path(new_path, is_first=True)
+		if self.indexDb == 0:
+			if os.path.exists(newPath):
+				self.setDatabasePath(newPath, isFirst=True)
 			else:
-				os.rename(self.first_database, new_path)
-				self.set_database_path(new_path, is_first=True)
+				os.rename(self.firstDatabase, newPath)
+				self.setDatabasePath(newPath, isFirst=True)
 		else:
-			if os.path.exists(new_path):
-				self.set_database_path(new_path, is_first=False)
+			if os.path.exists(newPath):
+				self.setDatabasePath(newPath, isFirst=False)
 			else:
-				if not self.alt_database:
-					self.set_database_path(new_path, is_first=False)
+				if not self.altDatabase:
+					self.setDatabasePath(newPath, isFirst=False)
 				else:
-					os.rename(self.alt_database, new_path)
-					self.set_database_path(new_path, is_first=False)
+					os.rename(self.altDatabase, newPath)
+					self.setDatabasePath(newPath, isFirst=False)
 
 
 # DatabaseConfig class instance
-db_config = DatabaseConfig(default_path=os.path.join(os.path.dirname(__file__), "database.db"))
+dbConfig = DatabaseConfig(defaultPath=os.path.join(os.path.dirname(__file__), "database.db"))
 
 
 class ContactsManagerSettingsPanel(SettingsPanel):
@@ -99,43 +105,86 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 		settingsSizerHelper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
 
 		# Translators: Formatting text for phone fields.
-		phoneFormattingBoxSizer = wx.StaticBoxSizer(wx.HORIZONTAL, self, label=_("Add mask for phone fields:"))
+		phoneFormattingBoxSizer = wx.StaticBoxSizer(
+			wx.HORIZONTAL,
+			self,
+			label=_("Add mask for phone fields:")
+		)
+
 		phoneFormattingBox = phoneFormattingBoxSizer.GetStaticBox()
 		phoneFormattingGroup = guiHelper.BoxSizerHelper(self, sizer=phoneFormattingBoxSizer)
 		settingsSizerHelper.addItem(phoneFormattingGroup)
 
-		# Cell field formatting.
-		wx.StaticText(phoneFormattingBox, label=_("Cell phone"))
-		self.textCellPhone = wx.TextCtrl(phoneFormattingBox, value="")
-		self.textCellPhone.SetValue(config.conf[ourAddon.name].get("formatCellPhone", ""))
-
-		# Formatting the landline phone field.
-		wx.StaticText(phoneFormattingBox, label=_("Landline"))
-		self.textLandline = wx.TextCtrl(phoneFormattingBox, value="")
-		self.textLandline.SetValue(config.conf[ourAddon.name].get("formatLandline", ""))
-
-		self.resetRecords = wx.CheckBox(
-			# Translators: Checkbox text to display scheduler reset button.
-			self, label=_("Show option &to delete entire calendar")
+		# Country code
+		choices = [f"{code} - {name}" for code, name in countryCode]
+		self.countryCode = phoneFormattingGroup.addLabeledControl(
+			_("Country code"),
+	wx.ComboBox,
+	choices=choices,
+			style=wx.CB_READONLY
 		)
-		self.resetRecords.SetValue(config.conf[ourAddon.name].get("resetRecords", False))
-		settingsSizerHelper.addItem(self.resetRecords)
+		savedCode = config.conf[ourAddon.name].get("countryCode", "55")
 
-		# Button to import CSV files.
-		self.importCSV = wx.CheckBox(
-			# Translators: Checkbox text to display import csv files to database.
-			self, label=_("Show &import CSV file button")
-		)
-		self.importCSV.SetValue(config.conf[ourAddon.name].get("importCSV", False))
-		settingsSizerHelper.addItem(self.importCSV)
+		for i, (code, name) in enumerate(countryCode):
+			if code == savedCode:
+				self.countryCode.SetSelection(i)
+				break
 
-		# Button to export CSV files.
-		self.exportCSV = wx.CheckBox(
-			# Translators: Checkbox text to display export csv files to database.
-			self, label=_("Show e&xport CSV file button")
+		# Cell phone
+		self.textCellPhone = phoneFormattingGroup.addLabeledControl(
+			_("Cell phone"),
+			wx.TextCtrl
 		)
-		self.exportCSV.SetValue(config.conf[ourAddon.name].get("exportCSV", False))
-		settingsSizerHelper.addItem(self.exportCSV)
+		self.textCellPhone.SetValue(
+			config.conf[ourAddon.name].get("formatCellPhone", "")
+		)
+
+		# Landline
+		self.textLandline = phoneFormattingGroup.addLabeledControl(
+			_("Landline"),
+			wx.TextCtrl
+		)
+		self.textLandline.SetValue(
+			config.conf[ourAddon.name].get("formatLandline", "")
+		)
+
+		# Group for buttons
+		buttonsBoxSizer = wx.StaticBoxSizer(
+			wx.VERTICAL,
+			self,
+			# Translators: Group for buttons
+			label=_("Options")
+		)
+
+		buttonsBox = buttonsBoxSizer.GetStaticBox()
+		buttonsGroup = guiHelper.BoxSizerHelper(self, sizer=buttonsBoxSizer)
+
+		settingsSizerHelper.addItem(buttonsGroup)
+
+		# Buttons within the group
+		self.resetRecords = buttonsGroup.addItem(
+			# Translators: Label for the checkbox to show the option to delete the entire calendar.
+			wx.CheckBox(buttonsBox, label=_("Show option &to delete entire calendar"))
+		)
+		self.resetRecords.SetValue(
+			config.conf[ourAddon.name].get("resetRecords", False)
+		)
+
+		self.importCSV = buttonsGroup.addItem(
+			# Translators: Label for the checkbox to show the import CSV file button.
+			wx.CheckBox(buttonsBox, label=_("Show &import CSV file button"))
+		)
+		self.importCSV.SetValue(
+			config.conf[ourAddon.name].get("importCSV", False)
+		)
+
+		self.exportCSV = buttonsGroup.addItem(
+			# Translators: Label for the checkbox to show the export CSV file button.
+			wx.CheckBox(buttonsBox, label=_("Show e&xport CSV file button"))
+		)
+		self.exportCSV.SetValue(
+			config.conf[ourAddon.name].get("exportCSV", False)
+		)
 
 		pathBoxSizer = wx.StaticBoxSizer(
 			# Translators: Name of combobox with the agenda files currentDBPath.
@@ -145,9 +194,9 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 		pathGroup = guiHelper.BoxSizerHelper(self, sizer=pathBoxSizer)
 		settingsSizerHelper.addItem(pathGroup)
 
-		self.pathList = [db_config.first_database, db_config.alt_database]
+		self.pathList = [dbConfig.firstDatabase, dbConfig.altDatabase]
 		self.pathNameCB = pathGroup.addLabeledControl("", wx.Choice, choices=self.pathList)
-		self.pathNameCB.SetSelection(db_config.index_db)
+		self.pathNameCB.SetSelection(dbConfig.indexDb)
 
 		# Translators: This is the label for the button used to add or change a contactsManager.db location.
 		changePathBtn = wx.Button(pathBox, label=_("&Select or add a directory"))
@@ -175,11 +224,11 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 		if dlg.ShowModal() == wx.ID_OK:
 			fname = dlg.GetPath()
 			index = self.pathNameCB.GetSelection()
-			db_config.index_db = index
-			db_config.update_database_path(fname)
+			dbConfig.indexDb = index
+			dbConfig.updateDatabasePath(fname)
 
 			# Update the combobox choices and selection
-			self.pathList = [db_config.first_database, db_config.alt_database]
+			self.pathList = [dbConfig.firstDatabase, dbConfig.altDatabase]
 			self.pathNameCB.Set(self.pathList)
 			self.pathNameCB.SetSelection(index)
 
@@ -195,6 +244,12 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 		Saves the options to the NVDA configuration file.
 		"""
 
+		selection = self.countryCode.GetSelection()
+
+		if selection != wx.NOT_FOUND:
+			code = countryCode[selection][0]
+
+		config.conf[ourAddon.name]["countryCode"] = code
 		config.conf[ourAddon.name]["formatCellPhone"] = self.textCellPhone.GetValue()
 		config.conf[ourAddon.name]["formatLandline"] = self.textLandline.GetValue()
 		config.conf[ourAddon.name]["resetRecords"] = self.resetRecords.GetValue()
@@ -202,8 +257,8 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 		config.conf[ourAddon.name]["exportCSV"] = self.exportCSV.GetValue()
 
 		# Update selection index and save settings
-		db_config.index_db = self.pathNameCB.GetSelection()
-		db_config.save_config()
+		dbConfig.indexDb = self.pathNameCB.GetSelection()
+		dbConfig.saveConfig()
 
 		# Reactivate profiles triggers
 		config.conf.enableProfileTriggers()

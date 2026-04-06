@@ -2,11 +2,17 @@
 
 """
 Author: Edilberto Fonseca <edilberto.fonseca@outlook.com>
-Copyright: (C) 2025 Edilberto Fonseca
+Copyright: (C) 2025 - 2026 Edilberto Fonseca
 
 This file is covered by the GNU General Public License.
 See the file COPYING for more details or visit:
 https://www.gnu.org/licenses/gpl-2.0.html
+
+-------------------------------------------------------------------------
+AI DISCLOSURE / NOTA DE IA:
+This project utilizes AI for code refactoring and logic suggestions.
+All AI-generated code was manually reviewed and tested by the author.
+-------------------------------------------------------------------------
 
 Created on: 30/11/2022.
 """
@@ -33,7 +39,8 @@ except ImportError as e:
 
 # Initialize translation support
 addonHandler.initTranslation()
-def get_all_records():
+
+def getAllRecords():
 	"""
 	Function that retrieves all data from the database.
 
@@ -47,14 +54,14 @@ def get_all_records():
 	with Section() as trans:
 		trans.execute("SELECT * FROM contacts ORDER BY name ASC")
 		results = trans.fetchall()
-	return convert_results(results)
+	return convertResults(results)
 
 
-def convert_results(results):
+def convertResults(results):
 	"""
 	Converts the results to `ObjectContact` objects.
 
-	Esta função recebe uma lista de resultados de codatabase query, where each result is a dictionary,
+	This function receives a list of results from codatabase query, where each result is a dictionary,
 	and converts these results into `ObjectContact` objects.
 
 	Args:
@@ -69,7 +76,7 @@ def convert_results(results):
 	return rows
 
 
-def add_record(data):
+def addRecord(data):
 	"""
 	Inserts new records into the database.
 
@@ -91,7 +98,7 @@ def add_record(data):
 		trans.persist()
 
 
-def search_records(filterChoice, keyword):
+def searchRecords(filterChoice, keyword):
 	"""
 	Searches for records in the database based on the chosen filter and the keyword provided by the user.
 
@@ -117,14 +124,14 @@ def search_records(filterChoice, keyword):
 	}
 	query = query_map.get(filterChoice)
 	if not query:
-		# Lidar com erro ou retornar uma lista vazia
+		# Handle error or return an empty list
 		return []
 	with Section() as trans:
 		trans.execute(query, ('%' + keyword + '%',))
 		results = trans.fetchall()
-	return convert_results(results)
+	return convertResults(results)
 
-def edit_record(ID, row):
+def editRecord(ID, row):
 	"""
 	Function to update records in the database.
 
@@ -159,7 +166,7 @@ def delete(id):
 		trans.persist()
 
 
-def reset_record():
+def resetRecord():
 	"""
 	Delete all records from the database.
 	"""
@@ -168,7 +175,7 @@ def reset_record():
 		trans.persist()
 
 
-def import_csv_to_db(mypath):
+def importCsvToDb(mypath):
 	"""
 	Imports data from a CSV file into the database.
 
@@ -190,24 +197,24 @@ def import_csv_to_db(mypath):
 				file.seek(0)
 				dialect = csv.Sniffer().sniff(sample)
 				contents = csv.reader(file, dialect=dialect)
-				insert_records = """
+				insertRecords = """
 				INSERT INTO contacts(name, cell, landline, email)
 				SELECT ?, ?, ?, ?
 				WHERE NOT EXISTS (
 					SELECT 1 FROM contacts WHERE name = ? AND cell = ? AND landline = ? AND email = ?
 				)"""
 
-				data_to_insert = [
+				dataToInsert = [
 					(name, cell, landline, email, name, cell, landline, email)
 					for name, cell, landline, email in contents
 				]
-				trans.executemany(insert_records, data_to_insert)
+				trans.executeMany(insertRecords, dataToInsert)
 			trans.persist()  # Persist only after successful execution
 		except (FileNotFoundError, csv.Error, UnicodeDecodeError) as e:
 			log.error(f"Error importing data: {str(e)}")
 			raise  # Re-raise the exception after logging
 
-def export_db_to_csv(mypath):
+def exportDbToCsv(mypath):
 	try:
 		with Section() as trans:
 			trans.execute("SELECT * FROM contacts")
@@ -228,7 +235,7 @@ def export_db_to_csv(mypath):
 		# The exception must be relaunched to notify the interface
 		raise
 
-def count_records():
+def countRecords():
 	"""
 It counts the total number of records in the database safely.
 
