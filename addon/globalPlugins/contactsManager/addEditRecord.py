@@ -135,7 +135,10 @@ class AddEditRecDialog(wx.Dialog):
 		mainSizer.Add(viewSizer, wx.EXPAND)
 		mainSizer.Add(buttonSizer, 0, wx.CENTER)
 		self.panel.SetSizerAndFit(mainSizer)
+
 		# Binding EVT_TEXT_ENTER events to corresponding methods
+		self.textCell.Bind(wx.EVT_CHAR_HOOK, self.onPasteAndClean)
+		self.textLandline.Bind(wx.EVT_CHAR_HOOK, self.onPasteAndClean)
 		self.textName.Bind(wx.EVT_TEXT_ENTER, self.onFocusName)
 		self.textCell.Bind(wx.EVT_TEXT_ENTER, self.onFocusCell)
 		self.textLandline.Bind(wx.EVT_TEXT_ENTER, self.onFocusLandline)
@@ -323,3 +326,28 @@ Args:
 			event (wx.Event): Event triggered by the cancel button.
 		"""
 		self.Destroy()
+
+	def onPasteAndClean(self, event):
+		# Detects if the user is trying to paste (Ctrl+V)
+		if event.GetKeyCode() == ord('V') and event.ControlDown():
+			# Identifies which field the user is trying to paste into
+			currentField = event.GetEventObject()
+
+			# Opens the Windows clipboard
+			if not wx.TheClipboard.IsOpened():
+				wx.TheClipboard.Open()
+				data = wx.TextDataObject()
+				success = wx.TheClipboard.GetData(data)
+				wx.TheClipboard.Close()
+
+				if success:
+					clipboardText = data.GetText()
+					# Remove all non-digit characters from the clipboard text
+					cleanText = re.sub(r'\D', '', clipboardText)
+
+					# Inserts only the cleaned numbers into the focused field
+					currentField.SetValue(cleanText)
+					return # Prevents the default paste action from occurring, since we've already handled it.
+
+		# If it's not Ctrl+V, let other keys (arrows, numbers, backspace) pass through
+		event.Skip()
