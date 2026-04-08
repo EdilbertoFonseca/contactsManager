@@ -1,365 +1,453 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 'contactManager' '2025.5.1'\n"
-"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2025-06-28 23:47-0300\n"
-"PO-Revision-Date: 2025-06-28 23:55-0300\n"
+"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
+"POT-Creation-Date: 2026-04-06 13:27+0000\n"
+"PO-Revision-Date: 2026-04-07 10:29+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.9\n"
 "X-Poedit-Basepath: .\n"
 
-#: addon\installTasks.py:45
+#: addon/installTasks.py:43
 #, python-brace-format
 msgid "Error when renaming file: {e}"
 msgstr "Помилка під час перейменування файлу: {e}"
 
-#. Translators: Message displayed to the user in case of errors when importing the CSV file
-#. Translators: Message displayed to the user in case of errors when exporting the CSV file
-#: addon\installTasks.py:45 addon\globalPlugins\contactsManager\main.py:207
-#: addon\globalPlugins\contactsManager\main.py:266
-#: addon\globalPlugins\contactsManager\main.py:274
-#: addon\globalPlugins\contactsManager\main.py:293
-#: addon\globalPlugins\contactsManager\main.py:301
-#: addon\globalPlugins\contactsManager\main.py:322
-#: addon\globalPlugins\contactsManager\main.py:326
+#. translators: Title of message dialog box.
+#: addon/installTasks.py:43 addon/globalPlugins/contactsManager/main.py:230
+#: addon/globalPlugins/contactsManager/main.py:241
+#: addon/globalPlugins/contactsManager/main.py:286
+#: addon/globalPlugins/contactsManager/main.py:336
+#: addon/globalPlugins/contactsManager/addEditRecord.py:316
 msgid "Attention"
 msgstr "Увага"
 
-#: addon\globalPlugins\contactsManager\__init__.py:70
-#: addon\globalPlugins\contactsManager\__init__.py:107
-msgid "&Contacts Manager"
-msgstr "&Менеджер контактів"
+#: addon/globalPlugins/contactsManager/main.py:42
+msgid "An instance of {} is already open."
+msgstr "Екземпляр {} уже відкрито."
 
-#: addon\globalPlugins\contactsManager\__init__.py:80
+#: addon/globalPlugins/contactsManager/main.py:75
+msgid "Search for: "
+msgstr "Пошук за: "
+
+#: addon/globalPlugins/contactsManager/main.py:76
+#: addon/globalPlugins/contactsManager/main.py:77
+#: addon/globalPlugins/contactsManager/main.py:146
+#: addon/globalPlugins/contactsManager/controller.py:120
+msgid "Name"
+msgstr "Ім'я"
+
+#: addon/globalPlugins/contactsManager/main.py:76
+#: addon/globalPlugins/contactsManager/main.py:147
+#: addon/globalPlugins/contactsManager/configPanel.py:135
+#: addon/globalPlugins/contactsManager/controller.py:121
+msgid "Cell phone"
+msgstr "Мобільний телефон"
+
+#: addon/globalPlugins/contactsManager/main.py:76
+#: addon/globalPlugins/contactsManager/main.py:148
+#: addon/globalPlugins/contactsManager/configPanel.py:144
+#: addon/globalPlugins/contactsManager/controller.py:122
+msgid "Landline"
+msgstr "Стаціонарний"
+
+#: addon/globalPlugins/contactsManager/main.py:76
+#: addon/globalPlugins/contactsManager/main.py:149
+#: addon/globalPlugins/contactsManager/controller.py:123
+msgid "Email"
+msgstr "Електронна пошта"
+
+#: addon/globalPlugins/contactsManager/main.py:80
+msgid "&Search"
+msgstr "&Пошук"
+
+#. Buttons
+#: addon/globalPlugins/contactsManager/main.py:87
+msgid "&New"
+msgstr "&Додати"
+
+#: addon/globalPlugins/contactsManager/main.py:88
+msgid "&Edit"
+msgstr "&Редагувати"
+
+#: addon/globalPlugins/contactsManager/main.py:89
+msgid "&WhatsApp"
+msgstr "&WhatsApp"
+
+#: addon/globalPlugins/contactsManager/main.py:90
+msgid "&Remove"
+msgstr "&Видалити"
+
+#: addon/globalPlugins/contactsManager/main.py:91
+msgid "Refres&h"
+msgstr "&Оновити"
+
+#: addon/globalPlugins/contactsManager/main.py:92
+msgid "&Import csv..."
+msgstr "&Імпортувати CSV..."
+
+#: addon/globalPlugins/contactsManager/main.py:93
+msgid "Ex&port csv..."
+msgstr "Екс&портувати CSV..."
+
+#: addon/globalPlugins/contactsManager/main.py:94
+msgid "&Delete all records."
+msgstr "&Видалити всі записи."
+
+#: addon/globalPlugins/contactsManager/main.py:95
+msgid "E&xit"
+msgstr "В&ихід"
+
+#. translators: Message shown when no record is selected
+#: addon/globalPlugins/contactsManager/main.py:183
+#: addon/globalPlugins/contactsManager/main.py:195
+#: addon/globalPlugins/contactsManager/main.py:227
+msgid "No records selected!"
+msgstr "Записи не вибрано!"
+
+#: addon/globalPlugins/contactsManager/main.py:183
+#: addon/globalPlugins/contactsManager/main.py:195
+#: addon/globalPlugins/contactsManager/main.py:227
+#: addon/globalPlugins/contactsManager/main.py:281
+#: addon/globalPlugins/contactsManager/addEditRecord.py:205
+#: addon/globalPlugins/contactsManager/addEditRecord.py:240
+#: addon/globalPlugins/contactsManager/addEditRecord.py:287
+msgid "Error"
+msgstr "Помилка"
+
+#: addon/globalPlugins/contactsManager/main.py:185
+msgid "To edit"
+msgstr "Для редагування"
+
+#: addon/globalPlugins/contactsManager/main.py:201
+msgid "The cell phone field for {} is empty."
+msgstr "Поле «Номер мобільного телефону» для {} порожнє."
+
+#. translators: Message shown when contacting a record via WhatsApp
+#: addon/globalPlugins/contactsManager/main.py:217
+msgid "Contacting {} via WhatsApp"
+msgstr "Зв'язатися з {} через WhatsApp"
+
+#: addon/globalPlugins/contactsManager/main.py:229
+msgid "Do you want to delete the selected record?"
+msgstr "Ви бажаєте видалити вибраний запис?"
+
+#: addon/globalPlugins/contactsManager/main.py:233
+msgid "Record deleted!"
+msgstr "Запис видалено!"
+
+#: addon/globalPlugins/contactsManager/main.py:241
+msgid "The search field is empty!"
+msgstr "Поле пошуку порожнє!"
+
+#: addon/globalPlugins/contactsManager/main.py:248
+msgid "No contacts found matching the search criteria."
+msgstr "Не знайдено контактів, що відповідають критеріям пошуку."
+
+#: addon/globalPlugins/contactsManager/main.py:258
+msgid "import csv file"
+msgstr "імпорт файлу csv"
+
+#: addon/globalPlugins/contactsManager/main.py:262
+msgid "File imported successfully!"
+msgstr "Файл успішно імпортовано!"
+
+#: addon/globalPlugins/contactsManager/main.py:268
+msgid "export csv file"
+msgstr "експорт файлу csv"
+
+#: addon/globalPlugins/contactsManager/main.py:273
+msgid "File exported successfully!"
+msgstr "Файл успішно експортовано!"
+
+#: addon/globalPlugins/contactsManager/main.py:281
+msgid "Error counting records."
+msgstr "Помилка підрахунку записів."
+
+#: addon/globalPlugins/contactsManager/main.py:284
+msgid "The agenda is already empty!"
+msgstr "Порядок денний вже порожній!"
+
+#: addon/globalPlugins/contactsManager/main.py:286
+msgid "Erase ALL records?"
+msgstr "Стерти ВСІ записи?"
+
+#: addon/globalPlugins/contactsManager/main.py:289
+msgid "Agenda deleted!"
+msgstr "Телефонна книга видалена!"
+
+#: addon/globalPlugins/contactsManager/main.py:299
+msgid "Message"
+msgstr "Повідомлення"
+
+#: addon/globalPlugins/contactsManager/main.py:364
+msgid "Updated records!"
+msgstr "Оновлені записи!"
+
+#: addon/globalPlugins/contactsManager/__init__.py:81
+msgid "&Contact List"
+msgstr "&Список контактів"
+
+#: addon/globalPlugins/contactsManager/__init__.py:84
 msgid "&Settings"
 msgstr "&Налаштування"
 
-#: addon\globalPlugins\contactsManager\__init__.py:90
+#: addon/globalPlugins/contactsManager/__init__.py:87
 msgid "&Help"
 msgstr "&Довідка"
 
 #. Translators: Title of contact list dialog box.
-#: addon\globalPlugins\contactsManager\__init__.py:117
+#: addon/globalPlugins/contactsManager/__init__.py:101
 msgid "Contact list."
 msgstr "Список контактів."
 
 #. Translators: Text displayed in NVDA help.
-#: addon\globalPlugins\contactsManager\__init__.py:127
+#: addon/globalPlugins/contactsManager/__init__.py:111
 msgid "Displays a window with all contacts registered in the Contacts Manager."
 msgstr ""
 "Показує діалог з усіма контактами, зареєстрованими в менеджері контактів."
 
 #. Translators: Opens the Contacts Manager configuration menu
-#: addon\globalPlugins\contactsManager\__init__.py:137
+#: addon/globalPlugins/contactsManager/__init__.py:121
 msgid "Opens Contacts Manager add-on settings"
 msgstr "Відкриває налаштування додатка Менеджера контактів"
 
 #. Translators: Text displayed in NVDA help.
-#: addon\globalPlugins\contactsManager\__init__.py:152
+#: addon/globalPlugins/contactsManager/__init__.py:136
 msgid "Opens the Contacts Manager add-on help page."
 msgstr "Відкриває довідкову сторінку менеджера контактів."
 
-#: addon\globalPlugins\contactsManager\addEditRecord.py:45
-msgid "Add"
-msgstr "Додати"
+#: addon/globalPlugins/contactsManager/addEditRecord.py:64
+msgid "It is necessary to inform the name!"
+msgstr "Необхідно вказати ім'я!"
 
-#: addon\globalPlugins\contactsManager\addEditRecord.py:52
-msgid "{} Record in Contacts Manager for NVDA"
-msgstr "{} Запис у менеджері контактів для NVDA"
+#: addon/globalPlugins/contactsManager/addEditRecord.py:66
+msgid "It is necessary to inform the landline!"
+msgstr "Необхідно повідомити номер стаціонарного телефону!"
 
-#: addon\globalPlugins\contactsManager\addEditRecord.py:75
-msgid "Name: "
-msgstr "Ім'я: "
-
-#: addon\globalPlugins\contactsManager\addEditRecord.py:78
-msgid "Cell phone: "
-msgstr "Мобільний телефон: "
-
-#: addon\globalPlugins\contactsManager\addEditRecord.py:81
-msgid "Landline: "
-msgstr "Стаціонарний телефон: "
-
-#: addon\globalPlugins\contactsManager\addEditRecord.py:85
-msgid "Email: "
-msgstr "Електронна пошта: "
-
-#: addon\globalPlugins\contactsManager\addEditRecord.py:88
-msgid "&Ok"
-msgstr "&Гаразд"
-
-#: addon\globalPlugins\contactsManager\addEditRecord.py:91
-msgid "&Cancel"
-msgstr "&Скасувати"
-
-#: addon\globalPlugins\contactsManager\addEditRecord.py:176
-msgid "Name is required!"
-msgstr "Ім'я обов'язкове!"
-
-#: addon\globalPlugins\contactsManager\addEditRecord.py:176
-#: addon\globalPlugins\contactsManager\addEditRecord.py:182
-#: addon\globalPlugins\contactsManager\addEditRecord.py:188
-#: addon\globalPlugins\contactsManager\addEditRecord.py:195
-#: addon\globalPlugins\contactsManager\addEditRecord.py:244
-#: addon\globalPlugins\contactsManager\main.py:178
-#: addon\globalPlugins\contactsManager\main.py:203
-#: addon\globalPlugins\contactsManager\main.py:217
-#: addon\globalPlugins\contactsManager\main.py:318
-#: addon\globalPlugins\contactsManager\main.py:334
-msgid "Error"
-msgstr "Помилка"
-
-#: addon\globalPlugins\contactsManager\addEditRecord.py:182
-msgid "Mobile number is required!"
-msgstr "Номер мобільного телефону обов'язково!"
-
-#: addon\globalPlugins\contactsManager\addEditRecord.py:188
-msgid "Landline number is required!"
-msgstr "Номер стаціонарного телефону обов'язково!"
-
-#: addon\globalPlugins\contactsManager\addEditRecord.py:195
+#: addon/globalPlugins/contactsManager/addEditRecord.py:69
 msgid "Invalid email format!"
 msgstr "Недійсний формат електронної пошти!"
 
-#. Translators:  Dialog displayed upon completion.
-#: addon\globalPlugins\contactsManager\addEditRecord.py:232
+#: addon/globalPlugins/contactsManager/addEditRecord.py:76
+msgid "Add"
+msgstr "Додати"
+
+#: addon/globalPlugins/contactsManager/addEditRecord.py:83
+msgid "{} Record in Contacts Manager for NVDA"
+msgstr "{} Запис у менеджері контактів для NVDA"
+
+#: addon/globalPlugins/contactsManager/addEditRecord.py:100
+msgid "Name: "
+msgstr "Ім'я: "
+
+#: addon/globalPlugins/contactsManager/addEditRecord.py:103
+msgid "Cell phone: "
+msgstr "Мобільний телефон: "
+
+#: addon/globalPlugins/contactsManager/addEditRecord.py:106
+msgid "Landline: "
+msgstr "Стаціонарний телефон: "
+
+#: addon/globalPlugins/contactsManager/addEditRecord.py:110
+msgid "Email: "
+msgstr "Електронна пошта: "
+
+#: addon/globalPlugins/contactsManager/addEditRecord.py:113
+msgid "&Ok"
+msgstr "&Гаразд"
+
+#: addon/globalPlugins/contactsManager/addEditRecord.py:116
+msgid "&Cancel"
+msgstr "&Скасувати"
+
+#: addon/globalPlugins/contactsManager/addEditRecord.py:232
 msgid "Contact added, want to add a new contact?"
 msgstr "Контакт додано, хочете додати новий контакт?"
 
-#: addon\globalPlugins\contactsManager\addEditRecord.py:233
-#: addon\globalPlugins\contactsManager\addEditRecord.py:272
-#: addon\globalPlugins\contactsManager\main.py:213
-#: addon\globalPlugins\contactsManager\main.py:332
+#: addon/globalPlugins/contactsManager/addEditRecord.py:233
+#: addon/globalPlugins/contactsManager/addEditRecord.py:284
 msgid "Success"
 msgstr "Успішно"
 
-#: addon\globalPlugins\contactsManager\addEditRecord.py:244
+#: addon/globalPlugins/contactsManager/addEditRecord.py:240
 msgid "Error adding contact: {}"
 msgstr "Помилка додавання контакту: {}"
 
-#. Translators:  Dialog displayed after editing is complete.
-#: addon\globalPlugins\contactsManager\addEditRecord.py:272
+#: addon/globalPlugins/contactsManager/addEditRecord.py:284
 msgid "Contact edited!"
 msgstr "Контакт відредаговано!"
 
-#: addon\globalPlugins\contactsManager\addEditRecord.py:297
-#: addon\globalPlugins\contactsManager\main.py:349
-msgid "Message"
-msgstr "Повідомлення"
+#: addon/globalPlugins/contactsManager/addEditRecord.py:287
+msgid "Error editing contact: {}"
+msgstr "Помилка редагування контакту: {}"
 
-#. Translators: Formatting text for phone fields.
-#: addon\globalPlugins\contactsManager\configPanel.py:102
+#: addon/globalPlugins/contactsManager/configPanel.py:111
 msgid "Add mask for phone fields:"
 msgstr "Додати маску для полів телефону:"
 
-#. Cell field formatting.
-#: addon\globalPlugins\contactsManager\configPanel.py:108
-#: addon\globalPlugins\contactsManager\controller.py:138
-#: addon\globalPlugins\contactsManager\main.py:93
-#: addon\globalPlugins\contactsManager\main.py:151
-msgid "Cell phone"
-msgstr "Мобільний телефон"
+#: addon/globalPlugins/contactsManager/configPanel.py:121
+msgid "Country code"
+msgstr "Код країни"
 
-#. Formatting the landline phone field.
-#: addon\globalPlugins\contactsManager\configPanel.py:113
-#: addon\globalPlugins\contactsManager\controller.py:139
-#: addon\globalPlugins\contactsManager\main.py:93
-#: addon\globalPlugins\contactsManager\main.py:152
-msgid "Landline"
-msgstr "Стаціонарний"
+#. Translators: Group for buttons
+#: addon/globalPlugins/contactsManager/configPanel.py:156
+msgid "Options"
+msgstr "Параметри"
 
-#. Translators: Checkbox text to display scheduler reset button.
-#: addon\globalPlugins\contactsManager\configPanel.py:119
+#. Translators: Label for the checkbox to show the option to delete the entire calendar.
+#: addon/globalPlugins/contactsManager/configPanel.py:167
 msgid "Show option &to delete entire calendar"
 msgstr "Показати опцію &для видалення всього календаря"
 
-#. Translators: Checkbox text to display import csv files to database.
-#: addon\globalPlugins\contactsManager\configPanel.py:127
+#. Translators: Label for the checkbox to show the import CSV file button.
+#: addon/globalPlugins/contactsManager/configPanel.py:175
 msgid "Show &import CSV file button"
 msgstr "Кнопка Показати та імпортувати файл CSV"
 
-#. Translators: Checkbox text to display export csv files to database.
-#: addon\globalPlugins\contactsManager\configPanel.py:135
+#. Translators: Label for the checkbox to show the export CSV file button.
+#: addon/globalPlugins/contactsManager/configPanel.py:183
 msgid "Show e&xport CSV file button"
 msgstr "Показати кнопку експорту та імпорту CSV-файлу"
 
-#. Translators: Name of combobox with the agenda files path.
-#: addon\globalPlugins\contactsManager\configPanel.py:142
+#. Translators: Name of combobox with the agenda files currentDBPath.
+#: addon/globalPlugins/contactsManager/configPanel.py:191
 msgid "Path of agenda files:"
 msgstr "Шлях до файлів телефонної книги:"
 
 #. Translators: This is the label for the button used to add or change a contactsManager.db location.
-#: addon\globalPlugins\contactsManager\configPanel.py:153
+#: addon/globalPlugins/contactsManager/configPanel.py:202
 msgid "&Select or add a directory"
 msgstr "&Вибрати або додати каталог"
 
-#: addon\globalPlugins\contactsManager\configPanel.py:169
+#: addon/globalPlugins/contactsManager/configPanel.py:218
 msgid "Choose where to save the Data Base file"
 msgstr "Виберіть місце для збереження файлу бази даних"
 
-#: addon\globalPlugins\contactsManager\configPanel.py:172
+#: addon/globalPlugins/contactsManager/configPanel.py:221
 msgid "Database files (*.db)"
 msgstr "Файли бази даних (*.db)"
 
-#. List of combobox choices option.
-#: addon\globalPlugins\contactsManager\controller.py:137
-#: addon\globalPlugins\contactsManager\main.py:93
-#: addon\globalPlugins\contactsManager\main.py:94
-#: addon\globalPlugins\contactsManager\main.py:150
-msgid "Name"
-msgstr "Ім'я"
-
-#: addon\globalPlugins\contactsManager\controller.py:140
-#: addon\globalPlugins\contactsManager\main.py:93
-#: addon\globalPlugins\contactsManager\main.py:153
-msgid "Email"
-msgstr "Електронна пошта"
-
-#: addon\globalPlugins\contactsManager\main.py:55
-msgid "An instance of {} is already open."
-msgstr "Екземпляр {} уже відкрито."
-
-#. Translators: Message displayed when the contactList is empty.
-#: addon\globalPlugins\contactsManager\main.py:87
-msgid "No records found!"
-msgstr "Записів не знайдено!"
-
-#. Translators: Search field label.
-#: addon\globalPlugins\contactsManager\main.py:90
-msgid "Search for: "
-msgstr "Пошук за: "
-
-#: addon\globalPlugins\contactsManager\main.py:97
-msgid "&Search"
-msgstr "&Пошук"
-
-#: addon\globalPlugins\contactsManager\main.py:99
-msgid "&Edit"
-msgstr "&Редагувати"
-
-#: addon\globalPlugins\contactsManager\main.py:100
-msgid "&New"
-msgstr "&Додати"
-
-#: addon\globalPlugins\contactsManager\main.py:101
-msgid "&Remove"
-msgstr "&Видалити"
-
-#: addon\globalPlugins\contactsManager\main.py:102
-msgid "Refres&h"
-msgstr "&Оновити"
-
-#: addon\globalPlugins\contactsManager\main.py:103
-msgid "&Import csv..."
-msgstr "&Імпортувати CSV..."
-
-#: addon\globalPlugins\contactsManager\main.py:104
-msgid "Ex&port csv..."
-msgstr "Екс&портувати CSV..."
-
-#: addon\globalPlugins\contactsManager\main.py:105
-msgid "&Delete all records."
-msgstr "&Видалити всі записи."
-
-#: addon\globalPlugins\contactsManager\main.py:106
-msgid "E&xit"
-msgstr "В&ихід"
-
-#: addon\globalPlugins\contactsManager\main.py:178
-#: addon\globalPlugins\contactsManager\main.py:203
-msgid "No records selected!"
-msgstr "Записи не вибрано!"
-
-#: addon\globalPlugins\contactsManager\main.py:183
-msgid "To edit"
-msgstr "Для редагування"
-
-#: addon\globalPlugins\contactsManager\main.py:206
-msgid "Do you want to delete the selected record?"
-msgstr "Ви бажаєте видалити вибраний запис?"
-
-#: addon\globalPlugins\contactsManager\main.py:213
-msgid "Record deleted!"
-msgstr "Запис видалено!"
-
-#: addon\globalPlugins\contactsManager\main.py:217
-msgid "Error deleting record: {}"
-msgstr "Помилка видалення запису: {}"
-
-#. If there are no results, displays an informative message
-#: addon\globalPlugins\contactsManager\main.py:235
-msgid "No contacts found matching the search criteria."
-msgstr "Не знайдено контактів, що відповідають критеріям пошуку."
-
-#: addon\globalPlugins\contactsManager\main.py:252
-msgid "Updated records!"
-msgstr "Оновлені записи!"
-
-#: addon\globalPlugins\contactsManager\main.py:259
-msgid "import csv file"
-msgstr "імпорт файлу csv"
-
-#: addon\globalPlugins\contactsManager\main.py:266
-msgid "File imported successfully!"
-msgstr "Файл успішно імпортовано!"
-
-#: addon\globalPlugins\contactsManager\main.py:270
-#, python-brace-format
-msgid "It was not possible to import the file! {e}"
-msgstr "Не вдалося імпортувати файл! {e}"
-
-#: addon\globalPlugins\contactsManager\main.py:283
-msgid "export csv file"
-msgstr "експорт файлу csv"
-
-#: addon\globalPlugins\contactsManager\main.py:293
-msgid "File exported successfully!"
-msgstr "Файл успішно експортовано!"
-
-#: addon\globalPlugins\contactsManager\main.py:297
-#, python-brace-format
-msgid "It was not possible to export the file! {e}"
-msgstr "Не вдалося експортувати файл! {e}"
-
-#: addon\globalPlugins\contactsManager\main.py:318
-msgid "Error counting records: {}"
-msgstr "Помилка підрахунку записів: {}"
-
-#: addon\globalPlugins\contactsManager\main.py:322
-msgid "The agenda is empty!"
-msgstr "Телефонна книга порожня!"
-
-#: addon\globalPlugins\contactsManager\main.py:325
-msgid "This operation erases all phonebook entries. do you wish to continue?"
-msgstr "Ця операція видаляє всі записи телефонної книги. ви хочете продовжити?"
-
-#: addon\globalPlugins\contactsManager\main.py:332
-msgid "Agenda deleted!"
-msgstr "Телефонна книга видалена!"
-
-#: addon\globalPlugins\contactsManager\main.py:334
-msgid "Error deleting records: {}"
-msgstr "Помилка видалення записів: {}"
-
-#. Add-on summary, usually the user visible name of the addon.
-#. Translators: Summary for this add-on to be shown
-#. on installation and add-on information.
-#: buildVars.py:25
+#. Add-on summary/title, usually the user visible name of the add-on
+#. Translators: Summary/title for this add-on
+#. to be shown on installation and add-on information found in add-on store
+#: buildVars.py:21
 msgid "Contacts Manager for NVDA"
 msgstr "Менеджер контактів для NVDA"
 
-#: buildVars.py:30
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-on store
+#: buildVars.py:24
 msgid ""
 "Simple contacts manager for saving phone numbers, emails, and other contact "
-"details for personal or professional use. Shortcut Windows+Alt+L."
+"details for personal or professional use.\n"
+"\n"
+"Shortcut Windows+Alt+L."
 msgstr ""
-"Простий менеджер контактів для збереження номерів телефонів, адрес "
-"електронної пошти та інших контактних даних для особистого або професійного "
-"використання. Комбінація клавіш Windows+Alt+L."
+"Простий менеджер контактів для збереження номерів телефонів, електронних "
+"листів та інших контактних даних для особистого чи професійного "
+"використання.\n"
+"\n"
+"Комбінація клавіш Windows+Alt+L."
+
+#. Brief changelog for this version
+#. Translators: what's new content for the add-on version to be shown in the add-on store
+#: buildVars.py:31
+msgid ""
+"Introduces multiple enhancements to contact handling:\n"
+"\n"
+"- Directly open saved contacts in WhatsApp from the contact list.\n"
+"- Perform a search when Enter is pressed in the search field.\n"
+"- Intercept Ctrl+V on contact phone fields to paste only digits.\n"
+"\n"
+"Details:\n"
+"\n"
+"- Direct WhatsApp Opening (Contact List): Pressing Enter on a contact in the "
+"list now opens that contact directly in WhatsApp.\n"
+"- Search Execution (Search Field): Pressing Enter in the search field now "
+"triggers the search action.\n"
+"\n"
+"Clean Pasted Phone Input:\n"
+"\n"
+"- Binds EVTCHARHOOK for cell and landline inputs.\n"
+"- Adds `onPasteAndClean` to: Read the clipboard.\n"
+"Strip non-digit characters using a regex.\n"
+"- Set the cleaned value into the focused field (skipping default paste).\n"
+"- Allows non-paste keys to be processed normally via `event.Skip()`.\n"
+"\n"
+"Additionally updates `addonversion` to 2025.7.0 and replaces the "
+"`addonchangelog` text.\n"
+"The changelog now includes notes about opening contacts in WhatsApp, "
+"enabling pasting into number fields, and the Enter key functionality."
+msgstr ""
+"Впроваджено низку вдосконалень у роботі з контактами:\n"
+"\n"
+"- Можливість безпосередньо відкривати збережені контакти у WhatsApp зі "
+"списку контактів.\n"
+"- Запуск пошуку при натисканні клавіші Enter у полі пошуку.\n"
+"- Перехоплення комбінації Ctrl+V у полях телефону контакту для вставки лише "
+"цифр.\n"
+"\n"
+"Деталі:\n"
+"\n"
+"- Пряме відкриття WhatsApp (список контактів): натискання клавіші Enter на "
+"контакті у списку тепер відкриває цей контакт безпосередньо у WhatsApp.\n"
+"- Виконання пошуку (поле пошуку): Натискання Enter у полі пошуку тепер "
+"запускає дію пошуку.\n"
+"\n"
+"Очищення введеного номера телефону:\n"
+"\n"
+"- Прив'язує EVTCHARHOOK для введення мобільних та стаціонарних номерів.\n"
+"- Додає `onPasteAndClean` до: Зчитування буфера обміну.\n"
+"Видалення символів, що не є цифрами, за допомогою регулярного виразу.\n"
+"- Встановлення очищеного значення у поле, на якому знаходиться фокус "
+"(пропускаючи початкову вставку).\n"
+"- Дозволяє нормально обробляти клавіші, що не пов'язані з вставкою, за "
+"допомогою `event.Skip()`.\n"
+"\n"
+"Додатково оновлює `addonversion` до 2025.7.0 та замінює текст "
+"`addonchangelog`.\n"
+"Журнал змін тепер містить примітки щодо відкриття контактів у WhatsApp, "
+"увімкнення вставки у поля номерів та функціональності клавіші Enter."
+
+#~ msgid "&Contacts Manager"
+#~ msgstr "&Менеджер контактів"
+
+#~ msgid "Name is required!"
+#~ msgstr "Ім'я обов'язкове!"
+
+#~ msgid "Mobile number is required!"
+#~ msgstr "Номер мобільного телефону обов'язково!"
+
+#~ msgid "Landline number is required!"
+#~ msgstr "Номер стаціонарного телефону обов'язково!"
+
+#~ msgid "No records found!"
+#~ msgstr "Записів не знайдено!"
+
+#~ msgid "Error deleting record: {}"
+#~ msgstr "Помилка видалення запису: {}"
+
+#, python-brace-format
+#~ msgid "It was not possible to import the file! {e}"
+#~ msgstr "Не вдалося імпортувати файл! {e}"
+
+#, python-brace-format
+#~ msgid "It was not possible to export the file! {e}"
+#~ msgstr "Не вдалося експортувати файл! {e}"
+
+#~ msgid ""
+#~ "This operation erases all phonebook entries. do you wish to continue?"
+#~ msgstr ""
+#~ "Ця операція видаляє всі записи телефонної книги. ви хочете продовжити?"
+
+#~ msgid "Error deleting records: {}"
+#~ msgstr "Помилка видалення записів: {}"
 
 #, python-brace-format
 #~ msgid "{e}"
