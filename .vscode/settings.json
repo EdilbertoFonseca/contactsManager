@@ -7,10 +7,5 @@
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "editor.insertSpaces": false,
-    "python.analysis.stubPath": "${workspaceFolder}/.vscode/typings",
-    "python.analysis.extraPaths": [
-        "../nvda/source",
-        "../nvda/miscDeps/python"
-    ],
     "python.defaultInterpreterPath": "${workspaceFolder}/../nvda/.venv/scripts/python.exe"
 }

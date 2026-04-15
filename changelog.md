@@ -1,23 +1,26 @@
 # Changelog
 
-Introduces multiple enhancements to contact handling:
+This commit introduces support for 64-bit bundled libraries (lib64), including lib64 sqlite3/binaries. The code now dynamically selects between 'lib' and 'lib64' based on the IS64 flag.
 
-- Directly open saved contacts in WhatsApp from the contact list.
-- Perform a search when Enter is pressed in the search field.
-- Intercept Ctrl+V on contact phone fields to paste only digits.
+Improvements to the GlobalPlugin dialog lifecycle include:
 
-Details:
+- Using `wx.CallAfter` for better event handling.
+- Unifying `displayDialog` with destruction binding.
+- Implementing safer `show`/`raise`/`restore` handling.
 
-- Direct WhatsApp Opening (Contact List): Pressing Enter on a contact in the list now opens that contact directly in WhatsApp.
-- Search Execution (Search Field): Pressing Enter in the search field now triggers the search action.
+The add/edit form paste behavior has been enhanced to:
 
-Clean Pasted Phone Input:
+- Clean clipboard digits.
+- Align and pad values to masked fields.
+- Manage cursor placement more effectively.
+- Tighten import error logging for missing masked libraries.
 
-- Binds EVTCHARHOOK for cell and landline inputs.
-- Adds `onPasteAndClean` to: Read the clipboard.
-Strip non-digit characters using a regex.
-- Set the cleaned value into the focused field (skipping default paste).
-- Allows non-paste keys to be processed normally via `event.Skip()`.
+Internal `csv` and `masked` modules have been reformatted and tidied (style/whitespace, signature formatting).
 
-Additionally updates `addonversion` to 2025.7.0 and replaces the `addonchangelog` text.
-The changelog now includes notes about opening contacts in WhatsApp, enabling pasting into number fields, and the Enter key functionality.
+Documentation has been updated in pt_BR, pt_PT, and uk to include:
+
+- WhatsApp open feature.
+- Keyboard notes.
+- Layout fixes.
+
+Additionally, some VSCode python analysis paths have been removed from settings, and `sqlLoader.py` and small ancillary updates (buildVars, readme) have been added.

@@ -114,9 +114,11 @@ class BackupTests(unittest.TestCase):
             self.cx.backup(bck, pages=1, progress=progress)
             self.verify_backup(bck)
 
-            result = bck.execute("SELECT key FROM foo"
-                                 " WHERE key >= 1000"
-                                 " ORDER BY key").fetchall()
+            result = bck.execute(
+                "SELECT key FROM foo"
+                " WHERE key >= 1000"
+                " ORDER BY key",
+            ).fetchall()
             self.assertEqual(result[0][0], 1001)
 
         self.assertEqual(len(journal), 3)
@@ -143,7 +145,7 @@ class BackupTests(unittest.TestCase):
                 self.cx.backup(bck, name='non-existing')
         self.assertIn(
             str(cm.exception),
-            ['SQL logic error', 'SQL logic error or missing database']
+            ['SQL logic error', 'SQL logic error or missing database'],
         )
 
         self.cx.execute("ATTACH DATABASE ':memory:' AS attached_db")

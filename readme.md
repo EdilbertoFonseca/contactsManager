@@ -1,125 +1,132 @@
 # Contact Manager for NVDA
 
-**Author**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)  
-**Created on**: 11/04/2024  
-**License**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
+- **Author**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)
+- **Creation Date**: 04/11/2024
+- **License**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Introduction
 
-Welcome to the **Contact Manager for NVDA**!
+Welcome to **Contact Manager for NVDA**!  
+This add-on was specially developed for people with visual impairments, allowing them to organize and access contact information with practicality, accessibility, and autonomy.
 
-This add-on was developed to help blind or visually impaired users manage their contact list in a practical, accessible, and efficient way.
+With it, you can:
 
-With this tool, you can:
-
-- Add, edit, delete, and search for contacts;
-- Import and export contact lists in CSV format;
-- Apply custom phone number formatting;
-- Choose a custom location to store your contact database;
-- Navigate an intuitive and fully keyboard-accessible interface.
+- Add, edit, and delete contacts;
+- Open your contacts in WhatsApp;
+- Search for names and data quickly;
+- Import and export lists in CSV format;
+- Customize phone number formatting;
+- Store data in a custom directory;
+- Use a simple and accessible keyboard-driven interface.
 
 ## Installation
 
-1. In NVDA, open the **Tools** menu and go to the **Add-on Store**.
-2. Under the **Available Add-ons** tab, use the **Search** field and look for `Contact Manager`.
-3. Select it, press **Enter** or click **Apply**, and choose **Install**.
+1. In NVDA, open the **Tools** menu and access the **Add-on Store**.
+2. In the **Available Add-ons** tab, type "Contact Manager" in the search field.
+3. Select the add-on and press **Enter** or click **Apply**, then choose **Install**.
 4. Restart NVDA to complete the installation.
 
-Once installed, the add-on is ready to use.
+## Settings
 
-When you select a contact in the list, their details will be shown in a read-only text box. You can navigate the list using the first letter of the contact’s name.
+Access:  
+**NVDA > Preferences > Settings... > Contact Manager for NVDA**
 
-## Configuration
+The following options are available:
 
-Access the settings panel from:  
-**NVDA Menu > Preferences > Settings > Contact Manager for NVDA**
+1. **Country Code** allows you to select the international code to be used in WhatsApp number formatting. By default, the selected code is (+55) for Brazil.
 
-Available options:
+2. **Mask for phone fields** Applies a mask using `#` to format numbers. The default mask is based on the Brazilian format.
 
-1. **Phone number masking**: Use `#` to apply a formatting mask (e.g., for Brazilian numbers).
-2. **Allow clearing all contacts** (`Alt+T`): Enables a button to delete all entries in the contact list.
-3. **Enable CSV import** (`Alt+I`): Shows a button to import contacts from CSV files.
-4. **Enable CSV export** (`Alt+X`): Shows a button to export the contact list to a CSV file.
-5. **Contact file directory**: Set a custom path for storing your agenda file.
+3. **Complete agenda deletion** (`Alt+T`)  
+   Allows you to remove all contacts at once.
 
-## Accessing the Add-on
+4. **Import contacts via CSV** (`Alt+I`)  
+   Allows you to import contacts from compatible CSV files.
 
-You can open the Contact Manager in two ways:
+5. **Export agenda to CSV** (`Alt+X`)  
+   Exports all contacts to a CSV file.
 
-1. Keyboard shortcut: `Windows+Alt+L`  
+6. **Database path** Defines a personalized directory to save the agenda data.
+
+## Access
+
+You can open the Contact Manager in the following ways:
+
+1. Shortcut: `Windows+Alt+L`
 2. NVDA Menu: `NVDA+N > Tools > Contact Manager`
 
-In the main window, you can:
+The main window allows you to:
 
-- Add, edit, and delete contacts;
-- Search for specific contacts;
-- Import and export CSV files;
-- Delete all records in the contact list (if enabled).
+- Register, edit, remove, and search for contacts;
+- Import/export contacts;
+- Delete the entire agenda (optional in settings).
+- By pressing Enter on the contact list, the contact is opened in WhatsApp. If the mobile field is empty, NVDA will announce this condition.
 
-## Adding a New Contact
+## Registering a New Contact
 
-1. Open the Contact Manager (`Windows+Alt+L` or via menu).
-2. Press `Alt+N` to add a new contact.
-3. Fill out the fields.
-4. Press `Alt+O` to save or `Alt+C` to cancel.
+1. Open the Manager (`Windows+Alt+L` or via the NVDA menu);
+2. Press `Alt+N` to add;
+3. Fill in the fields and press `Alt+O` to save or `Alt+C` to cancel.
 
-> **Note:** Use **Enter** to navigate between fields.  
-> The **Tab** key may behave unpredictably due to a known issue.
+> Note:  
+> Use the `Enter` key to navigate between fields. Using `Tab` may cause unpredictable behavior. You can also now paste numbers directly from the clipboard.
 
 ## Editing a Contact
 
-1. Select a contact from the list.
-2. Press `Alt+E` or `F2`.
-3. Make your changes.
-4. Press `Alt+O` to save or `Alt+C` to cancel.
+1. Select a contact from the list;
+2. Press `Alt+E` or `F2`;
+3. Edit the data and press `Alt+O` to save or `Alt+C` to cancel.
 
 ## Searching Contacts
 
-1. Type a search term (name, phone, or email).
-2. Press `Alt+P` to filter the results.
-3. Press `Alt+A` or `F5` to refresh the full list.
+In the main window:
 
-> If no match is found, a message will inform you.
+1. Type the search term (name, mobile, landline, or email);
+2. Select the corresponding field;
+3. Press `Alt+P` or the `Enter` key to search;
+4. Press `Alt+A` or `F5` to refresh the list.
 
-## Keyboard Shortcuts
+If no results are found, a message will be displayed.
+
+## Available Shortcuts
 
 ### Main Window
 
-| Action                     | Shortcut             |
-|---------------------------|----------------------|
-| Add new contact           | `Alt+N`              |
-| Edit selected contact     | `Alt+E` or `F2`      |
-| Remove selected contact   | `Alt+R` or `Delete`  |
-| Search                    | `Alt+P`              |
-| Refresh contact list      | `Alt+A` or `F5`      |
-| Import CSV file           | `Alt+I`              |
-| Export to CSV             | `Alt+X`              |
-| Delete all contacts       | `Alt+T`              |
-| Exit                      | `Alt+S`              |
+| Action                        | Shortcut                   |
+| ----------------------------- | -------------------------- |
+| New contact                   | `Alt+N`                    |
+| Edit                          | `Alt+E` or `F2`            |
+| Remove contact                | `Alt+R` or `Delete`        |
+| Search                        | `Alt+P` or `Enter`         |
+| Open contact in WhatsApp      | `Enter on contact list`    |
+| Refresh list                  | `Alt+A` or `F5`            |
+| Import CSV                    | `Alt+I`                    |
+| Export CSV                    | `Alt+X`                    |
+| Delete all contacts           | `Alt+T`                    |
+| Exit                          | `Alt+S`                    |
 
-> To **edit** or **remove** a contact, make sure it is selected in the list.  
-> If no contact is selected, a warning message will be shown.
+> To edit or remove, you must first select a contact.
 
-### Add/Edit Contact Window
+### Registration/Editing Window
 
-| Action        | Shortcut  |
-|---------------|-----------|
-| Confirm       | `Alt+O`   |
-| Cancel        | `Alt+C`   |
+| Action   | Shortcut |
+| -------- | -------- |
+| Confirm  | `Alt+O`  |
+| Cancel   | `Alt+C`  |
 
-> You can close all windows with `Esc` or `Alt+F4`.
+> Tip: Use `Esc` or `Alt+F4` to close any window.
 
-## Acknowledgements
+## Acknowledgments
 
-This add-on was inspired by the contact manager originally developed by:
+This add-on was inspired by the agenda created by:
 
-- Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)  
-- Rui Fontes (<rui.fontes@tiflotecnia.com>)  
+- Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)
+- Rui Fontes (<rui.fontes@tiflotecnia.com>)
 - Ângelo Abrantes (<ampa4374@gmail.com>)
 
-## Translators
+## Translations
 
-- **Portuguese (Brazil)** – Edilberto Fonseca  
-- **Portuguese (Portugal)** – Edilberto Fonseca  
-- **Ukrainian** – George‑br  
+- **Portuguese (Brazil)** – Edilberto Fonseca
+- **Portuguese (Portugal)** – Edilberto Fonseca
+- **Ukrainian** – George‑br
 - **Turkish** – Umut KORKMAZ

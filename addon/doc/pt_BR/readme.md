@@ -1,8 +1,8 @@
 # Gerenciador de Contatos para NVDA
 
-**Autor**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)  
-**Data de Criação**: 11/04/2024  
-**Licença**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
+- **Autor**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)
+- **Data de Criação**: 11/04/2024
+- **Licença**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Introdução
 
@@ -12,6 +12,7 @@ Este complemento foi desenvolvido especialmente para pessoas com deficiência vi
 Com ele, você pode:
 
 - Adicionar, editar e excluir contatos;
+- Abrir seus contatos no Whatsapp;
 - Pesquisar nomes e dados rapidamente;
 - Importar e exportar listas em formato CSV;
 - Personalizar a formatação de números de telefone;
@@ -32,19 +33,21 @@ Acesse:
 
 As seguintes opções estão disponíveis:
 
-1. **Máscara para campos de telefone**  
+1. **Código do** país permite selecionar o código internacional a ser usado na formatação do número do WhatsApp. Por padrão, o código selecionado é o (+55) do Brasil.
+
+2. **Máscara para campos de telefone**  
    Aplica uma máscara usando `#` para formatar números. A máscara padrão é baseada no formato brasileiro.
 
-2. **Exclusão completa da agenda** (`Alt+T`)  
+3. **Exclusão completa da agenda** (`Alt+T`)  
    Permite remover todos os contatos de uma só vez.
 
-3. **Importação de contatos via CSV** (`Alt+I`)  
+4. **Importação de contatos via CSV** (`Alt+I`)  
    Permite importar contatos de arquivos CSV compatíveis.
 
-4. **Exportação da agenda para CSV** (`Alt+X`)  
+5. **Exportação da agenda para CSV** (`Alt+X`)  
    Exporta todos os contatos para um arquivo CSV.
 
-5. **Caminho do banco de dados**  
+6. **Caminho do banco de dados**  
    Define um diretório personalizado para salvar os dados da agenda.
 
 ## Acesso
@@ -59,6 +62,7 @@ A janela principal permite:
 - Registrar, editar, remover e buscar contatos;
 - Importar/exportar contatos;
 - Apagar toda a agenda (opcional nas configurações).
+- Pressionando Enter na lista de contatos, o contato é aberto no WhatsApp. Caso o campo do celular esteja vazio, esta condição será verbalizada pelo NVDA.
 
 ## Cadastrando um Novo Contato
 
@@ -67,7 +71,7 @@ A janela principal permite:
 3. Preencha os campos e pressione `Alt+O` para salvar ou `Alt+C` para cancelar.
 
 > Observação:  
-> Use a tecla `Enter` para navegar entre os campos. O uso do `Tab` pode gerar comportamentos imprevisíveis.
+> Use a tecla `Enter` para navegar entre os campos. O uso do `Tab` pode gerar comportamentos imprevisíveis. Agora também é possível colar números diretamente da área de transferência.
 
 ## Editando um Contato
 
@@ -81,7 +85,7 @@ Na janela principal:
 
 1. Digite o termo de busca (nome, celular, fixo ou e-mail);
 2. Selecione o campo correspondente;
-3. Pressione `Alt+P` para pesquisar;
+3. Pressione `Alt+P` para pesquisar ou a tecla `enter`;
 4. Pressione `Alt+A` ou `F5` para atualizar a lista.
 
 Caso nenhum resultado seja encontrado, uma mensagem será exibida.
@@ -90,26 +94,27 @@ Caso nenhum resultado seja encontrado, uma mensagem será exibida.
 
 ### Janela Principal
 
-| Ação                        | Atalho              |
-|-----------------------------|---------------------|
-| Novo contato                | `Alt+N`             |
-| Editar                      | `Alt+E` ou `F2`     |
-| Remover contato             | `Alt+R` ou `Delete` |
-| Pesquisar                   | `Alt+P`             |
-| Atualizar lista             | `Alt+A` ou `F5`     |
-| Importar CSV                | `Alt+I`             |
-| Exportar CSV                | `Alt+X`             |
-| Excluir todos os contatos   | `Alt+T`             |
-| Sair                        | `Alt+S`             |
+| Ação                                   | Atalho                       |
+| -------------------------------------- | ---------------------------- |
+| Novo contato                           | `Alt+N`                      |
+| Editar                                 | `Alt+E` ou `F2`              |
+| Remover contato                        | `Alt+R` ou `Delete`          |
+| Pesquisar                              | `Alt+P` ou `enter`           |
+| Abre o contato selecionado no Whatsapp | `Enter na lista de contatos` |
+| Atualizar lista                        | `Alt+A` ou `F5`              |
+| Importar CSV                           | `Alt+I`                      |
+| Exportar CSV                           | `Alt+X`                      |
+| Excluir todos os contatos              | `Alt+T`                      |
+| Sair                                   | `Alt+S`                      |
 
 > Para editar ou remover, é necessário selecionar um contato primeiro.
 
 ### Janela de Cadastro/Edição
 
-| Ação        | Atalho     |
-|-------------|------------|
-| Confirmar   | `Alt+O`    |
-| Cancelar    | `Alt+C`    |
+| Ação      | Atalho  |
+| --------- | ------- |
+| Confirmar | `Alt+O` |
+| Cancelar  | `Alt+C` |
 
 > Dica: Use `Esc` ou `Alt+F4` para fechar qualquer janela.
 
@@ -117,13 +122,13 @@ Caso nenhum resultado seja encontrado, uma mensagem será exibida.
 
 Este complemento foi inspirado na agenda criada por:
 
-- Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)  
-- Rui Fontes (<rui.fontes@tiflotecnia.com>)  
+- Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)
+- Rui Fontes (<rui.fontes@tiflotecnia.com>)
 - Ângelo Abrantes (<ampa4374@gmail.com>)
 
 ## Traduções
 
-- **Português (Brasil)** – Edilberto Fonseca  
-- **Português (Portugal)** – Edilberto Fonseca  
-- **Ucraniano** – George‑br  
+- **Português (Brasil)** – Edilberto Fonseca
+- **Português (Portugal)** – Edilberto Fonseca
+- **Ucraniano** – George‑br
 - **Turco** – Umut KORKMAZ

@@ -18,7 +18,7 @@ Created on: 30/11/2022
 """
 
 import os
-
+from functools import partial
 import addonHandler
 import globalPluginHandler
 import globalVars
@@ -98,11 +98,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			event (wx.Event): The event triggered by the contactsManager button.
 		"""
 		# Translators: Title of contact list dialog box.
-		self.dlg = ContactList(gui.mainFrame, _('Contact list.'))
-		gui.mainFrame.prePopup()
-		self.dlg.CentreOnScreen()
-		self.dlg.Show()
-		gui.mainFrame.postPopup()
+		wx.CallAfter(self.displayDialog, ContactList, "dlgContact", _('Contact list.'))
 
 	# defining a script with decorator:
 	@script(
@@ -140,6 +136,45 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		"""Open the addon's help page"""
 		wx.LaunchDefaultBrowser(addonHandler.Addon(os.path.join(
 			os.path.dirname(__file__), "..", "..")).getDocFilePath())
+
+	def _onDestroy(self, e: wx.Event, attrName: str) -> None:
+		self.onGenericClosed(e, attrName)
+
+	def displayDialog(self, dialogClass, attrName, *args, **kwargs):
+		# 1. Retrieves what is stored in the attribute
+		dlg = getattr(self, attrName, None)
+
+		# 2. "Life" check:
+		# If None OR if the wx object is no longer valid (window closed)
+		if dlg is None or not dlg:
+			# We create a new instance
+			dlg = dialogClass(gui.mainFrame, *args, **kwargs)
+			setattr(self, attrName, dlg)
+
+			# We bind the attribute cleanup when the window is destroyed
+			dlg.Bind(wx.EVT_WINDOW_DESTROY, partial(self._onDestroy, attrName=attrName))
+
+		# 3. Display and Focus
+		try:
+			gui.mainFrame.prePopup()
+
+			# We check once again if the object is active before calling methods
+			if dlg:
+				if dlg.IsIconized():
+					dlg.Restore()
+				dlg.Show()
+				dlg.Raise()
+				dlg.SetFocus()
+
+			gui.mainFrame.postPopup()
+		except Exception as e:
+			log.error(f"Error when manipulating window {attrName}: {e}")
+			setattr(self, attrName, None)
+
+	def onGenericClosed(self, evt: wx.Event, attrName: str) -> None:
+		"""Handles the closure of generic dialogs."""
+		setattr(self, attrName, None)
+		evt.Skip()
 
 	def terminate(self):
 		super(GlobalPlugin, self).terminate()

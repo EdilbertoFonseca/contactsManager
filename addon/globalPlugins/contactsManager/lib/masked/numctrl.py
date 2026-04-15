@@ -461,7 +461,7 @@ class NumCtrlAccessorsMixin:
          'validFunc',
          'validRequired',
          'stopFieldChangeIfInvalid',
-        )
+    )
     for param in exposed_basectrl_params:
         propname = param[0].upper() + param[1:]
         exec('def Set%s(self, value): self.SetCtrlParameters(%s=value)' % (propname, param))
@@ -507,7 +507,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
         'invalidBackgroundColour': "Yellow",
         'useFixedWidthFont': False,         # use base control default font, instead of fixed width one
         'autoSize': True,                   # by default, set the width of the control based on the mask
-        }
+    }
 
 
     def __init__ (
@@ -515,7 +515,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
                 pos = wx.DefaultPosition, size = wx.DefaultSize,
                 style = wx.TE_PROCESS_TAB, validator = wx.DefaultValidator,
                 name = "masked.num",
-                **kwargs ):
+                **kwargs, ):
         """
         Default class constructor.
 
@@ -619,15 +619,16 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
                 formatcodes = formatcodes,
                 fields = fields,
                 validFunc=self.IsInBounds,
-                setupEventHandling = False)
+                setupEventHandling = False,
+        )
 
-        self.Bind(wx.EVT_SET_FOCUS, self._OnFocus )        ## defeat automatic full selection
-        self.Bind(wx.EVT_KILL_FOCUS, self._OnKillFocus )   ## run internal validator
+        self.Bind(wx.EVT_SET_FOCUS, self._OnFocus)        ## defeat automatic full selection
+        self.Bind(wx.EVT_KILL_FOCUS, self._OnKillFocus)   ## run internal validator
         self.Bind(wx.EVT_LEFT_DCLICK, self._OnDoubleClick)  ## select field under cursor on dclick
-        self.Bind(wx.EVT_RIGHT_UP, self._OnContextMenu )    ## bring up an appropriate context menu
-        self.Bind(wx.EVT_KEY_DOWN, self._OnKeyDown )       ## capture control events not normally seen, eg ctrl-tab.
-        self.Bind(wx.EVT_CHAR, self._OnChar )              ## handle each keypress
-        self.Bind(wx.EVT_TEXT, self.OnTextChange )      ## color control appropriately & keep
+        self.Bind(wx.EVT_RIGHT_UP, self._OnContextMenu)    ## bring up an appropriate context menu
+        self.Bind(wx.EVT_KEY_DOWN, self._OnKeyDown)       ## capture control events not normally seen, eg ctrl-tab.
+        self.Bind(wx.EVT_CHAR, self._OnChar)              ## handle each keypress
+        self.Bind(wx.EVT_TEXT, self.OnTextChange)      ## color control appropriately & keep
                                                            ## track of previous value for undo
 
         # Establish any additional parameters, with appropriate error checking
@@ -1103,7 +1104,8 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
                 elif( self._typedSign
                       and int_str.find('-') != -1
                       and self._limited
-                      and not self._min <= numval <= self._max):
+                      and not self._min <= numval <= self._max
+                ):
                     # changed sign resulting in value that's now out-of-bounds;
                     # disallow
                     self._disallowValue()
@@ -1199,7 +1201,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
 ##        dbg(indent=0)
 
 
-    def _OnErase( self, event=None, just_return_value=False ):
+    def _OnErase( self, event=None, just_return_value=False):
         """
         This overrides the base control _OnErase, so that erasing around
         grouping characters auto selects the digit before or after the
@@ -1242,7 +1244,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
         return BaseMaskedTextCtrl._OnErase(self, event, just_return_value)
 
 
-    def OnTextChange( self, event ):
+    def OnTextChange( self, event):
         """
         Handles an event indicating that the text control's value
         has changed, and issue EVT_NUM event.
@@ -1264,7 +1266,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
         if value != self._oldvalue:
             try:
                 self.GetEventHandler().ProcessEvent(
-                    NumberUpdatedEvent( self.GetId(), self.GetValue(), self ) )
+                    NumberUpdatedEvent( self.GetId(), self.GetValue(), self), )
             except ValueError:
 ##                dbg(indent=0)
                 return
@@ -1285,7 +1287,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
         """
         Returns the current numeric value of the control.
         """
-        return self._fromGUI( BaseMaskedTextCtrl.GetValue(self) )
+        return self._fromGUI( BaseMaskedTextCtrl.GetValue(self))
 
     def SetValue(self, value):
         """
@@ -1300,7 +1302,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
 
         """
 ##        dbg('NumCtrl::SetValue(%s)' % value, indent=1)
-        BaseMaskedTextCtrl.SetValue( self, self._toGUI(value) )
+        BaseMaskedTextCtrl.SetValue( self, self._toGUI(value))
 ##        dbg(indent=0)
 
     def ChangeValue(self, value):
@@ -1318,7 +1320,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
 
         """
 ##        dbg('NumCtrl::ChangeValue(%s)' % value, indent=1)
-        BaseMaskedTextCtrl.ChangeValue( self, self._toGUI(value) )
+        BaseMaskedTextCtrl.ChangeValue( self, self._toGUI(value))
 ##        dbg(indent=0)
 
 
@@ -1629,7 +1631,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
 
     # (Other parameter accessors are inherited from base class)
 
-    def _toGUI( self, value, apply_limits = True ):
+    def _toGUI( self, value, apply_limits = True):
         """
         Conversion function used to set the value of the control; does
         type and bounds checking and raises ValueError if argument is
@@ -1649,7 +1651,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
                     return self._template
                 else:
 ##                    dbg('exception raised:', e, indent=0)
-                    raise ValueError ('NumCtrl requires numeric value, passed %s'% repr(value) )
+                    raise ValueError ('NumCtrl requires numeric value, passed %s'% repr(value))
             # else...
             try:
                 if self._fractionWidth or value.find('.') != -1:
@@ -1658,16 +1660,16 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
                     value = int(value)
             except Exception as e:
 ##                dbg('exception raised:', e, indent=0)
-                raise ValueError ('NumCtrl requires numeric value, passed %s'% repr(value) )
+                raise ValueError ('NumCtrl requires numeric value, passed %s'% repr(value))
 
         elif not isinstance(value, (int, float)):
 ##            dbg(indent=0)
             raise ValueError (
-                'NumCtrl requires numeric value, passed %s'% repr(value) )
+                'NumCtrl requires numeric value, passed %s'% repr(value), )
 
         if not self._allowNegative and value < 0:
             raise ValueError (
-                'control configured to disallow negative values, passed %s'% repr(value) )
+                'control configured to disallow negative values, passed %s'% repr(value), )
 
         if self.IsLimited() and apply_limits:
             min = self.GetMin()
@@ -1675,11 +1677,11 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
             if not min is None and value < min:
 ##                dbg(indent=0)
                 raise ValueError (
-                    'value %d is below minimum value of control'% value )
+                    'value %d is below minimum value of control'% value, )
             if not max is None and value > max:
 ##                dbg(indent=0)
                 raise ValueError (
-                    'value %d exceeds value of control'% value )
+                    'value %d exceeds value of control'% value, )
 
         adjustwidth = len(self._mask) - (1 * self._useParens * self._signOk)
 ##        dbg('len(%s):' % self._mask, len(self._mask))
@@ -1708,7 +1710,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
         return s
 
 
-    def _fromGUI( self, value ):
+    def _fromGUI( self, value):
         """
         Conversion function used in getting the value of the control.
         """
@@ -1736,7 +1738,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
             if self._fractionWidth:
                 try:
 ##                    dbg(indent=0)
-                    return float( value )
+                    return float( value)
                 except ValueError:
 ##                    dbg("couldn't convert to float; returning None")
                     return None
@@ -1745,11 +1747,11 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
             else:
                 try:
 ##                    dbg(indent=0)
-                    return int( value )
+                    return int( value)
                 except ValueError:
                     try:
 ##                       dbg(indent=0)
-                        return int( value )
+                        return int( value)
                     except ValueError:
 ##                       dbg("couldn't convert to long; returning None")
                         return None
@@ -1761,7 +1763,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
                     return None
 
 
-    def _Paste( self, value=None, raise_on_invalid=False, just_return_value=False ):
+    def _Paste( self, value=None, raise_on_invalid=False, just_return_value=False):
         """
         Preprocessor for base control paste; if value needs to be right-justified
         to fit in control, do so prior to paste:
@@ -1816,10 +1818,12 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
             self.SetInsertionPoint(sel_to)
             self.SetSelection(sel_start, sel_to)
 
-        new_text, replace_to = MaskedEditMixin._Paste(self,
-                                        paste_text,
-                                        raise_on_invalid=raise_on_invalid,
-                                        just_return_value=True)
+        new_text, replace_to = MaskedEditMixin._Paste(
+            self,
+            paste_text,
+            raise_on_invalid=raise_on_invalid,
+            just_return_value=True,
+        )
         self._SetInsertionPoint(orig_sel_to)
         self._SetSelection(orig_sel_start, orig_sel_to)
         if not just_return_value and new_text is not None:
@@ -1856,7 +1860,7 @@ class NumCtrl(BaseMaskedTextCtrl, NumCtrlAccessorsMixin):
         edit_start, edit_end = self._FindFieldExtent(0)
 
         adjvalue = self._GetNumValue(value).rjust(self._masklength)
-        adjprev  = self._GetNumValue(prev ).rjust(self._masklength)
+        adjprev  = self._GetNumValue(prev).rjust(self._masklength)
 
         # move selection to account for "ungrouped" value:
         left_text = value[sel_start:].lstrip()
@@ -1913,26 +1917,27 @@ if __name__ == '__main__':
     import traceback
 
     class myDialog(wx.Dialog):
-        def __init__(self, parent, id, title,
+        def __init__(
+            self, parent, id, title,
             pos = wx.DefaultPosition, size = wx.DefaultSize,
-            style = wx.DEFAULT_DIALOG_STYLE ):
+            style = wx.DEFAULT_DIALOG_STYLE, ):
             wx.Dialog.__init__(self, parent, id, title, pos, size, style)
 
             self.int_ctrl = NumCtrl(self, wx.ID_ANY, size=(55,20))
             self.OK = wx.Button( self, wx.ID_OK, "OK")
             self.Cancel = wx.Button( self, wx.ID_CANCEL, "Cancel")
 
-            vs = wx.BoxSizer( wx.VERTICAL )
-            vs.Add( self.int_ctrl, 0, wx.ALIGN_CENTRE|wx.ALL, 5 )
-            hs = wx.BoxSizer( wx.HORIZONTAL )
-            hs.Add( self.OK, 0, wx.ALIGN_CENTRE|wx.ALL, 5 )
-            hs.Add( self.Cancel, 0, wx.ALIGN_CENTRE|wx.ALL, 5 )
-            vs.Add(hs, 0, wx.ALIGN_CENTRE|wx.ALL, 5 )
+            vs = wx.BoxSizer( wx.VERTICAL)
+            vs.Add( self.int_ctrl, 0, wx.ALIGN_CENTRE|wx.ALL, 5)
+            hs = wx.BoxSizer( wx.HORIZONTAL)
+            hs.Add( self.OK, 0, wx.ALIGN_CENTRE|wx.ALL, 5)
+            hs.Add( self.Cancel, 0, wx.ALIGN_CENTRE|wx.ALL, 5)
+            vs.Add(hs, 0, wx.ALIGN_CENTRE|wx.ALL, 5)
 
-            self.SetAutoLayout( True )
-            self.SetSizer( vs )
-            vs.Fit( self )
-            vs.SetSizeHints( self )
+            self.SetAutoLayout( True)
+            self.SetSizer( vs)
+            vs.Fit( self)
+            vs.SetSizeHints( self)
             self.Bind(EVT_NUM, self.OnChange, self.int_ctrl)
 
         def OnChange(self, event):
@@ -1941,7 +1946,7 @@ if __name__ == '__main__':
     class TestApp(wx.App):
         def OnInit(self):
             try:
-                self.frame = wx.Frame(None, -1, "Test", (20,20), (120,100)  )
+                self.frame = wx.Frame(None, -1, "Test", (20,20), (120,100))
                 self.panel = wx.Panel(self.frame, -1)
                 button = wx.Button(self.panel, -1, "Push Me", (20, 20))
                 self.Bind(wx.EVT_BUTTON, self.OnClick, button)

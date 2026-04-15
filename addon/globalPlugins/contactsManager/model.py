@@ -24,22 +24,7 @@ import versionInfo
 from logHandler import log
 
 from .configPanel import dbConfig  # Imports the instance of the DatabaseConfig class
-
-# Get the path to the root of the current add-on
-addonPath = os.path.dirname(__file__)
-
-# Add the lib/ folder to sys.path (only once)
-libPath = os.path.join(addonPath, "lib")
-if libPath not in sys.path:
-	sys.path.insert(0, libPath)
-
-try:
-	if versionInfo.version_year < 2024:
-		import sqlite3 as sql
-	else:
-		import sqlite311 as sql
-except ImportError as e:
-	log.error(f"Error importing module: {str(e)}")
+from .sqlLoader import sql
 
 
 class ObjectContact(object):
