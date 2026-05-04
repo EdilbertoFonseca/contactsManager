@@ -325,7 +325,7 @@ class TimeCtrlAccessorsMixin:
 
          'validFunc',
          'validRequired',
-        )
+    )
     for param in exposed_basectrl_params:
         propname = param[0].upper() + param[1:]
         exec('def Set%s(self, value): self.SetCtrlParameters(%s=value)' % (propname, param))
@@ -351,8 +351,8 @@ class TimeCtrl(BaseMaskedTextCtrl):
         'max': None,
         'limited': False,           # by default, no limiting even if bounds set
         'useFixedWidthFont': True,  # by default, use a fixed-width font
-        'oob_color': "Yellow"       # by default, the default masked.TextCtrl "invalid" color
-        }
+        'oob_color': "Yellow",       # by default, the default masked.TextCtrl "invalid" color
+    }
 
     def __init__ (
                 self, parent, id=-1, value = '00:00:00',
@@ -362,7 +362,7 @@ class TimeCtrl(BaseMaskedTextCtrl):
                 style = wx.TE_PROCESS_TAB,
                 validator = wx.DefaultValidator,
                 name = "time",
-                **kwargs ):
+                **kwargs, ):
 
         """
         Default class constructor.
@@ -461,7 +461,8 @@ class TimeCtrl(BaseMaskedTextCtrl):
                 validator = validator,
                 name = name,
                 setupEventHandling = False,
-                **maskededit_kwargs)
+                **maskededit_kwargs,
+        )
 
 
         # This makes ':' act like tab (after we fix each ':' key event to remove "shift")
@@ -485,15 +486,15 @@ class TimeCtrl(BaseMaskedTextCtrl):
         # that : takes you forward, not back, and so we can issue
         # EVT_TIMEUPDATE events on changes:
 
-        self.Bind(wx.EVT_SET_FOCUS, self._OnFocus )         ## defeat automatic full selection
-        self.Bind(wx.EVT_KILL_FOCUS, self._OnKillFocus )    ## run internal validator
+        self.Bind(wx.EVT_SET_FOCUS, self._OnFocus)         ## defeat automatic full selection
+        self.Bind(wx.EVT_KILL_FOCUS, self._OnKillFocus)    ## run internal validator
         self.Bind(wx.EVT_LEFT_UP, self.__LimitSelection)    ## limit selections to single field
-        self.Bind(wx.EVT_LEFT_DCLICK, self._OnDoubleClick ) ## select field under cursor on dclick
-        self.Bind(wx.EVT_KEY_DOWN, self._OnKeyDown )        ## capture control events not normally seen, eg ctrl-tab.
-        self.Bind(wx.EVT_CHAR, self.__OnChar )              ## remove "shift" attribute from colon key event,
+        self.Bind(wx.EVT_LEFT_DCLICK, self._OnDoubleClick) ## select field under cursor on dclick
+        self.Bind(wx.EVT_KEY_DOWN, self._OnKeyDown)        ## capture control events not normally seen, eg ctrl-tab.
+        self.Bind(wx.EVT_CHAR, self.__OnChar)              ## remove "shift" attribute from colon key event,
                                                             ## then call BaseMaskedTextCtrl._OnChar with
                                                             ## the possibly modified event.
-        self.Bind(wx.EVT_TEXT, self.__OnTextChange, self )  ## color control appropriately and EVT_TIMEUPDATE events
+        self.Bind(wx.EVT_TEXT, self.__OnTextChange, self)  ## color control appropriately and EVT_TIMEUPDATE events
 
 
         # Validate initial value and set if appropriate
@@ -596,7 +597,7 @@ class TimeCtrl(BaseMaskedTextCtrl):
             # similarly configured as above:
             minutefield = Field(formatcodes='0r<SV', validRegex=r'[0-5]\d', validRequired=True)
 
-            fields = [ hourfield, minutefield ]
+            fields = [ hourfield, minutefield]
             if self.__displaySeconds:
                 fields.append(copy.copy(minutefield))    # second field has same constraints as field 1
 
@@ -694,11 +695,13 @@ class TimeCtrl(BaseMaskedTextCtrl):
         self._ChangeValue(strtime)
 ##        dbg(indent=0)
 
-    def GetValue(self,
-                 as_wxDateTime = False,
-                 as_mxDateTime = False,
-                 as_wxTimeSpan = False,
-                 as_mxDateTimeDelta = False):
+    def GetValue(
+        self,
+        as_wxDateTime = False,
+        as_mxDateTime = False,
+        as_wxTimeSpan = False,
+        as_mxDateTimeDelta = False,
+    ):
         """
         This function returns the value of the display as a string by default,
         but supports return as a :class:`DateTime`, mx.DateTime, :class:`TimeSpan`,
@@ -1048,7 +1051,8 @@ class TimeCtrl(BaseMaskedTextCtrl):
                                     0,      # hours
                                     0,      # minutes
                                     interval.GetSeconds() / 2,  # seconds
-                                    0)      # msec
+                                    0,
+                )      # msec
 
                 if value < min: # min is on next day, so use value on
                     # "next day" for "nearest" interval calculation:
@@ -1267,7 +1271,7 @@ class TimeCtrl(BaseMaskedTextCtrl):
         if keycode == ord(':'):
 ##            dbg('colon seen! removing shift attribute')
             event.shiftDown = False
-        BaseMaskedTextCtrl._OnChar(self, event )              ## handle each keypress
+        BaseMaskedTextCtrl._OnChar(self, event)              ## handle each keypress
 ##        dbg(indent=0)
 
 
@@ -1347,7 +1351,7 @@ class TimeCtrl(BaseMaskedTextCtrl):
 ##        dbg(indent=0)
 
 
-    def _toGUI( self, wxdt ):
+    def _toGUI( self, wxdt):
         """
         This function takes a wxdt as an unambiguous representation of a time, and
         converts it to a string appropriate for the format of the control.
@@ -1362,7 +1366,7 @@ class TimeCtrl(BaseMaskedTextCtrl):
         return strval
 
 
-    def __validateValue( self, value ):
+    def __validateValue( self, value):
         """
         This function converts the value to a wxDateTime if not already one,
         does bounds checking and raises ValueError if argument is
@@ -1384,7 +1388,7 @@ class TimeCtrl(BaseMaskedTextCtrl):
         if self.IsLimited() and not self.IsInBounds(value):
 ##            dbg(indent=0)
             raise ValueError (
-                'value %s is not within the bounds of the control' % str(value) )
+                'value %s is not within the bounds of the control' % str(value), )
 ##        dbg(indent=0)
         return value
 
@@ -1395,27 +1399,28 @@ if __name__ == '__main__':
     import traceback
 
     class TestPanel(wx.Panel):
-        def __init__(self, parent, id,
-                     pos = wx.DefaultPosition, size = wx.DefaultSize,
-                     fmt24hr = 0, test_mx = 0,
-                     style = wx.TAB_TRAVERSAL ):
+        def __init__(
+            self, parent, id,
+            pos = wx.DefaultPosition, size = wx.DefaultSize,
+            fmt24hr = 0, test_mx = 0,
+            style = wx.TAB_TRAVERSAL, ):
 
             wx.Panel.__init__(self, parent, id, pos, size, style)
 
             self.test_mx = test_mx
 
             self.tc = TimeCtrl(self, 10, fmt24hr = fmt24hr)
-            sb = wx.SpinButton( self, 20, wx.DefaultPosition, (-1,20), 0 )
+            sb = wx.SpinButton( self, 20, wx.DefaultPosition, (-1,20), 0)
             self.tc.BindSpinButton(sb)
 
-            sizer = wx.BoxSizer( wx.HORIZONTAL )
-            sizer.Add( self.tc, 0, wx.ALIGN_CENTRE|wx.LEFT|wx.TOP|wx.BOTTOM, 5 )
-            sizer.Add( sb, 0, wx.ALIGN_CENTRE|wx.RIGHT|wx.TOP|wx.BOTTOM, 5 )
+            sizer = wx.BoxSizer( wx.HORIZONTAL)
+            sizer.Add( self.tc, 0, wx.ALIGN_CENTRE|wx.LEFT|wx.TOP|wx.BOTTOM, 5)
+            sizer.Add( sb, 0, wx.ALIGN_CENTRE|wx.RIGHT|wx.TOP|wx.BOTTOM, 5)
 
-            self.SetAutoLayout( True )
-            self.SetSizer( sizer )
-            sizer.Fit( self )
-            sizer.SetSizeHints( self )
+            self.SetAutoLayout( True)
+            self.SetSizer( sizer)
+            sizer.Fit( self)
+            sizer.SetSizeHints( self)
 
             self.Bind(EVT_TIMEUPDATE, self.OnTimeChange, self.tc)
 
@@ -1434,7 +1439,7 @@ if __name__ == '__main__':
             fmt24hr = '24' in sys.argv
             test_mx = 'mx' in sys.argv
             try:
-                frame = wx.Frame(None, -1, "TimeCtrl Test", (20,20), (100,100) )
+                frame = wx.Frame(None, -1, "TimeCtrl Test", (20,20), (100,100))
                 panel = TestPanel(frame, -1, (-1,-1), fmt24hr=fmt24hr, test_mx = test_mx)
                 frame.Show(True)
             except:

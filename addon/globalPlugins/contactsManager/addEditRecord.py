@@ -28,23 +28,23 @@ import wx
 from logHandler import log
 
 from . import controller as core
-from .varsConfig import ADDON_PATH, ourAddon
+from .varsConfig import ADDON_PATH, EMAIL_REGEX, IS64, ourAddon
 
 # Add the lib/ folder to sys.path (only once)
-libPath = os.path.join(ADDON_PATH, "lib")
-if libPath not in sys.path:
+libFolder = "lib64" if IS64 else "lib"
+libPath = os.path.join(ADDON_PATH, libFolder)
+
+if os.path.isdir(libPath) and libPath not in sys.path:
 	sys.path.insert(0, libPath)
 
 try:
 	from masked.textctrl import TextCtrl
 except ImportError as e:
-	log.error(f"Failed to import masked.textctrl: {str(e)}. The 'lib' folder might be missing or corrupted.")
+	log.error(f"[{ADDON_NAME}] Error when importing internal library 'masked': {e}")
+	raise ImportError(_("Mandatory Library Absent: Masked"))
 
 # Initialize translation support
 addonHandler.initTranslation()
-
-# Global Constants for Regex
-EMAIL_REGEX = r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,63}$"
 
 def validateFields(data):
 	"""
@@ -286,7 +286,7 @@ Args:
 		except Exception as e:
 			self.showMessage(_("Error editing contact: {}").format(str(e)), _("Error"), wx.ICON_ERROR)
 
-	def handleRecord(self, event):
+	def handleRecord(self, event:wx.Event):
 		"""
 		Adds or edits a contact based on the form's current state.
 		"""
@@ -317,8 +317,8 @@ Args:
 
 		gui.messageBox(message, caption, style)
 
-		# Cancels the dialog.
-	def onClose(self, event):
+	# Cancels the dialog.
+	def onClose(self, event:wx.Event):
 		"""
 		closes the window.
 
@@ -327,27 +327,55 @@ Args:
 		"""
 		self.Destroy()
 
-	def onPasteAndClean(self, event):
-		# Detects if the user is trying to paste (Ctrl+V)
-		if event.GetKeyCode() == ord('V') and event.ControlDown():
-			# Identifies which field the user is trying to paste into
+	def onPasteAndClean(self, event:wx.KeyEvent):
+		"""
+		Handles the Ctrl+V event, cleans the clipboard data, and intelligently
+		aligns the numbers based on the current field's mask.
+		"""
+		# Check if the key combination is Ctrl+V
+		if event.GetKeyCode() == ord("V") and event.ControlDown():
+			# Get the currently focused field
 			currentField = event.GetEventObject()
 
-			# Opens the Windows clipboard
+			# Open the system clipboard
 			if not wx.TheClipboard.IsOpened():
 				wx.TheClipboard.Open()
-				data = wx.TextDataObject()
-				success = wx.TheClipboard.GetData(data)
+				dataObject = wx.TextDataObject()
+				success = wx.TheClipboard.GetData(dataObject)
 				wx.TheClipboard.Close()
 
 				if success:
-					clipboardText = data.GetText()
-					# Remove all non-digit characters from the clipboard text
-					cleanText = re.sub(r'\D', '', clipboardText)
+					rawText = dataObject.GetText()
+					# 1. Clean the text: keep only digits
+					cleanText = re.sub(r"\D", "", rawText)
 
-					# Inserts only the cleaned numbers into the focused field
+					# 2. Identify the field's current mask
+					currentMask = currentField.GetMask()
+
+					# 3. Count how many digits (#) the mask supports
+					maskDigitCount = currentMask.count("#")
+					pastedDigitCount = len(cleanText)
+
+					# 4. Automatic Alignment (Padding)
+					# If the pasted string is shorter than the mask, we pad it with
+					# leading spaces to prevent the mask from deleting initial digits.
+					if 0 < pastedDigitCount < maskDigitCount:
+						digitDifference = maskDigitCount - pastedDigitCount
+						# Add leading spaces equivalent to the difference
+						cleanText = (" " * digitDifference) + cleanText
+
+					# 5. Set the formatted value into the field
 					currentField.SetValue(cleanText)
-					return # Prevents the default paste action from occurring, since we've already handled it.
 
-		# If it's not Ctrl+V, let other keys (arrows, numbers, backspace) pass through
+					# 6. Intelligent Cursor Positioning
+					# If the area was partially filled (e.g., missing Area Code),
+					# we set the cursor to the beginning of the field.
+					if pastedDigitCount < maskDigitCount:
+						# Find the first editable position (the first #)
+						firstEditablePos = currentMask.find("#")
+						currentField.SetInsertionPoint(max(0, firstEditablePos))
+
+					return  # Block the default system Paste action
+
+		# If it's not Ctrl+V or success failed, let the event propagate
 		event.Skip()

@@ -32,7 +32,7 @@ from tools.dbg import Logger
 ##dbg(enable=1)
 
 
-class BaseMaskedTextCtrl( wx.TextCtrl, MaskedEditMixin ):
+class BaseMaskedTextCtrl( wx.TextCtrl, MaskedEditMixin):
     """
     This is the primary derivation from MaskedEditMixin.  It provides
     a general masked text control that can be configured with different
@@ -69,7 +69,8 @@ class BaseMaskedTextCtrl( wx.TextCtrl, MaskedEditMixin ):
                   validator=wx.DefaultValidator,
                   name = 'maskedTextCtrl',
                   setupEventHandling = True,
-                  **kwargs):
+                  **kwargs,
+    ):
         """
         Default class constructor.
 
@@ -90,32 +91,37 @@ class BaseMaskedTextCtrl( wx.TextCtrl, MaskedEditMixin ):
         """
 
         if not hasattr(self, 'this'):
-            wx.TextCtrl.__init__(self, parent, id, value='',
-                                 pos=pos, size = size,
-                                 style=style, validator=validator,
-                                 name=name)
+            wx.TextCtrl.__init__(
+                self, parent, id, value='',
+                pos=pos, size = size,
+                style=style, validator=validator,
+                name=name,
+            )
 
-        self._PostInit(setupEventHandling = setupEventHandling,
-                      name=name, value=value,**kwargs )
+        self._PostInit(
+            setupEventHandling = setupEventHandling,
+            name=name, value=value,**kwargs, )
 
 
-    def _PostInit(self,setupEventHandling=True,
-                 name='maskedTextCtrl' , value='', **kwargs):
+    def _PostInit(
+        self,setupEventHandling=True,
+        name='maskedTextCtrl' , value='', **kwargs,
+    ):
 
         self.controlInitialized = True
-        MaskedEditMixin.__init__( self, name, **kwargs )
+        MaskedEditMixin.__init__( self, name, **kwargs)
 
         self._SetInitialValue(value)
 
         if setupEventHandling:
             ## Setup event handlers
-            self.Bind(wx.EVT_SET_FOCUS, self._OnFocus )         ## defeat automatic full selection
-            self.Bind(wx.EVT_KILL_FOCUS, self._OnKillFocus )    ## run internal validator
+            self.Bind(wx.EVT_SET_FOCUS, self._OnFocus)         ## defeat automatic full selection
+            self.Bind(wx.EVT_KILL_FOCUS, self._OnKillFocus)    ## run internal validator
             self.Bind(wx.EVT_LEFT_DCLICK, self._OnDoubleClick)  ## select field under cursor on dclick
-            self.Bind(wx.EVT_RIGHT_UP, self._OnContextMenu )    ## bring up an appropriate context menu
-            self.Bind(wx.EVT_KEY_DOWN, self._OnKeyDown )        ## capture control events not normally seen, eg ctrl-tab.
-            self.Bind(wx.EVT_CHAR, self._OnChar )               ## handle each keypress
-            self.Bind(wx.EVT_TEXT, self._OnTextChange )         ## color control appropriately & keep
+            self.Bind(wx.EVT_RIGHT_UP, self._OnContextMenu)    ## bring up an appropriate context menu
+            self.Bind(wx.EVT_KEY_DOWN, self._OnKeyDown)        ## capture control events not normally seen, eg ctrl-tab.
+            self.Bind(wx.EVT_CHAR, self._OnChar)               ## handle each keypress
+            self.Bind(wx.EVT_TEXT, self._OnTextChange)         ## color control appropriately & keep
                                                                 ## track of previous value for undo
 
 
@@ -137,7 +143,7 @@ class BaseMaskedTextCtrl( wx.TextCtrl, MaskedEditMixin ):
         """
 ####        dbg("MaskedTextCtrl::_SetSelection(%(sel_start)d, %(sel_to)d)" % locals())
         if self:
-            return self.SetSelection( sel_start, sel_to )
+            return self.SetSelection( sel_start, sel_to)
 
 ##    def SetSelection(self, sel_start, sel_to):
 ##        """
@@ -417,7 +423,7 @@ class BaseMaskedTextCtrl( wx.TextCtrl, MaskedEditMixin ):
         return self._calcSize(size)
 
 
-class TextCtrl( BaseMaskedTextCtrl, MaskedEditAccessorsMixin ):
+class TextCtrl( BaseMaskedTextCtrl, MaskedEditAccessorsMixin):
     """
     The "user-visible" masked text control; it is identical to the
     BaseMaskedTextCtrl class it's derived from.
@@ -430,7 +436,7 @@ class TextCtrl( BaseMaskedTextCtrl, MaskedEditAccessorsMixin ):
     pass
 
 
-class PreMaskedTextCtrl( BaseMaskedTextCtrl, MaskedEditAccessorsMixin ):
+class PreMaskedTextCtrl( BaseMaskedTextCtrl, MaskedEditAccessorsMixin):
     """
     This class exists to support the use of XRC subclassing.
     """

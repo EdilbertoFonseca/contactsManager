@@ -36,17 +36,15 @@ class ContactList(wx.Dialog):
 	_instance = None
 
 	def __new__(cls, *args, **kwargs):
-		if not cls._instance:
-			cls._instance = super(ContactList, cls).__new__(cls, *args, **kwargs)
-		else:
-			msg = _("An instance of {} is already open.").format(ADDON_SUMMARY)
-			queueHandler.queueFunction(queueHandler.eventQueue, ui.message, msg)
-		return cls._instance
+		# Make this a singleton.
+		if ContactList._instance is None:
+			return super(ContactList, cls).__new__(cls, *args, **kwargs)
+		return ContactList._instance
 
 	def __init__(self, parent, title):
-		if hasattr(self, "initialized"):
+		if ContactList._instance is not None:
 			return
-		self.initialized = True
+		ContactList._instance = self
 
 		self.title = title
 
@@ -59,10 +57,10 @@ class ContactList(wx.Dialog):
 			style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER,
 			size=wx.Size(900, 450)
 		)
-
+		self.Bind(wx.EVT_WINDOW_DESTROY, self._onInternalDestroy)
 		self.Bind(wx.EVT_CHAR_HOOK, self.onKeyPress)
 
-		# -------- WIDGETS --------
+		# WIDGETS
 		panel = wx.Panel(self)
 		self.contactList = wx.ListCtrl(panel, style=wx.LC_REPORT | wx.BORDER_SUNKEN)
 		self.initializeContactList()
@@ -371,3 +369,9 @@ class ContactList(wx.Dialog):
 			)
 			self.contactList.EnsureVisible(0)
 		event.Skip()
+
+	def _onInternalDestroy(self, event):
+		# Clears the Singleton instance so that the next __new__ creates a new one
+		ContactList._instance = None
+		event.Skip()
+ 

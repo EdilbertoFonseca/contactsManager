@@ -218,7 +218,7 @@ class Logger:
 
     def SetStream(self, value):
         if value:
-            self._outstream_stack.append( self._outstream )
+            self._outstream_stack.append( self._outstream)
             self._outstream = value
         elif value is None and len(self._outstream_stack) > 0:
             self._outstream = self._outstream_stack.pop(-1)
@@ -246,7 +246,7 @@ if __name__ == "__main__":
     dbg(wxlog=0, stream=sys.stderr)
     dbg(logger._outstream, 'switching back to stdout:')
     dbg(stream=None)
-    dbg(logger._outstream )
+    dbg(logger._outstream)
     def foo(str):
         dbg('foo:', indent=1)
         dbg(str, indent=0)
@@ -265,4 +265,3 @@ if __name__ == "__main__":
     f.foo("should print")
     dbg('test completed.', enable=0)
     dbg('(double-checking ;-)')
-

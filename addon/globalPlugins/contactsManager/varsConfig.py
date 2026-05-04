@@ -18,6 +18,7 @@ Created on: 24/05/2024
 """
 
 import os
+import struct
 
 import addonHandler
 import config
@@ -28,6 +29,12 @@ ADDON_PATH = os.path.dirname(__file__)
 
 # Get the title of the add-on defined in the summary.
 ADDON_SUMMARY = addonHandler.getCodeAddon().manifest["summary"]
+
+# Detect architecture
+IS64 = struct.calcsize("P") * 8 == 64
+
+# Global Constants for Regex
+EMAIL_REGEX = r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,63}$"
 
 # Retrieve the current add-on instance
 try:

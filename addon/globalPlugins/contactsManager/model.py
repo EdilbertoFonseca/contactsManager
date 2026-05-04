@@ -24,22 +24,7 @@ import versionInfo
 from logHandler import log
 
 from .configPanel import dbConfig  # Imports the instance of the DatabaseConfig class
-
-# Get the path to the root of the current add-on
-addonPath = os.path.dirname(__file__)
-
-# Add the lib/ folder to sys.path (only once)
-libPath = os.path.join(addonPath, "lib")
-if libPath not in sys.path:
-	sys.path.insert(0, libPath)
-
-try:
-	if versionInfo.version_year < 2024:
-		import sqlite3 as sql
-	else:
-		import sqlite311 as sql
-except ImportError as e:
-	log.error(f"Error importing module: {str(e)}")
+from .sqlLoader import sql
 
 
 class ObjectContact(object):
@@ -133,8 +118,21 @@ class Section:
 	@classmethod
 	def initDB(cls):
 		"""Verifica a existência do banco de dados e cria a tabela de contatos, se não existir."""
-		with cls() as trans:
-			sqlCommand = """CREATE TABLE IF NOT EXISTS contacts(
-				id INTEGER PRIMARY KEY, name TEXT, cell TEXT, landline TEXT, email TEXT)"""
-			trans.execute(sqlCommand)
-			trans.persist()
+		try:
+			with cls() as trans:
+				# Garante que a tabela existe com a estrutura completa
+				sqlCommand = """CREATE TABLE IF NOT EXISTS contacts(
+					id INTEGER PRIMARY KEY AUTOINCREMENT, 
+					name TEXT NOT NULL, 
+					cell TEXT, 
+					landline TEXT, 
+					email TEXT)"""
+				trans.execute(sqlCommand)
+				trans.persist()
+				log.info("ContactsManager: Base de dados inicializada com sucesso.")
+		except Exception as e:
+			log.error(f"ContactsManager: Erro ao inicializar base de dados: {e}")
+			
+
+# Start the initDB function.
+Section.initDB()

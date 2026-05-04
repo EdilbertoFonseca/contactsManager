@@ -119,9 +119,8 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 		choices = [f"{code} - {name}" for code, name in countryCode]
 		self.countryCode = phoneFormattingGroup.addLabeledControl(
 			_("Country code"),
-	wx.ComboBox,
+	wx.Choice,
 	choices=choices,
-			style=wx.CB_READONLY
 		)
 		savedCode = config.conf[ourAddon.name].get("countryCode", "55")
 

@@ -59,22 +59,22 @@ class MaskedComboBoxEventHandler(wx.EvtHandler):
         wx.EvtHandler.__init__(self)
         self.combobox = combobox
         combobox.PushEventHandler(self)
-        self.Bind(wx.EVT_SET_FOCUS, self.combobox._OnFocus )            ## defeat automatic full selection
-        self.Bind(wx.EVT_KILL_FOCUS, self.combobox._OnKillFocus )       ## run internal validator
+        self.Bind(wx.EVT_SET_FOCUS, self.combobox._OnFocus)            ## defeat automatic full selection
+        self.Bind(wx.EVT_KILL_FOCUS, self.combobox._OnKillFocus)       ## run internal validator
         self.Bind(wx.EVT_LEFT_DCLICK, self.combobox._OnDoubleClick)     ## select field under cursor on dclick
-        self.Bind(wx.EVT_RIGHT_UP, self.combobox._OnContextMenu )       ## bring up an appropriate context menu
-        self.Bind(wx.EVT_CHAR, self.combobox._OnChar )                  ## handle each keypress
-        self.Bind(wx.EVT_KEY_DOWN, self.combobox._OnKeyDownInComboBox ) ## for special processing of up/down keys
-        self.Bind(wx.EVT_KEY_DOWN, self.combobox._OnKeyDown )           ## for processing the rest of the control keys
+        self.Bind(wx.EVT_RIGHT_UP, self.combobox._OnContextMenu)       ## bring up an appropriate context menu
+        self.Bind(wx.EVT_CHAR, self.combobox._OnChar)                  ## handle each keypress
+        self.Bind(wx.EVT_KEY_DOWN, self.combobox._OnKeyDownInComboBox) ## for special processing of up/down keys
+        self.Bind(wx.EVT_KEY_DOWN, self.combobox._OnKeyDown)           ## for processing the rest of the control keys
                                                                         ## (next in evt chain)
-        self.Bind(wx.EVT_COMBOBOX, self.combobox._OnDropdownSelect )    ## to bring otherwise completely independent base
+        self.Bind(wx.EVT_COMBOBOX, self.combobox._OnDropdownSelect)    ## to bring otherwise completely independent base
                                                                         ## ctrl selection into maskededit framework
-        self.Bind(wx.EVT_TEXT, self.combobox._OnTextChange )            ## color control appropriately & keep
+        self.Bind(wx.EVT_TEXT, self.combobox._OnTextChange)            ## color control appropriately & keep
                                                                         ## track of previous value for undo
 
 
 
-class BaseMaskedComboBox( wx.ComboBox, MaskedEditMixin ):
+class BaseMaskedComboBox( wx.ComboBox, MaskedEditMixin):
     """
     Base class for generic masked edit comboboxes; allows auto-complete of values.
     It is not meant to be instantiated directly, but rather serves as a base class
@@ -88,7 +88,8 @@ class BaseMaskedComboBox( wx.ComboBox, MaskedEditMixin ):
                   validator = wx.DefaultValidator,
                   name = "maskedComboBox",
                   setupEventHandling = True,
-                  **kwargs):
+                  **kwargs,
+    ):
         """
         Default class constructor.
 
@@ -117,7 +118,7 @@ class BaseMaskedComboBox( wx.ComboBox, MaskedEditMixin ):
         if 'compareNoCase' not in kwargs:
             kwargs['compareNoCase'] = True
 
-        MaskedEditMixin.__init__( self, name, **kwargs )
+        MaskedEditMixin.__init__( self, name, **kwargs)
 
         self._choices = self._ctrl_constraints._choices
 ##        dbg('self._choices:', self._choices)
@@ -127,20 +128,26 @@ class BaseMaskedComboBox( wx.ComboBox, MaskedEditMixin ):
         else:
             choices = [choice.ljust(self._masklength) for choice in choices]
 
-        wx.ComboBox.__init__(self, parent, id, value='',
-                            pos=pos, size = size,
-                            choices=choices, style=style|wx.WANTS_CHARS,
-                            validator=validator,
-                            name=name)
+        wx.ComboBox.__init__(
+            self, parent, id, value='',
+            pos=pos, size = size,
+            choices=choices, style=style|wx.WANTS_CHARS,
+            validator=validator,
+            name=name,
+        )
         self.controlInitialized = True
 
-        self._PostInit(style=style, setupEventHandling=setupEventHandling,
-                       name=name, value=value, **kwargs)
+        self._PostInit(
+            style=style, setupEventHandling=setupEventHandling,
+            name=name, value=value, **kwargs,
+        )
 
 
-    def _PostInit(self, style=wx.CB_DROPDOWN,
-                  setupEventHandling = True,        ## setup event handling by default):
-                  name = "maskedComboBox", value='', **kwargs):
+    def _PostInit(
+        self, style=wx.CB_DROPDOWN,
+        setupEventHandling = True,        ## setup event handling by default):
+        name = "maskedComboBox", value='', **kwargs,
+    ):
 
         # This is necessary, because wxComboBox currently provides no
         # method for determining later if this was specified in the
@@ -159,7 +166,7 @@ class BaseMaskedComboBox( wx.ComboBox, MaskedEditMixin ):
             if 'compareNoCase' not in kwargs:
                 kwargs['compareNoCase'] = True
 
-            MaskedEditMixin.__init__( self, name, **kwargs )
+            MaskedEditMixin.__init__( self, name, **kwargs)
 
             self._choices = self._ctrl_constraints._choices
 ##        dbg('self._choices:', self._choices)
@@ -206,7 +213,7 @@ class BaseMaskedComboBox( wx.ComboBox, MaskedEditMixin ):
             ## to guarantee processing prior to giving event callbacks from
             ## outside the class:
             self.evt_handler = MaskedComboBoxEventHandler(self)
-            self.Bind(wx.EVT_WINDOW_DESTROY, self.OnWindowDestroy )
+            self.Bind(wx.EVT_WINDOW_DESTROY, self.OnWindowDestroy)
 
 
 
@@ -262,7 +269,7 @@ class BaseMaskedComboBox( wx.ComboBox, MaskedEditMixin ):
         """
 ##        dbg('MaskedComboBox::_SetSelection: setting mark to (%d, %d)' % (sel_start, sel_to))
         if not self.__readonly:
-            return self.SetTextSelection( sel_start, sel_to )
+            return self.SetTextSelection( sel_start, sel_to)
 
 
     def _GetInsertionPoint(self):
@@ -468,7 +475,7 @@ class BaseMaskedComboBox( wx.ComboBox, MaskedEditMixin ):
             else:
                 wx.ComboBox.Undo(self)       # else revert to base control behavior
 
-    def Append( self, choice, clientData=None ):
+    def Append( self, choice, clientData=None):
         """
         This base control function override is necessary so the control can keep
         track of any additions to the list of choices, because :class:`ComboBox`
@@ -507,14 +514,15 @@ class BaseMaskedComboBox( wx.ComboBox, MaskedEditMixin ):
             self._choices = self._ctrl_constraints._choices     # (for shorthand)
 
             if( not self.IsValid(choice) and
-               (not self._ctrl_constraints.IsEmpty(choice) or
-                (self._ctrl_constraints.IsEmpty(choice) and self._ctrl_constraints._validRequired) ) ):
+               (
+                   not self._ctrl_constraints.IsEmpty(choice) or
+                   (self._ctrl_constraints.IsEmpty(choice) and self._ctrl_constraints._validRequired) ) ):
                 raise ValueError('"%s" is not a valid value for the control "%s" as specified.' % (choice, self.name))
 
         wx.ComboBox.Append(self, choice, clientData)
 
 
-    def AppendItems( self, choices ):
+    def AppendItems( self, choices):
         """
         :meth:`~lib.masked.combobox.ComboBox.AppendItems` is handled in terms
         of :meth:`lib.masked.combobox.ComboBox.Append`, to avoid code replication.
@@ -523,7 +531,7 @@ class BaseMaskedComboBox( wx.ComboBox, MaskedEditMixin ):
             self.Append(choice)
 
 
-    def Clear( self ):
+    def Clear( self):
         """
         This base control function override is necessary so the derived control
         can keep track of any additions to the list of choices, because
@@ -546,7 +554,7 @@ class BaseMaskedComboBox( wx.ComboBox, MaskedEditMixin ):
             wx.ComboBox.Clear(self)
             self._choices = self._ctrl_constraints._choices
             for choice in self._choices:
-                wx.ComboBox.Append( self, choice )
+                wx.ComboBox.Append( self, choice)
 
 
     # Not all wx platform implementations have .GetMark, so we make the following test,
@@ -686,7 +694,8 @@ class BaseMaskedComboBox( wx.ComboBox, MaskedEditMixin ):
                                                 self._ctrl_constraints._compareChoices,
                                                 value,
                                                 self._ctrl_constraints._compareNoCase,
-                                                current_index = self._ctrl_constraints._autoCompleteIndex)
+                                                current_index = self._ctrl_constraints._autoCompleteIndex,
+        )
         if match_index is not None:
 ##            dbg('setting selection to', match_index)
             # issue appropriate event to outside:
@@ -722,7 +731,7 @@ class BaseMaskedComboBox( wx.ComboBox, MaskedEditMixin ):
                 self.SetSelection(match_index)
 ##                dbg('issuing combo selection event')
                 self.GetEventHandler().ProcessEvent(
-                    MaskedComboBoxSelectEvent( self.GetId(), match_index, self ) )
+                    MaskedComboBoxSelectEvent( self.GetId(), match_index, self), )
             self._CheckValid()
 ##            dbg('field._autoCompleteIndex:', match)
 ##            dbg('self.GetCurrentSelection():', self.GetCurrentSelection())
@@ -775,7 +784,7 @@ class BaseMaskedComboBox( wx.ComboBox, MaskedEditMixin ):
             wx.CallAfter(self.SetSelection, self._ctrl_constraints._autoCompleteIndex)
 
 
-class ComboBox( BaseMaskedComboBox, MaskedEditAccessorsMixin ):
+class ComboBox( BaseMaskedComboBox, MaskedEditAccessorsMixin):
     """
     The "user-visible" masked combobox control, this class is
     identical to the BaseMaskedComboBox class it's derived from.
@@ -788,7 +797,7 @@ class ComboBox( BaseMaskedComboBox, MaskedEditAccessorsMixin ):
     pass
 
 
-class PreMaskedComboBox( BaseMaskedComboBox, MaskedEditAccessorsMixin ):
+class PreMaskedComboBox( BaseMaskedComboBox, MaskedEditAccessorsMixin):
     """
     This class exists to support the use of XRC subclassing.
     """

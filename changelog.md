@@ -1,5 +1,7 @@
 # Changelog
 
+Updates the latest tested version of NVDA to 2026.1.0.
+
 Introduces multiple enhancements to contact handling:
 
 - Directly open saved contacts in WhatsApp from the contact list.
@@ -15,9 +17,6 @@ Clean Pasted Phone Input:
 
 - Binds EVTCHARHOOK for cell and landline inputs.
 - Adds `onPasteAndClean` to: Read the clipboard.
-Strip non-digit characters using a regex.
+  Strip non-digit characters using a regex.
 - Set the cleaned value into the focused field (skipping default paste).
 - Allows non-paste keys to be processed normally via `event.Skip()`.
-
-Additionally updates `addonversion` to 2025.7.0 and replaces the `addonchangelog` text.
-The changelog now includes notes about opening contacts in WhatsApp, enabling pasting into number fields, and the Enter key functionality.

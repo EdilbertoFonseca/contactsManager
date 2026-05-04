@@ -51,7 +51,8 @@ def _iterdump(connection):
         column_names = [str(table_info[1]) for table_info in res.fetchall()]
         q = """SELECT 'INSERT INTO "{0}" VALUES({1})' FROM "{0}";""".format(
             table_name_ident,
-            ",".join("""'||quote("{0}")||'""".format(col.replace('"', '""')) for col in column_names))
+            ",".join("""'||quote("{0}")||'""".format(col.replace('"', '""')) for col in column_names),
+        )
         query_res = cu.execute(q)
         for row in query_res:
             yield("{0};".format(row[0]))

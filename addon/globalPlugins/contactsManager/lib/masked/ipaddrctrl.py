@@ -55,7 +55,7 @@ class IpAddrCtrlAccessorsMixin:
         'emptyInvalid',
         'validFunc',
         'validRequired',
-        )
+    )
 
     for param in exposed_basectrl_params:
         propname = param[0].upper() + param[1:]
@@ -70,7 +70,7 @@ class IpAddrCtrlAccessorsMixin:
             exec('def Get%s(self): return self.GetCtrlParameter("%s")''' % (propname, param))
 
 
-class IpAddrCtrl( BaseMaskedTextCtrl, IpAddrCtrlAccessorsMixin ):
+class IpAddrCtrl( BaseMaskedTextCtrl, IpAddrCtrlAccessorsMixin):
     """
     This class is a particular type of MaskedTextCtrl that accepts
     and understands the semantics of IP addresses, reformats input
@@ -85,7 +85,8 @@ class IpAddrCtrl( BaseMaskedTextCtrl, IpAddrCtrlAccessorsMixin ):
                   validator = wx.DefaultValidator,
                   name = 'IpAddrCtrl',
                   setupEventHandling = True,
-                  **kwargs):
+                  **kwargs,
+    ):
 
         """
         Default class constructor.
@@ -121,7 +122,8 @@ class IpAddrCtrl( BaseMaskedTextCtrl, IpAddrCtrlAccessorsMixin ):
                 validator = validator,
                 name = name,
                 setupEventHandling = setupEventHandling,
-                **kwargs)
+                **kwargs,
+        )
 
 
         # set up individual field parameters as well:
