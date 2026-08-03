@@ -18,7 +18,7 @@ Created on: 24/01/2023.
 """
 
 import os
-from typing import Any
+from typing import Any, cast
 
 import addonHandler
 import config
@@ -58,7 +58,7 @@ class DatabaseConfig:
 			log.warning("Database configuration not found, using default paths.")
 
 	def saveConfig(self):
-		addonConf: dict[str, Any] = config.conf[ourAddon.name]  # type: ignore[index]
+		addonConf = cast(Any, config.conf)[ourAddon.name]
 		addonConf["currentDBPath"] = self.firstDatabase
 		addonConf["alternateDBPath"] = self.altDatabase
 		addonConf["selectedDBIndex"] = str(self.indexDb)
@@ -244,7 +244,7 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 		Saves the options to the NVDA configuration file.
 		"""
 
-		addonConf: dict[str, Any] = config.conf[ourAddon.name]  # type: ignore[index]
+		addonConf = cast(Any, config.conf)[ourAddon.name]
 
 		selection = self.countryCode.GetSelection()
 
