@@ -1,12 +1,12 @@
 # Gerenciador de Contatos para NVDA
 
-**Autor**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)  
-**Data de Criação**: 11/04/2024  
+**Autor**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)
+**Data de Criação**: 11/04/2024
 **Licença**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Introdução
 
-Bem-vindo ao **Gerenciador de Contatos para NVDA**!  
+Bem-vindo ao **Gerenciador de Contatos para NVDA**!
 Este complemento foi desenvolvido especialmente para pessoas com deficiência visual, permitindo organizar e acessar informações de contato com praticidade, acessibilidade e autonomia.
 
 Com ele, você pode:
@@ -27,24 +27,24 @@ Com ele, você pode:
 
 ## Configurações
 
-Acesse:  
+Acesse:
 **NVDA > Preferências > Configurações... > Gerenciador de Contatos para NVDA**
 
 As seguintes opções estão disponíveis:
 
-1. **Máscara para campos de telefone**  
+1. **Máscara para campos de telefone**
    Aplica uma máscara usando `#` para formatar números. A máscara padrão é baseada no formato brasileiro.
 
-2. **Exclusão completa da agenda** (`Alt+T`)  
+2. **Exclusão completa da agenda** (`Alt+T`)
    Permite remover todos os contatos de uma só vez.
 
-3. **Importação de contatos via CSV** (`Alt+I`)  
+3. **Importação de contatos via CSV** (`Alt+I`)
    Permite importar contatos de arquivos CSV compatíveis.
 
-4. **Exportação da agenda para CSV** (`Alt+X`)  
+4. **Exportação da agenda para CSV** (`Alt+X`)
    Exporta todos os contatos para um arquivo CSV.
 
-5. **Caminho do banco de dados**  
+5. **Caminho do banco de dados**
    Define um diretório personalizado para salvar os dados da agenda.
 
 ## Acesso
@@ -66,7 +66,7 @@ A janela principal permite:
 2. Pressione `Alt+N` para adicionar;
 3. Preencha os campos e pressione `Alt+O` para salvar ou `Alt+C` para cancelar.
 
-> Observação:  
+> Observação:
 > Use a tecla `Enter` para navegar entre os campos. O uso do `Tab` pode gerar comportamentos imprevisíveis.
 
 ## Editando um Contato
@@ -117,13 +117,13 @@ Caso nenhum resultado seja encontrado, uma mensagem será exibida.
 
 Este complemento foi inspirado na agenda criada por:
 
-- Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)  
-- Rui Fontes (<rui.fontes@tiflotecnia.com>)  
+- Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)
+- Rui Fontes (<rui.fontes@tiflotecnia.com>)
 - Ângelo Abrantes (<ampa4374@gmail.com>)
 
 ## Traduções
 
-- **Português (Brasil)** – Edilberto Fonseca  
-- **Português (Portugal)** – Edilberto Fonseca  
-- **Ucraniano** – George‑br  
+- **Português (Brasil)** – Edilberto Fonseca
+- **Português (Portugal)** – Edilberto Fonseca
+- **Ucraniano** – George‑br
 - **Turco** – Umut KORKMAZ

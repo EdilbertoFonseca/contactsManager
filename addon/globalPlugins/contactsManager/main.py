@@ -14,11 +14,11 @@ Created on: 30/11/2022.
 import os
 import re
 import webbrowser
+from typing import Any, cast
 
 import addonHandler
 import config
 import gui
-import queueHandler
 import ui
 import wx
 from gui import guiHelper
@@ -26,7 +26,7 @@ from logHandler import log
 
 from . import controller as core
 from .addEditRecord import AddEditRecDialog
-from .varsConfig import ADDON_SUMMARY, ourAddon
+from .varsConfig import ourAddon
 
 # Initialize translation support
 addonHandler.initTranslation()
@@ -53,9 +53,11 @@ class ContactList(wx.Dialog):
 		except EOFError:
 			self.contactResults = []
 
-		super(ContactList, self).__init__(parent, title=title,
+		super(ContactList, self).__init__(
+			parent,
+			title=title,
 			style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER,
-			size=wx.Size(900, 450)
+			size=wx.Size(900, 450),
 		)
 		self.Bind(wx.EVT_WINDOW_DESTROY, self._onInternalDestroy)
 		self.Bind(wx.EVT_CHAR_HOOK, self.onKeyPress)
@@ -67,7 +69,7 @@ class ContactList(wx.Dialog):
 
 		self.visualizationField = wx.TextCtrl(
 			panel,
-			style=wx.TE_MULTILINE | wx.TE_READONLY | wx.BORDER_STATIC
+			style=wx.TE_MULTILINE | wx.TE_READONLY | wx.BORDER_STATIC,
 		)
 
 		labelSearch = wx.StaticText(panel, label=_("Search for: "))
@@ -149,7 +151,7 @@ class ContactList(wx.Dialog):
 		for i, (title, width) in enumerate(columns):
 			self.contactList.InsertColumn(i, title, width=width)
 
-		for rowIndex, record in enumerate(self.contactResults):
+		for _rowIndex, record in enumerate(self.contactResults):
 			i = self.contactList.InsertItem(self.contactList.GetItemCount(), record.name)
 
 			values = (record.cell, record.landline, record.email)
@@ -166,7 +168,7 @@ class ContactList(wx.Dialog):
 		index = self.contactList.GetFirstSelected()
 		if index == -1:
 			return None
-		return self._itemMap.get(index) # SAFE RETURN
+		return self._itemMap.get(index)  # SAFE RETURN
 
 	def onNew(self, event):
 		dlg = AddEditRecDialog(gui.mainFrame)
@@ -193,7 +195,7 @@ class ContactList(wx.Dialog):
 			self.showMessage(_("No records selected!"), _("Error"))
 			return
 
-		cleanNumber = re.sub(r'\D', '', selected.cell)
+		cleanNumber = re.sub(r"\D", "", selected.cell)
 
 		if not cleanNumber:
 			msg = _("The cell phone field for {} is empty.").format(selected.name)
@@ -202,21 +204,21 @@ class ContactList(wx.Dialog):
 			return
 
 		# Add country code to number
-		countryCode = config.conf[ourAddon.name]["countryCode"]
-		cleanNumber = countryCode   + cleanNumber
+		countryCode = cast(Any, config.conf)[ourAddon.name]["countryCode"]
+		cleanNumber = countryCode + cleanNumber
 
 		# Usando o protocolo da aplicação em vez de HTTPS
 		url = f"whatsapp://send?phone={cleanNumber}"
-		log.warning(f"number formatted with URL: {url}")		
+		log.warning(f"number formatted with URL: {url}")
 		try:
 			# O sistema tentará abrir a App do WhatsApp diretamente
 			webbrowser.open(url)
 			# translators: Message shown when contacting a record via WhatsApp
 			ui.message(_("Contacting {} via WhatsApp").format(selected.name))
-		except Exception as e:
+		except Exception:
 			# Caso o protocolo falhe, voltamos ao método do navegador como plano B
 			urlFallback = f"https://wa.me/{cleanNumber}"
-			log.warning(f"number formatted with URL Fall back: {urlFallback}")		
+			log.warning(f"number formatted with URL Fall back: {urlFallback}")
 			webbrowser.open(urlFallback)
 
 	def onDelete(self, event):
@@ -224,9 +226,14 @@ class ContactList(wx.Dialog):
 		if not selected:
 			self.showMessage(_("No records selected!"), _("Error"))
 			return
-		if gui.messageBox(_("Do you want to delete the selected record?"),
-						  _("Attention"),
-						  wx.YES_NO) == wx.YES:
+		if (
+			gui.messageBox(
+				_("Do you want to delete the selected record?"),
+				_("Attention"),
+				wx.YES_NO,
+			)
+			== wx.YES
+		):
 			core.delete(selected.id)
 			self.showMessage(_("Record deleted!"))
 			self._refreshAndFocus()
@@ -263,8 +270,14 @@ class ContactList(wx.Dialog):
 		self._refreshAndFocus()
 
 	def onToExport(self, event):
-		dlg = wx.FileDialog(self, _("export csv file"), os.getcwd(), "agenda",
-							"*.csv", wx.FD_SAVE)
+		dlg = wx.FileDialog(
+			self,
+			_("export csv file"),
+			os.getcwd(),
+			"agenda",
+			"*.csv",
+			wx.FD_SAVE,
+		)
 		try:
 			if dlg.ShowModal() == wx.ID_OK:
 				core.exportDbToCsv(dlg.GetPath())
@@ -281,26 +294,30 @@ class ContactList(wx.Dialog):
 		if count == 0:
 			self.showMessage(_("The agenda is already empty!"))
 			return
-		if gui.messageBox(_("Erase ALL records?"), _("Attention"),
-						  wx.YES_NO) == wx.YES:
+		if (
+			gui.messageBox(
+				_("Erase ALL records?"),
+				_("Attention"),
+				wx.YES_NO,
+			)
+			== wx.YES
+		):
 			core.resetRecord()
 			self.showMessage(_("Agenda deleted!"))
 		self._refreshAndFocus()
 
 	def set_config(self):
-		if not config.conf[ourAddon.name]["resetRecords"]:
+		if not cast(Any, config.conf)[ourAddon.name]["resetRecords"]:
 			self.buttonResetRecords.Disable()
-		if (not config.conf[ourAddon.name]["importCSV"]) or (not config.conf[ourAddon.name]["exportCSV"]):
+		if (not cast(Any, config.conf)[ourAddon.name]["importCSV"]) or (
+			not cast(Any, config.conf)[ourAddon.name]["exportCSV"]
+		):
 			self.buttonExport.Disable()
 			self.buttonImport.Disable()
 
-	def showMessage(self, message, caption=_("Message"),
-					 style=wx.OK | wx.ICON_INFORMATION):
-		gui.messageBox(message, caption, style)
-
 	def onKeyPress(self, event):
 		keyCode = event.GetKeyCode()
-		focused = self.FindFocus() # Identifica onde o utilizador está
+		focused = self.FindFocus()  # Identifica onde o utilizador está
 
 		if keyCode == wx.WXK_F5:
 			self.onToUpdate(event)
@@ -320,7 +337,7 @@ class ContactList(wx.Dialog):
 			elif focused == self.contactList:
 				self.onWhatsApp(event)
 			else:
-				event.Skip() # Allows default behavior in other fields
+				event.Skip()  # Allows default behavior in other fields
 				return
 		event.Skip()
 
@@ -330,9 +347,7 @@ class ContactList(wx.Dialog):
 		"""
 
 		if caption is None:
-			# translators: Title of message dialog box.
-			caption = _("Attention")
-
+			caption = _("Message")
 		gui.messageBox(message, caption, style)
 
 	def onClose(self, event):
@@ -363,9 +378,10 @@ class ContactList(wx.Dialog):
 
 	def onListFocus(self, event):
 		if self.contactList.GetItemCount() > 0:
-			self.contactList.SetItemState(0,
+			self.contactList.SetItemState(
+				0,
 				wx.LIST_STATE_SELECTED | wx.LIST_STATE_FOCUSED,
-				wx.LIST_STATE_SELECTED | wx.LIST_STATE_FOCUSED
+				wx.LIST_STATE_SELECTED | wx.LIST_STATE_FOCUSED,
 			)
 			self.contactList.EnsureVisible(0)
 		event.Skip()
@@ -374,4 +390,3 @@ class ContactList(wx.Dialog):
 		# Clears the Singleton instance so that the next __new__ creates a new one
 		ContactList._instance = None
 		event.Skip()
- 

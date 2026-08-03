@@ -14,7 +14,6 @@ Created on: 03/03/2023.
 import os
 
 import addonHandler
-import config
 import globalVars
 from gui import messageBox
 
@@ -24,18 +23,32 @@ addonHandler.initTranslation()
 # Get the name of the addon defined in the manifest.
 ADDON_name = addonHandler.getCodeAddon().manifest["name"]
 
+
 def onInstall():
 	"""
 	Moves the add-on database file to a new location during installation.
 	"""
-	relativeDbPath = os.path.join("addons", "contactsManager", "globalPlugins", "contactsManager", "database.db")
-	absoluteDbPath = os.path.abspath(os.path.join(globalVars.appArgs.configPath, relativeDbPath))
+	configPath = globalVars.appArgs.configPath
+	if not configPath:
+		return
+
+	relativeDbPath = os.path.join(
+		"addons",
+		"contactsManager",
+		"globalPlugins",
+		"contactsManager",
+		"database.db",
+	)
+	absoluteDbPath = os.path.abspath(os.path.join(configPath, relativeDbPath))
 
 	if os.path.isfile(absoluteDbPath):
-		configPath = globalVars.appArgs.configPath
 		addonRelativePath = os.path.join("addons", "contactsManager")
 		dbRelativeSuffix = os.path.join("globalPlugins", "contactsManager", "database.db")
-		newDbPath = os.path.join(configPath, addonRelativePath + addonHandler.ADDON_PENDINGINSTALL_SUFFIX, dbRelativeSuffix)
+		newDbPath = os.path.join(
+			configPath,
+			addonRelativePath + addonHandler.ADDON_PENDINGINSTALL_SUFFIX,
+			dbRelativeSuffix,
+		)
 
 		try:
 			os.rename(absoluteDbPath, os.path.abspath(newDbPath))

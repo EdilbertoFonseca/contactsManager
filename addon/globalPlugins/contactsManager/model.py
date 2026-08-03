@@ -17,10 +17,6 @@ All AI-generated code was manually reviewed and tested by the author.
 Created on: 30/11/2022.
 """
 
-import os
-import sys
-
-import versionInfo
 from logHandler import log
 
 from .configPanel import dbConfig  # Imports the instance of the DatabaseConfig class
@@ -28,8 +24,7 @@ from .sqlLoader import sql
 
 
 class ObjectContact(object):
-
-	def __init__(self, id='', name='', cell='', landline='', email=''):
+	def __init__(self, id="", name="", cell="", landline="", email=""):
 		"""
 		Initializes a new contact with the provided details.
 
@@ -53,8 +48,7 @@ class ObjectContact(object):
 		Returns:
 			str: A formatted string with the contact's name, cell phone, landline and email.
 		"""
-		return f'Name: {self.name}, Cell: {self.cell}, Landline: {self.landline}, Email: {self.email}'
-
+		return f"Name: {self.name}, Cell: {self.cell}, Landline: {self.landline}, Email: {self.email}"
 
 
 class Section:
@@ -65,7 +59,7 @@ class Section:
 	def __enter__(self):
 		"""Método de entrada para o gerenciador de contexto."""
 		self.connect = sql.connect(dbConfig.getCurrentDatabasePath())
-		self.connect.row_factory = self.dictFactory # Adicionado aqui para consistência
+		self.connect.row_factory = self.dictFactory  # Adicionado aqui para consistência
 		self.cursor = self.connect.cursor()
 		self.connected = True
 		return self
@@ -122,17 +116,17 @@ class Section:
 			with cls() as trans:
 				# Garante que a tabela existe com a estrutura completa
 				sqlCommand = """CREATE TABLE IF NOT EXISTS contacts(
-					id INTEGER PRIMARY KEY AUTOINCREMENT, 
-					name TEXT NOT NULL, 
-					cell TEXT, 
-					landline TEXT, 
+					id INTEGER PRIMARY KEY AUTOINCREMENT,
+					name TEXT NOT NULL,
+					cell TEXT,
+					landline TEXT,
 					email TEXT)"""
 				trans.execute(sqlCommand)
 				trans.persist()
 				log.info("ContactsManager: Base de dados inicializada com sucesso.")
 		except Exception as e:
 			log.error(f"ContactsManager: Erro ao inicializar base de dados: {e}")
-			
+
 
 # Start the initDB function.
 Section.initDB()

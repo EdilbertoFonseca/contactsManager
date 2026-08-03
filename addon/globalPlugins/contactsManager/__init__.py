@@ -41,6 +41,7 @@ Section.initDB()
 # Initialize translation support
 addonHandler.initTranslation()
 
+
 def disableInSecureMode(decoratedCls):
 	"""
 	Decorates a class to disable the plugin if safe mode is enabled.
@@ -60,7 +61,6 @@ def disableInSecureMode(decoratedCls):
 
 @disableInSecureMode
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
-
 	# Creating the constructor of the newly created GlobalPlugin class.
 	def __init__(self, *args, **kwargs):
 		super(GlobalPlugin, self).__init__(*args, **kwargs)
@@ -78,17 +78,20 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.mainMenu = wx.Menu()
 		self.toolsMenu = gui.mainFrame.sysTrayIcon.toolsMenu
 
-		self.contactsManager = self.mainMenu.Append(-1, _('&Contact List'))
+		self.contactsManager = self.mainMenu.Append(-1, _("&Contact List"))
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_activateContactsManager, self.contactsManager)
 
-		self.settingsPanel = self.mainMenu.Append(-1, _('&Settings'))
+		self.settingsPanel = self.mainMenu.Append(-1, _("&Settings"))
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_openAddonSettingsDialog, self.settingsPanel)
 
-		self.help = self.mainMenu.Append(-1, _('&Help'))
+		self.help = self.mainMenu.Append(-1, _("&Help"))
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_onHelp, self.help)
 
 		# Save submenu item
-		self.contactsManagerMenuItem = self.toolsMenu.AppendSubMenu(self.mainMenu, "&{}...".format(ADDON_SUMMARY))
+		self.contactsManagerMenuItem = self.toolsMenu.AppendSubMenu(
+			self.mainMenu,
+			"&{}...".format(ADDON_SUMMARY),
+		)
 
 	def onContactsManager(self, event):
 		"""
@@ -98,44 +101,51 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			event (wx.Event): The event triggered by the contactsManager button.
 		"""
 		# Translators: Title of contact list dialog box.
-		wx.CallAfter(self.displayDialog, ContactList, "dlgContact", _('Contact list.'))
+		wx.CallAfter(self.displayDialog, ContactList, "dlgContact", _("Contact list."))
 
 	# defining a script with decorator:
 	@script(
-		gesture='kb:Windows+alt+L',
+		gesture="kb:Windows+alt+L",
 		# Translators: Text displayed in NVDA help.
-		description=_('Displays a window with all contacts registered in the Contacts Manager.'),
-		category=ADDON_SUMMARY
+		description=_("Displays a window with all contacts registered in the Contacts Manager."),
+		category=ADDON_SUMMARY,
 	)
 	def script_activateContactsManager(self, gesture):
 		wx.CallAfter(self.onContactsManager, None)
 
 	# defining a script with decorator:
 	@script(
-		gesture='kb:Windows+alt+O',
+		gesture="kb:Windows+alt+O",
 		# Translators: Opens the Contacts Manager configuration menu
 		description=_("Opens Contacts Manager add-on settings"),
-		category=ADDON_SUMMARY
+		category=ADDON_SUMMARY,
 	)
 	@gui.blockAction.when(gui.blockAction.Context.MODAL_DIALOG_OPEN)
 	def script_openAddonSettingsDialog(self, gesture):
 		wx.CallAfter(
 			getattr(gui.mainFrame, "popupSettingsDialog", gui.mainFrame._popupSettingsDialog),
 			gui.settingsDialogs.NVDASettingsDialog,
-			ContactsManagerSettingsPanel
+			ContactsManagerSettingsPanel,
 		)
 
 	# defining a script with decorator:
 	@script(
-		gesture='kb:Windows+alt+J',
+		gesture="kb:Windows+alt+J",
 		# Translators: Text displayed in NVDA help.
-		description=_('Opens the Contacts Manager add-on help page.'),
-		category=ADDON_SUMMARY
+		description=_("Opens the Contacts Manager add-on help page."),
+		category=ADDON_SUMMARY,
 	)
 	def script_onHelp(self, gesture):
 		"""Open the addon's help page"""
-		wx.LaunchDefaultBrowser(addonHandler.Addon(os.path.join(
-			os.path.dirname(__file__), "..", "..")).getDocFilePath())
+		wx.LaunchDefaultBrowser(
+			addonHandler.Addon(
+				os.path.join(
+					os.path.dirname(__file__),
+					"..",
+					"..",
+				),
+			).getDocFilePath(),
+		)
 
 	def _onDestroy(self, e: wx.Event, attrName: str) -> None:
 		self.onGenericClosed(e, attrName)
@@ -179,7 +189,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def terminate(self):
 		super(GlobalPlugin, self).terminate()
 		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(
-			ContactsManagerSettingsPanel)
+			ContactsManagerSettingsPanel,
+		)
 		try:
 			self.toolsMenu.Remove(self.contactsManagerMenuItem)
 		except Exception as e:

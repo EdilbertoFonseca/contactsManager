@@ -1,7 +1,7 @@
 # Contact Manager for NVDA
 
-**Author**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)  
-**Created on**: 11/04/2024  
+**Author**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)
+**Created on**: 11/04/2024
 **License**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Introduction
@@ -31,7 +31,7 @@ When you select a contact in the list, their details will be shown in a read-onl
 
 ## Configuration
 
-Access the settings panel from:  
+Access the settings panel from:
 **NVDA Menu > Preferences > Settings > Contact Manager for NVDA**
 
 Available options:
@@ -46,7 +46,7 @@ Available options:
 
 You can open the Contact Manager in two ways:
 
-1. Keyboard shortcut: `Windows+Alt+L`  
+1. Keyboard shortcut: `Windows+Alt+L`
 2. NVDA Menu: `NVDA+N > Tools > Contact Manager`
 
 In the main window, you can:
@@ -63,7 +63,7 @@ In the main window, you can:
 3. Fill out the fields.
 4. Press `Alt+O` to save or `Alt+C` to cancel.
 
-> **Note:** Use **Enter** to navigate between fields.  
+> **Note:** Use **Enter** to navigate between fields.
 > The **Tab** key may behave unpredictably due to a known issue.
 
 ## Editing a Contact
@@ -97,7 +97,7 @@ In the main window, you can:
 | Delete all contacts       | `Alt+T`              |
 | Exit                      | `Alt+S`              |
 
-> To **edit** or **remove** a contact, make sure it is selected in the list.  
+> To **edit** or **remove** a contact, make sure it is selected in the list.
 > If no contact is selected, a warning message will be shown.
 
 ### Add/Edit Contact Window
@@ -113,13 +113,13 @@ In the main window, you can:
 
 This add-on was inspired by the contact manager originally developed by:
 
-- Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)  
-- Rui Fontes (<rui.fontes@tiflotecnia.com>)  
+- Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)
+- Rui Fontes (<rui.fontes@tiflotecnia.com>)
 - Ângelo Abrantes (<ampa4374@gmail.com>)
 
 ## Translators
 
-- **Portuguese (Brazil)** – Edilberto Fonseca  
-- **Portuguese (Portugal)** – Edilberto Fonseca  
-- **Ukrainian** – George‑br  
+- **Portuguese (Brazil)** – Edilberto Fonseca
+- **Portuguese (Portugal)** – Edilberto Fonseca
+- **Ukrainian** – George‑br
 - **Turkish** – Umut KORKMAZ
