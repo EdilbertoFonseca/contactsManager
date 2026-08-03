@@ -1,7 +1,7 @@
-﻿# NVDA için Kişi Yöneticisi
+# NVDA için Kişi Yöneticisi
 
-**Yazar**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)  
-**Oluşturulma Tarihi**: 11.04.2024  
+**Yazar**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)
+**Oluşturulma Tarihi**: 11.04.2024
 **Lisans**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Giriş
@@ -30,32 +30,32 @@ Kurulumdan sonra eklenti kullanıma hazırdır. Bir kişiyi seçtiğinizde bilgi
 
 ## Yapılandırma
 
-Ayar paneline şu şekilde ulaşabilirsiniz:  
+Ayar paneline şu şekilde ulaşabilirsiniz:
 **NVDA Menüsü > Tercihler > Ayarlar... > NVDA için Kişi Yöneticisi**
 
 Mevcut seçenekler:
 
-1. **Telefon alanlarına maske ekle**  
+1. **Telefon alanlarına maske ekle**
    Telefon numaralarını biçimlendirmek için `#` sembolü ile maske uygular. Varsayılan format Brezilya telefon biçimidir.
 
-2. **Tüm kişileri silme seçeneğini göster** (`Alt+T`)  
+2. **Tüm kişileri silme seçeneğini göster** (`Alt+T`)
    Etkinleştirildiğinde, tüm kayıtları tek bir komutla silmenize olanak tanır.
 
-3. **CSV dosyası içe aktarma düğmesini göster** (`Alt+I`)  
-   CSV dosyasından kişi bilgilerini içe aktarmanızı sağlar.  
+3. **CSV dosyası içe aktarma düğmesini göster** (`Alt+I`)
+   CSV dosyasından kişi bilgilerini içe aktarmanızı sağlar.
    > Not: CSV dosyasındaki alanlar, Kişi Yöneticisi ile uyumlu olmalıdır.
 
-4. **CSV dosyasını dışa aktarma düğmesini göster** (`Alt+X`)  
+4. **CSV dosyasını dışa aktarma düğmesini göster** (`Alt+X`)
    Tüm kişileri CSV formatında dışa aktarır.
 
-5. **Kişi veritabanı klasörü**  
+5. **Kişi veritabanı klasörü**
    Kişi veritabanının saklanacağı dizini belirlemenizi sağlar. Varsayılan yol değiştirilebilir.
 
 ## Kişi Yöneticisini Açma
 
 Kişi Yöneticisi’ne aşağıdaki yollarla erişebilirsiniz:
 
-1. Kısayol tuşu: `Windows+Alt+L`  
+1. Kısayol tuşu: `Windows+Alt+L`
 2. NVDA Menüsü: `NVDA+N > Araçlar > Kişi Yöneticisi`
 
 Ana pencerede şunları yapabilirsiniz:
@@ -72,7 +72,7 @@ Ana pencerede şunları yapabilirsiniz:
 3. Gerekli alanları doldurun;
 4. `Alt+O` ile kaydedin veya `Alt+C` ile iptal edin.
 
-> **Not:**  
+> **Not:**
 > Alanlar arasında geçiş yapmak için `Enter` tuşunu kullanın. `Tab` tuşu bazı durumlarda öngörülemeyen davranışlara neden olabilir.
 
 ## Kişi Düzenleme
@@ -93,7 +93,7 @@ Kişi listesi penceresinde şu alanlara göre arama yapabilirsiniz:
 - Sabit telefon
 - E-posta
 
-Arama terimini girdikten sonra `Alt+P` tuşuna basın.  
+Arama terimini girdikten sonra `Alt+P` tuşuna basın.
 Listeyi yenilemek ve aramayı sıfırlamak için `Alt+A` veya `F5` tuşunu kullanın.
 
 > Eşleşme bulunamazsa kullanıcıya bir bilgilendirme mesajı gösterilir.
@@ -114,7 +114,7 @@ Listeyi yenilemek ve aramayı sıfırlamak için `Alt+A` veya `F5` tuşunu kulla
 | Tüm kişileri sil         | `Alt+T`               |
 | Kapat                    | `Alt+S`               |
 
-> **Not:**  
+> **Not:**
 > Kişiyi düzenlemek veya silmek için önce listeden bir kişinin seçilmiş olması gerekir. Aksi hâlde, “seçili kişi yok” mesajı gösterilir.
 
 ### Yeni/Düzenle Penceresi
@@ -130,13 +130,13 @@ Listeyi yenilemek ve aramayı sıfırlamak için `Alt+A` veya `F5` tuşunu kulla
 
 Bu eklenti, aşağıdaki kişilerin geliştirdiği kişi yöneticisinden esinlenilerek oluşturulmuştur:
 
-- Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)  
-- Rui Fontes (<rui.fontes@tiflotecnia.com>)  
+- Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)
+- Rui Fontes (<rui.fontes@tiflotecnia.com>)
 - Ângelo Abrantes (<ampa4374@gmail.com>)
 
 ## Çeviriler
 
-- **Portekizce (Brezilya)** – Edilberto Fonseca  
-- **Portekizce (Portekiz)** – Edilberto Fonseca  
-- **Ukraynaca** – George‑br  
+- **Portekizce (Brezilya)** – Edilberto Fonseca
+- **Portekizce (Portekiz)** – Edilberto Fonseca
+- **Ukraynaca** – George‑br
 - **Türkçe** – Umut KORKMAZ

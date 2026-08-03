@@ -18,9 +18,9 @@ Created on: 24/01/2023.
 """
 
 import os
+from typing import Any
 
 import addonHandler
-import addonHandler.addonVersionCheck
 import config
 import gui
 import wx
@@ -28,7 +28,7 @@ from gui import guiHelper
 from gui.settingsDialogs import SettingsPanel
 from logHandler import log
 
-from .varsConfig import ADDON_SUMMARY, initConfiguration, ourAddon, countryCode
+from .varsConfig import ADDON_SUMMARY, countryCode, initConfiguration, ourAddon
 
 # Initialize translation support
 addonHandler.initTranslation()
@@ -38,7 +38,6 @@ initConfiguration()
 
 
 class DatabaseConfig:
-
 	def __init__(self, defaultPath):
 		self.defaultPath = defaultPath
 		self.firstDatabase = defaultPath
@@ -59,9 +58,10 @@ class DatabaseConfig:
 			log.warning("Database configuration not found, using default paths.")
 
 	def saveConfig(self):
-		config.conf[ourAddon.name]["currentDBPath"] = self.firstDatabase
-		config.conf[ourAddon.name]["alternateDBPath"] = self.altDatabase
-		config.conf[ourAddon.name]["selectedDBIndex"] = str(self.indexDb)
+		addonConf: dict[str, Any] = config.conf[ourAddon.name]  # type: ignore[index]
+		addonConf["currentDBPath"] = self.firstDatabase
+		addonConf["alternateDBPath"] = self.altDatabase
+		addonConf["selectedDBIndex"] = str(self.indexDb)
 
 	def setDatabasePath(self, newPath, isFirst=True):
 		if isFirst:
@@ -101,17 +101,16 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 	# Translators: Title of the Contacts Manager settings dialog in the NVDA settings.
 	title = ADDON_SUMMARY
 
-	def makeSettings(self, settingsSizer):
-		settingsSizerHelper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
+	def makeSettings(self, sizer):
+		settingsSizerHelper = gui.guiHelper.BoxSizerHelper(self, sizer=sizer)
 
 		# Translators: Formatting text for phone fields.
 		phoneFormattingBoxSizer = wx.StaticBoxSizer(
 			wx.HORIZONTAL,
 			self,
-			label=_("Add mask for phone fields:")
+			label=_("Add mask for phone fields:"),
 		)
 
-		phoneFormattingBox = phoneFormattingBoxSizer.GetStaticBox()
 		phoneFormattingGroup = guiHelper.BoxSizerHelper(self, sizer=phoneFormattingBoxSizer)
 		settingsSizerHelper.addItem(phoneFormattingGroup)
 
@@ -119,12 +118,12 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 		choices = [f"{code} - {name}" for code, name in countryCode]
 		self.countryCode = phoneFormattingGroup.addLabeledControl(
 			_("Country code"),
-	wx.Choice,
-	choices=choices,
+			wx.Choice,
+			choices=choices,
 		)
 		savedCode = config.conf[ourAddon.name].get("countryCode", "55")
 
-		for i, (code, name) in enumerate(countryCode):
+		for i, (code, _name) in enumerate(countryCode):
 			if code == savedCode:
 				self.countryCode.SetSelection(i)
 				break
@@ -132,19 +131,19 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 		# Cell phone
 		self.textCellPhone = phoneFormattingGroup.addLabeledControl(
 			_("Cell phone"),
-			wx.TextCtrl
+			wx.TextCtrl,
 		)
 		self.textCellPhone.SetValue(
-			config.conf[ourAddon.name].get("formatCellPhone", "")
+			config.conf[ourAddon.name].get("formatCellPhone", ""),
 		)
 
 		# Landline
 		self.textLandline = phoneFormattingGroup.addLabeledControl(
 			_("Landline"),
-			wx.TextCtrl
+			wx.TextCtrl,
 		)
 		self.textLandline.SetValue(
-			config.conf[ourAddon.name].get("formatLandline", "")
+			config.conf[ourAddon.name].get("formatLandline", ""),
 		)
 
 		# Group for buttons
@@ -152,7 +151,7 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 			wx.VERTICAL,
 			self,
 			# Translators: Group for buttons
-			label=_("Options")
+			label=_("Options"),
 		)
 
 		buttonsBox = buttonsBoxSizer.GetStaticBox()
@@ -163,31 +162,33 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 		# Buttons within the group
 		self.resetRecords = buttonsGroup.addItem(
 			# Translators: Label for the checkbox to show the option to delete the entire calendar.
-			wx.CheckBox(buttonsBox, label=_("Show option &to delete entire calendar"))
+			wx.CheckBox(buttonsBox, label=_("Show option &to delete entire calendar")),
 		)
 		self.resetRecords.SetValue(
-			config.conf[ourAddon.name].get("resetRecords", False)
+			config.conf[ourAddon.name].get("resetRecords", False),
 		)
 
 		self.importCSV = buttonsGroup.addItem(
 			# Translators: Label for the checkbox to show the import CSV file button.
-			wx.CheckBox(buttonsBox, label=_("Show &import CSV file button"))
+			wx.CheckBox(buttonsBox, label=_("Show &import CSV file button")),
 		)
 		self.importCSV.SetValue(
-			config.conf[ourAddon.name].get("importCSV", False)
+			config.conf[ourAddon.name].get("importCSV", False),
 		)
 
 		self.exportCSV = buttonsGroup.addItem(
 			# Translators: Label for the checkbox to show the export CSV file button.
-			wx.CheckBox(buttonsBox, label=_("Show e&xport CSV file button"))
+			wx.CheckBox(buttonsBox, label=_("Show e&xport CSV file button")),
 		)
 		self.exportCSV.SetValue(
-			config.conf[ourAddon.name].get("exportCSV", False)
+			config.conf[ourAddon.name].get("exportCSV", False),
 		)
 
 		pathBoxSizer = wx.StaticBoxSizer(
 			# Translators: Name of combobox with the agenda files currentDBPath.
-			wx.HORIZONTAL, self, label=_("Path of agenda files:")
+			wx.HORIZONTAL,
+			self,
+			label=_("Path of agenda files:"),
 		)
 		pathBox = pathBoxSizer.GetStaticBox()
 		pathGroup = guiHelper.BoxSizerHelper(self, sizer=pathBoxSizer)
@@ -218,7 +219,7 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 			dDir,
 			dFile,
 			wildcard=_("Database files (*.db)"),
-			style=wx.FD_SAVE
+			style=wx.FD_SAVE,
 		)
 		if dlg.ShowModal() == wx.ID_OK:
 			fname = dlg.GetPath()
@@ -243,17 +244,19 @@ class ContactsManagerSettingsPanel(SettingsPanel):
 		Saves the options to the NVDA configuration file.
 		"""
 
+		addonConf: dict[str, Any] = config.conf[ourAddon.name]  # type: ignore[index]
+
 		selection = self.countryCode.GetSelection()
 
 		if selection != wx.NOT_FOUND:
 			code = countryCode[selection][0]
 
-		config.conf[ourAddon.name]["countryCode"] = code
-		config.conf[ourAddon.name]["formatCellPhone"] = self.textCellPhone.GetValue()
-		config.conf[ourAddon.name]["formatLandline"] = self.textLandline.GetValue()
-		config.conf[ourAddon.name]["resetRecords"] = self.resetRecords.GetValue()
-		config.conf[ourAddon.name]["importCSV"] = self.importCSV.GetValue()
-		config.conf[ourAddon.name]["exportCSV"] = self.exportCSV.GetValue()
+		addonConf["countryCode"] = code
+		addonConf["formatCellPhone"] = self.textCellPhone.GetValue()
+		addonConf["formatLandline"] = self.textLandline.GetValue()
+		addonConf["resetRecords"] = self.resetRecords.GetValue()
+		addonConf["importCSV"] = self.importCSV.GetValue()
+		addonConf["exportCSV"] = self.exportCSV.GetValue()
 
 		# Update selection index and save settings
 		dbConfig.indexDb = self.pathNameCB.GetSelection()

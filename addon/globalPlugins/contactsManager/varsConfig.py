@@ -30,6 +30,10 @@ ADDON_PATH = os.path.dirname(__file__)
 # Get the title of the add-on defined in the summary.
 ADDON_SUMMARY = addonHandler.getCodeAddon().manifest["summary"]
 
+# Retrieve the current add-on instance
+_addon = addonHandler.getCodeAddon()
+ADDON_NAME = _addon.name
+
 # Detect architecture
 IS64 = struct.calcsize("P") * 8 == 64
 
@@ -207,6 +211,7 @@ countryCode = [
 	("263", "Zimbábue"),
 ]
 
+
 def initConfiguration():
 	"""
 	Initializes the configuration specification for the Contacts Manager for NVDA add-on.
@@ -219,9 +224,9 @@ def initConfiguration():
 			"resetRecords": "boolean(default=True)",
 			"importCSV": "boolean(default=True)",
 			"exportCSV": "boolean(default=True)",
-			"currentDBPath": "string(default="")",
-			"alternateDBPath": "string(default="")",
-			"selectedDBIndex": "string(default="")",
+			"currentDBPath": "string(default=)",
+			"alternateDBPath": "string(default=)",
+			"selectedDBIndex": "string(default=)",
 		}
 		config.conf.spec[ourAddon.name] = confspec
 	except Exception as e:

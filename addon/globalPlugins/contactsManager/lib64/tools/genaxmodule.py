@@ -1,7 +1,7 @@
-#----------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
 # Name:         genaxmodule.py
 # Tags:         phoenix-port
-#----------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
 """
 
 
@@ -24,26 +24,26 @@ import sys
 
 
 def main(args=None):
-    if not args:
-        args = sys.argv
+	if not args:
+		args = sys.argv
 
-    if len(args) < 3:
-        print(__doc__)
-        sys.exit(1)
+	if len(args) < 3:
+		print(__doc__)
+		sys.exit(1)
 
-    # unfortunately we need to make an app, frame and an instance of
-    # the ActiceX control in order to get the TypeInfo about it...
-    app = wx.App()
-    f = wx.Frame(None, -1, "")
-    clsid = wx.activex.CLSID(args[1])
-    axw = wx.activex.ActiveXWindow(f, clsid)
+	# unfortunately we need to make an app, frame and an instance of
+	# the ActiceX control in order to get the TypeInfo about it...
+	app = wx.App()
+	f = wx.Frame(None, -1, "")
+	clsid = wx.activex.CLSID(args[1])
+	axw = wx.activex.ActiveXWindow(f, clsid)
 
-    wx.activex.GernerateAXModule(axw, args[2], '.', verbose=True)
+	wx.activex.GernerateAXModule(axw, args[2], ".", verbose=True)
 
-    # Cleanup
-    f.Close()
-    app.MainLoop()
+	# Cleanup
+	f.Close()
+	app.MainLoop()
 
 
 if __name__ == "__main__":
-    main(sys.argv)
+	main(sys.argv)

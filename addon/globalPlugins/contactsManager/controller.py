@@ -37,9 +37,11 @@ try:
 	import csv
 except ImportError as e:
 	log.error(f"Error importing module: {str(e)}")
+	raise
 
 # Initialize translation support
 addonHandler.initTranslation()
+
 
 def getAllRecords():
 	"""
@@ -72,8 +74,16 @@ def convertResults(results):
 		list: A list of `ObjectContact` objects, where each object represents a contact in the database.
 	"""
 
-	rows = [ObjectContact(
-		record['id'], record['name'], record['cell'], record['landline'], record['email']) for record in results]
+	rows = [
+		ObjectContact(
+			record["id"],
+			record["name"],
+			record["cell"],
+			record["landline"],
+			record["email"],
+		)
+		for record in results
+	]
 	return rows
 
 
@@ -95,7 +105,14 @@ def addRecord(data):
 
 	with Section() as trans:
 		trans.execute(
-			"INSERT INTO contacts VALUES(NULL, ?,?,?,?)", (data["contacts"]["name"], data['contacts']['cell'], data['contacts']['landline'], data['contacts']['email']))
+			"INSERT INTO contacts VALUES(NULL, ?,?,?,?)",
+			(
+				data["contacts"]["name"],
+				data["contacts"]["cell"],
+				data["contacts"]["landline"],
+				data["contacts"]["email"],
+			),
+		)
 		trans.persist()
 
 
@@ -118,19 +135,20 @@ def searchRecords(filterChoice, keyword):
 	"""
 
 	query_map = {
-		_('Name'): "SELECT * FROM contacts WHERE name LIKE ?",
-		_('Cell phone'): "SELECT * FROM contacts WHERE cell LIKE ?",
-		_('Landline'): "SELECT * FROM contacts WHERE landline LIKE ?",
-		_('Email'): "SELECT * FROM contacts WHERE email LIKE ?",
+		_("Name"): "SELECT * FROM contacts WHERE name LIKE ?",
+		_("Cell phone"): "SELECT * FROM contacts WHERE cell LIKE ?",
+		_("Landline"): "SELECT * FROM contacts WHERE landline LIKE ?",
+		_("Email"): "SELECT * FROM contacts WHERE email LIKE ?",
 	}
 	query = query_map.get(filterChoice)
 	if not query:
 		# Handle error or return an empty list
 		return []
 	with Section() as trans:
-		trans.execute(query, ('%' + keyword + '%',))
+		trans.execute(query, ("%" + keyword + "%",))
 		results = trans.fetchall()
 	return convertResults(results)
+
 
 def editRecord(ID, row):
 	"""
@@ -149,7 +167,7 @@ def editRecord(ID, row):
 	with Section() as trans:
 		trans.execute(
 			"UPDATE contacts SET name =?, cell=?, landline=?, email=? WHERE id = ?",
-			(row['name'], row['cell'], row['landline'], row['email'], ID)
+			(row["name"], row["cell"], row["landline"], row["email"], ID),
 		)
 		trans.persist()
 
@@ -193,7 +211,7 @@ def importCsvToDb(mypath):
 
 	with Section() as trans:
 		try:
-			with open(mypath, 'r', encoding="UTF-8") as file:
+			with open(mypath, "r", encoding="UTF-8") as file:
 				sample = file.read(1024)
 				file.seek(0)
 				dialect = csv.Sniffer().sniff(sample)
@@ -215,19 +233,17 @@ def importCsvToDb(mypath):
 			log.error(f"Error importing data: {str(e)}")
 			raise  # Re-raise the exception after logging
 
+
 def exportDbToCsv(mypath):
 	try:
 		with Section() as trans:
 			trans.execute("SELECT * FROM contacts")
-			rows = trans.fetchall() # Isso retorna uma lista de dicionários, como você já configurou.
-			
-# Use column names to extract values by excluding 'id'.
+			rows = trans.fetchall()  # Isso retorna uma lista de dicionários, como você já configurou.
+
+			# Use column names to extract values by excluding 'id'.
 			# This is safe because dictionaries are hashable and have keys.
-			cleaned_rows = [
-				[row['name'], row['cell'], row['landline'], row['email']]
-				for row in rows
-			]
-			
+			cleaned_rows = [[row["name"], row["cell"], row["landline"], row["email"]] for row in rows]
+
 			with open(mypath, "w", newline="", encoding="UTF-8") as file:
 				writer = csv.writer(file)
 				writer.writerows(cleaned_rows)
@@ -236,22 +252,23 @@ def exportDbToCsv(mypath):
 		# The exception must be relaunched to notify the interface
 		raise
 
+
 def countRecords():
 	"""
-It counts the total number of records in the database safely.
+	It counts the total number of records in the database safely.
 
-Returns:
-INT: The total number of records.
-None: In case of error when accessing the database.
+	Returns:
+	INT: The total number of records.
+	None: In case of error when accessing the database.
 	"""
 	try:
 		with Section() as trans:
 			if not trans.connected:
 				return None
-			
+
 			trans.execute("SELECT COUNT(*) FROM contacts")
-# Access the value of the dictionary by the 'Count (*)' key instead of the index [0].
-			count = trans.cursor.fetchone()['COUNT(*)']
+			# Access the value of the dictionary by the 'Count (*)' key instead of the index [0].
+			count = trans.cursor.fetchone()["COUNT(*)"]
 			return count
 	except Exception as e:
 		log.error(f"Erro ao contar registros no banco de dados: {e.__class__.__name__} - {e}")
