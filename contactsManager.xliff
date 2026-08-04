@@ -1,0 +1,866 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en">
+<file id="readme.md" original="https://raw.githubusercontent.com/EdilbertoFonseca/contactsManager/25272d36f99e64a83caa45211b2c5fe74e4463ce/readme.md">
+<skeleton>
+# $(ID:ed075a31-98ed-4527-ba8f-6e24d134e3cb)
+
+$(ID:56d33a16-81d5-459e-8f28-6055418442d2)
+$(ID:6e668aea-9e99-4af7-ac1b-738df42bd0e8)
+$(ID:d708a3bf-c195-4714-b9d8-f5620bc509c0)
+
+## $(ID:e1b8c82e-0ec2-4ede-ade1-f53db2448545)
+
+$(ID:daf9a5da-cc04-469e-b191-2dc163f35b99)
+
+$(ID:57d0a21b-d607-453c-a82f-060ac0cc465b)
+
+$(ID:fb998ffb-24f2-491b-ad32-ca9d3ba0bb2d)
+
+$(ID:0be9f633-b1fd-4ce4-9d65-37c13da28557)
+$(ID:bb59450f-389f-4c8b-8d6b-ff526f14b36b)
+$(ID:f97a4dda-3707-46f5-8338-1399d81ce5f2)
+$(ID:80c8b099-06a1-4b18-9560-3d118d14fafc)
+$(ID:0c9e3edd-7ab3-46cb-9e11-ede1f3c0c12f)
+
+## $(ID:1e82fab8-e6c0-46ec-b23a-befcd13c85d4)
+
+1. $(ID:8aff707c-bef9-42a6-8a12-71e2b0de64c3)
+2. $(ID:cbbb144f-a675-490b-b408-e55cd86d9ad2)
+3. $(ID:273436c8-7a3d-4308-b9ae-fb498f8569bb)
+4. $(ID:b9418d19-f4d8-4f72-8ad1-0931a492abee)
+
+$(ID:e501b405-15f7-4808-aecd-847859c87683)
+
+$(ID:49a3faeb-f8cf-4808-9a9f-3939ee10acc9)
+
+## $(ID:f811d4ba-4c8b-4437-ab3c-bcd87a244a4c)
+
+$(ID:a793d4d3-c6b5-4e8a-b173-650a91a26988)
+$(ID:9804dc6b-b5c6-45ae-ab06-2d7117cd4a4d)
+
+$(ID:4f64110c-b772-4d58-9f41-efc49a9e5d65)
+
+1. $(ID:fe33af74-2cdc-484f-b69b-56f3efacffca)
+2. $(ID:7b390185-caae-401b-9052-3cde7741f65c)
+3. $(ID:aa76d738-42e7-46bf-849c-1e5c8306743b)
+4. $(ID:ec9d6f0f-1060-450a-b608-2e0c6bdef8d3)
+5. $(ID:73434449-424e-4be1-a194-1e588b52cb64)
+
+## $(ID:b09edc9c-cf36-492e-9f01-f83868721cb5)
+
+$(ID:97c3b756-d5c5-4db4-ba51-4ad47056faaa)
+
+1. $(ID:8f133899-6a5f-4eb3-b33e-370e2045130f)
+2. $(ID:fcdc6b96-b891-4479-9e0e-3192e1cef25c)
+
+$(ID:b45550ee-d0b0-428a-9304-fc3eaca24e5a)
+
+$(ID:179747c3-5fba-47b7-abe8-a683698b5b16)
+$(ID:ebf9625d-feff-496d-93b9-5a2e752b065c)
+$(ID:f0bad350-5c1c-44fd-b756-826420f9c6c6)
+$(ID:ebaacc18-59c9-4f79-ac22-4a7dc1d097dc)
+
+## $(ID:0f29626a-442c-4de2-8c19-2d68c6a59233)
+
+1. $(ID:f66565dc-474a-4be5-a335-7c335ce22713)
+2. $(ID:38e52d58-f2e6-4d88-8af2-e02d65a24002)
+3. $(ID:85b2dc93-2ec8-4947-af5d-9ee4ad2e2752)
+4. $(ID:a6be7109-da81-43fd-bda7-663eeb474923)
+
+$(ID:34ee2665-86d8-4a81-9f47-a785fe410459)
+$(ID:58f2b1f5-5ce2-4658-8dcf-c836806e6d17)
+
+## $(ID:499fae0f-6b09-49b4-9388-e547c0f08903)
+
+1. $(ID:8530956d-71b2-44b4-8190-b09803d9c667)
+2. $(ID:83b89be6-4c91-4080-b739-bb9fe94908b7)
+3. $(ID:416f66b2-275f-4d66-afc2-4e851c545d36)
+4. $(ID:5ef80543-8476-43ba-9892-4cee7f4cb3d7)
+
+## $(ID:938a3cdc-63ad-462a-9a1d-61b17eedbefc)
+
+1. $(ID:507f4553-6692-4c94-a266-312e6660a96d)
+2. $(ID:6dc57219-5546-4313-98af-c028e642770a)
+3. $(ID:4b9108f0-3c7b-4631-9471-3b2e4eb457bd)
+
+$(ID:75e0d45a-6683-4ced-adb4-4924cedb7478)
+
+## $(ID:33d95daf-82ef-44c1-aacc-f8956e945740)
+
+### $(ID:09fcaabf-dc99-4593-b4e7-c6023c3b134d)
+
+|$(ID:3e87080f-c2c9-4191-b7c7-5b10c687f22f)|
+|---------------------------|----------------------|
+|$(ID:fa240b0e-797b-4a45-9580-3191eed4d993)|
+|$(ID:f10bb8de-ee63-4fb9-a0bf-02d3ee50d2a5)|
+|$(ID:2f192937-0132-476e-851e-ea5efca1ab30)|
+|$(ID:c6d3239f-dddf-45c1-a783-ba5c62fe4b9b)|
+|$(ID:db8ea759-76fd-4064-87e9-7aefd2b16fd9)|
+|$(ID:f451f476-0930-41ec-9936-09e90f9ccf13)|
+|$(ID:16023fb9-5692-4e98-a443-7bd3c41153b7)|
+|$(ID:c01ebd19-39f0-43b5-870e-8a0c679d3ae7)|
+|$(ID:3dc73186-2694-483e-ab45-415b13131b58)|
+
+$(ID:2185ad1a-f2b0-49fb-bcc2-9f3eb6deffa8)
+$(ID:5aa25a2e-4bbc-4c89-848e-5e49ebafbf52)
+
+### $(ID:6e2283ed-dd42-45bf-b6d2-3a27613c65e5)
+
+|$(ID:cced2657-8074-4f6e-97bd-7b227e49ebae)|
+|---------------|-----------|
+|$(ID:49569af3-37cb-4cb9-a74c-150bdd69de9e)|
+|$(ID:24bd4552-ff8a-48cc-903f-7e1042a0ee0e)|
+
+$(ID:75059c60-f3d6-4a8f-9896-4d845e8db788)
+
+## $(ID:a10aab0f-cbeb-44fc-ab74-260321c3ee30)
+
+$(ID:8ac4b849-a3b2-4c03-83de-2e2fc0b61404)
+
+$(ID:ca71cde4-48bb-4728-9bd9-76eb672c997d)
+$(ID:a7ceb142-9a2a-476e-b503-d94e36d9094e)
+$(ID:f0d9e5a4-b1c9-4c93-866c-ff23c35fee29)
+
+## $(ID:fd49361d-25e2-4f94-9ea6-aa900d9bb914)
+
+$(ID:fa4df06d-8aa7-4ffc-ba23-625a67eed314)
+$(ID:41b2a241-98c6-4c68-8f40-4e4170ba07d0)
+$(ID:8dcebfa6-a4fc-4783-ae24-9f6b671a72fb)
+$(ID:50a747b7-74ce-4ff6-a878-5829d4c44579)
+
+</skeleton>
+<unit id="ed075a31-98ed-4527-ba8f-6e24d134e3cb">
+<notes>
+<note appliesTo="source">line: 2</note>
+<note appliesTo="source">prefix: # </note>
+</notes>
+<segment>
+<source>Contact Manager for NVDA</source>
+</segment>
+</unit>
+<unit id="56d33a16-81d5-459e-8f28-6055418442d2">
+<notes>
+<note appliesTo="source">line: 4</note>
+</notes>
+<segment>
+<source>**Author**: Edilberto Fonseca (&lt;edilberto.fonseca@outlook.com&gt;)</source>
+</segment>
+</unit>
+<unit id="6e668aea-9e99-4af7-ac1b-738df42bd0e8">
+<notes>
+<note appliesTo="source">line: 5</note>
+</notes>
+<segment>
+<source>**Created on**: 11/04/2024</source>
+</segment>
+</unit>
+<unit id="d708a3bf-c195-4714-b9d8-f5620bc509c0">
+<notes>
+<note appliesTo="source">line: 6</note>
+</notes>
+<segment>
+<source>**License**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)</source>
+</segment>
+</unit>
+<unit id="e1b8c82e-0ec2-4ede-ade1-f53db2448545">
+<notes>
+<note appliesTo="source">line: 8</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Introduction</source>
+</segment>
+</unit>
+<unit id="daf9a5da-cc04-469e-b191-2dc163f35b99">
+<notes>
+<note appliesTo="source">line: 10</note>
+</notes>
+<segment>
+<source>Welcome to the **Contact Manager for NVDA**!</source>
+</segment>
+</unit>
+<unit id="57d0a21b-d607-453c-a82f-060ac0cc465b">
+<notes>
+<note appliesTo="source">line: 12</note>
+</notes>
+<segment>
+<source>This add-on was developed to help blind or visually impaired users manage their contact list in a practical, accessible, and efficient way.</source>
+</segment>
+</unit>
+<unit id="fb998ffb-24f2-491b-ad32-ca9d3ba0bb2d">
+<notes>
+<note appliesTo="source">line: 14</note>
+</notes>
+<segment>
+<source>With this tool, you can:</source>
+</segment>
+</unit>
+<unit id="0be9f633-b1fd-4ce4-9d65-37c13da28557">
+<notes>
+<note appliesTo="source">line: 16</note>
+</notes>
+<segment>
+<source>- Add, edit, delete, and search for contacts;</source>
+</segment>
+</unit>
+<unit id="bb59450f-389f-4c8b-8d6b-ff526f14b36b">
+<notes>
+<note appliesTo="source">line: 17</note>
+</notes>
+<segment>
+<source>- Import and export contact lists in CSV format;</source>
+</segment>
+</unit>
+<unit id="f97a4dda-3707-46f5-8338-1399d81ce5f2">
+<notes>
+<note appliesTo="source">line: 18</note>
+</notes>
+<segment>
+<source>- Apply custom phone number formatting;</source>
+</segment>
+</unit>
+<unit id="80c8b099-06a1-4b18-9560-3d118d14fafc">
+<notes>
+<note appliesTo="source">line: 19</note>
+</notes>
+<segment>
+<source>- Choose a custom location to store your contact database;</source>
+</segment>
+</unit>
+<unit id="0c9e3edd-7ab3-46cb-9e11-ede1f3c0c12f">
+<notes>
+<note appliesTo="source">line: 20</note>
+</notes>
+<segment>
+<source>- Navigate an intuitive and fully keyboard-accessible interface.</source>
+</segment>
+</unit>
+<unit id="1e82fab8-e6c0-46ec-b23a-befcd13c85d4">
+<notes>
+<note appliesTo="source">line: 22</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Installation</source>
+</segment>
+</unit>
+<unit id="8aff707c-bef9-42a6-8a12-71e2b0de64c3">
+<notes>
+<note appliesTo="source">line: 24</note>
+<note appliesTo="source">prefix: 1. </note>
+</notes>
+<segment>
+<source>In NVDA, open the **Tools** menu and go to the **Add-on Store**.</source>
+</segment>
+</unit>
+<unit id="cbbb144f-a675-490b-b408-e55cd86d9ad2">
+<notes>
+<note appliesTo="source">line: 25</note>
+<note appliesTo="source">prefix: 2. </note>
+</notes>
+<segment>
+<source>Under the **Available Add-ons** tab, use the **Search** field and look for `Contact Manager`.</source>
+</segment>
+</unit>
+<unit id="273436c8-7a3d-4308-b9ae-fb498f8569bb">
+<notes>
+<note appliesTo="source">line: 26</note>
+<note appliesTo="source">prefix: 3. </note>
+</notes>
+<segment>
+<source>Select it, press **Enter** or click **Apply**, and choose **Install**.</source>
+</segment>
+</unit>
+<unit id="b9418d19-f4d8-4f72-8ad1-0931a492abee">
+<notes>
+<note appliesTo="source">line: 27</note>
+<note appliesTo="source">prefix: 4. </note>
+</notes>
+<segment>
+<source>Restart NVDA to complete the installation.</source>
+</segment>
+</unit>
+<unit id="e501b405-15f7-4808-aecd-847859c87683">
+<notes>
+<note appliesTo="source">line: 29</note>
+</notes>
+<segment>
+<source>Once installed, the add-on is ready to use.</source>
+</segment>
+</unit>
+<unit id="49a3faeb-f8cf-4808-9a9f-3939ee10acc9">
+<notes>
+<note appliesTo="source">line: 31</note>
+</notes>
+<segment>
+<source>When you select a contact in the list, their details will be shown in a read-only text box. You can navigate the list using the first letter of the contact’s name.</source>
+</segment>
+</unit>
+<unit id="f811d4ba-4c8b-4437-ab3c-bcd87a244a4c">
+<notes>
+<note appliesTo="source">line: 33</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Configuration</source>
+</segment>
+</unit>
+<unit id="a793d4d3-c6b5-4e8a-b173-650a91a26988">
+<notes>
+<note appliesTo="source">line: 35</note>
+</notes>
+<segment>
+<source>Access the settings panel from:</source>
+</segment>
+</unit>
+<unit id="9804dc6b-b5c6-45ae-ab06-2d7117cd4a4d">
+<notes>
+<note appliesTo="source">line: 36</note>
+</notes>
+<segment>
+<source>**NVDA Menu &gt; Preferences &gt; Settings &gt; Contact Manager for NVDA**</source>
+</segment>
+</unit>
+<unit id="4f64110c-b772-4d58-9f41-efc49a9e5d65">
+<notes>
+<note appliesTo="source">line: 38</note>
+</notes>
+<segment>
+<source>Available options:</source>
+</segment>
+</unit>
+<unit id="fe33af74-2cdc-484f-b69b-56f3efacffca">
+<notes>
+<note appliesTo="source">line: 40</note>
+<note appliesTo="source">prefix: 1. </note>
+</notes>
+<segment>
+<source>**Phone number masking**: Use `#` to apply a formatting mask (e.g., for Brazilian numbers).</source>
+</segment>
+</unit>
+<unit id="7b390185-caae-401b-9052-3cde7741f65c">
+<notes>
+<note appliesTo="source">line: 41</note>
+<note appliesTo="source">prefix: 2. </note>
+</notes>
+<segment>
+<source>**Allow clearing all contacts** (`Alt+T`): Enables a button to delete all entries in the contact list.</source>
+</segment>
+</unit>
+<unit id="aa76d738-42e7-46bf-849c-1e5c8306743b">
+<notes>
+<note appliesTo="source">line: 42</note>
+<note appliesTo="source">prefix: 3. </note>
+</notes>
+<segment>
+<source>**Enable CSV import** (`Alt+I`): Shows a button to import contacts from CSV files.</source>
+</segment>
+</unit>
+<unit id="ec9d6f0f-1060-450a-b608-2e0c6bdef8d3">
+<notes>
+<note appliesTo="source">line: 43</note>
+<note appliesTo="source">prefix: 4. </note>
+</notes>
+<segment>
+<source>**Enable CSV export** (`Alt+X`): Shows a button to export the contact list to a CSV file.</source>
+</segment>
+</unit>
+<unit id="73434449-424e-4be1-a194-1e588b52cb64">
+<notes>
+<note appliesTo="source">line: 44</note>
+<note appliesTo="source">prefix: 5. </note>
+</notes>
+<segment>
+<source>**Contact file directory**: Set a custom path for storing your agenda file.</source>
+</segment>
+</unit>
+<unit id="b09edc9c-cf36-492e-9f01-f83868721cb5">
+<notes>
+<note appliesTo="source">line: 46</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Accessing the Add-on</source>
+</segment>
+</unit>
+<unit id="97c3b756-d5c5-4db4-ba51-4ad47056faaa">
+<notes>
+<note appliesTo="source">line: 48</note>
+</notes>
+<segment>
+<source>You can open the Contact Manager in two ways:</source>
+</segment>
+</unit>
+<unit id="8f133899-6a5f-4eb3-b33e-370e2045130f">
+<notes>
+<note appliesTo="source">line: 50</note>
+<note appliesTo="source">prefix: 1. </note>
+</notes>
+<segment>
+<source>Keyboard shortcut: `Windows+Alt+L`</source>
+</segment>
+</unit>
+<unit id="fcdc6b96-b891-4479-9e0e-3192e1cef25c">
+<notes>
+<note appliesTo="source">line: 51</note>
+<note appliesTo="source">prefix: 2. </note>
+</notes>
+<segment>
+<source>NVDA Menu: `NVDA+N &gt; Tools &gt; Contact Manager`</source>
+</segment>
+</unit>
+<unit id="b45550ee-d0b0-428a-9304-fc3eaca24e5a">
+<notes>
+<note appliesTo="source">line: 53</note>
+</notes>
+<segment>
+<source>In the main window, you can:</source>
+</segment>
+</unit>
+<unit id="179747c3-5fba-47b7-abe8-a683698b5b16">
+<notes>
+<note appliesTo="source">line: 55</note>
+</notes>
+<segment>
+<source>- Add, edit, and delete contacts;</source>
+</segment>
+</unit>
+<unit id="ebf9625d-feff-496d-93b9-5a2e752b065c">
+<notes>
+<note appliesTo="source">line: 56</note>
+</notes>
+<segment>
+<source>- Search for specific contacts;</source>
+</segment>
+</unit>
+<unit id="f0bad350-5c1c-44fd-b756-826420f9c6c6">
+<notes>
+<note appliesTo="source">line: 57</note>
+</notes>
+<segment>
+<source>- Import and export CSV files;</source>
+</segment>
+</unit>
+<unit id="ebaacc18-59c9-4f79-ac22-4a7dc1d097dc">
+<notes>
+<note appliesTo="source">line: 58</note>
+</notes>
+<segment>
+<source>- Delete all records in the contact list (if enabled).</source>
+</segment>
+</unit>
+<unit id="0f29626a-442c-4de2-8c19-2d68c6a59233">
+<notes>
+<note appliesTo="source">line: 60</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Adding a New Contact</source>
+</segment>
+</unit>
+<unit id="f66565dc-474a-4be5-a335-7c335ce22713">
+<notes>
+<note appliesTo="source">line: 62</note>
+<note appliesTo="source">prefix: 1. </note>
+</notes>
+<segment>
+<source>Open the Contact Manager (`Windows+Alt+L` or via menu).</source>
+</segment>
+</unit>
+<unit id="38e52d58-f2e6-4d88-8af2-e02d65a24002">
+<notes>
+<note appliesTo="source">line: 63</note>
+<note appliesTo="source">prefix: 2. </note>
+</notes>
+<segment>
+<source>Press `Alt+N` to add a new contact.</source>
+</segment>
+</unit>
+<unit id="85b2dc93-2ec8-4947-af5d-9ee4ad2e2752">
+<notes>
+<note appliesTo="source">line: 64</note>
+<note appliesTo="source">prefix: 3. </note>
+</notes>
+<segment>
+<source>Fill out the fields.</source>
+</segment>
+</unit>
+<unit id="a6be7109-da81-43fd-bda7-663eeb474923">
+<notes>
+<note appliesTo="source">line: 65</note>
+<note appliesTo="source">prefix: 4. </note>
+</notes>
+<segment>
+<source>Press `Alt+O` to save or `Alt+C` to cancel.</source>
+</segment>
+</unit>
+<unit id="34ee2665-86d8-4a81-9f47-a785fe410459">
+<notes>
+<note appliesTo="source">line: 67</note>
+</notes>
+<segment>
+<source>&gt; **Note:** Use **Enter** to navigate between fields.</source>
+</segment>
+</unit>
+<unit id="58f2b1f5-5ce2-4658-8dcf-c836806e6d17">
+<notes>
+<note appliesTo="source">line: 68</note>
+</notes>
+<segment>
+<source>&gt; The **Tab** key may behave unpredictably due to a known issue.</source>
+</segment>
+</unit>
+<unit id="499fae0f-6b09-49b4-9388-e547c0f08903">
+<notes>
+<note appliesTo="source">line: 70</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Editing a Contact</source>
+</segment>
+</unit>
+<unit id="8530956d-71b2-44b4-8190-b09803d9c667">
+<notes>
+<note appliesTo="source">line: 72</note>
+<note appliesTo="source">prefix: 1. </note>
+</notes>
+<segment>
+<source>Select a contact from the list.</source>
+</segment>
+</unit>
+<unit id="83b89be6-4c91-4080-b739-bb9fe94908b7">
+<notes>
+<note appliesTo="source">line: 73</note>
+<note appliesTo="source">prefix: 2. </note>
+</notes>
+<segment>
+<source>Press `Alt+E` or `F2`.</source>
+</segment>
+</unit>
+<unit id="416f66b2-275f-4d66-afc2-4e851c545d36">
+<notes>
+<note appliesTo="source">line: 74</note>
+<note appliesTo="source">prefix: 3. </note>
+</notes>
+<segment>
+<source>Make your changes.</source>
+</segment>
+</unit>
+<unit id="5ef80543-8476-43ba-9892-4cee7f4cb3d7">
+<notes>
+<note appliesTo="source">line: 75</note>
+<note appliesTo="source">prefix: 4. </note>
+</notes>
+<segment>
+<source>Press `Alt+O` to save or `Alt+C` to cancel.</source>
+</segment>
+</unit>
+<unit id="938a3cdc-63ad-462a-9a1d-61b17eedbefc">
+<notes>
+<note appliesTo="source">line: 77</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Searching Contacts</source>
+</segment>
+</unit>
+<unit id="507f4553-6692-4c94-a266-312e6660a96d">
+<notes>
+<note appliesTo="source">line: 79</note>
+<note appliesTo="source">prefix: 1. </note>
+</notes>
+<segment>
+<source>Type a search term (name, phone, or email).</source>
+</segment>
+</unit>
+<unit id="6dc57219-5546-4313-98af-c028e642770a">
+<notes>
+<note appliesTo="source">line: 80</note>
+<note appliesTo="source">prefix: 2. </note>
+</notes>
+<segment>
+<source>Press `Alt+P` to filter the results.</source>
+</segment>
+</unit>
+<unit id="4b9108f0-3c7b-4631-9471-3b2e4eb457bd">
+<notes>
+<note appliesTo="source">line: 81</note>
+<note appliesTo="source">prefix: 3. </note>
+</notes>
+<segment>
+<source>Press `Alt+A` or `F5` to refresh the full list.</source>
+</segment>
+</unit>
+<unit id="75e0d45a-6683-4ced-adb4-4924cedb7478">
+<notes>
+<note appliesTo="source">line: 83</note>
+</notes>
+<segment>
+<source>&gt; If no match is found, a message will inform you.</source>
+</segment>
+</unit>
+<unit id="33d95daf-82ef-44c1-aacc-f8956e945740">
+<notes>
+<note appliesTo="source">line: 85</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Keyboard Shortcuts</source>
+</segment>
+</unit>
+<unit id="09fcaabf-dc99-4593-b4e7-c6023c3b134d">
+<notes>
+<note appliesTo="source">line: 87</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Main Window</source>
+</segment>
+</unit>
+<unit id="3e87080f-c2c9-4191-b7c7-5b10c687f22f">
+<notes>
+<note appliesTo="source">line: 89</note>
+<note appliesTo="source">prefix: |</note>
+<note appliesTo="source">suffix: |</note>
+</notes>
+<segment>
+<source> Action                     | Shortcut             </source>
+</segment>
+</unit>
+<unit id="fa240b0e-797b-4a45-9580-3191eed4d993">
+<notes>
+<note appliesTo="source">line: 91</note>
+<note appliesTo="source">prefix: |</note>
+<note appliesTo="source">suffix: |</note>
+</notes>
+<segment>
+<source> Add new contact           | `Alt+N`              </source>
+</segment>
+</unit>
+<unit id="f10bb8de-ee63-4fb9-a0bf-02d3ee50d2a5">
+<notes>
+<note appliesTo="source">line: 92</note>
+<note appliesTo="source">prefix: |</note>
+<note appliesTo="source">suffix: |</note>
+</notes>
+<segment>
+<source> Edit selected contact     | `Alt+E` or `F2`      </source>
+</segment>
+</unit>
+<unit id="2f192937-0132-476e-851e-ea5efca1ab30">
+<notes>
+<note appliesTo="source">line: 93</note>
+<note appliesTo="source">prefix: |</note>
+<note appliesTo="source">suffix: |</note>
+</notes>
+<segment>
+<source> Remove selected contact   | `Alt+R` or `Delete`  </source>
+</segment>
+</unit>
+<unit id="c6d3239f-dddf-45c1-a783-ba5c62fe4b9b">
+<notes>
+<note appliesTo="source">line: 94</note>
+<note appliesTo="source">prefix: |</note>
+<note appliesTo="source">suffix: |</note>
+</notes>
+<segment>
+<source> Search                    | `Alt+P`              </source>
+</segment>
+</unit>
+<unit id="db8ea759-76fd-4064-87e9-7aefd2b16fd9">
+<notes>
+<note appliesTo="source">line: 95</note>
+<note appliesTo="source">prefix: |</note>
+<note appliesTo="source">suffix: |</note>
+</notes>
+<segment>
+<source> Refresh contact list      | `Alt+A` or `F5`      </source>
+</segment>
+</unit>
+<unit id="f451f476-0930-41ec-9936-09e90f9ccf13">
+<notes>
+<note appliesTo="source">line: 96</note>
+<note appliesTo="source">prefix: |</note>
+<note appliesTo="source">suffix: |</note>
+</notes>
+<segment>
+<source> Import CSV file           | `Alt+I`              </source>
+</segment>
+</unit>
+<unit id="16023fb9-5692-4e98-a443-7bd3c41153b7">
+<notes>
+<note appliesTo="source">line: 97</note>
+<note appliesTo="source">prefix: |</note>
+<note appliesTo="source">suffix: |</note>
+</notes>
+<segment>
+<source> Export to CSV             | `Alt+X`              </source>
+</segment>
+</unit>
+<unit id="c01ebd19-39f0-43b5-870e-8a0c679d3ae7">
+<notes>
+<note appliesTo="source">line: 98</note>
+<note appliesTo="source">prefix: |</note>
+<note appliesTo="source">suffix: |</note>
+</notes>
+<segment>
+<source> Delete all contacts       | `Alt+T`              </source>
+</segment>
+</unit>
+<unit id="3dc73186-2694-483e-ab45-415b13131b58">
+<notes>
+<note appliesTo="source">line: 99</note>
+<note appliesTo="source">prefix: |</note>
+<note appliesTo="source">suffix: |</note>
+</notes>
+<segment>
+<source> Exit                      | `Alt+S`              </source>
+</segment>
+</unit>
+<unit id="2185ad1a-f2b0-49fb-bcc2-9f3eb6deffa8">
+<notes>
+<note appliesTo="source">line: 101</note>
+</notes>
+<segment>
+<source>&gt; To **edit** or **remove** a contact, make sure it is selected in the list.</source>
+</segment>
+</unit>
+<unit id="5aa25a2e-4bbc-4c89-848e-5e49ebafbf52">
+<notes>
+<note appliesTo="source">line: 102</note>
+</notes>
+<segment>
+<source>&gt; If no contact is selected, a warning message will be shown.</source>
+</segment>
+</unit>
+<unit id="6e2283ed-dd42-45bf-b6d2-3a27613c65e5">
+<notes>
+<note appliesTo="source">line: 104</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Add/Edit Contact Window</source>
+</segment>
+</unit>
+<unit id="cced2657-8074-4f6e-97bd-7b227e49ebae">
+<notes>
+<note appliesTo="source">line: 106</note>
+<note appliesTo="source">prefix: |</note>
+<note appliesTo="source">suffix: |</note>
+</notes>
+<segment>
+<source> Action        | Shortcut  </source>
+</segment>
+</unit>
+<unit id="49569af3-37cb-4cb9-a74c-150bdd69de9e">
+<notes>
+<note appliesTo="source">line: 108</note>
+<note appliesTo="source">prefix: |</note>
+<note appliesTo="source">suffix: |</note>
+</notes>
+<segment>
+<source> Confirm       | `Alt+O`   </source>
+</segment>
+</unit>
+<unit id="24bd4552-ff8a-48cc-903f-7e1042a0ee0e">
+<notes>
+<note appliesTo="source">line: 109</note>
+<note appliesTo="source">prefix: |</note>
+<note appliesTo="source">suffix: |</note>
+</notes>
+<segment>
+<source> Cancel        | `Alt+C`   </source>
+</segment>
+</unit>
+<unit id="75059c60-f3d6-4a8f-9896-4d845e8db788">
+<notes>
+<note appliesTo="source">line: 111</note>
+</notes>
+<segment>
+<source>&gt; You can close all windows with `Esc` or `Alt+F4`.</source>
+</segment>
+</unit>
+<unit id="a10aab0f-cbeb-44fc-ab74-260321c3ee30">
+<notes>
+<note appliesTo="source">line: 113</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Acknowledgements</source>
+</segment>
+</unit>
+<unit id="8ac4b849-a3b2-4c03-83de-2e2fc0b61404">
+<notes>
+<note appliesTo="source">line: 115</note>
+</notes>
+<segment>
+<source>This add-on was inspired by the contact manager originally developed by:</source>
+</segment>
+</unit>
+<unit id="ca71cde4-48bb-4728-9bd9-76eb672c997d">
+<notes>
+<note appliesTo="source">line: 117</note>
+</notes>
+<segment>
+<source>- Abel Passos do Nascimento Jr. (&lt;abel.passos@gmail.com&gt;)</source>
+</segment>
+</unit>
+<unit id="a7ceb142-9a2a-476e-b503-d94e36d9094e">
+<notes>
+<note appliesTo="source">line: 118</note>
+</notes>
+<segment>
+<source>- Rui Fontes (&lt;rui.fontes@tiflotecnia.com&gt;)</source>
+</segment>
+</unit>
+<unit id="f0d9e5a4-b1c9-4c93-866c-ff23c35fee29">
+<notes>
+<note appliesTo="source">line: 119</note>
+</notes>
+<segment>
+<source>- Ângelo Abrantes (&lt;ampa4374@gmail.com&gt;)</source>
+</segment>
+</unit>
+<unit id="fd49361d-25e2-4f94-9ea6-aa900d9bb914">
+<notes>
+<note appliesTo="source">line: 121</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Translators</source>
+</segment>
+</unit>
+<unit id="fa4df06d-8aa7-4ffc-ba23-625a67eed314">
+<notes>
+<note appliesTo="source">line: 123</note>
+</notes>
+<segment>
+<source>- **Portuguese (Brazil)** – Edilberto Fonseca</source>
+</segment>
+</unit>
+<unit id="41b2a241-98c6-4c68-8f40-4e4170ba07d0">
+<notes>
+<note appliesTo="source">line: 124</note>
+</notes>
+<segment>
+<source>- **Portuguese (Portugal)** – Edilberto Fonseca</source>
+</segment>
+</unit>
+<unit id="8dcebfa6-a4fc-4783-ae24-9f6b671a72fb">
+<notes>
+<note appliesTo="source">line: 125</note>
+</notes>
+<segment>
+<source>- **Ukrainian** – George‑br</source>
+</segment>
+</unit>
+<unit id="50a747b7-74ce-4ff6-a878-5829d4c44579">
+<notes>
+<note appliesTo="source">line: 126</note>
+</notes>
+<segment>
+<source>- **Turkish** – Umut KORKMAZ</source>
+</segment>
+</unit>
+</file>
+</xliff>
