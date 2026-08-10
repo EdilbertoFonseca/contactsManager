@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en">
-<file id="readme.md" original="https://raw.githubusercontent.com/EdilbertoFonseca/contactsManager/25272d36f99e64a83caa45211b2c5fe74e4463ce/readme.md">
+<file id="readme.md" original="https://raw.githubusercontent.com/EdilbertoFonseca/contactsManager/57bce4f7d4eca957dce31b5f3dd6c15b5d943c92/readme.md">
 <skeleton>
 # $(ID:ed075a31-98ed-4527-ba8f-6e24d134e3cb)
 
@@ -127,7 +127,6 @@ $(ID:fa4df06d-8aa7-4ffc-ba23-625a67eed314)
 $(ID:41b2a241-98c6-4c68-8f40-4e4170ba07d0)
 $(ID:8dcebfa6-a4fc-4783-ae24-9f6b671a72fb)
 $(ID:50a747b7-74ce-4ff6-a878-5829d4c44579)
-
 </skeleton>
 <unit id="ed075a31-98ed-4527-ba8f-6e24d134e3cb">
 <notes>
