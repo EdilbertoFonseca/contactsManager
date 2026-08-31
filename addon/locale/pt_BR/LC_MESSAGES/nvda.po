@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nvdaaddons\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2026-08-04 10:14+0000\n"
-"PO-Revision-Date: 2026-08-31 05:20\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2026-08-31 15:56-0300\n"
+"PO-Revision-Date: 2026-08-31 15:57-0300\n"
+"Last-Translator: Edilberto Fonseca <edilberto.fonseca@outlook.com>\n"
 "Language-Team: Portuguese, Brazilian\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,11 @@ msgstr ""
 "X-Crowdin-Language: pt-BR\n"
 "X-Crowdin-File: contactsManager.pot\n"
 "X-Crowdin-File-ID: 645\n"
+"X-Generator: Poedit 3.9\n"
+
+#: addon\installTasks.py:56
+msgid "Error when renaming file: {e}"
+msgstr "Erro ao renomear o arquivo: {e}"
 
 #. translators: Title of message dialog box.
 #: addon\installTasks.py:56
@@ -47,7 +52,6 @@ msgid "Add"
 msgstr "Adicionar"
 
 #: addon\globalPlugins\contactsManager\addEditRecord.py:96
-#, python-brace-format
 msgid "{} Record in Contacts Manager for NVDA"
 msgstr "{} Registro no Gerenciador de contatos do NVDA"
 
@@ -95,7 +99,6 @@ msgid "Success"
 msgstr "Sucesso"
 
 #: addon\globalPlugins\contactsManager\addEditRecord.py:259
-#, python-brace-format
 msgid "Error adding contact: {}"
 msgstr "Erro ao adicionar contato: {}"
 
@@ -104,7 +107,6 @@ msgid "Contact edited!"
 msgstr "Contato Editado!"
 
 #: addon\globalPlugins\contactsManager\addEditRecord.py:306
-#, python-brace-format
 msgid "Error editing contact: {}"
 msgstr "Erro ao editar o contato: {}"
 
@@ -237,13 +239,11 @@ msgid "To edit"
 msgstr "Editar"
 
 #: addon\globalPlugins\contactsManager\main.py:201
-#, python-brace-format
 msgid "The cell phone field for {} is empty."
 msgstr "O campo do celular para {} está vazio."
 
 #. translators: Message shown when contacting a record via WhatsApp
 #: addon\globalPlugins\contactsManager\main.py:217
-#, python-brace-format
 msgid "Contacting {} via WhatsApp"
 msgstr "Entrar em contato com {} pelo WhatsApp"
 
@@ -323,7 +323,8 @@ msgstr "Lista de contatos."
 #. Translators: Text displayed in NVDA help.
 #: addon\globalPlugins\contactsManager\__init__.py:110
 msgid "Displays a window with all contacts registered in the Contacts Manager."
-msgstr "Exibe uma janela com todos os contatos cadastrados no Gerenciador de Contatos."
+msgstr ""
+"Exibe uma janela com todos os contatos cadastrados no Gerenciador de Contatos."
 
 #. Translators: Opens the Contacts Manager configuration menu
 #: addon\globalPlugins\contactsManager\__init__.py:120
@@ -345,40 +346,74 @@ msgstr "Gerenciador de contatos para NVDA"
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-on store
 #: buildVars.py:23
-msgid "Simple contacts manager for saving phone numbers, emails, and other contact details for personal or professional use.\n\n"
+msgid ""
+"Simple contacts manager for saving phone numbers, emails, and other contact "
+"details for personal or professional use.\n"
+"\n"
 "Shortcut Windows+Alt+L."
-msgstr "Gerenciador de contatos simples para salvar números de telefone, e-mails e outros detalhes de contato para uso pessoal ou profissional.\n\n"
+msgstr ""
+"Gerenciador de contatos simples para salvar números de telefone, e-mails e "
+"outros detalhes de contato para uso pessoal ou profissional.\n"
+"\n"
 "Atalho Windows+Alt+L."
 
 #. Brief changelog for this version
 #. Translators: what's new content for the add-on version to be shown in the add-on store
 #: buildVars.py:30
-msgid "Updates the latest tested version of NVDA to 2026.1.0.\n\n"
-"\t\t\t\t   Introduces multiple enhancements to contact handling:\n\n"
-"- Directly open saved contacts in WhatsApp from the contact list.\n"
-"- Perform a search when Enter is pressed in the search field.\n"
-"- Intercept Ctrl+V on contact phone fields to paste only digits.\n\n"
-"Details:\n\n"
-"- Direct WhatsApp Opening (Contact List): Pressing Enter on a contact in the list now opens that contact directly in WhatsApp.\n"
-"- Search Execution (Search Field): Pressing Enter in the search field now triggers the search action.\n\n"
-"Clean Pasted Phone Input:\n\n"
-"- Binds EVTCHARHOOK for cell and landline inputs.\n"
-"- Adds `onPasteAndClean` to: Read the clipboard.\n"
-"Strip non-digit characters using a regex.\n"
-"- Set the cleaned value into the focused field (skipping default paste).\n"
-"- Allows non-paste keys to be processed normally via `event.Skip()`.\n"
-msgstr "Atualiza a versão mais recente testada do NVDA para 2026.1.0.\n\n"
-"\t\t\t\t   Introduz diversas melhorias no tratamento de contatos:\n\n"
-"- Abra diretamente os contatos salvos no WhatsApp a partir da sua lista de contatos.\n"
-"- Realizar uma pesquisa quando a tecla Enter for pressionada no campo de pesquisa.\n"
-"- Interceptar Ctrl+V nos campos de contato do telefone para colar apenas os dígitos.\n\n"
-"Detalhes:\n\n"
-"- Abertura direta do WhatsApp (Lista de contatos): Ao pressionar Enter em um contato da lista, esse contato será aberto diretamente no WhatsApp.\n"
-"- Execução da pesquisa (campo de pesquisa): Pressionar Enter no campo de pesquisa agora aciona a ação de pesquisa.\n\n"
-"Limpar entrada de telefone colada:\n\n"
-"- Vincula o EVTCHARHOOK para entradas de celular e telefone fixo.\n"
-"- Adiciona `onPasteAndClean` para Ler a área de transferência.\n"
-"Remover caracteres não numéricos usando uma expressão regular.\n"
-"- Insira o valor limpo no campo selecionado (ignorando a colagem padrão).\n"
-"- Permite que teclas não coláveis ​​sejam processadas normalmente por meio de `event.Skip()`.\n"
+msgid ""
+"The new translation system via Crowdin has been integrated and the "
+"localization files have been updated."
+msgstr ""
+"O novo sistema de tradução via Crowdin foi integrado e os arquivos de "
+"localização foram atualizados."
 
+#~ msgid ""
+#~ "Updates the latest tested version of NVDA to 2026.1.0.\n"
+#~ "\n"
+#~ "\t\t\t\t   Introduces multiple enhancements to contact handling:\n"
+#~ "\n"
+#~ "- Directly open saved contacts in WhatsApp from the contact list.\n"
+#~ "- Perform a search when Enter is pressed in the search field.\n"
+#~ "- Intercept Ctrl+V on contact phone fields to paste only digits.\n"
+#~ "\n"
+#~ "Details:\n"
+#~ "\n"
+#~ "- Direct WhatsApp Opening (Contact List): Pressing Enter on a contact in "
+#~ "the list now opens that contact directly in WhatsApp.\n"
+#~ "- Search Execution (Search Field): Pressing Enter in the search field now "
+#~ "triggers the search action.\n"
+#~ "\n"
+#~ "Clean Pasted Phone Input:\n"
+#~ "\n"
+#~ "- Binds EVTCHARHOOK for cell and landline inputs.\n"
+#~ "- Adds `onPasteAndClean` to: Read the clipboard.\n"
+#~ "Strip non-digit characters using a regex.\n"
+#~ "- Set the cleaned value into the focused field (skipping default paste).\n"
+#~ "- Allows non-paste keys to be processed normally via `event.Skip()`.\n"
+#~ msgstr ""
+#~ "Atualiza a versão mais recente testada do NVDA para 2026.1.0.\n"
+#~ "\n"
+#~ "\t\t\t\t   Introduz diversas melhorias no tratamento de contatos:\n"
+#~ "\n"
+#~ "- Abra diretamente os contatos salvos no WhatsApp a partir da sua lista de "
+#~ "contatos.\n"
+#~ "- Realizar uma pesquisa quando a tecla Enter for pressionada no campo de "
+#~ "pesquisa.\n"
+#~ "- Interceptar Ctrl+V nos campos de contato do telefone para colar apenas "
+#~ "os dígitos.\n"
+#~ "\n"
+#~ "Detalhes:\n"
+#~ "\n"
+#~ "- Abertura direta do WhatsApp (Lista de contatos): Ao pressionar Enter em "
+#~ "um contato da lista, esse contato será aberto diretamente no WhatsApp.\n"
+#~ "- Execução da pesquisa (campo de pesquisa): Pressionar Enter no campo de "
+#~ "pesquisa agora aciona a ação de pesquisa.\n"
+#~ "\n"
+#~ "Limpar entrada de telefone colada:\n"
+#~ "\n"
+#~ "- Vincula o EVTCHARHOOK para entradas de celular e telefone fixo.\n"
+#~ "- Adiciona `onPasteAndClean` para Ler a área de transferência.\n"
+#~ "Remover caracteres não numéricos usando uma expressão regular.\n"
+#~ "- Insira o valor limpo no campo selecionado (ignorando a colagem padrão).\n"
+#~ "- Permite que teclas não coláveis ​​sejam processadas normalmente por meio "
+#~ "de `event.Skip()`.\n"

@@ -1,22 +1,4 @@
 # Changelog
 
-Updates the latest tested version of NVDA to 2026.1.0.
-
-Introduces multiple enhancements to contact handling:
-
-- Directly open saved contacts in WhatsApp from the contact list.
-- Perform a search when Enter is pressed in the search field.
-- Intercept Ctrl+V on contact phone fields to paste only digits.
-
-Details:
-
-- Direct WhatsApp Opening (Contact List): Pressing Enter on a contact in the list now opens that contact directly in WhatsApp.
-- Search Execution (Search Field): Pressing Enter in the search field now triggers the search action.
-
-Clean Pasted Phone Input:
-
-- Binds EVTCHARHOOK for cell and landline inputs.
-- Adds `onPasteAndClean` to: Read the clipboard.
-  Strip non-digit characters using a regex.
-- Set the cleaned value into the focused field (skipping default paste).
-- Allows non-paste keys to be processed normally via `event.Skip()`.
+Incremented addonversion to 2026.2.3 and updated addonchangelog in buildVars.py
+Announced the new Crowdin-based translation system and refreshed localization files

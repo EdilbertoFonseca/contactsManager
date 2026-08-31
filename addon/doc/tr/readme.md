@@ -1,8 +1,8 @@
 # NVDA İçin Kişi Yöneticisi
 
-**Yazar**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)
-**Oluşturulma tarihi**: 11/04/2024
-**Lisans**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
+- **Yazar**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)
+- **Oluşturulma tarihi**: 11/04/2024
+- **Lisans**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Giriş
 

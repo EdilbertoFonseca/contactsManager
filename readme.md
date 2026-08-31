@@ -1,8 +1,8 @@
 # Contact Manager for NVDA
 
-**Author**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)
-**Created on**: 11/04/2024
-**License**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
+- **Author**: Edilberto Fonseca <edilberto.fonseca@outlook.com>
+- **Created on**: 11/04/2024
+- **License**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Introduction
 

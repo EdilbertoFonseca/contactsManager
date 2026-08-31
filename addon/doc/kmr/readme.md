@@ -1,8 +1,8 @@
 # Gerînendeyê Têkiliyê ji bo NVDA
 
-**Nivîskar**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)
-**Di roja** de hatiye afirandin: 11/04/2024
-**Lîsans**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
+- **Nivîskar**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)
+- **Di roja** de hatiye afirandin: 11/04/2024
+- **Lîsans**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Pêşkêş
 
