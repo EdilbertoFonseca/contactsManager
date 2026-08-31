@@ -7,16 +7,16 @@
 ## Introdução
 
 Bem-vindo ao **Gerenciador de Contatos para NVDA**!
+
 Este complemento foi desenvolvido especialmente para pessoas com deficiência visual, permitindo organizar e acessar informações de contato com praticidade, acessibilidade e autonomia.
 
 Com ele, você pode:
 
 - Adicionar, editar e excluir contatos;
-- Pesquisar nomes e dados rapidamente;
-- Importar e exportar listas em formato CSV;
-- Personalizar a formatação de números de telefone;
-- Armazenar os dados em um diretório personalizado;
-- Utilizar uma interface simples e acessível via teclado.
+- Importar e exportar listas de contatos em formato CSV;
+- Aplicar formatação personalizada de números de telefone;
+- Escolha um local personalizado para armazenar seu banco de dados de contatos;
+- Navegue por uma interface intuitiva e totalmente acessível por teclado.
 
 ## Instalação
 
@@ -25,105 +25,101 @@ Com ele, você pode:
 3. Selecione o complemento e pressione **Enter** ou clique em **Aplicar**, depois escolha **Instalar**.
 4. Reinicie o NVDA para concluir a instalação.
 
-## Configurações
+Após a instalação, o complemento está pronto para uso.
 
-Acesse:
-**NVDA > Preferências > Configurações... > Gerenciador de Contatos para NVDA**
+Ao selecionar um contato na lista, os detalhes dele serão exibidos em uma caixa de texto somente leitura. Você pode navegar pela lista usando a primeira letra do nome do contato.
 
-As seguintes opções estão disponíveis:
+## Configuração
 
-1. **Máscara para campos de telefone**
-   Aplica uma máscara usando `#` para formatar números. A máscara padrão é baseada no formato brasileiro.
+Acesse o painel de configurações em:
+**Menu NVDA > Preferências > Configurações > Gerenciador de Contatos para NVDA**
 
-2. **Exclusão completa da agenda** (`Alt+T`)
-   Permite remover todos os contatos de uma só vez.
+Opções disponíveis:
 
-3. **Importação de contatos via CSV** (`Alt+I`)
-   Permite importar contatos de arquivos CSV compatíveis.
+1. **Máscara para número de telefone**: Use `#` para aplicar uma máscara de formatação (por exemplo, para números brasileiros).
+2. **Exclusão completa da agenda** (`Alt+T`) Permite remover todos os contatos de uma só vez.
+3. **Importação de contatos via CSV** (`Alt+I`) Permite importar contatos de arquivos CSV compatíveis.
+4. **Exportação da agenda para CSV** (`Alt+X`) Exporta todos os contatos para um arquivo CSV.
+5. **Caminho do banco de dados** Define um diretório personalizado para salvar os dados da agenda.
 
-4. **Exportação da agenda para CSV** (`Alt+X`)
-   Exporta todos os contatos para um arquivo CSV.
+## Acessando o complemento
 
-5. **Caminho do banco de dados**
-   Define um diretório personalizado para salvar os dados da agenda.
+Você pode abrir o Gerenciador de Contatos de duas maneiras:
 
-## Acesso
-
-Você pode abrir o Gerenciador de Contatos das seguintes formas:
-
-1. Atalho: `Windows+Alt+L`
+1. Atalho de teclado: `Windows+Alt+L`
 2. Menu NVDA: `NVDA+N > Ferramentas > Gerenciador de Contatos`
 
-A janela principal permite:
+Na janela principal, você pode:
 
-- Registrar, editar, remover e buscar contatos;
-- Importar/exportar contatos;
-- Apagar toda a agenda (opcional nas configurações).
+- Adicionar, editar e excluir contatos;
+- Pesquisar contatos específicos;
+- Importar e exportar arquivos CSV;
+- Excluir todos os registros da lista de contatos (se ativado).
 
-## Cadastrando um Novo Contato
+## Adicionar um novo contato
 
-1. Abra o Gerenciador (`Windows+Alt+L` ou pelo menu NVDA);
-2. Pressione `Alt+N` para adicionar;
-3. Preencha os campos e pressione `Alt+O` para salvar ou `Alt+C` para cancelar.
+1. Abra o Gerenciador de Contatos (pressione `Windows+Alt+L` ou através do menu).
+2. Pressione `Alt+N` para adicionar um novo contato.
+3. Preencha os campos.
+4. Pressione `Alt+O` para salvar ou `Alt+C` para cancelar.
 
-> Observação:
-> Use a tecla `Enter` para navegar entre os campos. O uso do `Tab` pode gerar comportamentos imprevisíveis.
+> **Nota:** Use a tecla **Enter** para navegar entre os campos.
+A tecla **Tab** pode apresentar comportamento imprevisível devido a um problema conhecido.
 
-## Editando um Contato
+## Editar um contato
 
-1. Selecione um contato na lista;
-2. Pressione `Alt+E` ou `F2`;
-3. Edite os dados e pressione `Alt+O` para salvar ou `Alt+C` para cancelar.
+1. Selecione um contato na lista.
+2. Pressione `Alt+E` ou `F2`.
+3. Faça as alterações.
+4. Pressione `Alt+O` para salvar ou `Alt+C` para cancelar.
 
-## Pesquisando Contatos
+## Pesquisando contatos
 
-Na janela principal:
+1. Digite um termo de pesquisa (nome, telefone ou e-mail).
+2. Pressione `Alt+P` para filtrar os resultados.
+3. Pressione `Alt+A` ou `F5` para atualizar a lista completa.
 
-1. Digite o termo de busca (nome, celular, fixo ou e-mail);
-2. Selecione o campo correspondente;
-3. Pressione `Alt+P` para pesquisar;
-4. Pressione `Alt+A` ou `F5` para atualizar a lista.
+Se nenhuma correspondência for encontrada, você será informado.
 
-Caso nenhum resultado seja encontrado, uma mensagem será exibida.
+## Atalhos de teclado
 
-## Atalhos Disponíveis
+### Janela principal
 
-### Janela Principal
+| Ação                     | Atalho             |
+|---------------------------|----------------------|
+| Adicionar novo contato           | `Alt+N`              |
+| Editar contato selecionado     | `Alt+E` ou `F2`      |
+| Remover contato selecionado   | `Alt+R` ou `Delete`  |
+| Pesquisar                    | `Alt+P``              |
+| Atualizar lista de contatos     | `Alt+A` ou `F5`      |
+| Importar arquivo CSV           | `Alt+I`              |
+| Exportar para CSV             | `Alt+X`              |
+| Apagar todos os contatos       | `Alt+T`              |
+| Sair                      | `Alt+S`              |
 
-| Ação                        | Atalho              |
-|-----------------------------|---------------------|
-| Novo contato                | `Alt+N`             |
-| Editar                      | `Alt+E` ou `F2`     |
-| Remover contato             | `Alt+R` ou `Delete` |
-| Pesquisar                   | `Alt+P`             |
-| Atualizar lista             | `Alt+A` ou `F5`     |
-| Importar CSV                | `Alt+I`             |
-| Exportar CSV                | `Alt+X`             |
-| Excluir todos os contatos   | `Alt+T`             |
-| Sair                        | `Alt+S`             |
+> Para **editar** ou **remover** um contato, certifique-se de que ele esteja selecionado na lista.
+> Se nenhum contato for selecionado, uma mensagem de aviso será exibida.
 
-> Para editar ou remover, é necessário selecionar um contato primeiro.
+### Janela Adicionar/Editar Contato
 
-### Janela de Cadastro/Edição
+| Ação | Atalho  |
+|---------------|-----------|
+| Confirmar       | `Alt+O`   |
+| Cancelar        | `Alt+C`   |
 
-| Ação        | Atalho     |
-|-------------|------------|
-| Confirmar   | `Alt+O`    |
-| Cancelar    | `Alt+C`    |
-
-> Dica: Use `Esc` ou `Alt+F4` para fechar qualquer janela.
+> Você pode fechar todas as janelas com `Esc` ou `Alt+F4`.
 
 ## Agradecimentos
 
-Este complemento foi inspirado na agenda criada por:
+This add-on was inspired by the contact manager originally developed by:Este complemento foi inspirado no gerenciador de contatos originalmente desenvolvido por:
 
 - Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)
 - Rui Fontes (<rui.fontes@tiflotecnia.com>)
 - Ângelo Abrantes (<ampa4374@gmail.com>)
 
-## Traduções
+## Tradutores
 
-- **Português (Brasil)** – Edilberto Fonseca
+- **Português (Brazil)** – Edilberto Fonseca
 - **Português (Portugal)** – Edilberto Fonseca
-- **Ucraniano** – George‑br
-- **Turco** – Umut KORKMAZ
+- **ucraniano** - George‑br
+- **turco** – Umut KORKMAZ

@@ -1,4 +1,4 @@
-# Gestor de Contactos para o NVDA
+# - Gestor de Contactos para o NVDA
 
 **Autor**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)
 **Data de Criação**: 11/04/2024
@@ -7,22 +7,22 @@
 ## Introdução
 
 Bem-vindo ao **Gestor de Contactos para o NVDA**!
+
 Este extra foi desenvolvido especialmente para pessoas com deficiência visual que pretendem organizar e aceder aos seus contactos com autonomia, acessibilidade e facilidade.
 
 Com esta ferramenta, é possível:
 
 - Adicionar, editar e remover contactos;
-- Pesquisar nomes e dados de contacto rapidamente;
 - Importar e exportar contactos em formato CSV;
 - Personalizar o formato dos números de telefone;
-- Armazenar os dados numa directoria personalizada;
+- Escolha uma localização personalizada para armazenar a sua base de dados de contactos;
 - Utilizar uma interface acessível e intuitiva através do teclado.
 
 ## Instalação
 
 1. No NVDA, abra o menu **Ferramentas** e aceda à **Loja de Extras**.
-2. No separador **Extras Disponíveis**, utilize o campo **Procurar**.
-3. Escreva "Gestor de Contactos". Quando o resultado aparecer, prima **Enter** ou clique em **Aplicar**, e depois escolha **Instalar**.
+2. No separador **Complementos disponíveis**, utilize o campo **Pesquisa** e procure por `Contact Manager`.
+3. Seleccione-o, prima Enter ou clique em Aplicar e, em seguida, seleccione Instalar.
 4. Reinicie o NVDA para concluir a instalação.
 
 Após a instalação, o extra estará pronto a ser utilizado.
@@ -36,21 +36,11 @@ Aceda ao painel de definições em:
 
 As seguintes opções estão disponíveis:
 
-1. **Máscara para campos de telefone**
-   Aplica uma máscara utilizando o símbolo `#` para formatar os números. A máscara padrão segue o formato brasileiro.
-
+1. **Máscara para campos de telefone**.
 2. **Mostrar opção para apagar todos os contactos** (`Alt+T`)
-   Quando ativada, permite eliminar toda a agenda de contactos com um único comando.
-
 3. **Mostrar botão para importar ficheiro CSV** (`Alt+I`)
-   Permite importar contactos de ficheiros compatíveis.
-   > Nota: Os campos do ficheiro devem seguir o formato do Gestor de Contactos.
-
-4. **Mostrar botão para exportar ficheiro CSV** (`Alt+X`)
-   Exporta todos os contactos da agenda para um ficheiro CSV.
-
-5. **Caminho dos ficheiros da agenda**
-   Define a directoria onde a base de dados será guardada. Pode alterar este caminho.
+4. **Activar a exportação para CSV** (`Alt+X`): Apresenta um botão para exportar a lista de contactos para um ficheiro CSV.
+5. **Caminho dos ficheiros da agenda**: Define a directoria onde a base de dados será guardada. Pode alterar este caminho.
 
 ## Aceder ao Extra
 
@@ -68,69 +58,66 @@ Na janela principal, pode:
 
 ## Registar um Novo Contacto
 
-1. Abra o Gestor de Contactos;
-2. Prima `Alt+N` para adicionar um novo contacto;
-3. Preencha os campos e prima `Alt+O` para guardar ou `Alt+C` para cancelar.
+1. Abra o Gestor de Contactos.
+2. Prima `Alt+N` para adicionar um novo contacto.
+3. Preencha os campos.
+4. Prima Alt+O para guardar ou Alt+C para cancelar.Press `Alt+O` to save or `Alt+C` to cancel.
 
-> **Nota:**
-> É recomendado usar a tecla `Enter` para navegar entre os campos. A tecla `Tab` pode originar comportamentos inesperados.
+> **Nota:** Utilize **Enter** para navegar entre os campos.
+> A tecla **Tab** pode comportar-se de forma imprevisível devido a um problema conhecido.
 
 ## Editar um Contacto
 
-1. Seleccione o contacto desejado na lista;
-2. Prima `Alt+E` ou `F2`;
-3. Altere os dados conforme necessário;
-4. Prima `Alt+O` para guardar ou `Alt+C` para cancelar.
-
-> A navegação entre campos é idêntica à da janela de novo contacto.
+1. - Selecione um contacto da lista.
+2. - Prima `Alt+E` ou `F2`.
+3. - Faça as suas alterações.
+4. - Prima `Alt+O` para guardar ou `Alt+C` para cancelar.
 
 ## Pesquisar Contactos
 
-Na janela principal:
+1. - Digite um termo de pesquisa (nome, telefone ou e-mail).
+2. - Prima `Alt+P` para filtrar os resultados.
+3. - Prima `Alt+A` ou `F5` para atualizar a lista completa.
 
-1. Introduza o termo de pesquisa;
-2. Escolha o campo desejado (nome, telemóvel, fixo ou e-mail);
-3. Prima `Alt+P` para aplicar o filtro;
-4. Para actualizar a lista e limpar a pesquisa, prima `Alt+A` ou `F5`.
-
-Se não for encontrado nenhum contacto, será apresentada uma mensagem.
+> Se não for encontrado nenhum resultado, será exibida uma mensagem a informá-lo.
 
 ## Atalhos de Teclado
 
 ### Janela Principal
 
-| Acção                        | Atalho              |
-|-----------------------------|---------------------|
-| Novo contacto               | `Alt+N`             |
-| Editar contacto             | `Alt+E` ou `F2`     |
-| Remover contacto            | `Alt+R` ou `Delete` |
-| Pesquisar                   | `Alt+P`             |
-| Actualizar lista            | `Alt+A` ou `F5`     |
-| Importar ficheiro CSV       | `Alt+I`             |
-| Exportar ficheiro CSV       | `Alt+X`             |
-| Apagar todos os contactos   | `Alt+T`             |
-| Sair                        | `Alt+S`             |
+| Ação                     | Atalho             |
+|---------------------------|----------------------|
+| Adicionar novo contacto           | `Alt+N`              |
+| Editar contacto selecionado | `Alt+E` ou `F2`      |
+| Remover contacto selecionado | `Alt+R` ou `Delete`  |
+| Pesquisar                   | `Alt+P`              |
+| Atualizar lista de contactos | `Alt+A` ou `F5`      |
+| Importar ficheiro CSV          | `Alt+I`              |
+| Exportar para CSV            | `Alt+X`              |
+| Eliminar todos os contactos      | `Alt+T`              |
+| Sair                     | `Alt+S`              |
 
-> Para editar ou remover, é necessário seleccionar um contacto da lista. Se nenhum estiver seleccionado, uma mensagem será apresentada.
+> Para **editar** ou **remover** um contacto, certifique-se de que o mesmo está selecionado na lista.
+> Se nenhum contacto for selecionado, será apresentada uma mensagem de aviso.
 
-### Janela de Novo Contacto / Edição
+### Janela Adicionar/Editar Contacto
 
-| Acção     | Atalho  |
-|-----------|---------|
-| Confirmar | `Alt+O` |
-| Cancelar  | `Alt+C` |
+| Ação | Atalho  |
+|---------------|-----------|
+| Confirmar | `Alt+O` |   |
+| Cancelar | `Alt+C`   |
 
-> Dica: Todas as janelas podem ser fechadas com `Esc` ou `Alt+F4`.
+> Pode fechar todas as janelas com `Esc` ou `Alt+F4`.
 
 ## Agradecimentos
 
-Este extra foi inspirado na agenda criada por:
+- Este suplemento foi inspirado pelo gestor de contactos originalmente desenvolvido por:
 
 - Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)
 - Rui Fontes (<rui.fontes@tiflotecnia.com>)
 - Ângelo Abrantes (<ampa4374@gmail.com>)
 
-## Traduções
+## Tradutores
 
 - **Português (Brasil)** – Edilberto Fonseca
 - **Português (Portugal)** – Edilberto Fonseca
