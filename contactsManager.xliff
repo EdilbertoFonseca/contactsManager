@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en">
-<file id="readme.md" original="https://raw.githubusercontent.com/EdilbertoFonseca/contactsManager/e60e6a6518025dda9b5ffa47a9c143173d37b406/readme.md">
+<file id="readme.md" original="https://raw.githubusercontent.com/EdilbertoFonseca/contactsManager/a3be33016ffc97a9ce84cb6e3da7fa70d691c6ae/readme.md">
 <skeleton>
 # $(ID:ed075a31-98ed-4527-ba8f-6e24d134e3cb)
 
-$(ID:56d33a16-81d5-459e-8f28-6055418442d2)
-$(ID:6e668aea-9e99-4af7-ac1b-738df42bd0e8)
-$(ID:d708a3bf-c195-4714-b9d8-f5620bc509c0)
+$(ID:c6df88a1-8a33-4d9f-a301-0f60405054bb)
+$(ID:824455ac-3199-4445-a74c-7bb7728fe34f)
+$(ID:2c0268fa-dc9b-4630-9389-8135186213ce)
 
 ## $(ID:e1b8c82e-0ec2-4ede-ade1-f53db2448545)
 
@@ -137,28 +137,28 @@ $(ID:50a747b7-74ce-4ff6-a878-5829d4c44579)
 <source>Contact Manager for NVDA</source>
 </segment>
 </unit>
-<unit id="56d33a16-81d5-459e-8f28-6055418442d2">
+<unit id="c6df88a1-8a33-4d9f-a301-0f60405054bb">
 <notes>
 <note appliesTo="source">line: 4</note>
 </notes>
 <segment>
-<source>**Author**: Edilberto Fonseca (&lt;edilberto.fonseca@outlook.com&gt;)</source>
+<source>- **Author**: Edilberto Fonseca &lt;edilberto.fonseca@outlook.com&gt;</source>
 </segment>
 </unit>
-<unit id="6e668aea-9e99-4af7-ac1b-738df42bd0e8">
+<unit id="824455ac-3199-4445-a74c-7bb7728fe34f">
 <notes>
 <note appliesTo="source">line: 5</note>
 </notes>
 <segment>
-<source>**Created on**: 11/04/2024</source>
+<source>- **Created on**: 11/04/2024</source>
 </segment>
 </unit>
-<unit id="d708a3bf-c195-4714-b9d8-f5620bc509c0">
+<unit id="2c0268fa-dc9b-4630-9389-8135186213ce">
 <notes>
 <note appliesTo="source">line: 6</note>
 </notes>
 <segment>
-<source>**License**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)</source>
+<source>- **License**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)</source>
 </segment>
 </unit>
 <unit id="e1b8c82e-0ec2-4ede-ade1-f53db2448545">
