@@ -2,27 +2,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nvdaaddons\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2026-08-31 15:56-0300\n"
-"PO-Revision-Date: 2026-08-31 16:00-0300\n"
-"Last-Translator: Edilberto Fonseca <edilberto.fonseca@outlook.com>\n"
+"POT-Creation-Date: 2026-09-07 06:59+0000\n"
+"PO-Revision-Date: 2026-09-07 07:01\n"
+"Last-Translator: \n"
 "Language-Team: Ukrainian\n"
 "Language: uk_UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 "
-"&& n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 "
-"&& n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
 "X-Crowdin-Project: nvdaaddons\n"
 "X-Crowdin-Project-ID: 780748\n"
 "X-Crowdin-Language: uk\n"
 "X-Crowdin-File: contactsManager.pot\n"
 "X-Crowdin-File-ID: 645\n"
-"X-Generator: Poedit 3.9\n"
-
-#: addon\installTasks.py:56
-msgid "Error when renaming file: {e}"
-msgstr "Помилка під час перейменування файлу: {e}"
 
 #. translators: Title of message dialog box.
 #: addon\installTasks.py:56
@@ -35,7 +28,7 @@ msgstr "Увага"
 
 #: addon\globalPlugins\contactsManager\addEditRecord.py:45
 msgid "Mandatory Library Absent: Masked"
-msgstr "Обов’язкова відсутність у бібліотеці: у масках"
+msgstr ""
 
 #: addon\globalPlugins\contactsManager\addEditRecord.py:66
 msgid "It is necessary to inform the name!"
@@ -54,6 +47,7 @@ msgid "Add"
 msgstr "Додати"
 
 #: addon\globalPlugins\contactsManager\addEditRecord.py:96
+#, python-brace-format
 msgid "{} Record in Contacts Manager for NVDA"
 msgstr "{} Запис у менеджері контактів для NVDA"
 
@@ -101,6 +95,7 @@ msgid "Success"
 msgstr "Успішно"
 
 #: addon\globalPlugins\contactsManager\addEditRecord.py:259
+#, python-brace-format
 msgid "Error adding contact: {}"
 msgstr "Помилка додавання контакту: {}"
 
@@ -109,6 +104,7 @@ msgid "Contact edited!"
 msgstr "Контакт відредаговано!"
 
 #: addon\globalPlugins\contactsManager\addEditRecord.py:306
+#, python-brace-format
 msgid "Error editing contact: {}"
 msgstr "Помилка редагування контакту: {}"
 
@@ -241,11 +237,13 @@ msgid "To edit"
 msgstr "Для редагування"
 
 #: addon\globalPlugins\contactsManager\main.py:201
+#, python-brace-format
 msgid "The cell phone field for {} is empty."
 msgstr "Поле «Номер мобільного телефону» для {} порожнє."
 
 #. translators: Message shown when contacting a record via WhatsApp
 #: addon\globalPlugins\contactsManager\main.py:217
+#, python-brace-format
 msgid "Contacting {} via WhatsApp"
 msgstr "Зв'язатися з {} через WhatsApp"
 
@@ -325,8 +323,7 @@ msgstr "Список контактів."
 #. Translators: Text displayed in NVDA help.
 #: addon\globalPlugins\contactsManager\__init__.py:110
 msgid "Displays a window with all contacts registered in the Contacts Manager."
-msgstr ""
-"Показує діалог з усіма контактами, зареєстрованими в менеджері контактів."
+msgstr "Показує діалог з усіма контактами, зареєстрованими в менеджері контактів."
 
 #. Translators: Opens the Contacts Manager configuration menu
 #: addon\globalPlugins\contactsManager\__init__.py:120
@@ -348,24 +345,14 @@ msgstr "Менеджер контактів для NVDA"
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-on store
 #: buildVars.py:23
-msgid ""
-"Simple contacts manager for saving phone numbers, emails, and other contact "
-"details for personal or professional use.\n"
-"\n"
+msgid "Simple contacts manager for saving phone numbers, emails, and other contact details for personal or professional use.\n\n"
 "Shortcut Windows+Alt+L."
-msgstr ""
-"Простий менеджер контактів для збереження номерів телефонів, електронних "
-"листів та інших контактних даних для особистого чи професійного "
-"використання.\n"
-"\n"
+msgstr "Простий менеджер контактів для збереження номерів телефонів, електронних листів та інших контактних даних для особистого чи професійного використання.\n\n"
 "Комбінація клавіш Windows+Alt+L."
 
 #. Brief changelog for this version
 #. Translators: what's new content for the add-on version to be shown in the add-on store
 #: buildVars.py:30
-msgid ""
-"The new translation system via Crowdin has been integrated and the "
-"localization files have been updated."
+msgid "The new translation system via Crowdin has been integrated and the localization files have been updated."
 msgstr ""
-"Нова система перекладу через Crowdin була інтегрована, а файли локалізації — "
-"оновлені."
+
