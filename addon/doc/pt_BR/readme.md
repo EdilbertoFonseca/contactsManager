@@ -1,8 +1,8 @@
 # Gerenciador de Contatos para NVDA
 
-- **Author**: Edilberto Fonseca <edilberto.fonseca@outlook.com>
-- **Created on**: 11/04/2024
-- **License**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
+* **Autor**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)
+* **Data de Criação**: 11/04/2024
+* **Licença**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Introdução
 
@@ -12,11 +12,11 @@ Este complemento foi desenvolvido especialmente para pessoas com deficiência vi
 
 Com ele, você pode:
 
-- Adicionar, editar e excluir contatos;
-- Importar e exportar listas de contatos em formato CSV;
-- Aplicar formatação personalizada de números de telefone;
-- Escolha um local personalizado para armazenar seu banco de dados de contatos;
-- Navegue por uma interface intuitiva e totalmente acessível por teclado.
+* Adicionar, editar e excluir contatos;
+* Importar e exportar listas de contatos em formato CSV;
+* Aplicar formatação personalizada de números de telefone;
+* Escolha um local personalizado para armazenar seu banco de dados de contatos;
+* Navegue por uma interface intuitiva e totalmente acessível por teclado.
 
 ## Instalação
 
@@ -51,10 +51,10 @@ Você pode abrir o Gerenciador de Contatos de duas maneiras:
 
 Na janela principal, você pode:
 
-- Adicionar, editar e excluir contatos;
-- Pesquisar contatos específicos;
-- Importar e exportar arquivos CSV;
-- Excluir todos os registros da lista de contatos (se ativado).
+* Adicionar, editar e excluir contatos;
+* Pesquisar contatos específicos;
+* Importar e exportar arquivos CSV;
+* Excluir todos os registros da lista de contatos (se ativado).
 
 ## Adicionar um novo contato
 
@@ -85,41 +85,44 @@ Se nenhuma correspondência for encontrada, você será informado.
 
 ### Janela principal
 
-| Ação                     | Atalho             |
-|---------------------------|----------------------|
-| Adicionar novo contato           | `Alt+N`              |
-| Editar contato selecionado     | `Alt+E` ou `F2`      |
-| Remover contato selecionado   | `Alt+R` ou `Delete`  |
-| Pesquisar                    | `Alt+P``              |
-| Atualizar lista de contatos     | `Alt+A` ou `F5`      |
-| Importar arquivo CSV           | `Alt+I`              |
-| Exportar para CSV             | `Alt+X`              |
-| Apagar todos os contatos       | `Alt+T`              |
-| Sair                      | `Alt+S`              |
+| Ação                        | Atalho              |
+| --------------------------- | ------------------- |
+| Adicionar novo contato      | `Alt+N`             |
+| Editar contato selecionado  | `Alt+E` ou `F2`     |
+| Remover contato selecionado | `Alt+R` ou `Delete` |
+| Pesquisar                   | `Alt+P``            |
+| Atualizar lista de contatos | `Alt+A` ou `F5`     |
+| Importar arquivo CSV        | `Alt+I`             |
+| Exportar para CSV           | `Alt+X`             |
+| Apagar todos os contatos    | `Alt+T`             |
+| Sair                        | `Alt+S`             |
 
 > Para **editar** ou **remover** um contato, certifique-se de que ele esteja selecionado na lista.
 > Se nenhum contato for selecionado, uma mensagem de aviso será exibida.
 
 ### Janela Adicionar/Editar Contato
 
-| Ação | Atalho  |
-|---------------|-----------|
-| Confirmar       | `Alt+O`   |
-| Cancelar        | `Alt+C`   |
+| Ação      | Atalho  |
+| --------- | ------- |
+| Confirmar | `Alt+O` |
+| Cancelar  | `Alt+C` |
 
 > Você pode fechar todas as janelas com `Esc` ou `Alt+F4`.
 
 ## Agradecimentos
 
-This add-on was inspired by the contact manager originally developed by:Este complemento foi inspirado no gerenciador de contatos originalmente desenvolvido por:
+Este complemento foi inspirado na Agenda Acessível, originalmente desenvolvida por:
 
-- Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)
-- Rui Fontes (<rui.fontes@tiflotecnia.com>)
-- Ângelo Abrantes (<ampa4374@gmail.com>)
+* Rui Fontes (<rui.fontes@tiflotecnia.com>)
+* Ângelo Abrantes (<ampa4374@gmail.com>)
+* Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)
 
-## Tradutores
+## Tradução
 
-- **Português (Brazil)** – Edilberto Fonseca
-- **Português (Portugal)** – Edilberto Fonseca
-- **ucraniano** - George‑br
-- **turco** – Umut KORKMAZ
+As traduções deste add-on são gerenciadas através do [projeto NVDA Add-ons no Crowdin](https://crowdin.com/project/nvdaaddons).
+
+Para contribuir com uma tradução, crie uma conta no Crowdin, entre na equipe do idioma desejado, se necessário, e traduza as strings de interface e a documentação diretamente no Crowdin.
+
+Também é possível usar o Poedit para trabalhar localmente com arquivos `.po` e `.xliff`. As traduções concluídas são sincronizadas com o repositório do add-on por meio do fluxo de localização.
+
+Para dúvidas ou obter ajuda, participe da [lista de discussão NVDA Translations](https://groups.io/g/nvda-translations).
