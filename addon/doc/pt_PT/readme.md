@@ -1,8 +1,8 @@
-# Gestor de Contactos para o NVDA
+# - Gestor de Contactos para o NVDA
 
-* **Autor**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)
-* **Data de Criação**: 11/04/2024
-* **Licença**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
+* **Author**: Edilberto Fonseca <edilberto.fonseca@outlook.com>
+* **Created on**: 11/04/2024
+* **License**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Introdução
 
@@ -12,11 +12,11 @@ Este extra foi desenvolvido especialmente para pessoas com deficiência visual q
 
 Com esta ferramenta, é possível:
 
-* Adicionar, editar e remover contactos;
-* Importar e exportar contactos em formato CSV;
-* Personalizar o formato dos números de telefone;
-* Escolha uma localização personalizada para armazenar a sua base de dados de contactos;
-* Utilizar uma interface acessível e intuitiva através do teclado.
+* Add, edit, delete, and search for contacts;
+* Import and export contact lists in CSV format;
+* Apply custom phone number formatting;
+* Choose a custom location to store your contact database;
+* Navigate an intuitive and fully keyboard-accessible interface.
 
 ## Instalação
 
@@ -51,10 +51,10 @@ Pode aceder ao Gestor de Contactos das seguintes formas:
 
 Na janela principal, pode:
 
-* Registar, editar e remover contactos;
-* Pesquisar contactos;
-* Importar e exportar ficheiros CSV;
-* Apagar todos os contactos (consoante as definições).
+* Add, edit, and delete contacts;
+* Search for specific contacts;
+* Import and export CSV files;
+* Delete all records in the contact list (if enabled).
 
 ## Registar um Novo Contacto
 
@@ -68,16 +68,16 @@ Na janela principal, pode:
 
 ## Editar um Contacto
 
-1. Selecione um contacto da lista.
-2. Prima `Alt+E` ou `F2`.
-3. Faça as suas alterações.
-4. Prima `Alt+O` para guardar ou `Alt+C` para cancelar.
+1. - Selecione um contacto da lista.
+2. - Prima `Alt+E` ou `F2`.
+3. - Faça as suas alterações.
+4. - Prima `Alt+O` para guardar ou `Alt+C` para cancelar.
 
 ## Pesquisar Contactos
 
-1. Digite um termo de pesquisa (nome, telefone ou e-mail).
-2. Prima `Alt+P` para filtrar os resultados.
-3. Prima `Alt+A` ou `F5` para atualizar a lista completa.
+1. - Digite um termo de pesquisa (nome, telefone ou e-mail).
+2. - Prima `Alt+P` para filtrar os resultados.
+3. - Prima `Alt+A` ou `F5` para atualizar a lista completa.
 
 > Se não for encontrado nenhum resultado, será exibida uma mensagem a informá-lo.
 
@@ -85,44 +85,44 @@ Na janela principal, pode:
 
 ### Janela Principal
 
-| Ação                         | Atalho              |
-| ---------------------------- | ------------------- |
-| Adicionar novo contacto      | `Alt+N`             |
-| Editar contacto selecionado  | `Alt+E` ou `F2`     |
-| Remover contacto selecionado | `Alt+R` ou `Delete` |
-| Pesquisar                    | `Alt+P`             |
-| Atualizar lista de contactos | `Alt+A` ou `F5`     |
-| Importar ficheiro CSV        | `Alt+I`             |
-| Exportar para CSV            | `Alt+X`             |
-| Eliminar todos os contactos  | `Alt+T`             |
-| Sair                         | `Alt+S`             |
+| Action                  | Shortcut            |
+| ----------------------- | ------------------- |
+| Add new contact         | `Alt+N`             |
+| Edit selected contact   | `Alt+E` or `F2`     |
+| Remove selected contact | `Alt+R` or `Delete` |
+| Search                  | `Alt+P`             |
+| Refresh contact list    | `Alt+A` or `F5`     |
+| Import CSV file         | `Alt+I`             |
+| Export to CSV           | `Alt+X`             |
+| Delete all contacts     | `Alt+T`             |
+| Exit                    | `Alt+S`             |
 
 > Para **editar** ou **remover** um contacto, certifique-se de que o mesmo está selecionado na lista.
 > Se nenhum contacto for selecionado, será apresentada uma mensagem de aviso.
 
 ### Janela Adicionar/Editar Contacto
 
-| Ação      | Atalho  |
-| --------- | ------- |
-| Confirmar | `Alt+O` |
-| Cancelar  | `Alt+C` |
+| Action  | Shortcut |
+| ------- | -------- |
+| Confirm | `Alt+O`  |
+| Cancel  | `Alt+C`  |
 
 > Pode fechar todas as janelas com `Esc` ou `Alt+F4`.
 
 ## Agradecimentos
 
-Este suplemento foi inspirado pela Agenda Acessível, originalmente desenvolvida por:
+This add-on was inspired by the Accessible Agenda, originally developed by:
 
 * Rui Fontes (<rui.fontes@tiflotecnia.com>)
 * Ângelo Abrantes (<ampa4374@gmail.com>)
 * Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)
 
-## Tradução
+## Translation
 
-As traduções deste add-on são geridas através do [projeto NVDA Add-ons no Crowdin](https://crowdin.com/project/nvdaaddons).
+Translations for this add-on are managed through the [NVDA Add-ons Crowdin project](https://crowdin.com/project/nvdaaddons).
 
-Para contribuir com uma tradução, crie uma conta no Crowdin, entre na equipa do idioma pretendido, se necessário, e traduza as strings da interface e da documentação diretamente no Crowdin.
+To contribute a translation, create a Crowdin account, join the appropriate language team if required, and translate the available interface and documentation strings directly in Crowdin.
 
-Também é possível utilizar o Poedit para trabalhar localmente com ficheiros `.po` e `.xliff`. As traduções concluídas são sincronizadas com o repositório do add-on através do fluxo de localização.
+You can also use Poedit to work with `.po` and `.xliff` files locally. Completed translations are synchronized to the add-on repository through the localization workflow.
 
-Para esclarecer dúvidas ou obter ajuda, participe na [lista de discussão NVDA Translations](https://groups.io/g/nvda-translations).
+For questions or assistance, please join the [NVDA Translations mailing list](https://groups.io/g/nvda-translations).

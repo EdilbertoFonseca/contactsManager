@@ -1,8 +1,8 @@
 # Gerînendeyê Têkiliyê ji bo NVDA
 
-- **Author**: Edilberto Fonseca <edilberto.fonseca@outlook.com>
-- **Created on**: 11/04/2024
-- **License**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
+* **Author**: Edilberto Fonseca <edilberto.fonseca@outlook.com>
+* **Created on**: 11/04/2024
+* **License**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Pêşkêş
 
@@ -12,11 +12,11 @@ Ev pêvek ji bo alîkariya bikarhênerên kor an jî yên kêmendamên dîtinê 
 
 Bi vê amûrê, hûn dikarin:
 
-- Têkiliyan lê zêde bike, biguherîne, jê bibe û bigere;
-- Lîsteyên têkiliyan di formata CSV de import û hinardekirin;
-- Formatkirina hejmarên têlefonê yên xwerû bicîh bînin;
-- Ji bo hilanîna databasa têkiliyên xwe cîhekî xwerû hilbijêrin;
-- Bi navrûyek hêsan û bi tevahî klavyeyê ve girêbide.
+* Add, edit, delete, and search for contacts;
+* Import and export contact lists in CSV format;
+* Apply custom phone number formatting;
+* Choose a custom location to store your contact database;
+* Navigate an intuitive and fully keyboard-accessible interface.
 
 ## Lêkirinî
 
@@ -51,10 +51,10 @@ Hûn dikarin Gerînendeyê Têkiliyê bi du awayan vekin:
 
 Di pencereya sereke de, hûn dikarin: +
 
-- Têkiliyan lê zêde bike, biguherîne û jê bibe;
-- Li têkiliyên taybetî bigerin;
-- Pelên CSV import û hinardekirin;
-- Hemû tomarên di navnîşa têkiliyan de jê bibe (eger çalak be).
+* Add, edit, and delete contacts;
+* Search for specific contacts;
+* Import and export CSV files;
+* Delete all records in the contact list (if enabled).
 
 ## Têkiliyek Nû Zêde Bike
 
@@ -85,41 +85,44 @@ Di pencereya sereke de, hûn dikarin: +
 
 ### Paceya Sereke
 
-| Çalakî | Kurterê             |
-|---------------------------|----------------------|
-| Têkiliyek nû lê zêde bike | `Alt+N`              |
-| Têkiliya bijartî biguherîne | `Alt+E` an `F2`      |
-| Têkiliya bijartî jê bibe | `Alt+R` an `Jêbirin`  |
-| Lêgerîn | `Alt+P`              |
-| Lîsteya têkiliyan nû bike | `Alt+A` an `F5`      |
-| Pelê CSV import bike | `Alt+I`              |
-| Hinarde bike bo CSV | `Alt+X`              |
-| Hemû têkiliyan jê bibe | `Alt+T`              |
-| Derketin | `Alt+S`              |
+| Action                  | Shortcut            |
+| ----------------------- | ------------------- |
+| Add new contact         | `Alt+N`             |
+| Edit selected contact   | `Alt+E` or `F2`     |
+| Remove selected contact | `Alt+R` or `Delete` |
+| Search                  | `Alt+P`             |
+| Refresh contact list    | `Alt+A` or `F5`     |
+| Import CSV file         | `Alt+I`             |
+| Export to CSV           | `Alt+X`             |
+| Delete all contacts     | `Alt+T`             |
+| Exit                    | `Alt+S`             |
 
 > Ji bo **sererastkirin** an **rakirina** têkiliyekê, pê ewle bin ku ew di navnîşê de hatiye hilbijartin.
 > Heke tu têkiliyek neyê hilbijartin, peyamek hişyariyê dê were nîşandan.
 
 ### Paceya Têkiliyê Zêdekirin/Guherandin
 
-| Çalakî | Kurterê  |
-|---------------|-----------|
-| Piştrastkirin | `Alt+O`   |
-| Betal bike | `Alt+C`   |
+| Action  | Shortcut |
+| ------- | -------- |
+| Confirm | `Alt+O`  |
+| Cancel  | `Alt+C`  |
 
 > Hûn dikarin hemû pencereyan bi `Esc` an `Alt+F4` bigirin.
 
 ## Spasî
 
-Ev pêvek ji rêveberê têkiliyê yê ku di destpêkê de ji hêla: ve hatî pêşve xistin îlhama xwe girtiye.
+This add-on was inspired by the Accessible Agenda, originally developed by:
 
-- Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)
-- Rui Fontes (<rui.fontes@tiflotecnia.com>)
-- Ângelo Abrantes (<ampa4374@gmail.com>)
+* Rui Fontes (<rui.fontes@tiflotecnia.com>)
+* Ângelo Abrantes (<ampa4374@gmail.com>)
+* Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)
 
-## Wergêr
+## Translation
 
-- **Portekîzî (Brezîlya)** – Edilberto Fonseca
-- **Portekîzî (Portekîzî)** – Edilberto Fonseca
-- **Ukraynî** – George‑br
-- **Tirkî** – Umut KORKMAZ
+Translations for this add-on are managed through the [NVDA Add-ons Crowdin project](https://crowdin.com/project/nvdaaddons).
+
+To contribute a translation, create a Crowdin account, join the appropriate language team if required, and translate the available interface and documentation strings directly in Crowdin.
+
+You can also use Poedit to work with `.po` and `.xliff` files locally. Completed translations are synchronized to the add-on repository through the localization workflow.
+
+For questions or assistance, please join the [NVDA Translations mailing list](https://groups.io/g/nvda-translations).

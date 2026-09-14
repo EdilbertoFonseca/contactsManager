@@ -1,8 +1,8 @@
 # Gerenciador de Contatos para NVDA
 
-* **Autor**: Edilberto Fonseca (<edilberto.fonseca@outlook.com>)
-* **Data de Criação**: 11/04/2024
-* **Licença**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
+* **Author**: Edilberto Fonseca <edilberto.fonseca@outlook.com>
+* **Created on**: 11/04/2024
+* **License**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Introdução
 
@@ -12,11 +12,11 @@ Este complemento foi desenvolvido especialmente para pessoas com deficiência vi
 
 Com ele, você pode:
 
-* Adicionar, editar e excluir contatos;
-* Importar e exportar listas de contatos em formato CSV;
-* Aplicar formatação personalizada de números de telefone;
-* Escolha um local personalizado para armazenar seu banco de dados de contatos;
-* Navegue por uma interface intuitiva e totalmente acessível por teclado.
+* Add, edit, delete, and search for contacts;
+* Import and export contact lists in CSV format;
+* Apply custom phone number formatting;
+* Choose a custom location to store your contact database;
+* Navigate an intuitive and fully keyboard-accessible interface.
 
 ## Instalação
 
@@ -51,10 +51,10 @@ Você pode abrir o Gerenciador de Contatos de duas maneiras:
 
 Na janela principal, você pode:
 
-* Adicionar, editar e excluir contatos;
-* Pesquisar contatos específicos;
-* Importar e exportar arquivos CSV;
-* Excluir todos os registros da lista de contatos (se ativado).
+* Add, edit, and delete contacts;
+* Search for specific contacts;
+* Import and export CSV files;
+* Delete all records in the contact list (if enabled).
 
 ## Adicionar um novo contato
 
@@ -85,44 +85,44 @@ Se nenhuma correspondência for encontrada, você será informado.
 
 ### Janela principal
 
-| Ação                        | Atalho              |
-| --------------------------- | ------------------- |
-| Adicionar novo contato      | `Alt+N`             |
-| Editar contato selecionado  | `Alt+E` ou `F2`     |
-| Remover contato selecionado | `Alt+R` ou `Delete` |
-| Pesquisar                   | `Alt+P``            |
-| Atualizar lista de contatos | `Alt+A` ou `F5`     |
-| Importar arquivo CSV        | `Alt+I`             |
-| Exportar para CSV           | `Alt+X`             |
-| Apagar todos os contatos    | `Alt+T`             |
-| Sair                        | `Alt+S`             |
+| Action                  | Shortcut            |
+| ----------------------- | ------------------- |
+| Add new contact         | `Alt+N`             |
+| Edit selected contact   | `Alt+E` or `F2`     |
+| Remove selected contact | `Alt+R` or `Delete` |
+| Search                  | `Alt+P`             |
+| Refresh contact list    | `Alt+A` or `F5`     |
+| Import CSV file         | `Alt+I`             |
+| Export to CSV           | `Alt+X`             |
+| Delete all contacts     | `Alt+T`             |
+| Exit                    | `Alt+S`             |
 
 > Para **editar** ou **remover** um contato, certifique-se de que ele esteja selecionado na lista.
 > Se nenhum contato for selecionado, uma mensagem de aviso será exibida.
 
 ### Janela Adicionar/Editar Contato
 
-| Ação      | Atalho  |
-| --------- | ------- |
-| Confirmar | `Alt+O` |
-| Cancelar  | `Alt+C` |
+| Action  | Shortcut |
+| ------- | -------- |
+| Confirm | `Alt+O`  |
+| Cancel  | `Alt+C`  |
 
 > Você pode fechar todas as janelas com `Esc` ou `Alt+F4`.
 
 ## Agradecimentos
 
-Este complemento foi inspirado na Agenda Acessível, originalmente desenvolvida por:
+This add-on was inspired by the Accessible Agenda, originally developed by:
 
 * Rui Fontes (<rui.fontes@tiflotecnia.com>)
 * Ângelo Abrantes (<ampa4374@gmail.com>)
 * Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)
 
-## Tradução
+## Translation
 
-As traduções deste add-on são gerenciadas através do [projeto NVDA Add-ons no Crowdin](https://crowdin.com/project/nvdaaddons).
+Translations for this add-on are managed through the [NVDA Add-ons Crowdin project](https://crowdin.com/project/nvdaaddons).
 
-Para contribuir com uma tradução, crie uma conta no Crowdin, entre na equipe do idioma desejado, se necessário, e traduza as strings de interface e a documentação diretamente no Crowdin.
+To contribute a translation, create a Crowdin account, join the appropriate language team if required, and translate the available interface and documentation strings directly in Crowdin.
 
-Também é possível usar o Poedit para trabalhar localmente com arquivos `.po` e `.xliff`. As traduções concluídas são sincronizadas com o repositório do add-on por meio do fluxo de localização.
+You can also use Poedit to work with `.po` and `.xliff` files locally. Completed translations are synchronized to the add-on repository through the localization workflow.
 
-Para dúvidas ou obter ajuda, participe da [lista de discussão NVDA Translations](https://groups.io/g/nvda-translations).
+For questions or assistance, please join the [NVDA Translations mailing list](https://groups.io/g/nvda-translations).
