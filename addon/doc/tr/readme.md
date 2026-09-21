@@ -1,8 +1,8 @@
 # NVDA İçin Kişi Yöneticisi
 
-* **Author**: Edilberto Fonseca <edilberto.fonseca@outlook.com>
-* **Created on**: 11/04/2024
-* **License**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
+* **Yazar**: Edilberto Fonseca <edilberto.fonseca@outlook.com>
+* **Oluşturulma tarihi:** 11/04/2024
+* **Lisans**: [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ## Giriş
 
@@ -12,11 +12,11 @@ Bu eklenti, görme engelli veya görme engelli kullanıcıların kişi listeleri
 
 Bu araçla şunları yapabilirsiniz:
 
-* Add, edit, delete, and search for contacts;
-* Import and export contact lists in CSV format;
-* Apply custom phone number formatting;
-* Choose a custom location to store your contact database;
-* Navigate an intuitive and fully keyboard-accessible interface.
+* Kişileri ekleyin, düzenleyin, silin ve arayın;
+* CSV formatındaki kişi listelerini içe ve dışa aktarın;
+* Özel telefon numarası biçimlendirmesi uygulayın;
+* İletişim veritabanınızı saklamak için özel bir konum seçin;
+* Sezgisel ve tamamen klavyeyle erişilebilir bir arayüzde dolaşın.
 
 ## Kurulum
 
@@ -51,10 +51,10 @@ Kişi Yöneticisini iki şekilde açabilirsiniz:
 
 Ana pencerede şunları yapabilirsiniz:
 
-* Add, edit, and delete contacts;
-* Search for specific contacts;
-* Import and export CSV files;
-* Delete all records in the contact list (if enabled).
+* Kişileri ekleyin, düzenleyin ve silin;
+* Belirli kişileri arayın;
+* CSV dosyalarını içe ve dışa aktarma;
+* Kişi listesindeki tüm kayıtları silin (etkinleştirilmişse).
 
 ## Yeni Kişi Ekleme
 
@@ -85,44 +85,44 @@ Ana pencerede şunları yapabilirsiniz:
 
 ### Ana Pencere
 
-| Action                  | Shortcut            |
+| Eylem | Kısayol            |
 | ----------------------- | ------------------- |
-| Add new contact         | `Alt+N`             |
-| Edit selected contact   | `Alt+E` or `F2`     |
-| Remove selected contact | `Alt+R` or `Delete` |
-| Search                  | `Alt+P`             |
-| Refresh contact list    | `Alt+A` or `F5`     |
-| Import CSV file         | `Alt+I`             |
-| Export to CSV           | `Alt+X`             |
-| Delete all contacts     | `Alt+T`             |
-| Exit                    | `Alt+S`             |
+| Yeni kişi ekle | `Alt+N`             |
+| Seçilen kişiyi düzenle   | `Alt+E` veya `F2`     |
+| Seçili kişiyi kaldır | `Alt+R` veya `Delete` |
+| Ara                  | `Alt+A`             |
+| Kişi listesini yenile    | `Alt+Y` veya `F5`     |
+| CSV dosyasını içe aktar         | `Alt+i`             |
+| CSV Olarak Dışa aktar           | `Alt+ı`             |
+| Tüm kayıtları sil     | `Alt+S`             |
+| Çık                    | `Alt+Ç`             |
 
 > Bir kişiyi **düzenlemek** veya **kaldırmak** için listede seçili olduğundan emin olun.
 > Hiçbir kişi seçilmezse bir uyarı mesajı gösterilecektir.
 
 ### Kişi Ekle/Düzenle Penceresi
 
-| Action  | Shortcut |
+| Eylem | Kısayol |
 | ------- | -------- |
-| Confirm | `Alt+O`  |
-| Cancel  | `Alt+C`  |
+| Tamam | `Alt+T`  |
+| İptal  | `Alt+L`  |
 
 > Tüm pencereleri 'Esc' veya 'Alt+F4' ile kapatabilirsiniz.
 
 ## Teşekkür
 
-This add-on was inspired by the Accessible Agenda, originally developed by:
+Bu eklenti, aslen şu kişiler tarafından geliştirilen Erişilebilir Aşanda'dan esinlenilmiştir:
 
 * Rui Fontes (<rui.fontes@tiflotecnia.com>)
 * Ângelo Abrantes (<ampa4374@gmail.com>)
 * Abel Passos do Nascimento Jr. (<abel.passos@gmail.com>)
 
-## Translation
+## Çeviri
 
-Translations for this add-on are managed through the [NVDA Add-ons Crowdin project](https://crowdin.com/project/nvdaaddons).
+Bu eklentiye ait çeviriler [NVDA Add-ons Crowdin projesi](https://crowdin.com/project/nvdaaddons) aracılığıyla yönetilmektedir.
 
-To contribute a translation, create a Crowdin account, join the appropriate language team if required, and translate the available interface and documentation strings directly in Crowdin.
+Çeviriye katkıda bulunmak için bir Crowdin hesabı oluşturun, gerekirse ilgili dil ekibine katılın ve mevcut arayüz ve dokümantasyon metinlerini doğrudan Crowdin'de çevirin.
 
-You can also use Poedit to work with `.po` and `.xliff` files locally. Completed translations are synchronized to the add-on repository through the localization workflow.
+Poedit'i `.po` ve `.xliff` dosyalarıyla yerel olarak çalışmak için de kullanabilirsiniz. Tamamlanan çeviriler, yerelleştirme iş akışı aracılığıyla eklenti deposuna senkronize edilir.
 
-For questions or assistance, please join the [NVDA Translations mailing list](https://groups.io/g/nvda-translations).
+Sorularınız için veya yardıma ihtiyacınız varsa lütfen [NVDA Translations posta listesine](https://groups.io/g/nvda-translations) katılın.
